@@ -1,0 +1,64 @@
+<!-- Write a JavaScript program to get the current date.  
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Current date</title>
+</head>
+
+<body>
+    <button onclick="dateButtonClickHandler()">Click to the button to get the current date:</button>
+    <button onclick="clearButtonClickHandler()">Clear</button>
+    <div id="showDate"></div>
+
+    <script>
+        let clickCounter = 0;
+
+        function dateButtonClickHandler() {
+            updateTag(getCurrentDate());
+            countClicks();
+        }
+
+        function updateTag(value) {
+            let tag = document.getElementById("showDate");
+            tag.textContent = value;
+        }
+
+        function countClicks() {
+            clickCounter++;
+            console.log(clickCounter);
+        }
+
+        function getCurrentDate() {
+            let currentDate = new Date();
+            let curentMonth = formatNumber(currentDate.getMonth());
+            let currentDay = formatNumber(currentDate.getDate());
+            let currentYear = currentDate.getFullYear();
+            let curentHour = formatNumber(currentDate.getHours());
+            let curentMinute = formatNumber(currentDate.getMinutes());
+            let currentSecond = formatNumber(currentDate.getSeconds());
+
+            let displayCurrentDate = (curentMonth + "-" + currentDay + "-" + currentYear + " " + curentHour + ":" + curentMinute + ":" + currentSecond);
+            return displayCurrentDate;
+        }
+
+        function formatNumber(num) {
+            if (num >= 10) {
+                return num;
+            }
+
+            return ("0" + num);
+        }
+
+        function clearButtonClickHandler() {
+            updateTag("");
+        }
+
+    </script>
+</body>
+
+</html>

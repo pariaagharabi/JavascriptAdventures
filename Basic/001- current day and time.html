@@ -1,0 +1,106 @@
+<!-- Write a JavaScript program to display the current day and time in the following format.
+Sample Output : Today is : Tuesday.
+Current time is : 10 PM : 30 : 38 -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>The current day and time </title>
+</head>
+
+<body>
+    <button onclick="main()">Current Time</button>
+    <div id="currentDate"></div>
+    <div id="currentTime"></div>
+
+    <script>
+        function main() {
+            let currentDate = new Date();
+            let minutes = currentDate.getMinutes();
+            let seconds = currentDate.getSeconds();
+            let hour = currentDate.getHours();
+            let dispalyHour
+
+            if (hour < 12) {
+                dispalyHour = hour + "AM";
+            } else if (hour == 12) {
+                dispalyHour = hour + "PM";
+            } else {
+                dispalyHour = (hour - 12) + "PM";
+            }
+
+            // console.log(dispalyHour);
+            // console.log(currentDate);
+            // console.log(currentDate.getDay());
+
+            let displayCurrentDay = ("Today is: " + convertDaytoString(currentDate.getDay()));
+            let displayCurrentTime = ("Current time is: " + dispalyHour + ":" + minutes + ":" + seconds);
+
+            let tag1 = document.getElementById("currentDate");
+            let tag2 = document.getElementById("currentTime");
+
+            tag1.textContent = displayCurrentDay;
+            tag2.textContent = displayCurrentTime;
+        }
+
+        // Method #1:
+        function convertDaytoString(day) {
+            switch (day) {
+                case 0:
+                    return ("Sunday");
+                    break;
+                case 1:
+                    return ("Monday");
+                    break;
+                case 2:
+                    return ("Tuesday");
+                    break;
+                case 3:
+                    return ("Wednesday");
+                    break;
+                case 4:
+                    return ("Thursday");
+                    break;
+                case 5:
+                    return ("Friday");
+                    break;
+                case 6:
+                    return ("Saturday");
+                    break;
+                default:
+                    return ("Wrong day");
+                    break;
+            }
+        }
+
+
+        // Method #2:
+        // function convertDaytoString(day) {
+
+        //     if (day == 0) {
+        //         return ("Sunday");
+        //     } else if (day == 1) {
+        //         return ("Monday");
+        //     } else if (day == 2) {
+        //         return ("Tuesday");
+        //     } else if (day == 3) {
+        //         return ("Wednesday");
+        //     } else if (day == 4) {
+        //         return ("Thursday");
+        //     } else if (day == 2) {
+        //         return ("Friday");
+        //     } else if (day == 2) {
+        //         return ("Saturday");
+        //     } else {
+        //         return ("Wrong day");
+        //     }
+        // }
+
+
+    </script>
+
+</body>
+
+</html>
