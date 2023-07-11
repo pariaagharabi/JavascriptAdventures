@@ -1,0 +1,49 @@
+<!-- 9. Write a JavaScript program to calculate the days left before Christmas.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Days left before Christmas</title>
+</head>
+
+<body>
+    <button onclick="main()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function main() {
+            let displayResult = calDiffDays();
+            let tag1 = document.getElementById("showResult");
+            tag1.innerHTML = ("The days left until next Christmas: " + displayResult);
+        }
+
+        function calDiffDays() {
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            let currentMonth = currentDate.getMonth();
+            let currentDay = currentDate.getDay();
+            let christmasDay = new Date(currentYear, 11, 25);
+
+            if (christmasDay > currentDate) {
+                let diffInMs = christmasDay - currentDate;
+                let diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+
+                return (diffInDays);
+            } else {
+                christmasDay = new Date(currentYear + 1, 11, 25);
+                let diffInMs = christmasDay - currentDate;
+                let diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+
+                return (diffInDays);
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

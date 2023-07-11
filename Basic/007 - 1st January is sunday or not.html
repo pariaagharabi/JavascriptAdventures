@@ -1,0 +1,47 @@
+<!-- 7. Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050.   -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>1st January in Sunday</title>
+</head>
+
+<body>
+    <button onclick="getWindowPrompt()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function getWindowPrompt() {
+            let userStartYear = Number(prompt("Please enter the start year:"));
+            let userEndYear = Number(prompt("Please enter the end year:"));
+
+            let years = checkDay(userStartYear, userEndYear, 0);
+            console.log(years);
+
+            let displayPrompt = ("The start year:" + userStartYear + " and " + "The end year: " + userEndYear);
+            let tag1 = document.getElementById("showResult");
+            tag1.innerHTML = displayPrompt + "<br>" + years.join(" | ");
+        }
+
+
+
+        function checkDay(startYear, endYear, day) {
+            let result = [];
+
+            for (let i = startYear; i <= endYear; i++) {
+                let date = new Date(i, 0, 1);
+                if (date.getDay() == day) {
+                    result.push(i);
+                }
+            }
+
+            return result;
+        }
+
+
+    </script>
+</body>
+
+</html>

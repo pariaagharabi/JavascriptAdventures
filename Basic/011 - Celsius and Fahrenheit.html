@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Celsius and Fahrenheit</title>
+</head>
+
+<body>
+    <button onclick="eventTemConvertToFahHandler()">Click to see Fahrenheit</button>
+    <input id="celsius" name="celsius" type="number">
+
+    <br>
+    <button onclick="eventTemConvertToCelHandler()">Click to see Celsius</button>
+    <input id="fahrenheit" name="fahrenheit" type="number">
+
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventTemConvertToFahHandler() {
+            let celsius = document.getElementById("celsius").value;
+            let resultTag = document.getElementById("showResult");
+
+            let displayResult = (celsius + "°C is " + convertToFahrenheit(celsius) + " °F");
+            resultTag.innerHTML = displayResult;
+        }
+
+        function eventTemConvertToCelHandler() {
+            let fahrenheit = document.getElementById("fahrenheit").value;
+            let resultTag = document.getElementById("showResult");
+
+            let displayResult = (fahrenheit + "°F is " + convertToCelsius(fahrenheit) + " °C");
+            resultTag.innerHTML = displayResult;
+
+        }
+
+        function convertToFahrenheit(celsius) {
+            const formoula = (celsius * 9 / 5) + 32;
+            return formoula;
+        }
+
+        function convertToCelsius(fahrenheit) {
+            const formoula = (fahrenheit - 32) * 5 / 9;
+            return formoula;
+        }
+
+    </script>
+</body>
+
+</html>

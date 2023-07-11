@@ -1,0 +1,28 @@
+<!-- 12. Write a JavaScript program to get the website URL (loading page).   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Get the website URL</title>
+</head>
+
+<body>
+    <button onclick="getWebsiteUrl()">Click to get the website URL</button>
+    <div id="showResult"></div>
+
+    <script>
+        function getWebsiteUrl() {
+            // let displayResult = ("The full URL is:" + "<br>" + window.location.href);
+            let displayResult = ("The full URL is:" + "<br>" + document.URL);
+
+            let resultTag = document.getElementById("showResult");
+
+            resultTag.innerHTML = displayResult;
+        }
+
+    </script>
+</body>
+
+</html>
