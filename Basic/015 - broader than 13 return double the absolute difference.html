@@ -1,0 +1,47 @@
+<!-- 15. Write a JavaScript program to get the difference between a given number and 13, if the number is broader than 13 return double the absolute difference.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Broader than 13 return double the absolute difference</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+    <script>
+
+        function eventHandler() {
+            let givenNum = Number(prompt("Please enter a number:"));
+
+            let displayResult = ("The result is: ");
+
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult + calDiff(givenNum);
+        }
+
+        function calDiff(userNum) {
+            userNum = Number(userNum);
+            let diff = userNum - 13;
+
+            if (diff >= 13) {
+                let result = Math.abs(diff * 2);
+                return result;
+            }
+            return ("The diffesrnce is NOT greater then 13!");
+        }
+
+        // let userNum = Number(prompt("Please enter a number:"));
+        // let diff = userNum - 13;
+        // if (diff > 13) {
+        //     let result = Math.abs(diff * 2);
+        //     console.log(result);
+        // }
+
+
+    </script>
+</body>
+
+</html>

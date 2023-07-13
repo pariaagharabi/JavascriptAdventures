@@ -1,0 +1,42 @@
+<!-- 14. Write a JavaScript exercise to get the filename extension.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Get the filename extension</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userFileStr = prompt("Please enter a filename with its extension:");
+
+            let displayResult = ("User filename: " + userFileStr + "<br>" + "The filename extension is: " + getFilenameExtension(userFileStr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function getFilenameExtension(fileName) {
+            let dotIndex = fileName.lastIndexOf(".");
+            let fileExtension = fileName.substr(dotIndex + 1);
+            return fileExtension;
+        }
+
+        //Program without function:
+        // let fileName = "filename.txt";
+        // console.log(fileName);
+        // let dotIndex = fileName.lastIndexOf(".");
+        // console.log(dotIndex);
+        // let fileExtension = fileName.substr(dotIndex + 1);
+        // console.log(fileExtension);
+
+    </script>
+</body>
+
+</html>
