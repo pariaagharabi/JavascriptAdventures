@@ -1,0 +1,41 @@
+<!-- 20. Write a JavaScript program to check two given integers whether one is positive and another one is negative.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler(userNum1, userNum2) {
+            userNum1 = Number(prompt("Please enter first number:"));
+            userNum2 = Number(prompt("Please enter second number:"));
+
+            let displayResult = ("The first number: " + userNum1 + "<br>" + "The second number: " + userNum2 + "<br>" + "The result: " + checkPositivityNegativity(userNum1, userNum2));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkPositivityNegativity(num1, num2) {
+            num1 = Number(num1);
+            num2 = Number(num2);
+
+            if (num1 < 0 && num2 < 0) {
+                return ("Both numbers are negative");
+            } else if (num1 >= 0 && num2 >= 0) {
+                return ("Both are positive");
+            }
+
+            return ("One of numbers is negative and another one is positive.");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- 21. Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Return the orginal string by a condition</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userString = prompt("Please enter a string");
+            let displayResult = ("User string: " + userString + "<br>" + checkOrgString(userString));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkOrgString(givenString) {
+            let twoFirstChar = givenString.substr(0, 2);
+
+            if (twoFirstChar.toLowerCase() === "py") {
+                return givenString;
+            }
+
+            return ("Py" + givenString);
+        }
+    </script>
+</body>
+
+</html>

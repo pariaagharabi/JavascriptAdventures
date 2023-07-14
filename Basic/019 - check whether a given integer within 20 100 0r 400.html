@@ -1,0 +1,40 @@
+<!-- 19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.  -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check a given number if is within 20 of 40 or 400</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userNum = Number(prompt("Please enter a number:"));
+
+            let displayResult = ("User number: " + userNum + "<br>" + "The result: " + compare(userNum));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function compare(givenNum) {
+            let diff100 = Math.abs(givenNum - 100);
+            let diff400 = Math.abs(givenNum - 400);
+
+            if (diff100 <= 20 || diff400 <= 20) {
+                return "Not mattched!";
+            }
+
+            return "Matched.";
+        }
+
+
+    </script>
+</body>
+
+</html>
