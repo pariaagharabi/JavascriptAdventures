@@ -1,0 +1,45 @@
+<!-- 28. Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them falls within the range.  -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check two number are in the range [50-99]</title>
+</head>
+
+<body>
+    <p>28. Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive).
+        Return true if either of them falls within the range.</p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum1 = Number(prompt("Please enter the first number:"));
+            let userNum2 = Number(prompt("Please enter the sconde number:"));
+
+            let displayResult = ("The fist nuber: " +
+                userNum1 +
+                "<br>" +
+                "The sond number: " +
+                userNum2 +
+                "<br>" +
+                "The result: " +
+                checkRangeOfTwoNums(userNum1, userNum2));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkRangeOfTwoNums(firstNum, secondeNum) {
+            if ((firstNum >= 50 && firstNum <= 99) || (secondeNum >= 50 && secondeNum <= 99)) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

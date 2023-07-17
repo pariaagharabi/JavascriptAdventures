@@ -9,23 +9,35 @@
 </head>
 
 <body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
 
     <script>
 
+        function eventHandler() {
+            let userStr = prompt("Please enter a string:");
+            let userIndex = Number(prompt("Please enter JUST one number:"));
+            userIndex -= 1;
+            let displayResult = (
+                "The user's string: " +
+                userStr +
+                "<br>" +
+                "The user's index:" +
+                userIndex +
+                "<br>" +
+                "The result:" +
+                checkSpecifiedPosition(userStr, userIndex));
 
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
 
-        let givenString = "paria";
-        let specifiedIndex = Number("3") - 1;
-        console.log(specifiedIndex);
-        let charOfGivenIndex = givenString.substr(specifiedIndex, 1);
-        console.log(charOfGivenIndex);
-
-        let modifiedStr = givenString.substr(0, specifiedIndex);
-        let test = givenString.substr(specifiedIndex + 1, [givenString.length + 1]);
-        console.log(modifiedStr);
-        console.log(test);
-
-
+        function checkSpecifiedPosition(givenString, specifiedIndex) {
+            let firstPart = givenString.substr(0, specifiedIndex);
+            let secondPart = givenString.substr(specifiedIndex + 1)
+            let result = firstPart + secondPart;
+            return result;
+        }
 
     </script>
 </body>

@@ -1,0 +1,35 @@
+<!-- 24. Write a JavaScript program to create another string from a given string with the first character of the given string added to the front and back. -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Add a new string to the front and back of the orgin string</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userStr = prompt("Please enter a string:");
+            let displayResult = ("The user string: " + userStr + "<br>" + "The result: " + addFirstCharToFrontBack(userStr));
+
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function addFirstCharToFrontBack(givenStr) {
+            let givenStrFirstChar = givenStr[0];
+            let result = givenStrFirstChar + givenStr + givenStrFirstChar;
+
+            return result;
+        }
+
+    </script>
+</body>
+
+</html>

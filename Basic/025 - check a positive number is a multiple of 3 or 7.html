@@ -1,0 +1,45 @@
+<!-- 25. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check a positive number is a multiple of 3 or 7</title>
+</head>
+
+<body>
+    <p>Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum = Number(prompt("Please enter a number: "));
+            let displayResult = ("The user number is:" +
+                userNum +
+                "<br>" +
+                "The result: " +
+                checkMultipleOf3Or7(userNum));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkMultipleOf3Or7(num) {
+            if (num >= 0) {
+                if (num % 3 === 0 || num % 7 === 0) {
+                    return ("Number is a multiple of 3 or 7.");
+                } else {
+                    return ("The number number is NOT a multiple of 3 or 7");
+                }
+            }
+
+            return ("The number is not a positive number, please enter a positive number!");
+
+        }
+
+    </script>
+</body>
+
+</html>

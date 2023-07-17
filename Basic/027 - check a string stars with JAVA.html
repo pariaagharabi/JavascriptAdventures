@@ -1,0 +1,40 @@
+<!-- 27. Write a JavaScript program to check whether a string starts with 'Java' if it does not otherwise.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check a string starts witj JAVA or not</title>
+</head>
+
+<body>
+    <p>27. Write a JavaScript program to check whether a string starts with 'Java' if it does not otherwise.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+            let displayResult = ("The user string: " +
+                userStr + "<br>" +
+                "The result: " +
+                checkStartingOfString(userStr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkStartingOfString(orgStr) {
+            let firstFourGivenChars = orgStr.substr(0, 4).toLowerCase();
+            if (firstFourGivenChars === "java") {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

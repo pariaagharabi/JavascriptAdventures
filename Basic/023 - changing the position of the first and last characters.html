@@ -1,0 +1,49 @@
+<!-- 23. Write a JavaScript program to create a new string from a given string by changing the position of the first and last characters. The string length must be broader than or equal to 1.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>changing the position of the first and last characters</title>
+</head>
+
+<body>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userStr = prompt("Please enter a string:");
+
+            let displayResult = (
+                "User string: " +
+                userStr + "<br>" +
+                "The result: " +
+                changeFirstLastChar(userStr));
+
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function changeFirstLastChar(orgStr) {
+            let strLength = orgStr.length;
+
+            if (strLength != 0 && strLength != 1) {
+                let firstCharOfGivenStr = orgStr[0];
+                let lastCharOfGivenStr = orgStr[orgStr.length - 1];
+                let midPart = orgStr.substr(1, orgStr.length - 2);
+                let newStr = lastCharOfGivenStr + midPart + firstCharOfGivenStr;
+                {
+                    return newStr;
+                }
+            }
+
+            return orgStr;
+        }
+
+    </script>
+</body>
+
+</html>

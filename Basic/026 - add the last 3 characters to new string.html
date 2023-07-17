@@ -1,0 +1,52 @@
+<!-- 26. Write a JavaScript program to create a string from a given string. This is done by taking the last 3 characters and adding them at both the front and back. The string length must be 3 or more.  -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Add the last 3 characters to a new string</title>
+</head>
+
+<body>
+    <p>26. Write a JavaScript program to create a string from a given string. This is done by taking the last 3
+        characters and adding them at both the front and back. The string length must be 3 or more.</p>
+
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+
+    <script>
+
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+            let displayResult = ("The user string: " +
+                userStr + "<br>" +
+                "The result: " +
+                addThreeCharToFrontEnd(userStr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function addThreeCharToFrontEnd(orgStr) {
+            let strLength = orgStr.length;
+            let lastThreeChars = orgStr.substr(orgStr.length - 3);
+            if (strLength >= 3) {
+                return lastThreeChars + orgStr + lastThreeChars;
+            }
+
+
+            return orgStr;
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
