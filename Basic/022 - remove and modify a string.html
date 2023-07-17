@@ -1,0 +1,33 @@
+<!-- 22. Write a JavaScript program to remove a character at the specified position in a given string and return the modified string. -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Remove and return the modified string</title>
+</head>
+
+<body>
+
+    <script>
+
+
+
+        let givenString = "paria";
+        let specifiedIndex = Number("3") - 1;
+        console.log(specifiedIndex);
+        let charOfGivenIndex = givenString.substr(specifiedIndex, 1);
+        console.log(charOfGivenIndex);
+
+        let modifiedStr = givenString.substr(0, specifiedIndex);
+        let test = givenString.substr(specifiedIndex + 1, [givenString.length + 1]);
+        console.log(modifiedStr);
+        console.log(test);
+
+
+
+    </script>
+</body>
+
+</html>
