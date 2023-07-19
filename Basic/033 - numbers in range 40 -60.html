@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>33. Write a JavaScript program to check whether two numbers are in the range 40..60 or 70..100 inclusive.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userArr = [];
+            userArr[0] = Number(prompt("Please enter the first number:"));
+            userArr[1] = Number(prompt("Please enter the second number:"));
+
+            let displayResult = ("The first number: " +
+                userArr[0] +
+                "<br>" +
+                "The second number: " +
+                userArr[1] +
+                "<br>" +
+                "The result: " +
+                checkRangeNums(userArr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkRangeNums(numsArr) {
+            if (numsArr.length < 2) {
+                return ("Please enter two numbers!");
+            }
+
+            if (
+                (numsArr[0] >= 40 && numsArr[0] <= 60 && numsArr[1] >= 40 && numsArr[1] <= 60) ||
+                (numsArr[0] >= 70 && numsArr[0] <= 100 && numsArr[1] >= 70 && numsArr[1] <= 100)
+            ) {
+                return ("Two numbers are in the range.");
+            }
+
+
+            return ("Two numbers are NOT in the range.");
+        }
+
+    </script>
+
+</body>
+
+</html>

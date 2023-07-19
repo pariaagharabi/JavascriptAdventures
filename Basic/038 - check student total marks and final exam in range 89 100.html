@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check a student's total marks</title>
+</head>
+
+<body>
+    <p>38. Write a JavaScript program to check a student's total marks in various examinations. The student will get A+
+        grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam" the student will
+        receive A+ grade and total marks must be greater than or equal to 90. If the student gets an A+ grade, return
+        true, otherwise return false.
+    </p>
+
+    <button onclick="">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+
+            let displayResult = ("The user");
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        const marks = [
+            { "course": "math", "mark": 75, "result": "" },
+            { "course": "sport", "mark": 50, "result": "" },
+            { "course": "physics", "mark": 100, "result": "" },
+            { "course": "music", "mark": 88, "result": "" },
+            { "course": "dance", "mark": 89, "result": "" },
+            { "course": "final", "mark": 90, "result": "" }
+        ];
+
+        for (var i = 0; i < marks.length; i++) {
+            if (marks[i].course == "final") {
+                if (marks[i].mark >= 90) {
+                    marks[i].result = "A+"
+                }
+            } else {
+                if (marks[i].mark >= 89) {
+                    marks[i].result = "A+"
+                }
+
+            }
+        }
+
+        for (var i = 0; i < marks.length; i++) {
+            console.log(marks[i].course + ": " + marks[i].result);
+        }
+    </script>
+</body>
+
+</html>

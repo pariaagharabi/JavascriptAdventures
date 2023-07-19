@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>39. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80
+        return 65 otherwise return 80.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum1 = Number(prompt("Please enter the first number"));
+            let userNum2 = Number(prompt("Please enter the scond number"));
+
+            let displayResult = ("The first number: " + userNum1 + "<br>" + "The second number: " + userNum2 + "<br>" + "The result: " + computeSumOfTwoNumbersInRange(userNum1, userNum2));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function computeSumOfTwoNumbersInRange(num1, num2) {
+            let summNums = num1 + num2;
+            if (summNums >= 50 && summNums <= 80) {
+                return 65;
+            }
+
+            return 80;
+        }
+    </script>
+</body>
+
+</html>

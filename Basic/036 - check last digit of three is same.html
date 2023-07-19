@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check last digit of three is same</title>
+</head>
+
+<body>
+    <p>36. Write a JavaScript program that checks whether the last digit of three positive integers is the same.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userArr = [];
+            userArr[0] = Math.abs(Number(prompt("Enter the first number:")));
+            userArr[1] = Math.abs(Number(prompt("Enter the second number:")));
+            userArr[2] = Math.abs(Number(prompt("Enter the third number:")));
+
+            let displayResult = (
+                "The first number: " +
+                userArr[0] +
+                "<br>" +
+                "The second number: " +
+                userArr[1] +
+                "<br>" +
+                "The third number: " +
+                userArr[2] +
+                "<br>" +
+                "The result: " +
+                checkLastDigitOfThreeIsSame(userArr));
+
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkLastDigitOfThreeIsSame(numsArr) {
+            if (numsArr.length < 3) {
+                throw new Error("You must enter 3 numbers!");
+            }
+
+            let lastDigitNum1 = numsArr[0].toString().slice(-1);
+            let lastDigitNum2 = numsArr[1].toString().slice(-1);
+            let lastDigitNum3 = numsArr[2].toString().slice(-1);
+
+            if (lastDigitNum1 == lastDigitNum2 && lastDigitNum1 == lastDigitNum3) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>34. Write a JavaScript program to find the largest number from the two given positive integers. The two numbers
+        are in the range 40..60 inclusive. </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userArr = [];
+            userArr[0] = Number(prompt("Please enter the first number:"));
+            userArr[1] = Number(prompt("Please enter the second number:"));
+
+            let displayResult = ("The first number: " + userArr[0] + "<br>" + "The second number: " + userArr[1] + "<br>" + "The result: " + findLargestNumInRange(userArr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findLargestNumInRange(numsArr) {
+            if (numsArr.length < 2) {
+                return ("Please enter two numbers!");
+            }
+
+            if (numsArr[0] >= 40 && numsArr[0] <= 60 && numsArr[1] >= 40 && numsArr[1] <= 60) {
+                if (numsArr[0] > numsArr[1]) {
+                    return ("The largest number is " + numsArr[0]);
+                }
+
+                return ("The largest number is " + numsArr[1]);
+            }
+
+            throw new Error('Numbers are not in the range!');
+        }
+    </script>
+
+</body>
+
+</html>

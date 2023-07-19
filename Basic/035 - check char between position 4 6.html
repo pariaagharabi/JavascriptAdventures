@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>35. Write a program to check whether a specified character exists between the 2nd and 4th positions in a given
+        string.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userStr = prompt("Please enter a string:");
+            let userChar = prompt("Please enter a character:");
+
+            let displayResult = ("The user string: " +
+                userStr +
+                "<br>" +
+                "The user character: " +
+                userChar +
+                "<br>" +
+                "The result: " +
+                checkSpecifiedPositionChar(userStr, userChar));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkSpecifiedPositionChar(orgStr, specifiedChar) {
+            if (orgStr.length < 4) {
+                return ("Please enter a string with at least 4 characters!");
+            }
+
+            let indexChar = orgStr.substr(1, 2);
+            indexChar += 1;
+            if (indexChar.includes(specifiedChar)) {
+                return true;
+            }
+
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

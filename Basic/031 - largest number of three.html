@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Largest number of three</title>
+</head>
+
+<body>
+    <p>31. Write a JavaScript program to find the largest of three given integers.
+    </p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let numbers = [];
+            numbers[0] = Number(prompt("Enter the first number: "));
+            numbers[1] = Number(prompt("Enter the second number: "));
+            numbers[2] = Number(prompt("Enter the third number: "));
+
+            let displayResult = ("The first number: " +
+                numbers[0] +
+                "<br>" +
+                "The second number: " +
+                numbers[1] +
+                "<br>" +
+                "The third number: " +
+                numbers[2] +
+                "<br>" +
+                "The result: " +
+                checkLargestNum(numbers));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkLargestNum(numsArr) {
+            if (numsArr.length < 2) {
+                return ("Please enter three numbers");
+            }
+
+            if (numsArr[0] > numsArr[1] && numsArr[0] > numsArr[2]) {
+                return ("The largest number is: " + numsArr[0]);
+            } else if (numsArr[1] > numsArr[0] && numsArr[1] > numsArr[2]) {
+                return ("The largest number is: " + numsArr[1]);
+            } else {
+                return ("The largest number is: " + numsArr[2]);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

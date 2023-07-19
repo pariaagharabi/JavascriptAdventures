@@ -1,0 +1,50 @@
+<!-- 30. Write a JavaScript program to check whether a string "Script" appears at the 5th (index 4) position in a given string. If "Script" appears in the string, return the string without "Script" otherwise return the original one.   -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check a string "Script" appears at the 5th (index 4) position in a given string</title>
+</head>
+
+<body>
+    <p>30. Write a JavaScript program to check whether a string "Script" appears at the 5th (index 4) position in a
+        given string. If "Script" appears in the string, return the string without "Script" otherwise return the
+        original one.</p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Please enter a string: ");
+            let displayResulet = ("The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                checkScriptWordInString(userStr, "Script"));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResulet;
+        }
+
+        function checkScriptWordInString(orginStr, scriptStr) {
+            if (scriptStr.length < 6) {
+                return orginStr;
+            }
+
+            let substrFrom4to10 = orginStr.substr(4, 6);
+
+            if (scriptStr.toLowerCase() === substrFrom4to10) {
+                let firstPart = orginStr.substr(0, 4);
+                let secondPart = orginStr.substr(10);
+                let result = firstPart + secondPart;
+                return result;
+            }
+
+            return orginStr;
+        }
+
+    </script>
+</body>
+
+</html>

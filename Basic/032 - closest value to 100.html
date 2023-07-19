@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>32. Write a JavaScript program to find the closest value to 100 from two numerical values.</p>
+    <button onclick="eventHandler()">Click</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userArr = [];
+            userArr[0] = Number(prompt("Please enter the first number:"));
+            userArr[1] = Number(prompt("Please enter the second number:"));
+
+            let displayResult = ("The first number:" +
+                userArr[0] +
+                "<br>" +
+                "The second number:" +
+                userArr[1] +
+                "<br>" +
+                "The result: " +
+                findClosestValueTo100(userArr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findClosestValueTo100(numsArr) {
+            let diffNum1of100 = Math.abs(numsArr[0] - 100);
+            let diffNum2of100 = Math.abs(numsArr[1] - 100);
+
+            if (diffNum1of100 > diffNum2of100) {
+                return ("The closet value to 100 is: " + numsArr[1]);
+            }
+
+            return ("The closet value to 100 is: " + numsArr[0]);
+        }
+
+
+    </script>
+</body>
+
+</html>
