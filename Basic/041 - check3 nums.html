@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check three numbers under some conditions</title>
+</head>
+
+<body>
+    <p>
+        41. Write a JavaScript program to check a set of three numbers; if the three numbers are the same return 30;
+        otherwise return 20; and if two numbers are the same return 40.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = Number(prompt("Please enter the first nember:"));
+            let userSecondNum = Number(prompt("Please enter the second nember:"));
+            let userThirdNum = Number(prompt("Please enter the third nember:"));
+
+            let displayResult = (
+                "The first number: " +
+                userFirstNum +
+                "<br>" +
+                "The second number: " +
+                userSecondNum +
+                "<br>" +
+                "The third number: " +
+                userThirdNum +
+                "<br>" +
+                "The result: " +
+                checkThreeNums(userFirstNum, userSecondNum, userThirdNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkThreeNums(num1, num2, num3) {
+            if (num1 == num2 && num1 == num3) {
+                return 30;
+            } else if (num1 !== num2 && num1 !== num3) {
+                return 20;
+            } else if (num1 == num2 || num2 == num3 || num1 == num3) {
+                return 40;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

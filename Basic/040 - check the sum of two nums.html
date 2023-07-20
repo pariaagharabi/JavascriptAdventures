@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check the sum of two numbers under some conditions</title>
+</head>
+
+<body>
+    <p>
+        40. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or
+        difference is 8.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = Number(prompt("Please enter the first number: "));
+            let userSecondNum = Number(prompt("Please enter the second number: "));
+
+            let displatResult = ("The first number is " +
+                userFirstNum +
+                "<br>" +
+                "The second number is " +
+                userSecondNum +
+                "<br>" +
+                "The resulet is " +
+                checkSumOfTwoNums(userFirstNum, userSecondNum));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displatResult;
+        }
+
+        function checkSumOfTwoNums(num1, num2) {
+            let sumNums = num1 + num2;
+            let diffNums = num1 - num2;
+
+            if (
+                num1 == 8 || num2 == 8 ||
+                sumNums == 8 ||
+                diffNums == 8
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

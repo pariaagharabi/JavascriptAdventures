@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        45. Write a JavaScript program that checks two integer values and returns true if either one is 15 or if their
+        sum or difference is 15.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = Number(prompt("Please enter the first number"));
+            let userSecondNum = Number(prompt("Please enter the second number"));
+
+            let displayResult = (
+                "The first number: " +
+                userFirstNum +
+                "<br>" +
+                "The second number: " +
+                userSecondNum +
+                "<br>" +
+                "The result: " +
+                checkTwoNums(userFirstNum, userSecondNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkTwoNums(num1, num2) {
+            let sumOfTwoNums = num1 + num2;
+            let diffOfTwoNums = num1 - num2;
+
+            if (
+                num1 == 15 || num2 == 15 ||
+                sumOfTwoNums == 15 || diffOfTwoNums == 15
+            ) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

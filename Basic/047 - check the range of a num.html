@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check the range of a number</title>
+</head>
+
+<body>
+    <p>
+        47. Write a JavaScript program to check whether a given number exists in the range 40..10000.
+        For example 40 presents in 40 and 4000
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum = Number(prompt("Please enter a number"));
+
+            let displayResult = (
+                "The user number is " +
+                userNum +
+                "<br>" +
+                "The result is " +
+                checkRangeOfGivenNum(userNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkRangeOfGivenNum(givenNum) {
+            if (
+                givenNum <= 10000 && givenNum >= 40
+            ) {
+                return givenNum + " presents in 40 and 4000";
+            }
+
+            return givenNum + " NOT presents in 40 and 4000"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        44. Write a JavaScript program to check from three given integers whether a number is greater than or equal to
+        20. It is less than the others.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = Number(prompt("Enter the first number:"));
+            let userSecondNum = Number(prompt("Enter the second number:"));
+            let userThirdNum = Number(prompt("Enter the third number:"));
+
+            let displayResult = (
+                "The first number: " +
+                userFirstNum +
+                "<br>" +
+                "The second number: " +
+                userSecondNum +
+                "<br>" +
+                "The third number: " +
+                userThirdNum +
+                "<br>" +
+                "The result: " +
+                checkThreeNums(userFirstNum, userSecondNum, userThirdNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkThreeNums(num1, num2, num3) {
+            if (
+                (num1 >= 20 && num1 < num2 && num1 < num3) ||
+                (num2 >= 20 && num2 < num1 && num2 < num3) ||
+                (num3 >= 20 && num3 < num1 && num3 < num2)
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

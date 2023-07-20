@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check two numbers under some condition</title>
+</head>
+
+<body>
+    <p>
+        46. Write a JavaScript program to check two given non-negative integers if one (not both) is a multiple of 7 or
+        11.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = Math.abs(Number(prompt("Please enter the first number")));
+            let userSecondNum = Math.abs(Number(prompt("Please enter the second number")));
+
+            let displayResult = (
+                "The first number: " +
+                userFirstNum +
+                "<br>" +
+                "The second number: " +
+                userSecondNum +
+                "<br>" +
+                "The result: " +
+                checkTwoNums(userFirstNum, userSecondNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkTwoNums(num1, num2) {
+            if (
+                num1 % 7 == 0 || num1 % 11 == 0 ||
+                num2 % 7 == 0 || num2 % 11 == 0
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
