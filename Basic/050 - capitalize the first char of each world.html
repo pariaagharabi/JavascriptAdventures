@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Capitalize the first letter</title>
+</head>
+
+<body>
+    <p>
+        50. Write a JavaScript program to capitalize the first letter of each word in a given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                capitalizeFirstLetter(userStr));
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function capitalizeFirstLetter(givenStr) {
+            let result = "";
+            let splitWord = givenStr.split(" ");
+
+            for (var i = 0; i < splitWord.length; i++) {
+                let eachWord = splitWord[i];
+                let firstLetterCapitalized = eachWord[0].toUpperCase();
+                let restOfWord = eachWord.substr(1); // Get the rest of the word (characters after the first letter)
+
+                result += firstLetterCapitalized + restOfWord + " ";
+            }
+
+            return result.trim(); // Trim to remove the extra space at the end
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Convert a given number into hours and minutes</title>
+</head>
+
+<body>
+    <p>
+        51. Write a JavaScript program to convert a given number into hours and minutes.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum = parseInt(prompt("Enter a number"));
+
+            let displayResult = (
+                "The user nember:" +
+                userNum +
+                "<br>" +
+                "The result (hrs:min:sec) is " +
+                convertNumIntoHoursMinute(userNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function convertNumIntoHoursMinute(givenNum) {
+            let result = "";
+
+            let hours = Math.floor(givenNum / 3600);
+            let secondsLeft = givenNum % 3600;
+            let minutes = Math.floor(secondsLeft / 60);
+            let seconds = secondsLeft % 60;
+
+            result = hours + ":" + minutes + ":" + seconds;
+
+            return result;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

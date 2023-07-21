@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>replace every character in a given string</title>
+</head>
+
+<body>
+    <p>
+        49. Write a JavaScript program to replace every character in a given string with the character following it in
+        the alphabet.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                replaceEveryChar(userStr)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function replaceEveryChar(givenStr) {
+            let replacedStr = "";
+            let englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            for (var i = 0; i < givenStr.length; i++) {
+                if (givenStr[i] === "Z") {
+                    replacedStr += "A";
+                    continue;
+                }
+
+                if (givenStr[i] === "z") {
+                    replacedStr += "a";
+                    continue;
+                }
+
+                let indexChar = englishAlphabet.indexOf(givenStr[i]);
+                if (indexChar < 0) {
+                    replacedStr += givenStr[i];
+                    continue;
+                }
+
+                replacedStr += englishAlphabet[indexChar + 1];
+            }
+
+            return replacedStr;
+        }
+
+    </script>
+</body>
+
+</html>
