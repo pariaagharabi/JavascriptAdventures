@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        61. Write a JavaScript program to concatenate two strings except for their first character.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr1 = prompt("Enter the first string:");
+            let userStr2 = prompt("Enter the second string:");
+
+            let displayResult = (
+                "The first user string: " +
+                userStr1 +
+                "<br>" +
+                "The second user string: " +
+                userStr2 +
+                "<br>" +
+                "The result: " +
+                concate2StrWithoutFistChar(userStr1, userStr2)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function concate2StrWithoutFistChar(str1, str2) {
+            if (str1.length >= 2 && str1.length) {
+                const str1WithoutFirstChar = str1.slice(1);
+                const str2WithoutFirstChar = str2.slice(1);
+                const concateStrs = str1WithoutFirstChar + str2WithoutFirstChar;
+
+                return concateStrs
+            }
+
+            return str1 + str2;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
