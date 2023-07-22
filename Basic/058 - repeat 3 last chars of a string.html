@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Repeat the last three chars</title>
+</head>
+
+<body>
+    <p>
+        58. Write a JavaScript program to create an updated string of 4 copies of the last 3 characters of a given
+        original string. The string length must be 3 and above.
+    </p>
+    <button onclick="eventHander()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHander() {
+            let userStr = prompt("Enter a string:");
+            let userNum = Math.abs(Number(prompt("Please enter a number to repeat the string:")))
+
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The number of repetition:" +
+                userNum +
+                "<br>" +
+                "The result: " +
+                updateLast3Chars(userStr, userNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function updateLast3Chars(orgStr, repetitionNum) {
+            let newStr = "";
+
+            if (orgStr.length >= 3) {
+                for (var i = 0; i < orgStr.length; i++) {
+                    let last3Chars = orgStr.slice(-3);
+                    newStr = last3Chars.repeat(repetitionNum);
+                }
+
+                return newStr;
+            }
+
+            return orgStr;
+        }
+    </script>
+
+</body>
+
+</html>

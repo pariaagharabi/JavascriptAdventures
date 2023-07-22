@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        57. Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.
+    </p> <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string: ");
+            let userNum = Math.abs(Number(prompt("Please enter a number to repeat the string:")))
+
+            let displayResult = (
+                "The user string:" +
+                userStr +
+                "<br>" +
+                "The number of repetition:" +
+                userNum +
+                "<br>" +
+                "The result: " +
+                repetitionOfStr(userStr, userNum)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function repetitionOfStr(givenStr, repetitionNum) {
+            if (repetitionNum === 0) {
+                return givenStr;
+            } else {
+                result = givenStr.repeat(repetitionNum);
+                return result;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>count the number of vowels</title>
+</head>
+
+<body>
+    <p>
+        54. Write a JavaScript program to count the number of vowels in a given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                countNumberOfVowels(userStr)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function countNumberOfVowels(givenStr) {
+            let EnglishVowels = "aeiouAEIOU";
+
+            let counter = 0;
+            for (var i = 0; i < givenStr.length; i++) {
+                let eachCharInGivenStr = givenStr[i];
+                if (EnglishVowels.includes(eachCharInGivenStr)) {
+                    counter += 1;
+                }
+            }
+
+            return counter;
+        }
+
+    </script>
+</body>
+
+</html>

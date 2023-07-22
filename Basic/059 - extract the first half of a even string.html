@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>extract the first half of a even string</title>
+</head>
+
+<body>
+    <p>
+        59. Write a JavaScript program to extract the first half of a even string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                extractHalfOfStr(userStr)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+
+        function extractHalfOfStr(orgStr) {
+            let resultStr = [];
+
+            if (orgStr.length % 2 === 0) {
+                let halfTndexOfEvenStr = orgStr.length / 2;
+                console.log(halfTndexOfEvenStr);
+                resultStr = orgStr.slice(0, halfTndexOfEvenStr);
+                console.log(resultStr);
+
+                return resultStr;
+            }
+
+            return orgStr;
+        }
+    </script>
+</body>
+
+</html>

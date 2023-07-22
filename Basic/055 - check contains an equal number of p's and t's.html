@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>string contains an equal number of p's and t's</title>
+</head>
+
+<body>
+    <p>
+        55. Write a JavaScript program to check whether a given string contains an equal number of p's and t's.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                checkStr()
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkStr() {
+
+        }
+
+
+
+        let givenStr = "parai p's and sop's";
+        console.log(givenStr);
+
+        let containsChar = givenStr.includes("p's");
+        console.log(containsChar);
+        let charSplit = givenStr.split("p's");
+        console.log(charSplit);
+
+
+        let charToFind = "p's";
+        let counter = 0;
+
+        for (var i = 0; i < givenStr.length; i++) {
+            let eachCharGivenStr = givenStr[i];
+            if (charToFind.includes(eachCharGivenStr)) {
+                counter += 1;
+            }
+        }
+        console.log(counter);
+
+
+    </script>
+</body>
+
+</html>

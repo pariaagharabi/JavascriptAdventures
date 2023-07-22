@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Divide two positive numbers</title>
+</head>
+
+<body>
+    <p>
+        56. Write a JavaScript program to divide two positive numbers and return the result as string with properly
+        formatted commas.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNum1 = Number(prompt("Enter first number: "));
+            let userNum2 = Number(prompt("Enter second number: "));
+
+            let displayResult = (
+                "The first number:" +
+                userNum1 +
+                "<br>" +
+                "The second number:" +
+                userNum2 +
+                "<br>" +
+                "The result:" +
+                divideTwoPositiveNums(userNum1, userNum2)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function divideTwoPositiveNums(num1, num2) {
+            let result = [];
+            let dividedOp = num1 / num2;
+
+            while (dividedOp >= 1) {
+                let reminder = dividedOp % 1000;
+                result.unshift(reminder);
+                dividedOp = Math.floor(dividedOp / 1000);
+            }
+
+            return result.join(",");
+        }
+
+
+
+                    // let dividedNums = num1 / num2;
+            // let convertToStr = dividedNums.toString();
+
+            // for (var i = 0; i < convertToStr.length; i++) {
+            //     let everyThreeNums = convertToStr.substr(-3);
+            //     let formattedCommas =
+            //  }
+    </script>
+</body>
+
+</html>

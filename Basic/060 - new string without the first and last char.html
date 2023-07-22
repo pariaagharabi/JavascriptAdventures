@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Given string without its first and last characters</title>
+</head>
+
+<body>
+    <p>
+        60. Write a JavaScript program to create a new string without the first and last characters of a given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            let displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                strWithoutFirstLastChar(userStr)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+
+        function strWithoutFirstLastChar(orgStr) {
+            if (orgStr.length >= 2) {
+                let newStr = orgStr.slice(1, -1);
+
+                return newStr;
+            }
+
+            return orgStr;
+
+
+
+            // let firstChar = orgStr[0];
+            // let lastChar = orgStr.slice(-1);
+
+            // console.log(firstChar);
+            // console.log(lastChar);
+
+        }
+    </script>
+</body>
+
+</html>
