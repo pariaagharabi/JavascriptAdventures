@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>64. Write a JavaScript program to concatenate two strings and return the result. If the length of the strings
+        does not match, then remove the characters from the longer string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr1 = prompt("Enter the first string:");
+            let userStr2 = prompt("Enter the second string:");
+
+            const displayResult = (
+                "The first string: " +
+                userStr1 +
+                "<br>" +
+                "The second string: " +
+                userStr2 +
+                "<br>" +
+                "The result: " +
+                concat2StrWithSameLength(userStr1, userStr2)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function concat2StrWithSameLength(orgStr1, orgStr2) {
+            const orgStr1Length = orgStr1.length;
+            const orgStr2Length = orgStr2.length;
+            const minLenght = Math.min(orgStr1Length, orgStr2Length);
+
+
+            const newStr = orgStr1.substr(0, minLenght) + orgStr2.substr(0, minLenght);
+            return newStr;
+        }
+    </script>
+
+
+</body>
+
+</html>

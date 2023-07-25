@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <p>
+        65. Write a JavaScript program to test whether a string ends with "Script". The string length must be greater
+        than or equal to 6.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                checkEndCharsOfStr(userStr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkEndCharsOfStr(orgStr) {
+            const strLength = orgStr.length;
+            let StrEndChars = orgStr.slice(-6);
+
+            if (strLength >= 6 && StrEndChars === "Script") {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

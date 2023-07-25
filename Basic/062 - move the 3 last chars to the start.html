@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Move 3 Last Chars To Begining</title>
+</head>
+
+<body>
+    <p>
+        62. Write a JavaScript program to move the last three characters to the start of a given string. The string
+        length must be greater than or equal to three
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            let deisplayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                move3LastCharsToBeginning(userStr)
+            );
+            let tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = deisplayResult;
+        }
+
+        function move3LastCharsToBeginning(orgStr) {
+            const strLength = orgStr.length;
+            let newStr = "";
+            const threeLastChars = orgStr.slice(-3);
+            if (strLength >= 3) {
+                newStr = threeLastChars + orgStr.slice(0, -3);
+                return newStr;
+            }
+
+            return orgStr;
+        }
+
+    </script>
+</body>
+
+</html>

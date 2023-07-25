@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Cities starting with Los or New</title>
+</head>
+
+<body>
+    <p>
+        66. Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise
+        return blank.
+    </p> <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                displayCityNameIfMatch(userStr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function displayCityNameIfMatch(cityName) {
+            const first3Chars = cityName.slice(0, 3);
+            if (first3Chars === "Los" || first3Chars === "New") {
+                return cityName;
+            }
+
+            return " ";
+        }
+
+    </script>
+
+</body>
+
+</html>

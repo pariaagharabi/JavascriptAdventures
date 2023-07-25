@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>create New String With First And Last N</title>
+</head>
+
+<body>
+    <p>
+        68. Write a JavaScript program to create a new string using the first and last n characters from a given string.
+        The string length must be larger than or equal to n.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+            let userNum = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "</br>" +
+                "The user string: " +
+                userNum +
+                "</br>" +
+                "The result: " +
+                createNewStringWithFirstAndLastN(userStr, userNum)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function createNewStringWithFirstAndLastN(orgStr, n_characters) {
+            if (orgStr.length < n_characters) {
+                throw new Error(" The string length must be larger than or equal to n!");
+            }
+
+            const newStr = orgStr.slice(0, n_characters) + orgStr.slice(-n_characters);
+            return newStr;
+        }
+
+    </script>
+</body>
+
+</html>

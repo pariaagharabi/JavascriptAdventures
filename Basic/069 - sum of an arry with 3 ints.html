@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Sum of three elements of a given array</title>
+</head>
+
+<body>
+    <p>
+        69. Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+
+        function eventHandler() {
+            let userNums = prompt("Enter a list of three numbers separated by commas:");
+            let userArray = userNums.split(",");
+
+            const displayResult = (
+                "The list of three user numbers: " +
+                userArray +
+                "<br>" +
+                "The result: " +
+                sumOf3ElementsOfArr(userArray)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOf3ElementsOfArr(orgArr) {
+            if (orgArr.length !== 3) {
+                return ("Please enter exactly 3 numbers");
+            }
+
+            let sumArr = 0;
+            for (var i = 0; i < orgArr.length; i++) {
+                sumArr += parseInt(orgArr[i]);
+            }
+
+            return sumArr;
+        }
+
+    </script>
+</body>
+
+</html>

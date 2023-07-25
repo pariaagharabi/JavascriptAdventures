@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Remove the first and the last character under some condition</title>
+</head>
+
+<body>
+    <p>
+        67. Write a JavaScript program to create a new string from a given string. This program removes the first and
+        last characters of the string if the first or last character is 'P'. Return the original string if the condition
+        is not satisfied.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                removeFirstAndLastP(userStr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function removeFirstAndLastP(orgStr) {
+            let newStr = "";
+            const firstChar = orgStr[0];
+            const lastChar = orgStr.slice(-1)
+
+            if (firstChar === "P" && lastChar === "P") {
+                newStr += orgStr.slice(1, -1);
+                return newStr;
+            }
+
+            return orgStr;
+        }
+    </script>
+
+</body>
+
+</html>
