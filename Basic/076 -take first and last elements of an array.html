@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>taking the first and last elements of the array</title>
+</head>
+
+<body>
+    <p>
+        76. Write a JavaScript program to create an array by taking the first and last elements from a given array of
+        integers. The length must be larger than or equal to 1.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Please enter an array:");
+
+            if (userNums.trim().length == 0) {
+                throw new Error("The length must be larger than or equal to 1");
+            }
+
+            let userArr = userNums.split(",");
+
+            if (userArr.length < 1) {
+                throw new Error("The length must be larger than or equal to 1");
+            }
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                getFirstLastEle(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function getFirstLastEle(orgArr) {
+            const firstEle = orgArr[0];
+            const lastEle = orgArr.slice(-1);
+
+            const newArr = [];
+            newArr.push(firstEle, lastEle);
+
+            return newArr;
+        }
+    </script>
+</body>
+
+</html>

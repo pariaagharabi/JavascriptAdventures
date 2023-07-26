@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Middle elements of the two arrays</title>
+</head>
+
+<body>
+    <p>
+        75. Write a JavaScript program to create an array taking the middle elements of the two arrays of integer and
+        each length 3.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums1 = prompt("Please enter the first list of three numbers separated by commas:");
+            let userArr1 = userNums1.split(",");
+
+            let userNums2 = prompt("Please enter the second list of three numbers separated by commas:");
+            let userArr2 = userNums2.split(",");
+
+            if (userArr1.length !== 3 || userArr2.length !== 3) {
+                alert("Please enter exactly three numbers separated by commas.");
+                return;
+            }
+
+            const displayResult = (
+                "The first array: " +
+                userArr1 +
+                "<br>" +
+                "The second array: " +
+                userArr2 +
+                "<br>" +
+                "The result: " +
+                getMiddleElementsOf2Arrs(userArr1, userArr2)
+            )
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function getMiddleElementsOf2Arrs(Arr1, Arr2) {
+            const middleEleOfArr1 = Arr1[1];
+            const middleEleOfArr2 = Arr2[1];
+
+            const newArr = [middleEleOfArr1, middleEleOfArr2];
+
+            return newArr;
+        }
+
+    </script>
+</body>
+
+</html>

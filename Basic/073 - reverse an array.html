@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reverse Elements in Array</title>
+</head>
+
+<body>
+    <p>
+        73. Write a JavaScript program to reverse the elements of a given array of integers of length 3.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Please enter a list of three numbers separated by commas:");
+            let userArr = userNums.split(",");
+
+            if (userArr.length !== 3) {
+                alert("Please enter exactly three numbers separated by commas.");
+                return;
+            }
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                reverseArr(userArr)
+            )
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function reverseArr(orgArr) {
+            const arrLength = orgArr.length;
+
+            if (arrLength !== 3) {
+                throw new Error("The length of the array must be 3!")
+            }
+
+            const reversedArr = [];
+            for (var i = orgArr.length - 1; i >= 0; i--) {
+                reversedArr.push(orgArr[i]);
+            }
+
+            return reversedArr;
+        }
+
+    </script>
+</body>
+
+</html>

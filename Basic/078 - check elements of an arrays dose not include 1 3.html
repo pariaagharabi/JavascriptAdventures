@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>array of integers of length 2 does not contain 1 or 3</title>
+</head>
+
+<body>
+    <p>
+        78. Write a JavaScript program to test whether an array of integers of length 2 does not contain 1 or 3.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Please enter an array:");
+            let userArr = userNums.split(",");
+
+            if (userArr.length !== 2) {
+                alert("The length of the array must be 2!");
+                return;
+            }
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                checkElementsNotContains1Or3(userArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkElementsNotContains1Or3(orgArr) {
+            for (var i = 0; i < orgArr.length; i++) {
+                if (orgArr[i] !== "1" && orgArr[i] !== "3") {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

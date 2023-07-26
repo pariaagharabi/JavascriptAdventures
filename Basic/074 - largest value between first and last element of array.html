@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the largest value between the first and last elements and set others</title>
+</head>
+
+<body>
+    <p>
+        74. Write a JavaScript program to find the largest value between the first and last elements and set all the
+        other elements to that value. Display the updated array.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Please enter a list of numbers separated by commas:");
+            let userArr = userNums.split(",");
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                updateArrayWithLargest(userArr)
+            )
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function updateArrayWithLargest(orgArr) {
+            const largestBetweenFirstAndLastEle = Math.max(orgArr[0], orgArr.slice(-1));
+            console.log(largestBetweenFirstAndLastEle);
+
+            for (var i = 0; i < orgArr.length; i++) {
+                orgArr[i] = largestBetweenFirstAndLastEle;
+            }
+
+            return orgArr;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Check if First and Last Elements are the Same</title>
+</head>
+
+<body>
+    <p>
+        72. Write a JavaScript program to check whether the first and last elements are the same in a given array of
+        integers of length 3.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Please enter a list of three numbers seprated by commas!");
+            let userArr = userNums.split(",");
+
+            if (userArr.length !== 3) {
+                alert("Please enter 3 numbers!");
+                return;
+            }
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                checkFirstAndLastEleSame(userArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkFirstAndLastEleSame(orgArr) {
+            const arrLength = orgArr.length;
+            if (arrLength !== 3) {
+                throw new Error("The length of array must be 3!");
+            }
+
+            const firstEle = orgArr[0];
+            const lastEle = orgArr[arrLength - 1];
+
+            if (firstEle === lastEle) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
