@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Determining Similarity of Two Integer Arrays</title>
+</head>
+
+<body>
+    <p>
+        87. Write a JavaScript program to determine if two arrays of integers of the same length are similar. The arrays
+        will be similar if one array can be obtained from another array by swapping at most one pair of elements.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum1 = prompt("Please enter a list of number seperated by commas:");
+            const userArr1 = userNum1.split(",");
+            const userNum2 = prompt("Please enter a list of second seperated by commas:");
+            const userArr2 = userNum2.split(",");
+
+            if (userArr1.length !== userArr2.length) {
+                alert("The length of both arrays must be similar!");
+                return;
+            }
+
+            const displayResult = (
+                "The user first array: " +
+                userArr1 +
+                "<br>" +
+                "The user second array: " +
+                userArr2 +
+                "<br>" +
+                "The result: " +
+                detectSimilarityOf2IntArr(userArr1, userArr2)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function detectSimilarityOf2IntArr(arr1, arr2) {
+            let arr1Diff = [];
+            let arr2Diff = [];
+
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1.length !== arr2.length) {
+                    arr1Diff.push(arr1[i]);
+                    arr2Diff.push(arr2[i]);
+                }
+
+                if (arr1Diff.length === 0) {
+                    return true;
+                }
+
+                if (arr1Diff.length !== 2) {
+                    return false;
+                }
+
+                if (arr1Diff[0] === arr2Diff[1] && arr1Diff[1] === arr2Diff[0]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

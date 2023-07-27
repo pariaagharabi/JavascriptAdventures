@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the kth greatest element</title>
+</head>
+
+<body>
+    <p>
+        91. Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers
+        that follow each other in order) in a given array of positive integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Enter a list of numbers seprated by commas:");
+            let userArr = userNums.split(",").map(Number);
+            let userNumberConsecutive = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The consecutive numbers: " +
+                userNumberConsecutive +
+                "<br>" +
+                "The result: " +
+                findMaximumConsecutiveSum(userArr, userNumberConsecutive)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findMaximumConsecutiveSum(orgArr, num) {
+            let result = -1;
+
+            for (var i = 0; i <= orgArr.length - num; i++) {
+                let partArr = orgArr.slice(i, (num + i));
+
+                let sumEachDividedPart = 0;
+                for (var j = 0; j < partArr.length; j++) {
+                    sumEachDividedPart += partArr[j];
+                }
+
+                if (sumEachDividedPart > result) {
+                    result = sumEachDividedPart;
+                }
+            }
+
+            return result;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>add two positive integers without carrying</title>
+</head>
+
+<body>
+    <p>
+        82. Write a JavaScript program to add two positive integers without carrying.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const usreNum1 = Math.abs(Number(prompt("Enter the first number:")));
+            const usreNum2 = Math.abs(Number(prompt("Enter the second number:")));
+
+            const displayResult = (
+                "The first number: " +
+                usreNum1 +
+                "<br>" +
+                "The second number: " +
+                usreNum2 +
+                "<br>" +
+                "The result: " +
+                add2PositiveIntWithoutCarring(usreNum1, usreNum2)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function add2PositiveIntWithoutCarring(num1, num2) {
+            // Step#1: convert an integer into an array of its individual digits 
+            let covertNum1ToArr = num1.toString().replace(/\D/g, "0").split("").map(Number);
+            let covertNum2ToArr = num2.toString().replace(/\D/g, "0").split("").map(Number);
+
+            // Step#2 : match the length of arrays by adding zeros at the beginning
+            if (covertNum1ToArr.length < covertNum2ToArr.length) {
+                const diff = covertNum2ToArr.length - covertNum1ToArr.length;
+                for (let i = 0; i < diff; i++) {
+                    covertNum1ToArr.unshift(0);
+                }
+            } else if (covertNum2ToArr.length < covertNum1ToArr.length) {
+                const diff = covertNum1ToArr.length - covertNum2ToArr.length;
+                for (let i = 0; i < diff; i++) {
+                    covertNum2ToArr.unshift(0);
+                }
+            }
+
+            let sumResult = [];
+            let lastDigitofSum = [];
+            for (let i = 0; i < covertNum1ToArr.length; i++) {
+                sumResult += covertNum1ToArr[i] + covertNum2ToArr[i];
+                lastDigitofSum.push(sumResult % 10);
+            }
+
+            return lastDigitofSum;
+        }
+
+    </script>
+</body>
+
+</html>

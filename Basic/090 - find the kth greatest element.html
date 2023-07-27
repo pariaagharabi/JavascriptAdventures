@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the kth greatest element</title>
+</head>
+
+<body>
+    <p>
+        90. Write a JavaScript program to find the kth greatest element in a given array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userNums = prompt("Enter a list of numbers seprated by commas:");
+            let userArr = userNums.split(",").map(Number);
+            let userNumEle = Number(prompt("Enter your desired element index:"));
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The user desired element: " +
+                userNumEle +
+                "<br>" +
+                "The result: " +
+                findKthGreatestElement(userArr, userNumEle)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findKthGreatestElement(orgArr, kthGreatest) {
+            orgArr.sort((x, y) => x - y);
+
+            const result = orgArr[orgArr.length - kthGreatest];
+
+            return result;
+        }
+
+    </script>
+
+</body>
+
+</html>
