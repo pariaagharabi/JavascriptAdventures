@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>replace each character with the next alphabetically</title>
+</head>
+
+<body>
+    <p>
+        84. Write a JavaScript program to replace each character in a given string with the next in the English
+        alphabet.
+        Note: 'a' will be replace by 'b' or 'z' would be replaced by 'a'.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Please enter a string:");
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                replaceCharWithNextChar(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function replaceCharWithNextChar(orgStr) {
+            let replacedStr = "";
+            let englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            for (var i = 0; i < orgStr.length; i++) {
+                if (orgStr[i] === "Z") {
+                    replacedStr += "A";
+                    continue;
+                }
+
+                if (orgStr[i] === "z") {
+                    replacedStr += "a";
+                    continue;
+                }
+
+                let indexCharOrgStr = englishAlphabet.indexOf(orgStr[i]);
+                if (indexCharOrgStr < 0) {
+                    replacedStr += orgStr[i];
+                    continue;
+                }
+
+                replacedStr += englishAlphabet[indexCharOrgStr + 1];
+            }
+
+            return replacedStr;
+        }
+
+    </script>
+
+</body>
+
+</html>

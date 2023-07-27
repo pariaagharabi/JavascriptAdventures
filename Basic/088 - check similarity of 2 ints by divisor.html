@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Checking Similarity of Integers with a Divisor</title>
+</head>
+
+<body>
+    <p>
+        88. Write a JavaScript program that takes two integers and a divisor. If the given divisor divides both integers
+        and does not divide either, two specified integers are similar. Check whether two integers are similar or not.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum1 = parseInt(prompt("Please enter the first number:"));
+            const userNum2 = parseInt(prompt("Please enter the second number:"));
+            const userDivisor = parseInt(prompt("Please enter a divisor:"));
+
+            const displayResult = (
+                "The user first number: " +
+                userNum1 +
+                "<br>" +
+                "The user second number: " +
+                userNum2 +
+                "<br>" +
+                "The divisor: " +
+                userDivisor +
+                "<br>" +
+                "The result: " +
+                checkSimilarityOfIntByDivisor(userNum1, userNum2, userDivisor)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkSimilarityOfIntByDivisor(num1, num2, divisor) {
+            let remainderNum1 = num1 % divisor;
+            let remainderNum2 = num2 % divisor;
+
+            if ((remainderNum1 === 0 && remainderNum2 === 0) || (remainderNum1 !== 0 && remainderNum2 !== 0)) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

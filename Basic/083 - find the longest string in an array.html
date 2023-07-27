@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the longest string</title>
+</head>
+
+<body>
+    <p>
+        83. Write a JavaScript program to find the longest string from a given array of strings.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Please enter a lest of strings:");
+
+            const displayResult = (
+                "The user strings: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                findLongestStr(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findLongestStr(orgStr) {
+            let eachStr = orgStr.split(" ");
+            let longestEle = eachStr[0];
+
+            for (var i = 0; i < eachStr.length; i++) {
+                if (longestEle < eachStr[i]) {
+                    longestEle = eachStr[i];
+                }
+            }
+
+            return longestEle;
+        }
+
+    </script>
+
+</body>
+
+</html>

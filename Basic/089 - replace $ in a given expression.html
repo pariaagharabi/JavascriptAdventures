@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Replace $ sign with the correct expression (signs +, -, *)</title>
+</head>
+
+<body>
+    <p>
+        89. Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with
+        one of the four signs +, -, * or / to obtain a correct expression.
+        For example x = 10, y = 30 and z = 300, we can replace $ with a multiple operator (*) to obtain x * y = z
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum1 = parseInt(prompt("Please enter the first number:"));
+            const userNum2 = parseInt(prompt("Please enter the second number:"));
+            const mathOp = prompt("Please enter one of themathematical operation +, -, * or /:");
+
+            const displayResult = (
+                "The user first number: " +
+                userNum1 +
+                "<br>" +
+                "The user second number: " +
+                userNum2 +
+                "<br>" +
+                "The themathematical operation: " +
+                mathOp +
+                "<br>" +
+                "The result: " +
+                simpleMathCalc(userNum1, userNum2, mathOp)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function simpleMathCalc(num1, num2, operator) {
+            switch (operator) {
+                case "+":
+                    return num1 + num2;
+                case "-":
+                    return num1 - num2;
+                case "*":
+                    return num1 * num2;
+                case "/":
+                    if (num2 === 0) {
+                        throw new Error("You cannot divide a number by zero!");
+                    }
+                    return num1 / num2;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

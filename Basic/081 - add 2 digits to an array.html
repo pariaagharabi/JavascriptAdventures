@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>add two digits to a given array</title>
+</head>
+
+<body>
+    <p>
+        81. Write a JavaScript program to add two digits to a given positive integer of length two.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const usreNum1 = Math.abs(Number(prompt("Enter the first number:")));
+            const usreNum2 = Math.abs(Number(prompt("Enter the second number:")));
+
+            const displayResult = (
+                "The first number: " +
+                usreNum1 +
+                "<br>" +
+                "The second number: " +
+                usreNum2 +
+                "<br>" +
+                "The result: " +
+                add2DigitsToArray(usreNum1, usreNum2)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function add2DigitsToArray(num1, num2) {
+            if (num1 < 10 || num1 > 99 || num2 < 10 || num2 > 99) {
+                alert("Both numbers should be positive integers of length two!");
+                return;
+            }
+
+            let arr = [];
+            arr.push(num1, num2);
+
+            return arr;
+        }
+    </script>
+
+</body>
+
+</html>

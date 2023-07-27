@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Alternating Sum of Two Parts of An Array</title>
+</head>
+
+<body>
+    <p>
+        85. Write a JavaScript program to divide a given array of positive integers into two parts. First element
+        belongs to the first part, second element belongs to the second part, and third element belongs to the first
+        part and so on. Now compute the sum of two parts and store it in an array of size two.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Please enter a list of numbers seprated by commas:");
+            const userArr = userNums.split(",");
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                sumOfTwoPartsOfArray(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOfTwoPartsOfArray(orgArr) {
+            let result = [];
+
+            let sumFirstPart = 0;
+            let sumSecondPart = 0;
+
+            for (var i = 0; i < orgArr.length; i++) {
+                let indexOfEachChar = orgArr.indexOf(orgArr[i]);
+
+                if (indexOfEachChar % 2 === 0) {
+                    sumFirstPart += parseInt(orgArr[i]);
+                } else {
+                    sumSecondPart += parseInt(orgArr[i]);
+                }
+            }
+            result.push(sumFirstPart, sumSecondPart);
+
+            return (result);
+        }
+
+    </script>
+
+</body>
+
+</html>
