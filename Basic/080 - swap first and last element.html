@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>swap the first and last elements</title>
+</head>
+
+<body>
+    <p>
+        80. Write a JavaScript program to swap the first and last elements of a given array of integers. The array
+        length should be at least 1.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const usreNums = prompt("Enter a list of numbers separated by commas:");
+            const userArr = usreNums.split(",");
+
+            if (userArr.length < 1) {
+                alert("The array length should be at least 1!");
+                return;
+            }
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                swapFirstLastEle(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function swapFirstLastEle(orgArr) {
+            const firstEle = orgArr[0];
+            const lastEle = orgArr[orgArr.length - 1];
+
+            orgArr[orgArr.length - 1] = firstEle;
+            orgArr[0] = lastEle;
+
+
+            return orgArr;
+        }
+
+    </script>
+
+</body>
+
+</html>
