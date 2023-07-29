@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>maximum difference among all possible pairs of anarray</title>
+</head>
+
+<body>
+    <p>
+        93. Write a JavaScript program to find the maximum difference among all possible pairs of a given array of
+        integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of number seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result :" +
+                findMaxDiffAllPaiesEle(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findMaxDiffAllPaiesEle(orgArr) {
+            let maxDiffResult = 0;
+
+            for (var i = 0; i < orgArr.length; i++) {
+                for (var j = i + 1; j < orgArr.length; j++) {
+                    let diffPairsArr = Math.abs(orgArr[i] - orgArr[j]);
+
+                    if (diffPairsArr > maxDiffResult) {
+                        maxDiffResult = diffPairsArr;
+                    }
+                }
+            }
+
+
+            return maxDiffResult;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the number appearing most frequently</title>
+</head>
+
+<body>
+    <p>
+        94. Write a JavaScript program to find the number appearing most frequently in a given array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result :" +
+                findTheMostFrequentNum(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findTheMostFrequentNum(orgArr) {
+            let numWithMaxFrequency;
+            let maxFrequency = 0;
+
+            for (var i = 0; i < orgArr.length; i++) {
+                let currentFrequency = 0;
+
+                for (var j = 0; j < orgArr.length; j++) {
+                    if (orgArr[i] === orgArr[j]) {
+                        currentFrequency++;
+                    }
+                }
+
+                if (currentFrequency >= maxFrequency) {
+                    maxFrequency = currentFrequency;
+                    numWithMaxFrequency = orgArr[i];
+                }
+            }
+
+            return numWithMaxFrequency;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>maximum difference between any two adjacent</title>
+</head>
+
+<body>
+    <p>
+        92. Write a JavaScript program to find the maximum difference between any two adjacent elements of a given array
+        of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of number seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result :" +
+                findMaxDiffTwoAdjacent(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findMaxDiffTwoAdjacent(orgArr) {
+            let maxDiffResult = 0;
+            let diffTwoAdjacent = [];
+
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                let maxDiffResult = 0;
+                let diffTwoAdjacent = [];
+
+                for (var i = 0; i < orgArr.length - 1; i++) {
+                    let everyTwoAdjacent = [orgArr[i], orgArr[i + 1]];
+                    let diff = Math.abs(everyTwoAdjacent[0] - everyTwoAdjacent[1]);
+                    diffTwoAdjacent.push(diff);
+
+                    if (diff > maxDiffResult) {
+                        maxDiffResult = diff;
+                    }
+                }
+
+                return maxDiffResult;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

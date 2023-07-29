@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>replace all numbers with a specified number</title>
+</head>
+
+<body>
+    <p>
+        95. Write a JavaScript program to replace all numbers with a specified number in an array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+            const userOldNum = Number(prompt("Enter a number from your list numbers:"));
+            const userSpecifiedNum = Number(prompt("Enter the number to be replaced:"));
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The user number from the list numbers: " +
+                userOldNum +
+                "<br>" +
+                "The user specified number: " +
+                userSpecifiedNum +
+                "<br>" +
+                "The result :" +
+                replaceAllNumsBySpecifiedNum(userArr, userOldNum, userSpecifiedNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function replaceAllNumsBySpecifiedNum(orgArr, oldNum, specifiedNum) {
+            let resultArr = [];
+
+            for (var i = 0; i < orgArr.length; i++) {
+                if (orgArr[i] === oldNum) {
+                    resultArr.push(specifiedNum);
+                } else {
+                    resultArr.push(orgArr[i]);
+                }
+            }
+
+            return resultArr;
+        }
+
+    </script>
+
+</body>
+
+</html>
