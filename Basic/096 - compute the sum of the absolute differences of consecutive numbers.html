@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>compute the sum of the absolute differences of consecutive numbers</title>
+</head>
+
+<body>
+    <p>
+        96. Write a JavaScript program to compute the sum of the absolute differences of consecutive numbers in a given
+        array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user array: " +
+                userArr +
+                "<br>" +
+                "The result :" +
+                sumOfAbsDiffConsecutiveNums(userArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOfAbsDiffConsecutiveNums(orgArr) {
+            let sumResult = 0;
+
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                let everyTwoNums = [orgArr[i], orgArr[i + 1]];
+                let diffEveryTwoNums = Math.abs(everyTwoNums[0] - everyTwoNums[1]);
+                sumResult += diffEveryTwoNums;
+            }
+
+            return sumResult;
+        }
+
+    </script>
+
+</body>
+
+</html>

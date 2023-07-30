@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>change the case of the minimum number of letters</title>
+</head>
+
+<body>
+    <p>
+        98. Write a JavaScript program to change the case of the minimum number of letters to make a given string
+        written in upper case or lower case.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user array: " +
+                userStr +
+                "<br>" +
+                "The result :" +
+                changeMinNumOfLetterToUpperOrLower(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function changeMinNumOfLetterToUpperOrLower(orgStr) {
+            let upperCaseCount = 0;
+            let lowerCaseCount = 0;
+
+            for (var i = 0; i < orgStr.length; i++) {
+                let ascciCode = orgStr.charCodeAt(i);
+                if (ascciCode >= 65 && ascciCode <= 90) {
+                    upperCaseCount++;
+                } else if (ascciCode >= 97 && ascciCode <= 122) {
+                    lowerCaseCount++;
+                }
+            }
+
+            if (upperCaseCount > lowerCaseCount) {
+                return orgStr.toUpperCase();
+            }
+
+            return orgStr.toLowerCase();
+        }
+    </script>
+
+</body>
+
+</html>

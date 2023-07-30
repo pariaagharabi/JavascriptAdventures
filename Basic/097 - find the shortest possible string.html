@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the shortest possible string</title>
+</head>
+
+<body>
+    <p>
+        97. Write a JavaScript program to find the shortest possible string. This can be converted into a string and
+        converted into a palindrome by adding characters to the end of it.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user array: " +
+                userStr +
+                "<br>" +
+                "The result :" +
+                findShortestPalindrome(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPalindromeV1(orgStr) {
+            const len = orgStr.length;
+
+            for (var i = 0; i < len / 2; i++) {
+                if (orgStr[i] !== orgStr[len - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function isPalindromeV2(orgStr) {
+            const len = orgStr.length;
+
+            for (var i = 0, j = len - 1; i <= j; i++, j--) {
+                if (orgStr[i] !== orgStr[j]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function isPalindromeV3(orgStr) {
+            let i = 0;
+            let j = orgStr.length - 1;
+
+            while (i <= j) {
+                if (orgStr[i] !== orgStr[j]) {
+                    return false;
+                }
+
+                i++;
+                j--;
+            }
+
+            return true;
+        }
+
+        function findShortestPalindrome(orgStr) {
+            console.log(orgStr);
+            let counter = 0;
+
+            while (counter < orgStr.length) {
+                let firstNthChar = orgStr.substr(0, counter);
+                let reverseFirstNthChar = firstNthChar.split("").reverse().join("");
+                let testStr = orgStr + reverseFirstNthChar;
+
+                if (isPalindromeV3(testStr) === true) {
+                    return reverseFirstNthChar;
+                }
+
+                counter++;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
