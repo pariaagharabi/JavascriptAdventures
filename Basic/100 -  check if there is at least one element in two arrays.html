@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>check if there is at least one element in two arrays</title>
+</head>
+
+<body>
+    <p>
+        100. Write a JavaScript program to check if there is at least one element in two given sorted arrays of
+        integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserNums = prompt("Enter the first list of numbers seprated by commas:");
+            const firstUserArr = firstUserNums.split(",").map(Number);
+            const secondUserNums = prompt("Enter the second list of numbers seprated by commas:");
+            const secondUserArr = secondUserNums.split(",").map(Number);
+
+
+            const displayResult = (
+                "The first user's array: " +
+                firstUserArr +
+                "<br>" +
+                "The second user's array: " +
+                secondUserArr +
+                "<br>" +
+                "The result :" +
+                hasCommonElement(firstUserArr, secondUserArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function hasCommonElement(firstOrgArr, secondOrgArr) {
+            firstOrgArr = firstOrgArr.sort((x, y) => x - y);
+            secondOrgArr = secondOrgArr.sort((x, y) => x - y);
+
+            var i = 0;
+            while (i < firstOrgArr.length && firstOrgArr[i] <= secondOrgArr[secondOrgArr.length - 1]) {
+                let result = searchArr(secondOrgArr, firstOrgArr[i]);
+                if (result === true) {
+                    return true;
+                }
+
+                i++;
+            }
+
+            return false;
+
+
+            // for (var i = 0; i < firstOrgArr.length; i++) {
+            //     if (firstOrgArr[i] > secondOrgArr[secondOrgArr.length - 1]) {
+            //         break;
+            //     }
+
+            //     let result = searchArr(secondOrgArr, firstOrgArr[i]);
+            //     if (result === true) {
+            //         return true;
+            //     }
+            // }
+
+            // return false;
+        }
+
+        function searchArr(myArr, ele) {
+            var i = 0;
+
+            while (i < myArr.length && ele <= myArr[i]) {
+                if (myArr[i] === ele) {
+                    return true;
+                }
+
+                i++;
+            }
+
+            return false;
+
+            // for (var i = 0; i < myArr.length; i++) {
+            //     if (myArr[i] === ele) {
+            //         return true;
+            //     }
+
+            //     if (ele > myArr[i]) {
+            //         break;
+            //     }
+            // }
+
+            // return false;
+        }
+    </script>
+
+</body>
+
+</html>

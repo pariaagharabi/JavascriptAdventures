@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>check whether it is possible to rearrange the characters</title>
+</head>
+
+<body>
+    <p>
+        99. Write a JavaScript program to check whether it is possible to rearrange the characters of a given string.
+        This is in such a way that it will become equal to another given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr1 = prompt("Enter the first string:");
+            const userStr2 = prompt("Enter the second string:");
+
+
+            const displayResult = (
+                "The first user's string: " +
+                userStr1 +
+                "<br>" +
+                "The second user's string: " +
+                userStr2 +
+                "<br>" +
+                "The result :" +
+                isRearrangePossible(userStr1, userStr2)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isRearrangePossible(firstOrgStr, secondOrgStr) {
+            firstOrgStr.split("").sort((x, y) => (x - y));
+            secondOrgStr.split("").sort((x, y) => (x - y));
+
+            if (firstOrgStr.length !== secondOrgStr.length) {
+                return false;
+            }
+
+            for (var i = 0; i < firstOrgStr.length; i++) {
+                if (firstOrgStr[i] === secondOrgStr[i]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
