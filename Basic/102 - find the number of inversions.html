@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>find the number of inversions</title>
+</head>
+
+<body>
+    <p>
+        102. Write a search JavaScript program to find the number of inversions of a given array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The usre's array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                findNumberOfInversions(userArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findNumberOfInversions(orgArr) {
+            let counter = 0;
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                for (var j = i + 1; j < orgArr.length; j++) {
+                    if (orgArr[i] > orgArr[j]) {
+                        counter++;
+                    }
+                }
+            }
+            return counter;
+        }
+    </script>
+</body>
+
+</html>

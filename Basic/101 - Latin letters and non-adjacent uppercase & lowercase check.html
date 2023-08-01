@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Latin letters and non-adjacent uppercase & lowercase check</title>
+</head>
+
+<body>
+    <p>
+        101. Write a JavaScript program to check whether a given string contains only Latin letters and no two uppercase
+        and no two lowercase letters are in adjacent positions.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                checkLatinLettersAndNonAdjacentUpperLower(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function checkLatinLettersAndNonAdjacentUpperLower(orgStr) {
+            var i = 0;
+            while (i < orgStr.length - 1) {
+                if (isAlphabet(orgStr[i]) == false) {
+                    return false;
+                }
+
+                if (isUpperCase(orgStr[i]) && isUpperCase(orgStr[i + 1])) {
+                    return false;
+                }
+
+                if (isLowerCase(orgStr[i]) && isLowerCase(orgStr[i + 1])) {
+                    return false;
+                }
+
+                i++;
+            }
+
+            return true;
+        }
+
+        function isAlphabet(letter) {
+            let letterCode = letter.charCodeAt(0);
+
+            return (letterCode >= 65 && letterCode <= 90) || (letterCode >= 97 && letterCode <= 122);
+
+        }
+
+        function isUpperCase(letter) {
+            let letterCode = letter.charCodeAt(0);
+
+            return letterCode >= 65 && letterCode <= 90;
+        }
+
+        function isLowerCase(letter) {
+            let letterCode = letter.charCodeAt(0);
+
+            return letterCode >= 97 && letterCode <= 122;
+        }
+
+    </script>
+</body>
+
+</html>
