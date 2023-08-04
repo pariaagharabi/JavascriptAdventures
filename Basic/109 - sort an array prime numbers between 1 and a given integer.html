@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort an array of all prime numbers between 1 and a given integer</title>
+</head>
+
+<body>
+    <p>
+        109. Write a JavaScript program to sort an array of all prime numbers between 1 and a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list on numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const userNum = Number(prompt("Enter a desired number:"));
+
+            const displayResult = (
+                "The user's array: " +
+                userArr +
+                "<br>" +
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                primeNumsBetween1AndNum(userArr, userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function primeNumsBetween1AndNum(orgArr, num) {
+            let primeNums = [];
+            let sortedOrgArr = orgArr.sort((x, y) => (x - y));
+
+            for (let i = 1; i < sortedOrgArr.length; i++) {
+
+                if (isPrime(sortedOrgArr[i]) &&
+                    sortedOrgArr[i] <= num) {
+                    primeNums.push(sortedOrgArr[i]);
+                }
+            }
+
+            return primeNums;
+        }
+
+    </script>
+
+</body>
+
+</html>

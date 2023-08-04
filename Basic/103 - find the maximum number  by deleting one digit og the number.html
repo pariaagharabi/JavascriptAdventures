@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the maximum number </title>
+</head>
+
+<body>
+    <p>
+        103. Write a search JavaScript program to find the maximum number of a given positive integer by deleting
+        exactly one digit of the given number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNum = prompt("Enter a  number:");
+            const userDigits = userNum.split("").map(Number);
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                findMaxNumAfterDeletion(userDigits)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findMaxNumAfterDeletion(userDigits) {
+            let maxNum = 0;
+            let numAfterDeletionArr = [];
+            for (let i = 0; i < userDigits.length; i++) {
+                const numAfterDeletion = userDigits.slice(0, i).join("") + userDigits.slice(i + 1).join("");
+                numAfterDeletionArr.push(numAfterDeletion);;
+            }
+            maxNum = Math.max(...numAfterDeletionArr);
+
+            return maxNum;
+        }
+    </script>
+
+</body>
+
+</html>

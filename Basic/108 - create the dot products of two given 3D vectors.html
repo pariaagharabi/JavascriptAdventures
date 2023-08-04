@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create the dot products of two given 3D vectors</title>
+</head>
+
+<body>
+    <p>
+        108. Write a JavaScript program to create the dot products of two given 3D vectors.
+        Note: The dot product is the sum of the products of the corresponding entries of the two sequences of numbers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserNums = prompt("Enter the first list on numbers seprated by commas:");
+            const firstUserArr = firstUserNums.split(",").map(Number);
+
+            const secondUserNums = prompt("Enter the second list on numbers seprated by commas:");
+            const secondUserArr = secondUserNums.split(",").map(Number);
+
+            const displayResult = (
+                "The first user's array: " +
+                firstUserArr +
+                "<br>" +
+                "The second user's array: " +
+                secondUserArr +
+                "<br>" +
+                "The result: " +
+                calculateDotProduct(firstUserArr, secondUserArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function calculateDotProduct(firstArray, secondArray) {
+            let sumPairsNums = 0;
+            const lenFirstArray = firstArray.length;
+            const lenSecondArray = secondArray.length;
+
+            if (lenFirstArray === lenSecondArray) {
+                for (var i = 0; i < lenFirstArray; i++) {
+                    let pairsNums = [firstArray[i], secondArray[i]];
+
+                    let multiplicationPairsNum = pairsNums[0] * pairsNums[1];
+
+                    sumPairsNums += multiplicationPairsNum;
+                }
+
+                return sumPairsNums;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

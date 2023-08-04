@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the number of times you need to replace this number with the sum of its digits</title>
+</head>
+
+<body>
+    <p>
+        105. Write a JavaScript program to find the number of times to replace a given number with the sum of its
+        digits. This is until it converts to a single-digit number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number: "));
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                countDigitSumReplacements(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+
+        function convertNumToArray(number) {
+            return number.toString().split("").map(Number);
+        }
+
+        function isSingleDigit(number) {
+            return number >= 0 && number <= 9;
+        }
+
+        function sumDigits(number) {
+            let arr = convertNumToArray(number);
+            let sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            return sum;
+        }
+
+        function countDigitSumReplacements(num) {
+            let newNumberOfSumOfDigits = num;
+            let counter = 0;
+
+            while (true) {
+                let sumOfDigits = sumDigits(newNumberOfSumOfDigits);
+                console.log(sumOfDigits);
+                counter++;
+
+                if (isSingleDigit(sumOfDigits)) {
+                    break;
+                }
+
+                newNumberOfSumOfDigits = sumOfDigits;
+            }
+
+            return counter;
+        }
+    </script>
+
+</body>
+
+</html>

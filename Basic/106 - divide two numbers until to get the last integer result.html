@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divide two integers until to get the last integer result</title>
+</head>
+
+<body>
+    <p>
+        106. Write a search JavaScript program to divide an integer by another integer as long as the result is an
+        integer and return the result.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            let userFirstNum = parseInt(prompt("Enter the fisrt number:"));
+            let userSecondNum = parseInt(prompt("Enter the second number:"));
+
+
+            const displayResult = (
+                "The user's first number: " +
+                userFirstNum +
+                "<br>" +
+                "The user's second number: " +
+                userSecondNum +
+                "<br>" +
+                "The result: " +
+                divideToInteger(userFirstNum, userSecondNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function divideToInteger(dividend, divisor) {
+            while (true) {
+                let reminder = (dividend % divisor);
+
+                if (reminder !== 0) {
+                    break;
+                }
+
+                dividend = dividend / divisor;
+            }
+
+            return dividend;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the pair whose absolute difference is as close as possible to the given integer</title>
+</head>
+
+<body>
+    <p>
+        104. Write a JavaScript program to find two elements of an array such that their absolute difference is not
+        larger than a given integer. However, it is as close as possible to the integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list on numbers seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            const userChosenNum = Number(prompt("Enter a desired number:"));
+
+            const displayResult = (
+                "The user's array: " +
+                userArr +
+                "<br>" +
+                "The number selected by the user: " +
+                userChosenNum +
+                "<br>" +
+                "The result: " +
+                findClosestPair(userArr, userChosenNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findClosestPair(orgArr, specificNum) {
+            let maxDiffPairsNums = 0;
+            let pairNumbers = [];
+
+            for (let i = 0; i < orgArr.length - 1; i++) {
+                for (let j = i + 1; j < orgArr.length; j++) {
+                    let pairsNums = [orgArr[i], orgArr[j]];
+                    let diffPairsNums = Math.abs(pairsNums[0] - pairsNums[1]);
+
+                    if (diffPairsNums < specificNum && diffPairsNums > maxDiffPairsNums) {
+                        maxDiffPairsNums = diffPairsNums;
+                        pairNumbers = pairsNums;
+                    }
+                }
+            }
+
+            return pairNumbers;
+        }
+
+    </script>
+
+</body>
+
+</html>

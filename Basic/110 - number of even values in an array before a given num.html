@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the number of even values in sequence before the first occurrence of a given number</title>
+</head>
+
+<body>
+    <p>
+        110. Write a JavaScript program to find the number of even values in sequence before the first occurrence of a
+        given number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list on numbers seprated by commas:");
+            const userArr = userNums.split("").map(Number);
+
+            const userChosenNum = Number(prompt("Enter a desired number:"));
+
+            const displayResult = (
+                "The user's array: " +
+                userArr +
+                "<br>" +
+                "The number selected by the user: " +
+                userChosenNum +
+                "<br>" +
+                "The result: " +
+                findNumberOfEvenValsBeforeNum(userArr, userChosenNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findNumberOfEvenValsBeforeNum(orgArr, specificNum) {
+            console.log(orgArr, specificNum);
+
+            let countOfEvenNum = 0;
+
+            for (var i = 0; i < orgArr.length && orgArr[i] !== specificNum; i++) {
+                if (orgArr[i] % 2 === 0) {
+                    countOfEvenNum++;
+                }
+            }
+
+            return countOfEvenNum;
+        }
+
+
+
+        let myArr = [2, 6, 10, 15, 18, 21];
+        const num = 15;
+        console.log(findNumberOfEvenValsBeforeNum(myArr, num));
+
+
+
+    </script>
+
+</body>
+
+</html>
