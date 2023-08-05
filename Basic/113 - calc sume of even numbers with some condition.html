@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate the sum of n + n/2 + n/4 + n/8</title>
+</head>
+
+<body>
+    <p>
+        113. Write a JavaScript program to calculate the sum of n + n/2 + n/4 + n/8 + .... where n is a positive integer
+        and all divisions are integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The usr's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                (userNum)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function calcEvenNums(num) {
+            let evenNums = [];
+
+            for (let i = 2; i <= num; i = i + 2) {
+                if (i % 2 === 0) {
+                    evenNums.push(i);
+                }
+            }
+
+            return evenNums;
+        }
+
+
+
+        let num = 8;
+        console.log(num);
+
+        let evennumbers = calcEvenNums(num);
+        console.log(evennumbers);
+
+        let sumOfSeries = 0;
+
+        if (num > 0 && num % 2 === 0) {
+            sumOfSeries = num + (num / calcEvenNums(num));
+        }
+
+        console.log(sumOfSeries);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

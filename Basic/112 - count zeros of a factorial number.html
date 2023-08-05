@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find zeros of a factorial numbers</title>
+</head>
+
+<body>
+    <p>
+        112. Write a JavaScript program to find the number of trailing zeros in the decimal representation of the
+        factorial of a given number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            if (userArr.length !== 3) {
+                alert("Please enter a number bigger than one!");
+                return;
+            }
+
+            const displayResult = (
+                "The usr's number: " +
+                userNum +
+                "<br>" +
+                "The factorial of the user's number: " +
+                calcFactorialNum(userNum) +
+                "<br>" +
+                "The result: " +
+                findZerosOfFactorialNum(userNum)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findZerosOfFactorialNum(num) {
+            let counter = 0;
+
+            let facNum = calcFactorialNum(num);
+            let facNumToArr = facNum.toString().split("").map(Number);
+
+            for (var i = facNumToArr.length - 1; i >= 0; j--) {
+
+            }
+
+
+
+        }
+
+
+
+        function calcFactorialNum(num) {
+            // console.log(num);
+
+            if (num === 0 || num === 1) {
+                return 1;
+            }
+
+            let factorialResult = 1;
+
+            for (var i = 1; i <= num; i++) {
+                factorialResult = num * (num - i);
+                console.log(factorialResult);
+            }
+
+            // return num;
+        }
+
+        let myNum = 5;
+        // num = 5 * (5 - 1) * (5 - 2) * (5 - 3) * (5 - 4);
+        // num = (num -(num-num)) * (num - (num - (num-1))) * (num - (num - (num-2))) * (num - (num - (num-3))) * (num - (num - (num-4)));
+        console.log(calcFactorialNum(myNum))
+
+
+    </script>
+
+</body>
+
+</html>

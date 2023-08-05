@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check whether a matrix is a diagonal matrix or not</title>
+</head>
+
+<body>
+    <p>
+        115. Write a JavaScript program to check whether a matrix is a diagonal matrix or not. In linear algebra, a
+        diagonal matrix is a matrix in which the entries outside the main diagonal are all zero (the diagonal from the
+        upper left to the lower right).
+        Example:
+        [1, 0, 0], [0, 2, 0], [0, 0, 3] ] = true
+        [1, 0, 0], [0, 2, 3], [0, 0, 3] ] = false
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNums1 = prompt("Enter the first list of numbers, seprated by commas:");
+            const userFirstArr = userNums1.split(",").map(Number);
+
+            const userNums2 = prompt("Enter the second list of numbers, seprated by commas:");
+            const userSecondArr = userNums2.split(",").map(Number);
+
+            const userNums3 = prompt("Enter the third list of numbers, seprated by commas:");
+            const userThirddArr = userNums3.split(",").map(Number);
+
+            const displayResult = (
+                "The usr's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                (userNum)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        // function isDiagonalMatrix() {
+
+        // }
+
+
+        let myArray = [
+            [0, 1, 2, 3],
+            [4, 5, 6, 7, 8],
+            [8, 9, 0, 0]
+        ];
+
+        for (var i = 0; i < myArray.length; i++) {
+            for (var j = 0; j < myArray[i].length; j++) {
+                console.log("[", i, "]", "[", j, "]->", myArray[i][j])
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

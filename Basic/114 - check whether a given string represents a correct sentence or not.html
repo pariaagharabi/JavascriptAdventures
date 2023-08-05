@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check whether a given string represents a correct sentence or not</title>
+</head>
+
+<body>
+    <p>
+        114. Write a JavaScript program to check whether a given string represents a correct sentence or not. A string
+        is considered a correct sentence if it starts with a capital letter and ends with a full stop (.)
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userWords = prompt("Enter a string that starts with a capital letter and ends with a full stop (.):");
+            const userWordsArr = userWords.split("");
+
+            const displayResult = (
+                "The usr's string: " +
+                userWords +
+                "<br>" +
+                "The result: " +
+                isCorrectSentence(userWordsArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isCorrectSentence(orgStr) {
+            const firstChar = orgStr[0];
+            const lastChar = orgStr[orgStr.length - 1];
+
+            if (firstChar === firstChar.toUpperCase() &&
+                lastChar === ".") {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

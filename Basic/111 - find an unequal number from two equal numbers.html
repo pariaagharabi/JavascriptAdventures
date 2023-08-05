@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find an unequal number from two equal numbers</title>
+</head>
+
+<body>
+    <p>
+        111. Write a JavaScript program to check a number from three given numbers where two numbers are equal. Find the
+        third one.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter three numbers (two of numbers must be equal), separated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            // if (userArr.length !== 3) {
+            //     alert("Please enter exactly three numbers separated by commas.");
+            //     return;
+            // }
+
+            const displayResult = (
+                "The usr's array: " +
+                userArr +
+                "<br>" +
+                "The result: " +
+                findUnequalNumFromTwoEqual(userArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findUnequalNumFromTwoEqual(orgArr) {
+            console.log(orgArr);
+
+            let equalNum = findEqualNums(orgArr[0], orgArr[1], orgArr[2]);
+
+            for (var i = 0; i < orgArr.length; i++) {
+                if (orgArr[i] !== equalNum) {
+                    return orgArr[i];
+                }
+            }
+
+            throw new Error("all numbers are the same");
+        }
+
+        function findEqualNums(x, y, z) {
+            if (x === y) {
+                return x;
+            } else if (x === z) {
+                return x;
+            }
+
+            return y;
+        }
+
+    </script>
+
+</body>
+
+</html>
