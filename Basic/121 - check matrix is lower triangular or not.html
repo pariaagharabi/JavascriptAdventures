@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check a given matrix is lower triangular or not</title>
+</head>
+
+<body>
+    <p>
+        121. Write a JavaScript program to check whether a given matrix is lower triangular or not.
+        Note: A square matrix is called lower triangular if all the entries above the main diagonal are zero.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNums1 = prompt("Enter the first list of numbers, seprated by commas:");
+            const userFirstArr = userNums1.split(",").map(Number);
+
+            const userNums2 = prompt("Enter the second list of numbers, seprated by commas:");
+            const userSecondArr = userNums2.split(",").map(Number);
+
+            const userNums3 = prompt("Enter the third list of numbers, seprated by commas:");
+            const userThirddArr = userNums3.split(",").map(Number);
+
+            const userNums4 = prompt("Enter the forth list of numbers, seprated by commas:");
+            const userForthArr = userNums3.split(",").map(Number);
+
+            const userOrginalArr = [userFirstArr, userSecondArr, userThirddArr, userForthArrs];
+
+            if (userOrginalArr.length < 5) {
+                alert("The matrix must be a square matrix!");
+                return;
+            }
+
+            const displayResult = (
+                "The usr's number: " +
+                userNums1 +
+                "<br>" +
+                "The result: " +
+                isLowerTriangularMatrix(userOrginalArr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isLowerTriangularMatrix(orgArr) {
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                for (var j = i + 1; j < arr[i].length; j++) {
+                    if (orgArr[i][j !== 0]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
