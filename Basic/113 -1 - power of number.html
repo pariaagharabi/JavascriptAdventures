@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate the power of number</title>
+</head>
+
+<body>
+    <p>
+        113.1 Write a JavaScript program to calculate the power of number
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const baseUserNum = Number(prompt("Enter a number as a base number:"));
+            const exponentUserNum = Number(prompt("Enter a number as a exponent:"));
+
+
+            const displayResult = (
+                "The usr's base number: " +
+                baseUserNum +
+                "<br>" +
+                "The usr's exponent number: " +
+                exponentUserNum +
+                "<br>" +
+                "The result: " +
+                calcPowerOfNum(baseUserNum, exponentUserNum)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function calcPowerOfNum(baseNum, exponent) {
+            let powerNum = 1;
+
+            for (var i = 1; i <= exponent; i++) {
+                powerNum *= baseNum;
+            }
+
+            return powerNum;
+        }
+
+    </script>
+
+</body>
+
+</html>

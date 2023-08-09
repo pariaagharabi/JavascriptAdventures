@@ -4,45 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculate the sum of n + n/2 + n/4 + n/8</title>
+    <title>check if a given integer has an increasing digit sequence</title>
 </head>
 
 <body>
     <p>
-        113. Write a JavaScript program to calculate the sum of n + n/2 + n/4 + n/8 + .... where n is a positive integer
-        and all divisions are integers.
+        119. Write a JavaScript program to check if a given integer has an increasing digit sequence.
     </p>
     <button onclick="eventHandler()">Run</button>
     <div id="showResult"></div>
 
-
     <script>
         function eventHandler() {
             const userNum = parseInt(prompt("Enter a number:"));
+            const userNumStr = userNum.toString();
 
             const displayResult = (
                 "The user's number: " +
                 userNum +
                 "<br>" +
                 "The result: " +
-                calcDivisorSeries(userNum)
+                isNumIncreasingDigit(userNumStr)
             );
+
             const tagResult = document.getElementById("showResult");
             tagResult.innerHTML = displayResult;
         }
 
-        function calcDivisorSeries(num) {
-            let sumOfSeries = 0;
-            let divisor = 1;
-
-            while (num >= divisor) {
-                let term = Math.floor(num / divisor);
-                sumOfSeries += term;
-                divisor *= 2;
+        function isNumIncreasingDigit(num) {
+            for (var i = 0; i < num.length; i++) {
+                if (num[i] <= num[i + 1]) {
+                    return true;
+                }
             }
 
-            return sumOfSeries;
+            return false;
         }
+
 
     </script>
 

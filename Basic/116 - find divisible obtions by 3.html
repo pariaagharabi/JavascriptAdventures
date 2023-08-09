@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find Divisible Options</title>
+</head>
+
+<body>
+    <p>
+        116. Write a JavaScript program to find all the possible options to replace the hash in a string (Consists of
+        digits and one hash (#)) with a digit to produce an integer divisible by 3.
+        For a string "2*0", the output should be : ["210", "240", "270"]
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string that consists of digits and a single hash (#) character:");
+
+            const displayResult = (
+                "The user's string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                findDivisibleOptions(userStr)
+            );
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findDivisibleOptions(orgStr) {
+            const optionsResult = [];
+
+            for (var i = 0; i <= 9; i++) {
+                let number = orgStr.replace("#", i);
+
+                if (Number(number) % 3 === 0) {
+                    optionsResult.push(number);
+                }
+            }
+
+            return optionsResult;
+        }
+
+    </script>
+
+</body>
+
+</html>

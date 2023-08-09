@@ -20,11 +20,6 @@
         function eventHandler() {
             const userNum = Number(prompt("Enter a number:"));
 
-            if (userArr.length !== 3) {
-                alert("Please enter a number bigger than one!");
-                return;
-            }
-
             const displayResult = (
                 "The usr's number: " +
                 userNum +
@@ -45,19 +40,19 @@
             let facNum = calcFactorialNum(num);
             let facNumToArr = facNum.toString().split("").map(Number);
 
-            for (var i = facNumToArr.length - 1; i >= 0; j--) {
-
+            for (var i = facNumToArr.length - 1; i >= 0; i--) {
+                if (facNumToArr[i] === 0) {
+                    counter++;
+                } else {
+                    break;
+                }
             }
 
-
-
+            return counter;
         }
 
 
-
         function calcFactorialNum(num) {
-            // console.log(num);
-
             if (num === 0 || num === 1) {
                 return 1;
             }
@@ -65,18 +60,11 @@
             let factorialResult = 1;
 
             for (var i = 1; i <= num; i++) {
-                factorialResult = num * (num - i);
-                console.log(factorialResult);
+                factorialResult = factorialResult * i;
             }
 
-            // return num;
+            return factorialResult;
         }
-
-        let myNum = 5;
-        // num = 5 * (5 - 1) * (5 - 2) * (5 - 3) * (5 - 4);
-        // num = (num -(num-num)) * (num - (num - (num-1))) * (num - (num - (num-2))) * (num - (num - (num-3))) * (num - (num - (num-4)));
-        console.log(calcFactorialNum(myNum))
-
 
     </script>
 

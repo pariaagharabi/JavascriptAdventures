@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check a given number is in a given range</title>
+</head>
+
+<body>
+    <p>
+        118. Write a JavaScript program to check whether a given number is in a given range.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+            const userRange = prompt("Enter a range of numbers seprated by commas:");
+            const userRangeArr = userRange.split(",").map(Number);
+
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The user's range: " +
+                userRangeArr +
+                "<br>" +
+                "The result: " +
+                isNumInRange(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isNumInRange(givenNum, givenRange) {
+            for (var i = 0; i < givenRange; i++) {
+                if (givenNum === givenRange[i]) {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
