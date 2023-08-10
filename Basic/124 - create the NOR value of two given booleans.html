@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create the NOR value of two given booleans</title>
+</head>
+
+<body>
+    <p>
+        124. Write a JavaScript program to create the NOR value of two given booleans.
+        Note: In boolean logic, logical nor or joint denial is a truth-functional operator which produces a result that
+        is the negation of logical or. That is, a sentence of the form (p NOR q) is true precisely when neither p nor q
+        is true - i.e. when both of p and q are false
+        Sample Example:
+        For x = true and y = false, the output should be logical_Nor(x, y) = false; For x = false and y = false, the
+        output should be logical_Nor(x, y) = true.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserBoolean = prompt("Enter your first boolean value (true or false):").toLowerCase();
+            const secondUserBoolean = prompt("Enter your second boolean value (true or false):").toLowerCase();
+
+
+            const displayResult = (
+                "The user's first boolean value: " +
+                firstUserBoolean +
+                "<br>" +
+                "The user's second boolean value: " +
+                secondUserBoolean +
+                "<br>" +
+                "The result: " +
+                createNORValue(firstUserBoolean, secondUserBoolean)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function createNORValue(firstBoolean, secondBoolean) {
+            if (firstBoolean === true && secondBoolean === true ||
+                firstBoolean === false && secondBoolean === false) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

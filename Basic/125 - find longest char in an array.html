@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find longest char in an array</title>
+</head>
+
+<body>
+    <p>
+        125. Write a JavaScript program to find the longest string in a given array.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStrings = prompt("Enter a list of strings, seprated by commas:");
+            const userStringsArr = userStrings.split(",");
+
+            const displayResult = (
+                "The user's strings: " +
+                userStringsArr.join(", ") +
+                "<br>" +
+                "The result: " +
+                finfLongestChar(userStringsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function finfLongestChar(orgArr) {
+            let longestChar = orgArr[0];
+
+            for (var i = 1; i < orgArr.length; i++) {
+                if (orgArr[i].length > longestChar.length) {
+                    longestChar = orgArr[i];
+                }
+            }
+
+            return longestChar;
+        }
+    </script>
+
+</body>
+
+</html>

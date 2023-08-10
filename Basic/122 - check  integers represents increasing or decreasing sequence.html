@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check integers represents increasing or decreasing sequence</title>
+</head>
+
+<body>
+    <p>
+        122. Write a JavaScript program to check whether a given array of integers represents a strictly increasing or
+        decreasing sequence.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user's numbers: " +
+                userNumsArr +
+                "<br>" +
+                "The result: " +
+                isIncreasingOrDecreasingArr(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isIncreasingOrDecreasingArr(orgArr) {
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                if (orgArr[i] >= orgArr[i + 1]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

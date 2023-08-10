@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check if a point lies strictly inside the circle</title>
+</head>
+
+<body>
+    <p>
+        120. Write a JavaScript program to check if a point lies strictly inside the circle.
+        Input:
+        Center of the circle (x, y)
+        Radius of circle: r
+        Point inside a circle (a, b)
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter 5 numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            if (userNumsArr.length < 5) {
+                alert("Please enter exatly 5 numbers!");
+                return;
+            }
+
+            const displayResult = (
+                "The user's number: " +
+                userNumsArr +
+                "<br>" +
+                "The result: " +
+                isPointInsideTheCircle(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPointInsideTheCircle(orgArr) {
+            [x, y, a, b, r] = orgArr;
+            if (
+                (a > x - r && a < x + r) &&
+                (b > y - r && b < y + r)
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

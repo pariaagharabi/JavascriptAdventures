@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find largest even number </title>
+</head>
+
+<body>
+    <p>
+        126. Write a JavaScript program to get the largest even number from an array of integers.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user's numbers: " +
+                userNumsArr +
+                "<br>" +
+                "The result: " +
+                findLargestEvenNum(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findLargestEvenNum(orgArr) {
+            let evenNumsresult = [];
+
+            for (var i = 0; i < orgArr.length; i++) {
+                if (orgArr[i] % 2 === 0) {
+                    evenNumsresult.push(orgArr[i]);
+                }
+            }
+
+            if (evenNumsResult.length === 0) {
+                return "No even numbers found";
+            }
+
+            let largestEvenNum = evenNumsResult[0];
+
+            for (let i = 1; i < evenNumsResult.length; i++) {
+                if (evenNumsResult[i] > largestEvenNum) {
+                    largestEvenNum = evenNumsResult[i];
+                }
+            }
+
+            return largestEvenNum;
+        }
+
+    </script>
+
+</body>
+
+</html>

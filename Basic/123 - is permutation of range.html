@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the members of a given array of integers are a permutation</title>
+</head>
+
+<body>
+    <p>
+        123. Write a JavaScript program to find out if the members of a given array of integers are a permutation of
+        numbers from 1 to a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const userNum = parseInt(prompt("Enter a number from your list:"));
+
+            const displayResult = (
+                "The user's numbers: " +
+                userNumsArr +
+                "<br>" +
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                isPermutationOfRange(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPermutationOfRange(orgArr, givenNum) {
+            const sortedOrgArr = orgArr.sort((x, y) => x - y);
+            console.log(sortedOrgArr);
+
+            for (var i = 0; i < sortedOrgArr.length - 1; i++) {
+                if (sortedOrgArr[i] === sortedOrgArr[i + 1]) {
+                    return false;
+                }
+            }
+
+            for (var i = 0; i < sortedOrgArr.length; i++) {
+                if (sortedOrgArr[i] < 1 || sortedOrgArr[i] > givenNum) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>
