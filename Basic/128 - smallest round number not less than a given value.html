@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smallest round number not less than a given value</title>
+</head>
+
+<body>
+    <p>
+        128. Write a JavaScript program to find the smallest round number not less than a given value.
+        Note: A round number is informally considered to be an integer that ends with one or more zeros.[3] So, 590 is
+        rounder than 592, but 590 is less round than 600.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                informalRoundNum(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function informalRoundNum(givenNum) {
+            if (givenNum % 10 === 0) {
+                return givenNum;
+            }
+
+            return Math.ceil(givenNum / 10) * 10;
+        }
+
+    </script>
+</body>
+
+</html>

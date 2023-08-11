@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smallest prime number strictly greater than a given number.</title>
+</head>
+
+<body>
+    <p>
+        129. Write a JavaScript program to find the smallest prime number strictly greater than a given number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+
+            const displayResult = (
+                "The user number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                findSmallestGreaterPrime(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+
+            if (num === 2) {
+                return true;
+            }
+
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        function findSmallestGreaterPrime(givenNum) {
+            let number = givenNum + 1;
+
+            while (!isPrime(number)) {
+                number++;
+            }
+
+            return number;
+        }
+
+    </script>
+</body>
+
+</html>

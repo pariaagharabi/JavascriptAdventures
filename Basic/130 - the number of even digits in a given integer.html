@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the number of even digits in a given integer</title>
+</head>
+
+<body>
+    <p>
+        130. Write a JavaScript program to find the number of even digits in a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = parseInt(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                findEvenNumsOfInt(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findEvenNumsOfInt(givenNum) {
+            const numStr = givenNum.toString();
+            let evenNums = [];
+            let counter = 0;
+
+            for (let i = 0; i < numStr.length; i++) {
+                const digit = parseInt(numStr[i]);
+                if (digit % 2 === 0) {
+                    // evenNums.push(digit);
+                    counter++;
+                }
+            }
+
+            // return evenNums;
+            return counter;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

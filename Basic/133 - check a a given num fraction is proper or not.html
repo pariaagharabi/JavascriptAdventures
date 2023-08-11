@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check whether a given fraction is proper or not</title>
+</head>
+
+<body>
+    <p>
+        133. Write a JavaScript program to check whether a given fraction is proper or not.
+        Note: There are two types of common fractions, proper or improper. When the numerator and the denominator are
+        both positive, the fraction is called proper if the numerator is less than the denominator, and improper
+        otherwise.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserNum = Number(prompt("Enter your first number:"));
+            const secondUserNum = Number(prompt("Enter your second number:"));
+
+            const displayResult = (
+                "The first user's number: " +
+                firstUserNum +
+                "<br>" +
+                "The second user's number: " +
+                secondUserNum +
+                "<br>" +
+                "The result: " +
+                fractionIsProper(firstUserNum, secondUserNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function fractionIsProper(numerator, denominator) {
+            if (numerator > 0 && denominator > 0 &&
+                denominator > numerator
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

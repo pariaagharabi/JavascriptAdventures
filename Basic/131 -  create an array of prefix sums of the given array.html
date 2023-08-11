@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create an array of prefix sums of the given array</title>
+</head>
+
+<body>
+    <p>
+        131. Write a JavaScript program to create an array of prefix sums of the given array.
+        In computer science, the prefix sum, cumulative sum, inclusive scan, or simply scan of a sequence of numbers x0,
+        x1, x2, ... is a second sequence of numbers y0, y1, y2, ..., the sums of prefixes of the input sequence:
+        y0 = x0
+        y1 = x0 + x1
+        y2 = x0 + x1+ x2 </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user's numbers: " +
+                userNumsArr +
+                "<br>" +
+                "The result: " +
+                calculatePrefixSums(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function calculatePrefixSums(orgArr) {
+            let resultPrefix = [orgArr[0]];
+
+            for (var i = 1; i < orgArr.length; i++) {
+                let prefixSum = 0;
+                for (var j = 0; j <= i; j++) {
+                    prefixSum += orgArr[j];
+                }
+                resultPrefix.push(prefixSum);
+            }
+
+            return resultPrefix;
+        }
+
+        function calculatePrefixSumsV2(orgArr) {
+            let resultPrefix = [orgArr[0]];
+            let prefixSum = orgArr[0];
+
+            for (var i = 1; i < orgArr.length; i++) {
+                prefixSum += orgArr[i];
+                resultPrefix.push(prefixSum);
+            }
+
+            return resultPrefix;
+        }
+
+    </script>
+
+</body>
+
+</html>

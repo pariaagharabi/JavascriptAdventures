@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>distinct prime factors of a given integer</title>
+</head>
+
+<body>
+    <p>
+        132. Write a JavaScript program to find all distinct prime factors of a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                distinctPrimeFactors(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+
+            if (num === 2) {
+                return true;
+            }
+
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function findFactorsNum(num) {
+            let factorsResult = [];
+
+            for (var i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    factorsResult.push(i);
+                }
+            }
+
+            return factorsResult;
+        }
+
+        function distinctPrimeFactors(num) {
+            let factorsNum = findFactorsNum(num);
+            let primeFactorsResult = [];
+
+            for (var i = 0; i < factorsNum.length; i++) {
+                if (isPrime(factorsNum[i])) {
+                    primeFactorsResult.push(factorsNum[i]);
+                }
+            }
+
+            return primeFactorsResult;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
