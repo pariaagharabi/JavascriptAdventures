@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the number of elements in both arrays</title>
+</head>
+
+<body>
+    <p>
+        141. Write a JavaScript program to find the number of elements in both arrays.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserNums = prompt("Enter a list of numbers, seprated by commas:");
+            const firstUserNumsArr = firstUserNums.split(",").map(Number);
+
+            const secondUserNums = prompt("Enter a list of numbers, seprated by commas:");
+            const secondUserNumsArr = secondUserNums.split(",").map(Number);
+
+            const displayResult = (
+                "The first user's array: " +
+                firstUserNumsArr +
+                "<br>" +
+                "The second user's array: " +
+                secondUserNumsArr +
+                "<br>" +
+                "The result: " +
+                countNumberOfElesInArr(firstUserNumsArr, secondUserNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function countNumberOfElesInArr(orgArr1) {
+            let count1 = 0;
+
+            for (var i = 0; i < orgArr1.length; i++) {
+                count1++;
+            }
+
+            return count1;
+        }
+
+        console.log(countNumberOfElesInArr([3, 4, 6, 8]));
+
+    </script>
+
+</body>
+
+</html>

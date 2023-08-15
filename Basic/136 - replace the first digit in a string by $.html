@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace the first digit in a string with $</title>
+</head>
+
+<body>
+    <p>
+        136. Write a JavaScript program to replace the first digit in a string (should have at least one digit) with the
+        $ character.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            if (userStr.length < 1) {
+                alert("The string should have at least one digit!");
+                return;
+            }
+
+            const displayResult = (
+                "The user's string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                replaceFirstDigit(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function replaceFirstDigit(orgStr) {
+            for (var i = 0; i < orgStr.length; i++) {
+                if (orgStr.charCodeAt(i) >= 48 && orgStr.charCodeAt(i) <= 57) {
+                    let newStr = orgStr.slice(0, i) + "$" + orgStr.substr(i + 1);
+                    return newStr;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

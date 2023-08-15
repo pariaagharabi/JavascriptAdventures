@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change the characters (lower case) with some conditions</title>
+</head>
+
+<body>
+    <p>
+        134. Write a JavaScript program to change the characters (lower case) in a string where a turns into z, b turns
+        into y, c turns into x, ..., n turns into m, m turns into n, ..., z turns into a.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The  user's string: " +
+                userStr +
+                "<br>" +
+                "The result: " +
+                mirrorLowerCaseChars(userStr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isLowerCase(char) {
+            var charCode = char.charCodeAt(0);
+
+            return charCode >= 97 && charCode <= 122;
+        }
+
+        function mirrorLowerCaseChars(orgStr) {
+            let newStr = "";
+
+            for (var i = 0; i < orgStr.length; i++) {
+                if (isLowerCase(orgStr[i])) {
+                    newStr += f1(orgStr[i]);
+
+                } else {
+                    newStr += orgStr[i];
+                }
+
+            }
+
+            return newStr;
+        }
+
+        function f1(char) {
+            let lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+            for (var i = 0, j = lowerCaseChar.length - 1; i < lowerCaseChar.length; i++, j--) {
+                if (lowerCaseChar[i] === char) {
+                    return lowerCaseChar[j];
+                }
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

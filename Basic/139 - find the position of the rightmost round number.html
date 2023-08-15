@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the position of the rightmost round number</title>
+</head>
+
+<body>
+    <p>
+        139. Write a JavaScript program to find the position of the rightmost round number in an array of integers. If
+        there are no round numbers, the function returns 0.
+        Note: A round number is informally considered to be an integer that ends with one or more zeros.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = (
+                "The user's numbers: " +
+                userNumsArr +
+                "<br>" +
+                "The result: " +
+                findRightmostRoundNumberPosition(userNumsArr)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findRightmostRoundNumberPosition(orgArr) {
+            for (var i = orgArr.length - 1; i >= 0; i--) {
+                if (orgArr[i] % 10 === 0) {
+                    return i;
+                }
+            }
+
+            return 0;
+        }
+
+    </script>
+
+</body>
+
+</html>

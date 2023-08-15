@@ -4,45 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reverse the order of bits in a integer</title>
+    <title>count numbers of zeros in a digit</title>
 </head>
 
 <body>
     <p>
-        127. Write a JavaScript program to reverse the order of bits in a integer.
-        14 -> 00001110 -> 01110000 -> 112
-        56 -> 00111000 -> 00011100 -> 28
-        234 -> 11101010 -> 01010111 -> 87
+        139.1 - check numbers of zeros in a digit
     </p>
     <button onclick="eventHandler()">Run</button>
     <div id="showResult"></div>
 
     <script>
         function eventHandler() {
-            const userNum = parseInt(prompt("Enter a number:"));
+            const userNum = Number(prompt("Enter a number:"));
 
             const displayResult = (
                 "The user's number: " +
                 userNum +
                 "<br>" +
                 "The result: " +
-                mirrorBits(orgNum)
+                countRightmoseZeros(userNum)
             );
 
             const tagResult = document.getElementById("showResult");
             tagResult.innerHTML = displayResult;
         }
 
-        function mirrorBits(orgNum) {
-            let t = orgNum.toString(2).split("");
-            let strLen = t.length;
-            for (let i = 0; i < 8 - strLen; i++) {
-                t.unshift("0");
+        function countRightmoseZeros(orgNum) {
+            let count = 0;
+            let divisor = 10;
+
+            while (true) {
+                if (orgNum % divisor !== 0) {
+                    break;
+                }
+                count++;
             }
-            return parseInt(t.reverse().join(""), 2);
+
+            return count;
         }
 
+        console.log(countRightmoseZeros(367800));
+
     </script>
+
 </body>
 
 </html>

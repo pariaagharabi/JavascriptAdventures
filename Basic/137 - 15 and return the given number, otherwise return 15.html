@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reverse the order of bits in a integer</title>
+    <title>if given number greater than 15 return it , otherwise return 15</title>
 </head>
 
 <body>
     <p>
-        127. Write a JavaScript program to reverse the order of bits in a integer.
-        14 -> 00001110 -> 01110000 -> 112
-        56 -> 00111000 -> 00011100 -> 28
-        234 -> 11101010 -> 01010111 -> 87
+        137. Write a JavaScript program to test whether a given integer is greater than 15 and return the given number,
+        otherwise return 15.
     </p>
     <button onclick="eventHandler()">Run</button>
     <div id="showResult"></div>
@@ -26,23 +24,24 @@
                 userNum +
                 "<br>" +
                 "The result: " +
-                mirrorBits(orgNum)
+                testAndLimitInteger(userNum)
             );
 
             const tagResult = document.getElementById("showResult");
             tagResult.innerHTML = displayResult;
         }
 
-        function mirrorBits(orgNum) {
-            let t = orgNum.toString(2).split("");
-            let strLen = t.length;
-            for (let i = 0; i < 8 - strLen; i++) {
-                t.unshift("0");
+        function testAndLimitInteger(orgNum) {
+            if (orgNum > 15) {
+                return orgNum
             }
-            return parseInt(t.reverse().join(""), 2);
+
+            return 15;
         }
 
+
     </script>
+
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse the bits of a given 16-bit unsigned short integer</title>
+</head>
+
+<body>
+    <p>
+        138. Write a JavaScript program to reverse the bits of a given 16-bit unsigned short integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            const displayResult = (
+                "The user's number: " +
+                userNum +
+                "<br>" +
+                "The result: " +
+                sixteenBitsReverse(userNum)
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sixteenBitsReverse(num) {
+            // var result = 0;
+            // for (var i = 0; i < 16; i++) {
+            //     result = result * 2 + (num % 2);
+            //     num = Math.floor(num / 2);
+
+            // }
+            // return result;
+
+
+            let numBasedOnTwo = num.toString(2).split("");
+            const len = numBasedOnTwo.length;
+
+            for (let i = 1; i <= 16 - len; i++) {
+                numBasedOnTwo.unshift("0");
+            }
+
+            return parseInt(numBasedOnTwo.reverse().join(""), 2);
+        }
+
+    </script>
+
+</body>
+
+</html>

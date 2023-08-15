@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change the capitalization of all letters in a given string</title>
+</head>
+
+<body>
+    <p>
+        149. Write a JavaScript program to change the capitalization of all letters in a given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = (
+                "The user's string: " +
+                userStr +
+                "<br>" +
+                "The result: "
+            );
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isUpperCase(char) {
+            let charCode = char.charCodeAt(0);
+            return charCode >= 65 && charCode <= 90;
+        }
+
+        function isLowerCase(char) {
+            let charCode = char.charCodeAt(0);
+            return charCode >= 97 && charCode <= 122;
+        }
+
+        function converCharsToUpperAndLower(orgStr) {
+            console.log(orgStr);
+
+            let newStr = "";
+            for (var i = 0; i < orgStr.length; i++) {
+                if (isLowerCase(orgStr[i])) {
+                    newStr += orgStr[i].toUpperCase();
+                } else if (isUpperCase(orgStr[i])) {
+                    newStr += orgStr[i].toLowerCase();
+                } else {
+                    newStr += orgStr[i];
+                }
+            }
+
+            return newStr;
+        }
+
+    </script>
+
+</body>
+
+</html>
