@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>convert letters of a given string alphabeticall</title>
 </head>
 
 <body>
@@ -35,13 +35,24 @@
 
             return givenStr;
 
+        }
 
-            // let englishAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        function convertLetterOfStrAlphabeticallyV2(givenStr) {
+            const englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            let convertedStr = "";
 
-            // let indexChar = englishAlphabet.indexOf(givenStr[i]);
-            // for (var i = 0; i < givenStr.length; i++) {
+            for (let i = 0; i < givenStr.length; i++) {
+                const char = givenStr[i];
 
-            // }
+                if (englishAlphabet.includes(char)) {
+                    const position = char.toUpperCase().charCodeAt(0) - 64; // Get the position within the alphabet
+                    convertedStr += position + " ";
+                } else {
+                    convertedStr += char + " ";
+                }
+            }
+
+            return convertedStr;
         }
 
     </script>

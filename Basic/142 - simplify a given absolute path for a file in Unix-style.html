@@ -27,16 +27,32 @@
             tagResult.innerHTML = displayResult;
         }
 
-        function simplifyAbsPath(orgAbsPath) {
-            console.log(orgAbsPath);
-            const splitPath = orgAbsPath.split("/");
-            const simplifiedPath = [];
+        function simplifyAbsPath(mainPath) {
+            const parts = mainPath.split('/');
+            const newPath = [];
+            let length = 0;
+            for (var i = 0; i < parts.length; i++) {
+                const part = parts[i];
+                if (part === '.' || part === '' || part === '..') {
+                    if (part === '..' && length > 0) {
+                        length--;
+                    }
+                    continue;
+                }
+                newPath[length++] = part;
+            }
 
+            if (length === 0) {
+                return '/';
+            }
 
+            let result = '';
+            for (var i = 0; i < length; i++) {
+                result += `/${newPath[i]}`;
+            }
+
+            return result;
         }
-
-        let myPath = "/home/user/../documents/../projects/./project1/../../file.txt";
-        console.log(simplifyAbsPath(myUrl));
 
     </script>
 
