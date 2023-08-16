@@ -27,32 +27,26 @@
             tagResult.innerHTML = displayResult;
         }
 
-        function checkStr() {
+        function checkStr(givenStr) {
+            let charToFind = "p's";
+            let counterP = 0;
+            let counterT = 0;
 
-        }
+            for (var i = 0; i < givenStr.length; i++) {
+                let eachCharGivenStr = givenStr[i];
+                if (charToFind.includes(eachCharGivenStr)) {
+                    counterP += 1;
+                } else if (eachCharGivenStr === "t") {
+                    counterT += 1;
+                }
+            }
 
-
-
-        let givenStr = "parai p's and sop's";
-        console.log(givenStr);
-
-        let containsChar = givenStr.includes("p's");
-        console.log(containsChar);
-        let charSplit = givenStr.split("p's");
-        console.log(charSplit);
-
-
-        let charToFind = "p's";
-        let counter = 0;
-
-        for (var i = 0; i < givenStr.length; i++) {
-            let eachCharGivenStr = givenStr[i];
-            if (charToFind.includes(eachCharGivenStr)) {
-                counter += 1;
+            if (counterP === counterT) {
+                return ("The string contains an equal number of 'p's and 't's.");
+            } else {
+                return ("The string does not contain an equal number of 'p's and 't's.");
             }
         }
-        console.log(counter);
-
 
     </script>
 </body>
