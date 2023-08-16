@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compute the sum of cubes of all integers</title>
+</head>
+
+<body>
+    <p>
+        146. Write a JavaScript program to compute the sum of cubes of all integers from 1 to a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userInt = parseInt(prompt("Enter an integer:"));
+
+            const displayResult = `
+            User's integer: ${userInt} <br>
+            The result: ${sumOfCubes(userInt)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOfCubes(orgInt) {
+            let sumOfCubesResult = 0;
+            let counter = 1;
+
+            for (var i = 0; i < orgInt; i++) {
+                let cubesOfInt = counter ** 3;
+
+                sumOfCubesResult += cubesOfInt;
+                counter++;
+            }
+
+            return sumOfCubesResult;
+        }
+
+    </script>
+
+</body>
+
+</html>

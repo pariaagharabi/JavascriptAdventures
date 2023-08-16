@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compute the sum of all the digits in a string</title>
+</head>
+
+<body>
+    <p>
+        147. Write a JavaScript program to compute the sum of all the digits that occur in a given string.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string");
+
+            const displayResult = `
+            The user's string: ${userStr}<br>
+            The result: ${sumOfDigitsInStr(userStr)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOfDigitsInStr(orgStr) {
+            let sumOfDigits = 0;
+
+            for (var i = 0; i < orgStr.length; i++) {
+                const charCodeNum = orgStr.charCodeAt(i);
+                if (charCodeNum >= 48 && charCodeNum <= 57) {
+                    sumOfDigits += charCodeNum - 48;
+                }
+            }
+
+            return sumOfDigits;
+        }
+
+    </script>
+
+</body>
+
+</html>

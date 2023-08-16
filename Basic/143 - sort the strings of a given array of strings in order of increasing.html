@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort the strings of a given array of strings in order of increasing</title>
+</head>
+
+<body>
+    <p>
+        143. Write a JavaScript program to sort the strings of a given array of strings in order of increasing length.
+        Note: Do not change the order if the lengths of two string are same.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStrs = prompt("Enter a list of the strings, seprated by commas and double quotation:");
+            const userStrsArr = userStrs.split(",");
+
+            const displayResult = `
+            User's integer: ${JSON.stringify(userStrsArr)} <br>
+            The result: ${JSON.stringify(sortStrsByIncreasingLen(userStrsArr))}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sortStrsByIncreasingLen(orgArr) {
+            console.log(orgArr);
+
+            let sortedArr = orgArr.slice().sort((a, b) => a.length - b.length);
+
+            return sortedArr;
+        }
+
+    </script>
+
+</body>
+
+</html>

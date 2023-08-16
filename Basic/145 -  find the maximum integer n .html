@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the maximum integer n </title>
+</head>
+
+<body>
+    <p>
+        145. Write a JavaScript program to find the maximum integer n such that 1 + 2 + ... + n = a given integer.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter an integer:"));
+
+            const displayResult = `
+            User's integer: ${userNum} <br>
+            The result: ${findMaxNForSum(userNum)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function findMaxNForSum(orgInt) {
+            let sumOfInts = 0;
+            let counter = 0;
+
+            while (sumOfInts < orgInt) {
+                sumOfInts += counter;
+                counter++;
+            }
+
+            return --counter;
+        }
+
+    </script>
+
+</body>
+
+</html>

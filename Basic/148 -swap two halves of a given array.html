@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap two halves of a given array</title>
+</head>
+
+<body>
+    <p>
+        148. Write a JavaScript program to swap two halves of a given array of integers of even length.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userArr = userNums.split(",").map(Number);
+
+            if (userArr.length % 2 !== 0) {
+                alert("The length of array must be even!");
+                return;
+            }
+
+            const displayResult = `
+            The user's array: ${userArr} <br>
+            The result: ${swapTwoHalves(userArr)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function swapTwoHalves(orgArr) {
+            let halfLenOrgArr = orgArr.length / 2;
+
+            for (var i = 0; i < halfLenOrgArr; i++) {
+                let temp = orgArr[i];
+                orgArr[i] = orgArr[i + halfLenOrgArr];
+                orgArr[i + halfLenOrgArr] = temp
+            }
+
+            return orgArr;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

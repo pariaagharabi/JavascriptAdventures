@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simplify a given absolute path for a file in Unix-style</title>
+</head>
+
+<body>
+    <p>
+        142. Write a JavaScript program to simplify a given absolute path for a file in Unix-style.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userPath = prompt("Enter an absolute path for a file in Unix-style:");
+
+            const displayResult = `
+            User's integer: ${userPath} <br>
+            The result: ${simplifyAbsPath(userPath)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function simplifyAbsPath(orgAbsPath) {
+            console.log(orgAbsPath);
+            const splitPath = orgAbsPath.split("/");
+            const simplifiedPath = [];
+
+
+        }
+
+        let myPath = "/home/user/../documents/../projects/./project1/../../file.txt";
+        console.log(simplifyAbsPath(myUrl));
+
+    </script>
+
+</body>
+
+</html>

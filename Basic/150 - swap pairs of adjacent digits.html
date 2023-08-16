@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap pairs of adjacent digits</title>
+</head>
+
+<body>
+    <p>
+        150. Write a JavaScript program to swap pairs of adjacent digits of a given integer of even length.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = prompt("Enter a number:");
+
+            if (userNum.length % 2 !== 0) {
+                alert("Length of the number must be even!");
+                return;
+            }
+
+            const displayResult = `
+                The user's number: ${userNum}<br>
+                The result: ${swapPairsAdjacentDigits(userNum).join('')}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function swapPairsAdjacentDigits(orgNum) {
+            let swapPaired = [];
+            for (var i = 0; i < orgNum.length; i += 2) {
+                swapPaired.push(orgNum[i + 1], orgNum[i]);
+            }
+
+            return swapPaired;
+        }
+
+    </script>
+
+</body>
+
+</html>

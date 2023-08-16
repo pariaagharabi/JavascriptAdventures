@@ -34,17 +34,27 @@
             let count = 0;
             let divisor = 10;
 
-            while (true) {
-                if (orgNum % divisor !== 0) {
-                    break;
-                }
+            while (orgNum % divisor === 0) {
                 count++;
+                divisor *= 10;
             }
 
             return count;
         }
 
-        console.log(countRightmoseZeros(367800));
+        function countRightmoseZerosV2(orgNum) {
+            let count = 0;
+
+            while (true) {
+                if (orgNum % 10 !== 0) {
+                    break
+                }
+                count++;
+                orgNum = Math.floor(orgNum / 10);
+            }
+
+            return count;
+        }
 
     </script>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break an URL address to an array</title>
+</head>
+
+<body>
+    <p>
+        144. Write a JavaScript program to break an URL address and put its parts into an array.
+        Note: url structure : ://.org[/] and there may be no part in the address.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userUrlAdd = prompt("Enter an URL address(ex: https://www.example.org/page):");
+
+            const displayResult = `
+            User's integer: ${userUrlAdd} <br>
+            The result: ${JSON.stringify(breakURLIntoArray(userUrlAdd))}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function breakURLIntoArray(urlAdd) {
+            let breakedUrl = [];
+
+            let urlAddSplited = urlAdd.split("/");
+
+            const firstEleOfUrlAddSplited = urlAddSplited[0].slice(0, 5);
+
+            breakedUrl = [firstEleOfUrlAddSplited, urlAddSplited[2], urlAddSplited[3]];
+
+            return breakedUrl;
+        }
+
+    </script>
+
+</body>
+
+</html>
