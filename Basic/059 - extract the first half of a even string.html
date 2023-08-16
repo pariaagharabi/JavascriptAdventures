@@ -28,21 +28,21 @@
             tagResult.innerHTML = displayResult;
         }
 
-
         function extractHalfOfStr(orgStr) {
-            let resultStr = [];
-
-            if (orgStr.length % 2 === 0) {
-                let halfTndexOfEvenStr = orgStr.length / 2;
-                console.log(halfTndexOfEvenStr);
-                resultStr = orgStr.slice(0, halfTndexOfEvenStr);
-                console.log(resultStr);
-
-                return resultStr;
+            if (orgStr.length % 2 !== 0) {
+                return "The input string length is not even.";
             }
 
-            return orgStr;
+            let firstHalfStr = [];
+            let halfLenStr = orgStr.length / 2;
+
+            for (var i = 0; i < halfLenStr; i++) {
+                firstHalfStr.push(halfLenStr[i])
+            }
+
+            return firstHalfStr.join("");
         }
+
     </script>
 </body>
 
