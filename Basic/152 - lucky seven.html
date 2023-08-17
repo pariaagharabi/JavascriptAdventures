@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucky sevens</title>
+</head>
+
+<body>
+    <p>
+        152. Write a function called lucky_sevens which takes an array of integers and returns true if any three
+        consecutive elements sum to 7.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of integers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = `
+            The user's array: ${JSON.stringify(userNumsArr)}
+            The result: ${JSON.stringify(luckySevens(userNumsArr))}
+            `;
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function luckySevens(orgArr) {
+            console.log(orgArr);
+            const lenOrgArr = orgArr.length;
+            let sumEles = 0;
+
+            for (var i = 0; i < lenOrgArr - 2; i++) {
+                let sumThreeAdjacentEles = orgArr[i] + orgArr[i + 1] + orgArr[i + 2];
+                if (sumThreeAdjacentEles === 7) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
