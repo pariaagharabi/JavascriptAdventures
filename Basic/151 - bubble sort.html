@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+
+<body>
+    <p>
+        Bubble Sort
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = `
+            The user's array: ${JSON.stringify(userNumsArr)}<br>
+            The result: ${JSON.stringify(bubbleSort(userNumsArr))}
+            `;
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function bubbleSort(orgArr) {
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                for (var j = 0; j < orgArr.length - 1 - i; j++) {
+                    if (orgArr[j] > orgArr[j + 1]) {
+                        let temp = orgArr[j];
+                        orgArr[j] = orgArr[j + 1];
+                        orgArr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return orgArr;
+        }
+    </script>
+
+</body>
+
+</html>
