@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Rotation</title>
+</head>
+
+<body>
+    <p>
+        157. Find out if a string is a rotation of another string. E.g. ABCD is a rotation of BCDA but not ACBD.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = `
+                The user's string: ${userStr}<br>
+
+                The result: ${strRotation(userStr)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function strRotation(orgStr) {
+            let rotatedStr = "";
+            for (var i = 0; i < orgStr.length; i++) {
+                let partTwo = orgStr.slice(1);
+                rotatedStr = partTwo + orgStr[0];
+            }
+
+            if (rotatedStr === orgStr) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
