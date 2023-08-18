@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test divisors of three</title>
+</head>
+
+<body>
+    <p>
+        154. You will be given 2 parameters: a low and high number. Your goal is to print all numbers between low and
+        high, and for each of these numbers print whether or not the number is divisible by 3. If the number is
+        divisible by 3, print the word "div3" directly after the number.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userLowNum = Number(prompt("Enter a low number:"));
+            const userHighNum = Number(prompt("Enter a high number:"));
+
+            const displayResult = `
+                The user's low number: ${userLowNum}<br>
+                The user's high number: ${userHighNum}<br>
+
+                The result: ${testDivisorsOfThree(userLowNum, userHighNum)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function testDivisorsOfThree(lowNum, highNum) {
+            let resultNums = [];
+
+            for (var i = lowNum; i <= highNum; i++) {
+                if (i % 3 === 0) {
+                    resultNums.push(`${i}:div3`);
+                }
+                else {
+                    resultNums.push(i);
+                }
+            }
+
+            return resultNums;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oddball sum</title>
+</head>
+
+<body>
+    <p>
+        155. Write a function called oddball_sum which takes in a list of numbers and returns the sum of all the odd
+        elements. Try to solve with and without reduce function.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:");
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult = `
+                The user's array: ${JSON.stringify(userNumsArr)}<br>
+
+                The result: ${oddballSum(userNumsArr)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function oddballSum(orgArr) {
+            let sumOddNums = 0;
+            for (var i = 0; i < orgArr.length; i++) {
+                if (orgArr[i] % 2 !== 0) {
+                    sumOddNums += oddNums
+                }
+            }
+
+            return sumOddNums;
+        }
+
+    </script>
+
+</body>
+
+</html>
