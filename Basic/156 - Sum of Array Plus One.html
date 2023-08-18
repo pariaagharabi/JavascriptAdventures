@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oddball sum</title>
+    <title>Sum of Array Plus One</title>
 </head>
 
 <body>
     <p>
-        155. Write a function called oddball_sum which takes in a list of numbers and returns the sum of all the odd
-        elements. Try to solve with and without reduce function.
+        156. Write a function that takes an array of integers and returns the sum of the integers after adding 1 to
+        each.
     </p>
     <button onclick="eventHandler()">Run</button>
     <div id="showResult"></div>
@@ -23,22 +23,20 @@
             const displayResult = `
                 The user's array: ${JSON.stringify(userNumsArr)}<br>
 
-                The result: ${oddballSum(userNumsArr)}
+                The result: ${sumAfterAddingOne(userNumsArr)}
             `;
 
             const tagResult = document.getElementById("showResult");
             tagResult.innerHTML = displayResult;
         }
 
-        function oddballSum(orgArr) {
-            let sumOddNums = 0;
+        function sumAfterAddingOne(orgArr) {
+            let sumNums = 0;
             for (var i = 0; i < orgArr.length; i++) {
-                if (orgArr[i] % 2 !== 0) {
-                    sumOddNums += orgArr[i];
-                }
+                sumNums += orgArr[i] + 1;
             }
 
-            return sumOddNums;
+            return sumNums;
         }
 
     </script>
