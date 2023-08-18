@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of seversl arrays</title>
+</head>
+
+<body>
+    <p>
+        153. You will be given an array of several arrays that each contain integers and your goal is to write a
+        function that will sum up all the numbers in all the arrays
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstUserNums = prompt("Enter the first list of integers, seprated by commas:");
+            const firstUserNumsArr = firstUserNums.split(",").map(Number);
+
+            const secondUserNums = prompt("Enter the second list of integers, seprated by commas:");
+            const secondUserNumsArr = secondUserNums.split(",").map(Number);
+
+            const thirdUserNums = prompt("Enter the third list of integers, seprated by commas:");
+            const thirdUserNumsArr = thirdUserNums.split(",").map(Number);
+
+            let allArrs = [firstUserNumsArr, secondUserNumsArr, thirdUserNumsArr];
+
+            const displayResult = `
+                The user's array: ${JSON.stringify(allArrs)}<br>
+                The result: ${JSON.stringify(sumOfSeveralArrsInArr(allArrs))}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function sumOfSeveralArrsInArr(orgArr) {
+            let sumEles = 0;
+
+            for (var i = 0; i < orgArr.length; i++) {
+                for (var j = 0; j < orgArr[i].length; j++) {
+
+                    sumEles += orgArr[i][j];
+                }
+            }
+
+            return sumEles;
+        }
+
+    </script>
+
+</body>
+
+</html>
