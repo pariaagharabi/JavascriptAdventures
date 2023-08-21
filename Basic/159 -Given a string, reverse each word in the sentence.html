@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse each word in the sentence</title>
+</head>
+
+<body>
+    <p>
+        Given a string, reverse each word in the sentence
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="resultShow"></div>
+
+    <script>
+        function eventHandler() {
+            const userSentence = prompt("Enter a sentence: ");
+            const userSentenceArr = userSentence.split(" ");
+
+            const displayResult =
+                `
+                User string: ${userSentence}<br>
+                The result: ${reverseEachWord(userSentenceArr).join(" ")} 
+                `;
+
+            const tagResult = document.getElementById("resultShow");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function reverseEachWord(orgArr) {
+            const reversedArr = [];
+            for (const word of orgArr) {
+                const reversedWord = word.split("").reverse().join("");
+                reversedArr.push(reversedWord);
+            }
+
+            return reversedArr;
+        }
+
+    </script>
+
+</body>
+
+</html>
