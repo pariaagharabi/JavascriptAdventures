@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove duplicates</title>
+</head>
+
+<body>
+    <p>
+        163. Remove duplicates of an array and return an array of only unique elements
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNums = prompt("Enter a list of numbers, seprated by commas:")
+            const userNumsArr = userNums.split(",").map(Number);
+
+            const displayResult =
+                `
+            The user's number: ${JSON.stringify(userNumsArr)}<br>
+            The result: ${JSON.stringify(removeDuplicates(userNumsArr))}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function removeDuplicates(orgArr) {
+            let uniqueEles = [];
+
+            for (let i = 0; i < orgArr.length; i++) {
+                if (!uniqueEles.includes(orgArr[i])) {
+                    uniqueEles.push(orgArr[i]);
+                }
+            }
+
+            return uniqueEles;
+        }
+
+    </script>
+
+</body>
+
+</html>

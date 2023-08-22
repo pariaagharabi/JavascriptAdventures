@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is an int</title>
+</head>
+
+<body>
+    <p>
+        161. How would you check if a number is an integer?
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+
+            const displayResult =
+                `
+            The user's number: ${userNum}<br>
+            The result: ${isInt(userNum)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isInt(orgNum) {
+            if (orgNum % 1 === 0) {
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
