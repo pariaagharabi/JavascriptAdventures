@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty an array</title>
+</head>
+
+<body>
+    <p>
+        161. How to empty an array in JavaScript?
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userEles = prompt("Enter a list, seprated by commas:")
+            const userElesArr = userEles.split(",");
+
+            const displayResult =
+                `
+            The user's array: ${JSON.stringify(userElesArr)}<br>
+            The result: ${JSON.stringify(emptyAnArr(userElesArr))}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function emptyAnArr(orgArr) {
+            return orgArr.splice();
+            // orgArr = [];
+            // return orgArr;
+        }
+
+    </script>
+
+</body>
+
+</html>
