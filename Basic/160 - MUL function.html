@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUL function</title>
+</head>
+
+<body>
+    <p>
+        160. Write a “mul” function which will properly when invoked as below syntax.
+        console.log(mul(2)(3)(4)); // output : 24
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const firstNum = Number(prompt("Enter the first number:"));
+            const secondNum = Number(prompt("Enter the second number:"));
+            const thirdNum = Number(prompt("Enter the third number:"));
+
+            const result = mul(firstNum)(secondNum)(thirdNum);
+
+            const displayResult =
+                `
+            The result: ${result}            
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function mul(a) {
+            return function (b) {
+                return function (c) {
+                    return a * b * c;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
