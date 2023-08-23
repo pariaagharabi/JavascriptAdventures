@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is power of two</title>
+</head>
+
+<body>
+    <p>
+        164. Given an integer, determine if it is a power of 2. If so, return that number, else return -1.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userNum = Number(prompt("Enter a number:"));
+            if (userNum % 1 !== 0) {
+                alert("Please enter an integer!");
+                return;
+            }
+            const userPow = Number(prompt("Enter a number as power:"));
+
+            const displayResult = `
+            The user's number: ${userNum}<br>
+            The user's power: ${userPow}<br>
+
+            The result: ${isPowerOfTwo(userNum)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isPowerOfTwo(orgNum, pow) {
+            if (orgNum < pow) {
+                return -1;
+            }
+
+            let counter = 0;
+
+            while (orgNum >= pow) {
+                let reminder = orgNum % pow;
+                if (reminder !== 0) {
+                    return -1;
+                }
+
+                orgNum = Math.floor(orgNum / pow);
+                counter++;
+            }
+
+            return counter;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
