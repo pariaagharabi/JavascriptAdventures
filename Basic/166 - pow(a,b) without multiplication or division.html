@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pow(a,b) without multiplication or division</title>
+</head>
+
+<body>
+    <p>
+        166. Implement pow(a,b) without multiplication or division.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userBase = Number(prompt("Enter your number as base of power:"));
+            const userExponent = Number(prompt("Enter your number as exponent of power:"));
+
+
+            const displayResult = `
+            The user's base number: ${userBase}<br>
+            The user's exponent number: ${userExponent}<br>
+            The result: ${calcPow(userBase, userExponent)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function calcPow(base, exponent) {
+            if (exponent === 0) {
+                return 1;
+            } else if (exponent === 1) {
+                return base;
+            } else if (exponent < 0) {
+                return 1 / power(base, -exponent);
+            } else {
+                // For even exponents: a^b = (a^(b/2))^2
+                // For odd exponents: a^b = a * (a^(b-1))
+                const halfPower = power(base, Math.floor(exponent / 2));
+                return exponent % 2 === 0 ? halfPower * halfPower : base * halfPower * halfPower;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
