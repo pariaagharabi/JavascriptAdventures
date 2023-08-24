@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparing Objects for Equivalent Property Values</title>
+</head>
+
+<body>
+    <p>
+        1. Write a JavaScript program to compare two objects to determine if the first contains equivalent property
+        values to the second one.
+    </p>
+
+    <script>
+
+        class Student {
+            constructor(id, firstName, lastName, major) {
+                this.id = id;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.major = major;
+            }
+
+            compare(secondObj) {
+                //     const keys = Object.keys(this);
+
+                //     for (const key of keys) {
+                //         if (this[key] !== secondObj[key]) {
+                //             return false;
+                //         }
+                //     }
+
+                //     return true;
+                // }
+
+                for (const key in this) {
+                    if (this[key] !== secondObj[key]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        const std1 = new Student("020", "Sam", "Smith", "Business");
+        const std2 = new Student("067", "Sam", "Smith", "Law");
+        const std3 = new Student("020", "Sam", "Smith", "Business");
+
+
+        console.log(std1.compare(std2));
+        console.log(std1.compare(std3));
+
+    </script>
+
+</body>
+
+</html>

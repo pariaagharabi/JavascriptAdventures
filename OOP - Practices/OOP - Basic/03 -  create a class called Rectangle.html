@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate rectangle area and perimeter</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(240, 205, 194);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        3. Write a JavaScript program to create a class called 'Rectangle' with properties for width and height. Include
+        two methods to calculate rectangle area and perimeter. Create an instance of the 'Rectangle' class and calculate
+        its area and perimeter.
+    </p>
+    <div class="rectangle-width">
+        <label for="width">Enter a number as width of rectangle: </label>
+        <input type="number" id="width" class="width-input">
+    </div>
+    <div class="rectangle-height">
+        <label for="width">Enter a number as height of rectangle: </label>
+        <input type="number" id="width" class="width-input">
+    </div>
+    <div class="rectangle-area">
+        <button class="btn-rectangle-area">Rectangle area</button>
+        <span id="result-rectangle-area" class="result-rectangle-area"></span>
+    </div>
+    <div class="rectangle-peimeter">
+        <button class="btn-rectangle-perimeter">Rectangle perimeter</button>
+        <span id="result-rectangle-peimeter" class="result-rectangle-peimeter"></span>
+    </div>
+
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            area() {
+                return this.width * this.height;
+            }
+
+            perimeter() {
+                return 2 * (this.width + this.height);
+            }
+        }
+
+        let rectangle1 = new Rectangle(3, 5);
+        let rectangle2 = new Rectangle(2, 6);
+
+        console.log(rectangle1);
+        console.log(rectangle1.area());
+
+        console.log(rectangle1);
+        console.log(rectangle1.perimeter());
+
+
+    </script>
+
+</body>
+
+</html>

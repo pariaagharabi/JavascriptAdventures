@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Class</title>
+</head>
+
+<body>
+    <p>
+        02. Write a JavaScript program to create a class called "Person" with properties for name, age and country.
+        Include a method to display the person's details. Create two instances of the 'Person' class and display their
+        details.
+    </p>
+    <button onclick="eventHandler()">Click to see people's information</button>
+    <div id="showResult"></div>
+
+    <script>
+        class Person {
+            constructor(firstName, lastName, age, country) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.country = country;
+            }
+
+
+
+        }
+
+        function displayResult() {
+            const infoValue = document.getElementById("showResult").innerHTML;
+
+        }
+
+
+
+        let person1 = new Person("Anna", "Smith", "33", "USA");
+        let person2 = new Person("Jack", "Yung", "47", "Canada");
+
+        console.log(person1);
+
+        let values = Object.values(person1);
+        console.log(values);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
