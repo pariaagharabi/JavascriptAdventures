@@ -5,6 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Person Class</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #daf5d4;
+            font-family: cursive;
+            display: grid;
+            margin: 20px 40px;
+        }
+
+        button {
+            background-color: #71a379;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,9 +30,27 @@
         Include a method to display the person's details. Create two instances of the 'Person' class and display their
         details.
     </p>
-    <button onclick="eventHandler()">Click to see people's information</button>
-    <div id="resultPerson1"></div>
-    <div id="resultPerson2"></div>
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName">
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName">
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="text" id="age">
+    </div>
+    <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country">
+    </div>
+
+    <div>
+        <button onclick="eventHandler()">Display Person Details</button>
+    </div>
+    <div id="personDetails"></div>
 
 
     <script>
@@ -44,15 +79,19 @@
 
         }
 
-        let person1 = new Person("Anna", "Smith", "33", "USA");
-        let person2 = new Person("Jack", "Yung", "47", "Canada");
-
         function eventHandler() {
-            const tagPerson1 = document.getElementById("resultPerson1");
-            tagPerson1.innerHTML = person1.display();
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const age = document.getElementById("age").value;
+            const country = document.getElementById("country").value;
 
-            const tagPerson2 = document.getElementById("resultPerson2");
-            tagPerson2.innerHTML = person2.display();
+            const person = new Person(firstName, lastName, age, country);
+
+            const personDiv = document.getElementById("personDetails");
+            personDiv.innerHTML = `
+            <h2>Person Details</h2>
+            ${person.display()}
+            `;
         }
 
     </script>
