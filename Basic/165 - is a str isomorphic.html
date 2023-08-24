@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is a isomorphic</title>
+</head>
+
+<body>
+    <p>
+        165. Check if a given string is a isomorphic.
+    </p>
+    <button onclick="eventHandler()">Run</button>
+    <div id="showResult"></div>
+
+    <script>
+        function eventHandler() {
+            const userStr = prompt("Enter a string:");
+
+            const displayResult = `
+            The user's number: ${userStr}<br>
+            The result: ${isIsomorphic(userStr)}
+            `;
+
+            const tagResult = document.getElementById("showResult");
+            tagResult.innerHTML = displayResult;
+        }
+
+        function isIsomorphic(orgStr) {
+
+        }
+
+    </script>
+
+</body>
+
+</html>

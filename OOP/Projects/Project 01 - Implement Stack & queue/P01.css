@@ -1,0 +1,46 @@
+/* CSS Code:*/
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    font-size: large;
+    background-color: #e6decf;
+    margin: 0;
+}
+
+.header{
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'current-stack-info size-stack-info'
+    'create-stack push-stack'
+    'remove-ele remove-ele'; 
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.current-stack-info, .size-stack-info,.create-stack, .push-stack, .pop-ele {
+    text-align: center;
+}
+
+
+button, .stack-size-input, .stack-ele-input {
+    background-color: #106470;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a9391;
+}
+
+.btn-pop {
+    width: 30%;
+}

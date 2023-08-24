@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate rectangle area and perimeter</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(240, 205, 194);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        3. Write a JavaScript program to create a class called 'Rectangle' with properties for width and height. Include
+        two methods to calculate rectangle area and perimeter. Create an instance of the 'Rectangle' class and calculate
+        its area and perimeter.
+    </p>
+    <div>
+        <label for="width">Enter a number as width of rectangle: </label>
+        <input type="number" id="width">
+    </div>
+    <div>
+        <label for="height">Enter a number as height of rectangle: </label>
+        <input type="number" id="height">
+    </div>
+    <div>
+        <button onclick="calculateArea()">Rectangle area</button>
+        <span id="result-rectangle-area"></span>
+    </div>
+    <div>
+        <button onclick="calculatePerimeter()">Rectangle perimeter</button>
+        <span id="result-rectangle-perimeter"></span>
+    </div>
+
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            area() {
+                return this.width * this.height;
+            }
+
+            perimeter() {
+                return 2 * (this.width + this.height);
+            }
+        }
+
+        function calculateArea() {
+            const width = parseFloat(document.getElementById("width").value);
+            const height = parseFloat(document.getElementById("height").value);
+
+            if (isNaN(width) || isNaN(height)) {
+                alert("Please enter valid numbers for width and height.");
+                return;
+            }
+
+            const rectangle = new Rectangle(width, height);
+            const tagRectangleArea = document.getElementById("result-rectangle-area");
+            tagRectangleArea.innerHTML = rectangle.area();
+        }
+
+        function calculatePerimeter() {
+            const width = parseFloat(document.getElementById("width").value);
+            const height = parseFloat(document.getElementById("height").value);
+
+            if (isNaN(width) || isNaN(height)) {
+                alert("Please enter valid numbers for width and height.");
+                return;
+            }
+
+            const rectangle = new Rectangle(width, height);
+            const tagRectanglePerimeter = document.getElementById("result-rectangle-perimeter");
+            tagRectanglePerimeter.innerHTML = rectangle.perimeter();
+        }
+    </script>
+
+</body>
+
+</html>

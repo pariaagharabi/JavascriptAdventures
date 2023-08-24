@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Class</title>
+</head>
+
+<body>
+    <p>
+        02. Write a JavaScript program to create a class called "Person" with properties for name, age and country.
+        Include a method to display the person's details. Create two instances of the 'Person' class and display their
+        details.
+    </p>
+    <button onclick="eventHandler()">Click to see people's information</button>
+    <div id="resultPerson1"></div>
+    <div id="resultPerson2"></div>
+
+
+    <script>
+        class Person {
+            constructor(firstName, lastName, age, country) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.country = country;
+            }
+
+            display() {
+                return `
+                        <dl>
+                            <dt><b>First Name:</b></dt>
+                            <dd>${this.firstName}</dd>
+                            <dt><b>Last Name:</b></dt>
+                            <dd>${this.lastName}</dd>
+                            <dt><b>Age:</b></dt>
+                            <dd>${this.age}</dd>
+                            <dt><b>Country:</b></dt>
+                            <dd>${this.country}</dd>
+                        </dl>
+                    `;
+            }
+
+        }
+
+        let person1 = new Person("Anna", "Smith", "33", "USA");
+        let person2 = new Person("Jack", "Yung", "47", "Canada");
+
+        function eventHandler() {
+            const tagPerson1 = document.getElementById("resultPerson1");
+            tagPerson1.innerHTML = person1.display();
+
+            const tagPerson2 = document.getElementById("resultPerson2");
+            tagPerson2.innerHTML = person2.display();
+        }
+
+    </script>
+
+</body>
+
+</html>
