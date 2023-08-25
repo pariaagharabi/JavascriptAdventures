@@ -70,10 +70,6 @@
                 this.#balance = balance;
             }
 
-            get balance() {
-                return this.#balance;
-            }
-
             deposit(amount) {
                 this.#balance += amount;
                 return this.#balance;
@@ -85,6 +81,10 @@
                 }
 
                 this.#balance -= amount;
+                return this.#balance;
+            }
+
+            get balance() {
                 return this.#balance;
             }
 
