@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creates a class called "BankAccount"</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(121, 49, 106, 0.4);
+            font-family: cursive;
+            margin: 40px;
+        }
+
+        hr {
+            margin: 20px;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            font-size: 25px;
+            gap: 100px;
+        }
+
+        input {
+            width: 10%;
+            height: 25px;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: rgba(195, 110, 198);
+            cursor: pointer;
+            border: 1px solid rgba(195, 110, 198);
+            border-radius: 6px;
+            width: 15%;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: rgba(150, 80, 160);
+        }
+
+        #account-info-panel {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        5.Write a JavaScript program that creates a class called "BankAccount" with properties for account number,
+        balance and interest rate. Include methods to interest rate, deposit and withdraw money from the account. Create
+        some instances of the "BankAccount" class, deposit some money, and withdraw a portion of it.
+    </p>
+    <p>
+        <hr>
+    </p>
+
+    <div class="wrapper">
+
+        <div id="account-creation-panel">
+            <div>
+                <h3>Welecome to Bank Account!</h3>
+            </div>
+            <div>
+                <div>
+                    <label for="account-number">Account Number</label>
+                </div>
+                <input type="number" id="account-number">
+            </div>
+
+            <div>
+                <div>
+                    <label for="initial-balance">Initial Balance</label>
+                </div>
+                <input type="number" id="initial-balance">
+            </div>
+
+            <div>
+                <div>
+                    <label for="intereste-rate">Amount of Interest Rate</label>
+                </div>
+                <input type="number" id="intereste-rate">
+            </div>
+            <div>
+                <button onclick="createBankAccount()">Create Account</button>
+            </div>
+        </div>
+
+        <div id="account-info-panel">
+            <div>
+                <h3>Account Info</h3>
+            </div>
+            <div>
+                <label for="account-number-info">Account Number:</label>
+                <span id="account-number-info"></span>
+            </div>
+            <div>
+                <label for="intereste-rate-info">Intereste Rate:</label>
+                <span id="intereste-rate-info"></span>
+            </div>
+            <div>
+                <label for="account-balance-info">Current Balance:</label>
+                <span id="account-balance-info"></span>
+            </div>
+            <div>
+                <button onclick="calculateInterestRate()">Calculate Interest Rate</button>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <h3>Transactions</h3>
+            </div>
+            <div>
+                <label for="amount-deposit">Amount Deposit</label>
+                <input type="number" id="amount-deposit">
+                <div>
+                    <button onclick="calculateDeposit()">Deposit</button>
+                </div>
+            </div>
+
+            <div>
+                <label for="amount-withdraw">Amount Withdraw</label>
+                <input type="number" id="amount-withdraw">
+                <div>
+                    <button onclick="calculateWithdraw()">Withdraw</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        class BankAccount {
+            #accountNum;
+            #balance;
+            #interestRate;
+
+            constructor(accountNum, balance, interestRate) {
+                this.#accountNum = accountNum;
+                this.#balance = balance;
+                this.#interestRate = interestRate;
+            }
+
+            deposit(amount) {
+                this.#balance += amount;
+                return this.#balance
+            }
+
+            calcInterestRate() {
+                let interest = this.#balance * this.#interestRate;
+                this.#balance += interest;
+                return this.#balance;
+            }
+
+            withdraw(amount) {
+                if (amount > this.#balance) {
+                    throw new Error("Insufficient amount!");
+                }
+
+                this.#balance -= amount;
+                return this.#balance;
+            }
+
+            get accountNum() {
+                return this.#accountNum;
+            }
+
+            get balance() {
+                return this.#balance;
+            }
+
+            get interestRate() {
+                return this.#interestRate * 100;
+            }
+
+        }
+
+        let myAccount;
+
+        function createBankAccount() {
+            const accountNum = Number(document.getElementById("account-number").value);
+            const balance = Number(document.getElementById("initial-balance").value);
+            const interestRate = Number(document.getElementById("intereste-rate").value) / 100;
+
+            if (isNaN(accountNum) || isNaN(balance) || isNaN(interestRate)) {
+                alert("The account number and the initial balance must be filled!");
+                return;
+            }
+
+            myAccount = new BankAccount(accountNum, balance, interestRate);
+
+            display();
+        }
+
+        function calculateDeposit() {
+            const amountDeposit = Number(document.getElementById("amount-deposit").value);
+
+            if (isNaN(amountDeposit)) {
+                alert("The amount must be filled!");
+                return;
+            }
+
+            const newBalance = myAccount.deposit(amountDeposit);
+
+            display();
+
+        }
+
+        function calculateInterestRate() {
+            myAccount.calcInterestRate();
+            display()
+        }
+
+        function calculateWithdraw() {
+            const amountWithdraw = Number(document.getElementById("amount-withdraw").value);
+
+            try {
+                myAccount.withdraw(amountWithdraw);
+            } catch (err) {
+                alert(err.message);
+            }
+
+            display();
+        }
+
+        function display() {
+            document.getElementById("account-number-info").innerHTML = myAccount.accountNum;
+            document.getElementById("account-balance-info").innerHTML = "$" + myAccount.balance;
+            document.getElementById("intereste-rate-info").innerHTML = myAccount.interestRate + "%";
+
+            hideAndShow();
+        }
+
+        function hideAndShow() {
+            const creationPanel = document.getElementById("account-creation-panel");
+            const infoPanel = document.getElementById("account-info-panel");
+
+            console.log(infoPanel.style);
+
+            if (infoPanel.style.display === "") {
+                infoPanel.style.display = "block";
+                creationPanel.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
