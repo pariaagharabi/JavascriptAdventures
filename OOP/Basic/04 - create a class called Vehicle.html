@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #E3BC9A;
+            font-family: cursive;
+            display: grid;
+            margin: 20px 40px;
+        }
+
+        button {
+            background-color: #d79a64;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>
+        4. Write a JavaScript program that creates a class called 'Vehicle' with properties for make, model, and year.
+        Include a method to display vehicle details. Create a subclass called 'Car' that inherits from the 'Vehicle'
+        class and includes an additional property for the number of doors. Override the display method to include the
+        number of doors.
+    </p>
+
+    <div>
+        <label for="make">Make:</label>
+        <input type="text" id="make">
+    </div>
+    <div>
+        <label for="model">Model:</label>
+        <input type="text" id="model">
+    </div>
+    <div>
+        <label for="year">Year:</label>
+        <input type="number" id="year">
+    </div>
+    <div>
+        <label for="doors">Number of doors:</label>
+        <input type="number" id="doors">
+    </div>
+    <div>
+        <button onclick="displayVehicleDetails()">Display Vehicle Details</button>
+    </div>
+    <div id="vehicleDetails"></div>
+
+
+    <script>
+        class Vehicle {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            display() {
+                return `
+                <dl>
+                    <dt><b>Make:</b></dt>
+                    <dd>${this.make}</dd>
+                    <dt><b>Model:</b></dt>
+                    <dd>${this.model}</dd>
+                    <dt><b>Year:</b></dt>
+                    <dd>${this.year}</dd>
+                </dl>
+                `;
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(make, model, year, doors) {
+                super(make, model, year);
+                this.doors = doors;
+            }
+
+            display() {
+                let subClassProp = `
+                <dl>
+                    <dt><b>Number of doors:</b></dt>
+                    <dd>${this.doors}</dd>
+                </dl>
+                `;
+
+                return super.display() + subClassProp;
+            }
+        }
+
+        function displayVehicleDetails() {
+            const make = document.getElementById("make").value;
+            const model = document.getElementById("model").value;
+            const year = document.getElementById("year").value;
+            const doors = document.getElementById("doors").value;
+
+            const vehicle = new Car(make, model, year, doors);
+
+            const vehicleDetailsDiv = document.getElementById("vehicleDetails");
+            vehicleDetailsDiv.innerHTML = `
+                <h2>Vehicle Details</h2>
+                ${vehicle.display()}
+            `;
+        }
+
+    </script>
+
+</body>
+
+</html>
