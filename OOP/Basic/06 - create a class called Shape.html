@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a class called 'Shape'</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(185, 202, 194);
+            font-family: cursive;
+        }
+
+        .wrapper {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .circle-area,
+        .triangle-area {
+            border-style: outset;
+        }
+
+        .form-input-container {
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 10%;
+            height: 25px;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: rgb(95, 162, 131);
+            cursor: pointer;
+            border: 1px solid rgb(95, 162, 131);
+            border-style: outset;
+            border-radius: 6px;
+            width: 15%;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(218, 242, 218);
+        }
+
+        hr {
+            width: 25%;
+            color: rgb(19, 59, 19);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        6. Write a JavaScript program that creates a class called 'Shape' with a method to calculate the area. Create
+        two subclasses, 'Circle' and 'Triangle', that inherit from the 'Shape' class and override the area calculation
+        method. Create an instance of the 'Circle' class and calculate its area. Similarly, do the same for the
+        'Triangle' class.
+    </p>
+
+    <div class="wrapper">
+        <div class="circle-area">
+            <div>
+                <h3>Circle Area Calculation</h3>
+            </div>
+            <div>
+                <div class="form-input-container">
+                    <label for="radius">Radius:</label>
+                </div>
+                <div class="form-input-container">
+                    <input type="number" id="radius">
+                </div>
+                <div class="form-input-container">
+                    <button onclick="circleArea()">Calculate</button>
+                </div>
+                <hr>
+                <div>
+                    <h3>
+                        Result:
+                    </h3>
+                    <span id="circle-area-result"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="triangle-area">
+            <div>
+                <h3>Triangle Area Calculation</h3>
+            </div>
+            <div>
+                <div class="form-input-container">
+                    <label for="triangle-base">Base:</label>
+                </div>
+                <div class="form-input-container">
+                    <input type="number" id="triangle-base">
+                </div>
+                <div class="form-input-container">
+                    <label for="triangle-height">Height:</label>
+                </div>
+                <div class="form-input-container">
+                    <input type="number" id="triangle-height">
+                </div>
+                <div class="form-input-container">
+                    <button onclick="triangleArea()">Calculate</button>
+                </div>
+                <hr>
+                <div>
+                    <h3>Result: </h3>
+                    <span id="triangle-area-result"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script>
+            class Shape {
+                constructor() { }
+                area() { }
+            }
+
+            class Circle extends Shape {
+                #radius
+
+                constructor(radius) {
+                    super();
+                    this.#radius = radius;
+                }
+
+                area() {
+                    return Math.PI * this.#radius * this.#radius;
+                }
+            }
+
+            class Triangle extends Shape {
+                #base;
+                #height;
+
+                constructor(base, height) {
+                    super();
+                    this.#base = base;
+                    this.#height = height;
+                }
+
+                area() {
+                    return 1 / 2 * (this.#base * this.#height);
+                }
+            }
+
+            let circle;
+            let triangle;
+
+            function circleArea() {
+                const radius = Number(document.getElementById("radius").value);
+
+                circle = new Circle(radius);
+
+                document.getElementById("circle-area-result").innerHTML = circle.area();
+            }
+
+            function triangleArea() {
+                const base = Number(document.getElementById("triangle-base").value);
+                const height = Number(document.getElementById("triangle-height").value);
+
+                triangle = new Triangle(base, height);
+
+                document.getElementById("triangle-area-result").innerHTML = triangle.area();
+            }
+
+        </script>
+
+
+</body>
+
+</html>
