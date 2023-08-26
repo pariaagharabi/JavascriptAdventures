@@ -217,7 +217,6 @@
             const newBalance = myAccount.deposit(amountDeposit);
 
             display();
-
         }
 
         function calculateInterestRate() {
@@ -248,8 +247,6 @@
         function hideAndShow() {
             const creationPanel = document.getElementById("account-creation-panel");
             const infoPanel = document.getElementById("account-info-panel");
-
-            console.log(infoPanel.style);
 
             if (infoPanel.style.display === "") {
                 infoPanel.style.display = "block";
