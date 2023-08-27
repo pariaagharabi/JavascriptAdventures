@@ -129,8 +129,21 @@
 
         <script>
             class Shape {
-                constructor() { }
-                area() { }
+                constructor() {
+                    if (this.constructor === Shape) {
+                        throw new Error("You cannot instantiate from class Shape.")
+                    }
+                }
+                area() {
+                    throw new Error("Method 'area' is not implemented. Please overirde it in the subclass.")
+                }
+                get name() {
+                    throw new Error("Property 'name' is not implemented. Please overide it in the subclass.")
+                }
+
+                display() {
+                    return `My name is ${this.name} and my area is ${this.area()}`
+                }
             }
 
             class Circle extends Shape {
@@ -143,6 +156,10 @@
 
                 area() {
                     return Math.PI * this.#radius * this.#radius;
+                }
+
+                get name() {
+                    return "Circle";
                 }
             }
 
@@ -159,6 +176,10 @@
                 area() {
                     return 1 / 2 * (this.#base * this.#height);
                 }
+
+                get name() {
+                    return "Triangle";
+                }
             }
 
             let circle;
@@ -169,7 +190,8 @@
 
                 circle = new Circle(radius);
 
-                document.getElementById("circle-area-result").innerHTML = circle.area();
+                // document.getElementById("circle-area-result").innerHTML = circle.display();
+                displayResult();
             }
 
             function triangleArea() {
@@ -178,7 +200,35 @@
 
                 triangle = new Triangle(base, height);
 
-                document.getElementById("triangle-area-result").innerHTML = triangle.area();
+                // document.getElementById("triangle-area-result").innerHTML = triangle.display();
+                displayResult();
+            }
+
+            function displayResult() {
+                // V1
+                document.getElementById("circle-area-result").innerHTML = circle?.display() || "";
+                document.getElementById("triangle-area-result").innerHTML = triangle?.display() || "";
+
+                // V2
+                // document.getElementById("circle-area-result").innerHTML = (circle && circle.display()) || "";
+                // document.getElementById("triangle-area-result").innerHTML = (triangle && triangle.display()) || "";
+
+
+                // V3
+                // if (circle) {
+                //     document.getElementById("circle-area-result").innerHTML = circle.display();
+                // }
+                // else {
+                //     document.getElementById("circle-area-result").innerHTML = "";
+                // }
+
+
+                // if (triangle) {
+                //     document.getElementById("triangle-area-result").innerHTML = triangle.display();
+                // }
+                // else {
+                //     document.getElementById("triangle-area-result").innerHTML = "";
+                // }
             }
 
         </script>
