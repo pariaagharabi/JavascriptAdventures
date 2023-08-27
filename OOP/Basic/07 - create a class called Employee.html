@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a class called 'Employee'</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(255, 217, 147);
+            font-family: cursive;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .wrapper {
+            border-style: outset;
+            padding: 35px;
+        }
+
+        input {
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: orange;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: rgb(248, 212, 145);
+        }
+
+        hr {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        7. Write a JavaScript program that creates a class called 'Employee' with properties for name and salary.
+        Include a method to calculate annual salary. Create a subclass called 'Manager' that inherits from the
+        'Employee' class and adds an additional property for department. Override the annual salary calculation method
+        to include bonuses for managers. Create two instances of the 'Manager' class and calculate their annual salary.
+    </p>
+    <div class="container">
+        <div class="wrapper">
+            <div>
+                <h3>Annual bonus calculation</h3>
+            </div>
+            <div>
+                <div>
+                    <label for="name">Name:</label>
+                    <div>
+                        <input type="text" id="name">
+                    </div>
+                </div>
+                <div>
+                    <label for="">Hourly wage:</label>
+                    <div>
+                        <input type="number" id="hourly-rate">
+                    </div>
+                </div>
+                <div>
+                    <label for="">Departemet:</label>
+                    <div>
+                        <input type="text" id="department">
+                    </div>
+                </div>
+                <div>
+                    <label for="">Annual bonus:</label>
+                    <div>
+                        <input type="number" id="annual-bonus">
+                    </div>
+                </div>
+                <div>
+                    <button onclick="createEmployee()">Calcaulate Annual Bounes Payment</button>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h3>Result:</h3>
+                <span id="showResult"></span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        class Employee {
+            #name;
+            #hourlyRate;
+
+            constructor(name, hourlyRate) {
+                this.#name = name;
+                this.#hourlyRate = hourlyRate;
+            }
+
+            get hourlyRate() {
+                return this.#hourlyRate;
+            }
+
+            CalcAnnualSalary() {
+                return this.#hourlyRate * 52 * 40;
+            }
+
+            display() {
+                return `Name: ${this.#name}, Annual Salary: ${this.CalcAnnualSalary()}`;
+            }
+        }
+
+        class Manager extends Employee {
+            #department;
+            #annualBounse;
+
+            constructor(name, hourlyRate, department, annualBounse) {
+                super(name, hourlyRate)
+                this.#department = department;
+                this.#annualBounse = annualBounse;
+            }
+
+            CalcAnnualSalary() {
+                return super.CalcAnnualSalary() + this.#annualBounse;
+            }
+
+            display() {
+                return super.display() + `, Department: ${this.#department}`;
+            }
+        }
+
+        let myManager;
+
+        function createEmployee() {
+            const name = document.getElementById("name").value;
+            const hourlyRate = Number(document.getElementById("hourly-rate").value);
+            const department = document.getElementById("department").value;
+            const annualBonus = Number(document.getElementById("annual-bonus").value);
+
+            myManager = new Manager(name, hourlyRate, department, annualBonus);
+
+            const result = document.getElementById("showResult");
+            result.innerHTML = myManager.display();
+        }
+
+    </script>
+
+</body>
+
+</html>
