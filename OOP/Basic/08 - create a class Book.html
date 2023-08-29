@@ -80,7 +80,7 @@
             </div>
 
             <div>
-                <button onclick="displayDetails()">Dispaly book details</button>
+                <button onclick="createBook()">Dispaly book details</button>
                 <hr>
                 <span id="displayDetails"></span>
             </div>
@@ -107,7 +107,7 @@
                     <dt><b>Title:</b></dt>
                     <dd>${this.title}</dd>
                     <dt><b>Author:</b></dt>
-                    <dd>${this.model}</dd>
+                    <dd>${this.author}</dd>
                     <dt><b>Publication year:</b></dt>
                     <dd>${this.publicationYear}</dd>
                 </dl>
@@ -153,7 +153,7 @@
 
         let myBook;
 
-        function bookInfo() {
+        function createBook() {
             const title = document.getElementById("book-title").value;
             const author = document.getElementById("book-author").value;
             const publicationYear = Number(document.getElementById("book-publication-year").value);
@@ -161,11 +161,7 @@
 
             myBook = new Ebook(title, author, publicationYear, bookPrice);
 
-            displayDetails();
-        }
-
-        function displayDetails() {
-            document.getElementById("displayDetails").innerHTML = (displayDetails?.displayBookDetails()) || "";
+            document.getElementById("displayDetails").innerHTML = (myBook?.displayBookDetails()) || "";
         }
 
         // function displayBookDetails() {
