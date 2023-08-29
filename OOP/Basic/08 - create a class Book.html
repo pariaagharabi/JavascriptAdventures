@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a class `Book`</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: thistle;
+            font-family: cursive;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .center-content {
+            border-style: outset;
+            padding: 40px;
+            width: 35%;
+        }
+
+        hr {
+            width: 35%;
+        }
+
+        button {
+            background-color: rgb(214, 138, 214);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(209, 194, 209);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        8. Write a JavaScript program that creates a class `Book` with properties for title, author, and publication
+        year. Include a method to display book details. Create a subclass called 'Ebook' that inherits from the 'Book'
+        class and includes an additional property for book price. Override the display method to include the book price.
+        Create an instance of the 'Ebook' class and display its details.
+    </p>
+    <div class="container">
+        <div class="center-content">
+            <h2>Book Info:</h2>
+            <div>
+                <label for="">Titel:</label>
+                <div>
+                    <input type="text" id="book-title">
+                </div>
+            </div>
+            <div>
+                <label for="">Author:</label>
+                <div>
+                    <input type="text" id="book-author">
+                </div>
+            </div>
+            <div>
+                <label for="">Publication year:</label>
+                <div>
+                    <input type="number" id="book-publication-year">
+                </div>
+            </div>
+            <div>
+                <label for="">Book price:</label>
+                <div>
+                    <input type="number" id="book-price">
+                </div>
+            </div>
+
+            <div>
+                <button onclick="displayDetails()">Dispaly book details</button>
+                <hr>
+                <span id="displayDetails"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        class Book {
+            #title;
+            #author;
+            #publicationYear;
+
+            constructor(title, author, publicationYear) {
+                this.#title = title;
+                this.#author = author;
+                this.#publicationYear = publicationYear;
+            }
+
+            displayBookDetails() {
+                return `
+                <dl>
+                    <dt><b>Title:</b></dt>
+                    <dd>${this.title}</dd>
+                    <dt><b>Author:</b></dt>
+                    <dd>${this.model}</dd>
+                    <dt><b>Publication year:</b></dt>
+                    <dd>${this.publicationYear}</dd>
+                </dl>
+                `;
+            }
+
+            get title() {
+                return this.#title;
+            }
+
+            get author() {
+                return this.#author;
+            }
+
+            get publicationYear() {
+                return this.#publicationYear;
+            }
+        }
+
+        class Ebook extends Book {
+            #bookPrice;
+
+            constructor(title, author, publicationYear, bookPrice) {
+                super(title, author, publicationYear);
+                this.#bookPrice = bookPrice;
+            }
+
+            displayBookDetails() {
+                let subClassProp = `
+                <dl>
+                    <dt><b>Book price:</b></dt>
+                    <dd>$ ${this.bookPrice}</dd>
+                </dl>
+                `;
+
+                return super.displayBookDetails() + subClassProp;
+            }
+
+            get bookPrice() {
+                return this.#bookPrice;
+            }
+        }
+
+        let myBook;
+
+        function bookInfo() {
+            const title = document.getElementById("book-title").value;
+            const author = document.getElementById("book-author").value;
+            const publicationYear = Number(document.getElementById("book-publication-year").value);
+            const bookPrice = Number(document.getElementById("book-price").value);
+
+            myBook = new Ebook(title, author, publicationYear, bookPrice);
+
+            displayDetails();
+        }
+
+        function displayDetails() {
+            document.getElementById("displayDetails").innerHTML = (displayDetails?.displayBookDetails()) || "";
+        }
+
+        // function displayBookDetails() {
+        //     const title = document.getElementById("book-title").value;
+        //     const author = document.getElementById("book-author").value;
+        //     const publicationYear = Number(document.getElementById("book-publication-year").value);
+        //     const bookPrice = Number(document.getElementById("book-price").value);
+
+        //     const book = new Ebook(title, author, publicationYear, bookPrice);
+
+        //     const displayDetailsDiv = document.getElementById("displayDetails");
+        //     displayDetailsDiv.innerHTML = `
+        //         <h2>Book Details:</h2>
+        //         ${book.displayBookDetails()}
+        //     `;
+        // }
+
+    </script>
+
+
+
+</body>
+
+</html>
