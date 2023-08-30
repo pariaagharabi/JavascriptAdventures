@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a class called 'Bank'</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(251, 209, 132);
+            font-family: cursive;
+            font-size: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        [class^="content-"] {
+            background-color: orange;
+            place-items: center;
+            padding: 15px;
+        }
+
+        .content {
+            border-style: outset;
+            width: 60%;
+        }
+
+        hr {
+            width: 35%;
+        }
+
+        button {
+            background-color: rgb(232, 110, 44);
+            cursor: pointer;
+            border-color: rgb(232, 110, 44);
+        }
+
+        button:hover {
+            background-color: rgb(237, 196, 152);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        10. Write a JavaScript program that creates a class called Bank with properties for bank names and branches.
+        Include methods to add a branch, remove a branch, and display all branches. Create an instance of the Bank class
+        and perform operations to add and remove branches.
+    </p>
+    <div class="container">
+        <div class="content">
+            <div class="content-bank-name">
+                <h3>Bank Names and Branches</h3>
+                <label for="bank-name">Bank Name:</label>
+                <input type="text" id="bank-name">
+                <div class="content-create-bank">
+                    <button onclick="createBank()">Create Bank</button>
+                </div>
+            </div>
+
+            <div class="content-bank-branch">
+                <label for="bank-branch">Add A Bank Branch:</label>
+                <input type="text" id="bank-branch">
+                <div class="content-add">
+                    <button onclick="addBranch()">Add a Branch</button>
+                </div>
+            </div>
+
+            <div class="content-bank-remove">
+                <label for="removed-branch">Remove A Bank Branch:</label>
+                <input type="text" id="removed-branch">
+                <div class="content-remove">
+                    <button onclick="removeBranch()">Remove a Branch</button>
+                </div>
+            </div>
+
+            <div class="content-result">
+                <hr>
+                <h3>Result: </h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        class Bank {
+            #name;
+            #branches;
+
+            constructor(name) {
+                this.#name = name;
+                this.#branches = [];
+            }
+
+            addBranch(branch) {
+                this.#branches.push(branch);
+            }
+
+            removeBranch(branch) {
+                if (this.#branches.length === 0) {
+                    throw new Error("The branch is empty!");
+                }
+
+                if (this.#branches.includes(branch)) {
+                    const index = this.#branches.indexOf(branch);
+                    // only splice array when item is found
+                    if (index > -1) {
+                        this.#branches.splice(index, 1); //1 parameter means remove one item only
+                    }
+                }
+            }
+
+                this.#branches;
+            }
+
+        display() {
+            let branchesList = "";
+
+            for (const branch of this.#branches) {
+                branchesList += `<dt>${branch}</dt>`;
+            }
+
+            return `
+                    ${this.#name} Bank
+                    <h3>Branches:</h3>
+                    <dl>${branchesList}</dl>
+                `;
+        }
+
+        }
+
+        let bankObj;
+
+        function createBank() {
+            const name = document.getElementById("bank-name").value;
+
+            bankObj = new Bank(name);
+
+            display();
+        }
+
+        function addBranch() {
+            const branch = document.getElementById("bank-branch").value;
+            bankObj.addBranch(branch);
+
+            display();
+        }
+
+        function removeBranch() {
+            try {
+                document.getElementById("removed-branch").value;
+
+            } catch (error) {
+                alert(error.message);
+            }
+
+            display();
+        }
+
+        function display() {
+            document.getElementById("showResult").innerHTML = (bankObj?.display()) || "";
+        }
+
+
+    </script>
+
+</body>
+
+</html>
