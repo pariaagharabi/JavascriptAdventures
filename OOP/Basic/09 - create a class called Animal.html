@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a class called 'Animal'</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(251, 223, 251);
+        }
+
+        [class^="content-"] {
+            background-color: rgb(227, 190, 232);
+
+            /* To place the letter at the center */
+            display: grid;
+            place-items: center;
+            padding: 8px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-info {
+            border-style: outset;
+            padding: 40px;
+            width: 50%;
+        }
+
+        hr {
+            width: 35%;
+        }
+
+        button {
+            background-color: rgb(214, 138, 214);
+            cursor: pointer;
+            border-color: rgb(214, 138, 214);
+        }
+
+        button:hover {
+            background-color: rgb(209, 194, 209);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        09. Write a JavaScript program that create a class called 'Animal' with properties for species and sound.
+        Include a method to make the animal's sound. Create a subclass called 'Dog' that inherits from the 'Animal'
+        class and adds an additional property for color. Override the make sound method to include the dog's color.
+        Create an instance of the 'Dog' class and make it make its sound.
+    </p>
+
+    <div class="container">
+        <div class="content-info">
+            <h3>Animal info:</h3>
+            <div class="content-species">
+                <label for="species">Species</label>
+                <div>
+                    <input type="text" name="species" id="species">
+                </div>
+            </div>
+            <div class="content-sound">
+                <label for="sound">Sound</label>
+                <div>
+                    <input type="text" name="sound" id="sound">
+                </div>
+            </div>
+            <div class="content-color">
+                <label for="color">Color</label>
+                <div>
+                    <input type="text" name="color" id="color">
+                </div>
+            </div>
+
+            <div>
+                <button class="content-creation" onclick="createAnimal()">Click</button>
+            </div>
+            <hr>
+            <h3>Result: </h3>
+            <span class="content-info-result" id="showResult"></span>
+        </div>
+    </div>
+
+
+    <script>
+        class Animal {
+            #species;
+            #sound;
+
+            constructor(species, sound) {
+                this.#species = species;
+                this.#sound = sound;
+            }
+
+            makeAnimalSound() {
+                return `
+                <dl>
+                    <dt>The species:</dt>
+                    <dd>${this.#species}</dd>
+                    <dt>The sound:</dt>
+                    <dd>${this.#sound}</dd>
+                </dl>
+                `;
+            }
+        }
+
+        class Dog extends Animal {
+            #color;
+
+            constructor(species, sound, color) {
+                super(species, sound);
+                this.#color = color;
+            }
+
+            makeAnimalSound() {
+                let subClassProp = `
+                <dl>
+                    <dt>The color:</dt>
+                    <dd>${this.#color}</dd>
+                </dl>
+                `;
+
+                return super.makeAnimalSound() + subClassProp;
+            }
+        }
+
+        let dogObj;
+
+        function createAnimal() {
+            const species = document.getElementById("species").value;
+            const sound = document.getElementById("sound").value;
+            const color = document.getElementById("color").value;
+
+            dogObj = new Dog(species, sound, color);
+
+            document.getElementById("showResult").innerHTML = (dogObj?.makeAnimalSound()) || "";
+        }
+
+    </script>
+
+</body>
+
+</html>
