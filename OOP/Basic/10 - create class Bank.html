@@ -108,35 +108,29 @@
             }
 
             removeBranch(branch) {
-                if (this.#branches.length === 0) {
-                    throw new Error("The branch is empty!");
+                const index = this.#branches.indexOf(branch);
+
+                if (index < 0) {
+                    throw new Error("The branch does not exist!");
                 }
 
-                if (this.#branches.includes(branch)) {
-                    const index = this.#branches.indexOf(branch);
-                    // only splice array when item is found
-                    if (index > -1) {
-                        this.#branches.splice(index, 1); //1 parameter means remove one item only
-                    }
+                // only splice array when item is found
+                this.#branches.splice(index, 1); //1 parameter means remove one item only
+            }
+
+            display() {
+                let branchesList = "";
+
+                for (const branch of this.#branches) {
+                    branchesList += `<dt>${branch}</dt>`;
                 }
-            }
 
-                this.#branches;
-            }
-
-        display() {
-            let branchesList = "";
-
-            for (const branch of this.#branches) {
-                branchesList += `<dt>${branch}</dt>`;
-            }
-
-            return `
+                return `
                     ${this.#name} Bank
                     <h3>Branches:</h3>
                     <dl>${branchesList}</dl>
                 `;
-        }
+            }
 
         }
 
@@ -159,7 +153,8 @@
 
         function removeBranch() {
             try {
-                document.getElementById("removed-branch").value;
+                const branch = document.getElementById("removed-branch").value;
+                bankObj.removeBranch(branch);
 
             } catch (error) {
                 alert(error.message);

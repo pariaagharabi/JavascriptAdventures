@@ -99,6 +99,10 @@
             #sound;
 
             constructor(species, sound) {
+                if (this.constructor === Animal) {
+                    throw new Error("You cannot instantiate from class Animal.")
+                }
+
                 this.#species = species;
                 this.#sound = sound;
             }
