@@ -96,32 +96,31 @@
     <script>
         class Bank {
             #name;
-            #branches;
 
             constructor(name) {
                 this.#name = name;
-                this.#branches = [];
+                this.branches = [];
             }
 
             addBranch(branch) {
-                this.#branches.push(branch);
+                this.branches.push(branch);
             }
 
             removeBranch(branch) {
-                const index = this.#branches.indexOf(branch);
+                const index = this.branches.indexOf(branch);
 
                 if (index < 0) {
                     throw new Error("The branch does not exist!");
                 }
 
                 // only splice array when item is found
-                this.#branches.splice(index, 1); //1 parameter means remove one item only
+                this.branches.splice(index, 1); //1 parameter means remove one item only
             }
 
             display() {
                 let branchesList = "";
 
-                for (const branch of this.#branches) {
+                for (const branch of this.branches) {
                     branchesList += `<dt>${branch}</dt>`;
                 }
 

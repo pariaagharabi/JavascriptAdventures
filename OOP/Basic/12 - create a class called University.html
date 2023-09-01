@@ -67,9 +67,9 @@
                 </div>
             </div>
 
-            <div class="content-university-department">
-                <label for="university-department">Add A Department:</label>
-                <input type="text" id="university-department">
+            <div class="content-add-department">
+                <label for="add-department">Add A Department:</label>
+                <input type="text" id="add-department">
                 <div class="content-add">
                     <button onclick="addDepartment()">Add a Department</button>
                 </div>
@@ -97,38 +97,74 @@
         class University {
             #name;
 
-            constructor(name, department) {
+            constructor(name) {
                 this.#name = name;
-                this.department = [];
+                this.departments = [];
             }
 
-            addDepartment() {
-
+            addDepartment(department) {
+                return this.departments.push(department);
             }
 
-            removeDepartment() {
+            removeDepartment(department) {
+                const index = this.departments.indexOf(department);
 
+                if (index < 0) {
+                    throw new Error("The department does not exist!");
+                }
+
+                // only splice array when item is found
+                this.departments.splice(index, 1); //1 parameter means remove one item only
             }
 
             display() {
+                let departmentList = "";
 
+                for (const department of this.departments) {
+                    departmentList += `<dt>${department}</dt>`;
+                }
+
+                return `
+                    ${this.#name} University
+                    <h3>Departments:</h3>
+                    <dl>${departmentList}</dl>
+                `;
             }
         }
 
-        function createUnuversity() {
 
+        let universityObj;
+
+        function createUnuversity() {
+            const name = document.getElementById("university-name").value;
+
+            universityObj = new University(name);
+
+            display();
         }
 
         function addDepartment() {
+            const department = document.getElementById("add-department").value;
 
+            universityObj.addDepartment(department);
+
+            display();
         }
 
         function removeDepartment() {
+            try {
+                const department = document.getElementById("removed-department").value;
 
+                universityObj.removeDepartment(department);
+
+                display();
+            } catch (error) {
+                alert(error.message);
+            }
         }
 
         function display() {
-
+            document.getElementById("showResult").innerHTML = (universityObj?.display()) || "";
         }
     </script>
 
