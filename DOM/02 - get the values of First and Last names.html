@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return first and last name from a form</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            2. Write a JavaScript function to get the values of First and Last names of the following form.
+            Sample HTML file :
+        </p>
+    </div>
+
+    <hr>
+
+    <form id="form1" onsubmit="onsubmitHandler()">
+        First name: <input type="text" name="fname" value="David"><br>
+        Last name: <input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- JS code -->
+    <script>
+        function onsubmitHandler() {
+            event.preventDefault();
+            getFormvalue();
+        }
+
+        function getFormvalue() {
+            const firstName = document.getElementById("form1").elements["fname"].value;
+            const lastName = document.getElementById("form1").elements["lname"].value;
+
+            console.log(`First Name: + ${firstName} + Last Name: + ${lastName}`);
+        }
+
+        getFormvalue();
+
+    </script>
+</body>
+
+</html>
