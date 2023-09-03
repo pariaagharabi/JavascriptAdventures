@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function reverse a number</title>
+</head>
+
+<body>
+    <p>
+        1. Write a JavaScript function that reverses a number.
+        Example x = 1234;
+        Expected Output : 4321
+    </p>
+
+    <hr>
+
+    <div>
+        <button id="btn-reverse-num">Revese Number</button>
+    </div>
+
+    <script>
+        // document.getElementById("btn-reverse-num").addEventListener("click", clickHandler);
+
+        document.getElementById("btn-reverse-num").addEventListener("click", () => {
+            const userNum = Number(prompt("Enter a number:"));
+
+            alert(reverseNum(userNum));
+        });
+
+
+        function reverseNum(orgNum) {
+            let reversedNum = 0;
+
+            while (orgNum > 0) {
+                let lastDigit = orgNum % 10;
+                orgNum = Math.floor(orgNum / 10);
+                reversedNum = reversedNum * 10 + lastDigit;
+            }
+
+            return reversedNum;
+        }
+
+
+        // Version 2:
+        // function reverseNum(orgNum) {
+        //     let convertNumToStr = orgNum.toString();
+        //     let reversedNum = "";
+
+        //     for (let i = convertNumToStr.length - 1; i >= 0; i--) {
+        //         reversedNum += convertNumToStr[i];
+        //     }
+
+        //     return Number(reversedNum);
+        // }
+    </script>
+</body>
+
+</html>
