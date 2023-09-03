@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set paragraph background color</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            3. Write a JavaScript program to set paragraph background color.
+        </p>
+    </div>
+
+    <hr>
+
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quasi eos et, magnam ipsam voluptatum
+        doloremque nam nesciunt quam placeat aut beatae architecto libero harum quia adipisci non cum!
+    </p>
+    <div>
+        <button onclick="setBGColor()">Run</button>
+        <!-- <span id="showResult"></span> -->
+    </div>
+
+    <!-- JS code -->
+    <script>
+        function setBGColor() {
+            const paragraph = document.getElementById("paragraph");
+
+            paragraph.style.backgroundColor = "aqua";
+        }
+    </script>
+</body>
+
+</html>

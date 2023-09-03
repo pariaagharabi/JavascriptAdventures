@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get the requested values</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            4. Here is a sample HTML file with a submit button. Write a JavaScript function to get the value of the
+            href, hreflang, rel, target, and type attributes of the specified link.
+        </p>
+    </div>
+
+    <hr>
+
+    <div>
+        <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+                href="https://www.youtube.com/@3-MinuteFrontWebFlow/featured">DOM Practice</a></p>
+        <button onclick="getAttributes()">Click here to get attributes value</button>
+    </div>
+
+    <!-- JS code -->
+    <script>
+        function onclickHandler() {
+            event.preventDefault();
+            getAttributes();
+        }
+
+        function getAttributes() {
+            const link = document.getElementById("w3r");
+            const type = link.getAttribute("type");
+            const hreflang = link.getAttribute("hreflang");
+            const rel = link.getAttribute("rel");
+            const target = link.getAttribute("target");
+            const href = link.getAttribute("href");
+
+            const attributesValue = `
+                Type: ${type}
+                Hreflang: ${hreflang}
+                Rel: ${rel}
+                Target: ${target}
+                Href: ${href}
+            `;
+
+            console.log(attributesValue);
+        }
+
+    </script>
+</body>
+
+</html>

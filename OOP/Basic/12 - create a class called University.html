@@ -63,7 +63,7 @@
                 <label for="university-name">University Name:</label>
                 <input type="text" id="university-name">
                 <div class="content-create-university">
-                    <button onclick="createUnuversity()">Create University</button>
+                    <button onclick="createUniversity()">Create University</button>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="content-department-remove">
+            <div class="content-remove-department">
                 <label for="removed-department">Remove Department:</label>
                 <input type="text" id="removed-department">
                 <div class="content-remove">
@@ -125,9 +125,12 @@
                 }
 
                 return `
-                    ${this.#name} University
-                    <h3>Departments:</h3>
-                    <dl>${departmentList}</dl>
+                <dl>
+                    <dt>Name:</dt>
+                    <dd>${this.#name} University<dd>
+                    <dt>Departments:</dt>
+                    <dd>${departmentList}</dd>
+                </dl>
                 `;
             }
         }
@@ -135,7 +138,7 @@
 
         let universityObj;
 
-        function createUnuversity() {
+        function createUniversity() {
             const name = document.getElementById("university-name").value;
 
             universityObj = new University(name);
