@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        2. Write a JavaScript function that checks whether a passed string is a palindrome or not?
+        A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
+    </p>
+
+    <hr>
+
+    <div>
+        <button id="btn-check-palindrome">Check Palindrome</button>
+    </div>
+
+    <script>
+        document.getElementById("btn-check-palindrome").addEventListener("click", () => {
+            const userStr = prompt("Enter a word:");
+
+            alert(checkPalindrome(userStr));
+        });
+
+        function checkPalindrome(orgStr) {
+            orgStr = orgStr.toLowerCase();
+            for (let i = 0; i < orgStr.length / 2; i++) {
+                if (orgStr[i] !== orgStr[orgStr.length - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>
