@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function returns a str in alphabetical order</title>
+</head>
+
+<body>
+    <p>
+        4. Write a JavaScript function that returns a string that has letters in alphabetical order.
+        Example string : 'webmaster'
+        Expected Output : 'abeemrstw'
+    </p>
+    <div>
+        <label for="user-input">Enter a string: </label>
+        <input type="text" id="user-input">
+        <button id="btn-alphabetical-order-str">String in alphabetical order</button>
+    </div>
+
+
+    <script>
+        document.getElementById("btn-alphabetical-order-str").addEventListener("click", () => {
+            const userStr = document.getElementById("user-input").value;
+
+            alert(makeStrAlphabeticalyOrder(userStr));
+        });
+
+        function makeStrAlphabeticalyOrder(orgStr) {
+            orgStr = orgStr.split("");
+
+            for (let i = 0; i < orgStr.length - 1; i++) {
+                for (let j = 0; j < orgStr.length - 1 - i; j++) {
+                    if (orgStr[j] > orgStr[j + 1]) {
+                        let temp = orgStr[j];
+                        orgStr[j] = orgStr[j + 1];
+                        orgStr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return orgStr.join("");
+        }
+    </script>
+
+</body>
+
+</html>

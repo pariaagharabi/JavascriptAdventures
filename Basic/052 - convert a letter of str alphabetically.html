@@ -30,30 +30,12 @@
 
         function convertLetterOfStrAlphabetically(givenStr) {
             if (givenStr.length >= 2) {
-                return givenStr.split("").sort().join("")
+                return givenStr.split("").sort().join("");
             }
 
             return givenStr;
-
         }
 
-        function convertLetterOfStrAlphabeticallyV2(givenStr) {
-            const englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            let convertedStr = "";
-
-            for (let i = 0; i < givenStr.length; i++) {
-                const char = givenStr[i];
-
-                if (englishAlphabet.includes(char)) {
-                    const position = char.toUpperCase().charCodeAt(0) - 64; // Get the position within the alphabet
-                    convertedStr += position + " ";
-                } else {
-                    convertedStr += char + " ";
-                }
-            }
-
-            return convertedStr;
-        }
 
     </script>
 </body>
