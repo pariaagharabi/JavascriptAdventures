@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class called "Car"</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(223, 135, 135);
+            font-family: cursive;
+            margin: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(246, 95, 95);
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            place-items: center;
+            margin: 5px;
+        }
+
+        button {
+            background-color: rgb(224, 156, 156);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 3px;
+        }
+
+        button:hover {
+            background-color: rgb(247, 106, 106);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        13. Create a JavaScript class called "Car" with properties for "make," "model," and "year." Include a method to
+        display the car's information. Create an instance of the 'Car' class and display its details.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Car info</h3>
+                <div>
+                    <label for="content-make">Make</label>
+                    <input type="text" name="content-make" id="content-make">
+                </div>
+                <div>
+                    <label for="content-model">Model</label>
+                    <input type="text" name="content-model" id="content-model">
+                </div>
+                <div>
+                    <label for="content-year">Year</label>
+                    <input type="number" name="content-year" id="content-year">
+                </div>
+                <div class="content-btn">
+                    <button id="btn-create-car">Create Car</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class Car {
+            #make; #model; #year;
+
+            constructor(make, model, year) {
+                this.#make = make;
+                this.#model = model;
+                this.#year = year;
+            }
+
+            display() {
+                return `
+                <dl>
+                    <dt><b>Make:</b></dt>
+                    <dd>${this.#make}</dd>
+                    <dt><b>Model:</b></dt>
+                    <dd>${this.#model}</dd>
+                    <dt><b>Year:</b></dt>
+                    <dd>${this.#year}</dd>
+                </dl>
+                `;
+            }
+        }
+
+        document.getElementById("btn-create-car").addEventListener("keydown", () => {
+            createCar();
+        });
+
+        function createCar() {
+            const make = document.getElementById("content-make").value;
+            const model = document.getElementById("content-model").value;
+            const year = document.getElementById("content-year").value;
+
+            const carObj = new Car(make, model, year);
+
+            const result = carObj.display();
+
+            document.getElementById("showResult").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

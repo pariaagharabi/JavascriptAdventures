@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert the first letter of each word into upper case</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(180, 207, 139);
+            font-family: cursive;
+            padding: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            margin: 5px;
+            place-items: center;
+        }
+
+        [class^="content-"] {
+            place-items: center;
+            background-color: rgb(83, 172, 83);
+            margin: 8px;
+        }
+
+        button {
+            background-color: greenyellow;
+            padding: 3px;
+        }
+
+        button:hover {
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word
+        into upper case.
+        Example string : 'the quick brown fox'
+        Expected Output : 'The Quick Brown Fox '
+    </p>
+    <hr>
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <label for="user-input">Enter a sentence</label>
+                <input type="text" name="user-input" id="user-input">
+                <div>
+                    <button id="btn-capitalize-words">Capitalize Words</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-capitalize-words").addEventListener("click", () => {
+            const userStr = document.getElementById("user-input").value;
+
+            document.getElementById("showResult").innerHTML = capitalizeWords(userStr);
+        });
+
+        function convertFirstLetterToUppercase(orgWord) {
+            const firstChar = orgWord[0];
+
+            const upperCasedFirstChar = firstChar.toUpperCase() + orgWord.slice(1);
+
+            return upperCasedFirstChar;
+        }
+
+
+        function capitalizeWords(orgStr) {
+            const eachWord = orgStr.split(" ");
+            const capitalizedStr = [];
+
+            for (let i = 0; i < eachWord.length; i++) {
+                const result = convertFirstLetterToUppercase(eachWord[i]);
+                capitalizedStr.push(result);
+            }
+
+            return capitalizedStr.join(" ");
+        }
+
+    </script>
+
+</body>
+
+</html>
