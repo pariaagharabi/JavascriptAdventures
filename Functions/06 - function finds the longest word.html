@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the longest word</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(134, 134, 208);
+            font-family: cursive;
+            padding: 10px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .content-container {
+            border-style: outset;
+            width: 50%;
+            padding: 15px;
+        }
+
+        [class^="content-"] {
+            place-items: center;
+            padding: 15px;
+            margin: 10px;
+            background-color: rgb(103, 103, 199);
+        }
+
+        button {
+            background-color: rgb(122, 122, 242);
+            cursor: pointer;
+            padding: 2px;
+        }
+
+        button:hover {
+            background-color: rgb(249, 216, 249);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        6. Write a JavaScript function that accepts a string as a parameter and finds the longest word within the
+        string.
+        Example string : 'Web Development Tutorial'
+        Expected Output : 'Development'
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <label for="user-input">Enter a sentence: </label>
+                <input type="text" name="user-input" id="user-input">
+                <div>
+                    <button id="btn-longest-word">Longest Word</button>
+                </div>
+            </div>
+
+            <div class="content-result">
+                <hr>
+                <h3>Result: </h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-longest-word").addEventListener("keydown", () => {
+            const userStr = document.getElementById("user-input").value;
+
+            const longestWord = findLongestWord(userStr);
+            document.getElementById("showResult").innerHTML = longestWord;
+        });
+
+        function findLongestWord(orgStr) {
+            const eachWord = orgStr.split(" ");
+            let longestWord = eachWord[0];
+            let maxLen = 0;
+
+            for (let i = 1; i < eachWord.length; i++) {
+                if (eachWord[i].length > maxLen) {
+                    longestWord = eachWord[i];
+                    maxLen = eachWord[i].length;
+                }
+            }
+
+            return longestWord;
+        }
+    </script>
+
+</body>
+
+</html>
