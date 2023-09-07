@@ -8,8 +8,28 @@
 </head>
 
 <body>
+    <p>
+        09. Write a JavaScript function which returns the n rows by n columns identity matrix.
+    </p>
+
+    <hr>
+
+    <div>
+        <label for="user-input">Enter a number</label>
+        <input type="number" name="user-input" id="user-input">
+        <div>
+            <button id="btn-identity-matrix">Run</button>
+            <span id="showResult"></span>
+        </div>
+    </div>
 
     <script>
+        document.getElementById("btn-identity-matrix").addEventListener("click", () => {
+            const userNum = Number(document.getElementById("user-input").value);
+
+            document.getElementById("showResult").innerHTML = JSON.stringify(identityMatrix(userNum));
+        });
+
         function identityMatrix(orgNum) {
             let result = [];
 
@@ -24,7 +44,6 @@
             return result;
         }
 
-        console.log(identityMatrix(4));
     </script>
 
 </body>
