@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Change the content of a cell</title>
+</head>
+
+<p>
+    6. Write a JavaScript function that accepts a row, column (to identify a particular cell) and a string to update the
+    cell's contents.
+    Sample HTML file :
+</p>
+
+<hr>
+
+<body>
+    <table id="my-table" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+        </tr>
+    </table>
+
+    <form>
+        <input type="text" id="rowIndex" placeholder="Row Index">
+        <input type="text" id="colIndex" placeholder="Column Index">
+        <input type="text" id="newContent" placeholder="New Content">
+
+        <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+
+    <script>
+        function changeContent() {
+            const rowIndex = document.getElementById("rowIndex").value;
+            const colIndex = document.getElementById("colIndex").value;
+            const newContent = document.getElementById("newContent").value;
+
+            // Get the table element by its ID
+            const table = document.getElementById("my-table");
+
+            // Check if the provided row and column indexes are valid
+            if (rowIndex >= 0 &&
+                rowIndex < table.rows.length &&
+                colIndex >= 0 &&
+                colIndex < table.rows[0].cells.length
+            ) {
+                // Update the content of the specified cell
+                table.rows[rowIndex].cells[colIndex].textContent = newContent;
+            } else {
+                alert("Invalid row or column index.");
+            }
+        }
+    </script>
+</body>
+
+</html>
