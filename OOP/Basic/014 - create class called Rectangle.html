@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class called "Rectangle"</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(57, 178, 172);
+            font-family: cursive;
+            padding: 8px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            margin: 8px;
+            padding: 8px;
+            background-color: rgb(142, 225, 221);
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            padding: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgb(57, 178, 172);
+            padding: 8px;
+        }
+
+        button:hover {
+            background-color: rgb(142, 225, 221);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Design a JavaScript class called "Rectangle" with properties for "width" and "height." Include methods to
+        calculate the area and perimeter of the rectangle. Create an instance of the 'Rectangle' class and calculate its
+        area and perimeter.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Perimeter and Area of Rectangle</h3>
+                <div class="content-user-width">
+                    <label for="user-width">Enter a number as a width:</label>
+                    <input type="number" name="user-width" id="user-width">
+                </div>
+
+                <div class="content-user-height">
+                    <label for="user-height">Enter a number as a height:</label>
+                    <input type="number" name="user-height" id="user-height">
+                </div>
+            </div>
+
+            <div class="content-rectangle-calculation">
+                <div>
+                    <button id="content-btn-calc-area">Area Calculation</button>
+                    <h3>Result</h3>
+                    <span id="display-area"></span>
+                </div>
+
+                <hr>
+
+                <div>
+                    <button id="content-btn-calc-perimeter">Perimeter Calculation</button>
+                    <h3>Result</h3>
+                    <span id="display-perimeter"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        class Rectangle {
+            #width;
+            #height;
+
+            constructor(width, height) {
+                this.#width = width;
+                this.#height = height;
+            }
+
+            area() {
+                return this.#width * this.#height;
+            }
+
+            perimeter() {
+                return 2 * (this.#width + this.#height);
+            }
+        }
+
+        let rectangleObj;
+
+        document.getElementById("content-btn-calc-area").addEventListener("click", () => {
+            calcArea();
+        });
+
+        document.getElementById("content-btn-calc-perimeter").addEventListener("click", () => {
+            calcPerimeter();
+        });
+
+        function createRectangle() {
+            const width = Number(document.getElementById("user-width").value);
+            const height = Number(document.getElementById("user-height").value);
+
+            if (isNaN(width) || isNaN(height)) {
+                alert("Please enter valid numbers for width and height.");
+                return;
+            }
+
+            rectangleObj = new Rectangle(width, height);
+        }
+
+        function calcArea() {
+            createRectangle();
+
+            const resultArea = rectangleObj.area();
+
+            document.getElementById("display-area").innerHTML = resultArea;
+        }
+
+        function calcPerimeter() {
+            createRectangle();
+
+            const resultPerimeter = rectangleObj.perimeter();
+
+            document.getElementById("display-perimeter").innerHTML = resultPerimeter;
+        }
+
+    </script>
+
+</body>
+
+</html>
