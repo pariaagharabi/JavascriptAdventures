@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add rows to a table</title>
+</head>
+
+<body>
+    <div>
+        <table id="sample-table" border="1">
+            <tr>
+                <td>Row1 cell1</td>
+                <td>Row1 cell2</td>
+            </tr>
+            <tr>
+                <td>Row2 cell1</td>
+                <td>Row2 cell2</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <input type="button" onclick="insertRow()" value="Insert row">
+    </div>
+
+    <script>
+        function insertRow() {
+            const table = document.getElementById("sample-table");
+
+            // -1 appends the row to the end
+            const newRow = table.insertRow(-1);
+
+            // Create new cells in the new row
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+
+            // Set content for the new cells by creating the new text node
+            const text1 = document.createTextNode("New Row cell1");
+            const text2 = document.createTextNode("New Row cell2");
+
+            // Append the text nodes to the table cell and display in the table
+            cell1.appendChild(text1);
+            cell2.appendChild(text2);
+
+        }
+    </script>
+</body>
+
+</html>
