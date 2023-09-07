@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is prime or not</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(204, 143, 204);
+            font-family: cursive;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            place-items: center;
+            background-color: rgb(223, 81, 223);
+            margin: 8px;
+        }
+
+        button {
+            background-color: rgb(204, 143, 204);
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        8. Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not.
+        Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1
+        and itself.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-user-input">
+                <h3>Prime checker</h3>
+                <label for="user-input">Enter a number:</label>
+                <input type="number" name="user-input" id="user-input">
+                <div class="content-btn-prime-check">
+                    <button id="btn-prime-check">Check</button>
+                </div>
+            </div>
+            <div class="content-result">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-prime-check").addEventListener("click", () => {
+            const userNum = Number(document.getElementById("user-input").value);
+
+            document.getElementById("showResult").innerHTML = isPrime(userNum);
+        });
+
+        function isPrime(orgNum) {
+            if (orgNum <= 1) {
+                return false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(orgNum); i++) {
+                if (orgNum % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        // function isPrime(orgNum) {
+        //     if (orgNum <= 1) {
+        //         return false;
+        //     }
+
+        //     for (let i = 2; i <= Math.sqrt(orgNum); i++) {
+        //         if (orgNum % i !== 0) {
+        //             return true;
+        //         }
+        //     }
+
+        //     return false;
+        // }
+
+    </script>
+
+</body>
+
+</html>
