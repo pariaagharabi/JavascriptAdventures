@@ -182,13 +182,13 @@
             const withdrawAmount = Number(document.getElementById("withdraw-amount").value);
 
             try {
-                bankAccountObj.withdraw(withdrawAmount);
+
+                const withdrawResult = bankAccountObj.withdraw(withdrawAmount);
+                document.getElementById("account-balance-info").innerHTML = withdrawResult;
             } catch (err) {
                 alert(err.message);
             }
 
-            const withdrawResult = bankAccountObj.withdraw(withdrawAmount);
-            document.getElementById("account-balance-info").innerHTML = withdrawResult;
         }
 
     </script>
