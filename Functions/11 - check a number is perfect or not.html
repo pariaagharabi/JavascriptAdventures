@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a number is perfect or not</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(49, 158, 149);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            margin: 15px;
+            padding: 10px;
+            background-color: rgb(57, 187, 174);
+        }
+
+        button {
+            background-color: rgb(49, 158, 149);
+            cursor: pointer;
+            padding: 5px;
+            margin: 8px;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        11. Write a JavaScript function that checks whether a number is perfect.
+        According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of
+        its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known
+        as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive
+        divisors (including itself).
+        Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 =
+        6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6.
+        The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Perfect Number</h3>
+                <label for="user-input">Enter a number</label>
+                <input type="number" name="user-input" id="user-input">
+                <div>
+                    <button id="content-btn-perfect-number">Check</button>
+                </div>
+            </div>
+            <div id="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("content-btn-perfect-number").addEventListener("click", () => {
+            const userNum = Number(document.getElementById("user-input").value);
+
+            document.getElementById("showResult").innerHTML = isPerfect(userNum);
+        })
+
+        function isPerfect(orgNum) {
+            let sumResult = 0;
+            let divisors = [];
+
+            for (let i = 0; i < orgNum; i++) {
+                if (orgNum % i === 0) {
+                    divisors.push(i);
+
+                    sumResult += i;
+                }
+
+                if (sumResult === orgNum) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
