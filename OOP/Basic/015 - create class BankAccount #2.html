@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(121, 49, 106, 0.4);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(140, 107, 140);
+            width: 30%;
+        }
+
+        [class^="content-"] {
+            text-align: center;
+            margin: 8px;
+        }
+
+        button {
+            background-color: rgba(246, 218, 241, 0.4);
+            cursor: pointer;
+            padding: 7px;
+        }
+
+        button:hover {
+            background-color: rgba(121, 49, 106, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Implement a JavaScript class called "BankAccount" with properties for "accountNumber" and "balance." Add methods
+        to deposit and withdraw money from the account. Create an instance of the 'BankAccount' class, perform some
+        transactions, and display the balance.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <div class="content-create-account" id="create-account">
+                    <h3>Banck Account</h3>
+                    <div>
+                        <label for="user-input-account-number">Account Number</label>
+                        <input type="number" name="user-input-account-number" id="user-input-account-number">
+                    </div>
+                    <div>
+                        <label for="user-input-balance">Initial Balance</label>
+                        <input type="number" name="user-input-balance" id="user-input-balance">
+                    </div>
+                    <div class="content-btn-create-account">
+                        <button id="btn-create-bank">Create Account</button>
+                    </div>
+
+                    <div class="content-show-created-account-info" id="created-account-info">
+                        <h3>Account Info</h3>
+                        <div>
+                            <label for="account-number-info">Account Number:</label>
+                            <span id="account-number-info"></span>
+                        </div>
+                        <div>
+                            <label for="account-balance-info">Current Balance:</label>
+                            <span id="account-balance-info"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="content-deposit">
+                    <h3>Deposit Transaction</h3>
+                    <div>
+                        <label for="deposit-amount">Amount Deposit</label>
+                        <input type="number" name="deposit-amount" id="deposit-amount">
+                        <div class="content-btn">
+                            <button id="btn-deposit-opt">Deposit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="content-withdraw">
+                <h3>Withdraw Transaction</h3>
+                <div>
+                    <label for="withdraw-amount">Amount Withdraw</label>
+                    <input type="number" name="withdraw-amount" id="withdraw-amount">
+                    <div class="content-btn">
+                        <button id="btn-withdraw-opt">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class BankAccount {
+            #accountNumber;
+            #balance;
+
+            constructor(accountNumber, balance) {
+                this.#accountNumber = accountNumber;
+                this.#balance = balance;
+            }
+
+            deposit(amount) {
+                this.#balance += amount;
+                return this.#balance;
+            }
+
+            withdraw(amount) {
+                if (amount > this.#balance) {
+                    throw new Error("Insufficient amount!");
+                }
+
+                this.#balance -= amount;
+                return this.#balance;
+            }
+
+            get balance() {
+                return this.#balance;
+            }
+        }
+
+        let bankAccountObj;
+
+        document.getElementById("btn-create-bank").addEventListener("click", () => {
+            createBankAccount();
+        });
+
+        document.getElementById("btn-deposit-opt").addEventListener("click", () => {
+            calcDeposit();
+        });
+
+        document.getElementById("btn-withdraw-opt").addEventListener("click", () => {
+            calcWithdraw();
+        });
+
+
+        function createBankAccount() {
+            const accountNumber = Number(document.getElementById("user-input-account-number").value);
+            const balance = Number(document.getElementById("user-input-balance").value);
+
+            if (isNaN(accountNumber) || isNaN(balance)) {
+                alert("The account number and the initial balance must be filled!");
+                return;
+            }
+
+            bankAccountObj = new BankAccount(accountNumber, balance);
+
+            document.getElementById("account-number-info").innerHTML = accountNumber;
+            document.getElementById("account-balance-info").innerHTML = `$${balance}`;
+        }
+
+        function calcDeposit() {
+            const depositAmount = Number(document.getElementById("deposit-amount").value);
+
+            const depositResult = bankAccountObj.deposit(depositAmount);
+            document.getElementById("account-balance-info").innerHTML = depositResult;
+        }
+
+        function calcWithdraw() {
+            const withdrawAmount = Number(document.getElementById("withdraw-amount").value);
+
+            try {
+                bankAccountObj.withdraw(withdrawAmount);
+            } catch (err) {
+                alert(err.message);
+            }
+
+            const withdrawResult = bankAccountObj.withdraw(withdrawAmount);
+            document.getElementById("account-balance-info").innerHTML = withdrawResult;
+        }
+
+    </script>
+
+</body>
+
+</html>
