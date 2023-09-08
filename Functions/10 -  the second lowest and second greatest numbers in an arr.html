@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Lowest & 2nd Greates</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: pink;
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            margin: 15px;
+            padding: 10px;
+            background-color: rgb(237, 117, 137);
+        }
+
+        button {
+            background-color: pink;
+            cursor: pointer;
+            padding: 5px;
+            margin: 8px;
+        }
+
+        button:hover {
+            background-color: rgb(247, 222, 226);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        10. Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest
+        numbers, respectively.
+        Sample array : [1,2,3,4,5]
+        Expected Output : 2,4
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Find 2nd Lowest & 2nd Greatest</h3>
+                <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                <input type="text" name="user-input" id="user-input" value="2,3,4,5,6,-3,0,1,2" />
+                <div>
+                    <button id="content-btn-2nd">2nd Lowest & 2nd Greates</button>
+                </div>
+            </div>
+            <div id="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("content-btn-2nd").addEventListener("click", () => {
+            const userNums = document.getElementById("user-input").value.split(",").map(Number);
+
+            document.getElementById("showResult").innerHTML = getSecondSmallest(userNums);
+        });
+
+        function getSecondLargest(orgArr) {
+
+        }
+
+        function getSecondSmallest(orgArr) {
+            if (orgArr[0] < orgArr[1]) {
+                var firstMin = orgArr[0];
+                var secondMin = orgArr[1];
+            } else {
+                var firstMin = orgArr[1];
+                var secondMin = orgArr[0];
+            }
+
+
+            for (let i = 2; i < orgArr.length; i++) {
+                if (orgArr[i] < firstMin) {
+                    secondMin = firstMin;
+                    firstMin = orgArr[i];
+                } else if (orgArr[i] > firstMin && orgArr[i] < secondMin) {
+                    secondMin = orgArr[i];
+                }
+            }
+
+            return `Second Smallest: ${secondMin}`;
+        }
+
+        let myArr = [5, -3, 2, 9, -2, 0, 33, 6];
+        console.log(getSecondSmallest(myArr));
+    </script>
+</body>
+
+</html>
