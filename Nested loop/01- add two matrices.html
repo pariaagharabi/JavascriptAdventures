@@ -15,32 +15,6 @@
 
     <hr>
 
-    <header>
-        <h1>Add Two Matrices</h1>
-    </header>
-
-    <div class="container">
-        <div class="matrix-container">
-            <div class="matrix">
-                <label for="matrix1">
-                    <h2>Matrix 1</h2>
-                </label>
-                <input type="text" id="matrix1">
-            </div>
-            <div class="matrix">
-                <label for="matrix2">
-                    <h2>Matrix 2</h2>
-                </label>
-                <input type="text" id="matrix2">
-            </div>
-            <div class="matrix">
-                <h2>Result</h2>
-                <pre id="result"></pre>
-            </div>
-        </div>
-    </div>
-
-
     <script>
         function matrixAdditionOpt(firstArr, secondArr) {
             // Check if matrices are empty or have different dimensions
@@ -63,6 +37,19 @@
             return matrixSumResult;
         }
 
+        const matrix1 = [
+            [1, 2],
+            [-3, 0],
+            [5, -6]
+        ];
+
+        const matrix2 = [
+            [0, 3],
+            [2, -3],
+            [0, 1]
+        ];
+
+        console.log(matrixAdditionOpt(matrix1, matrix2));
     </script>
 </body>
 
