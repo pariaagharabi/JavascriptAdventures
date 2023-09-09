@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add two matrices</title>
+</head>
+
+<body>
+    <p>
+        01. Implement a function to add two matrices in JavaScript.
+        Note: The two matrices must have the same dimensions.
+    </p>
+
+    <hr>
+
+    <header>
+        <h1>Add Two Matrices</h1>
+    </header>
+
+    <div class="container">
+        <div class="matrix-container">
+            <div class="matrix">
+                <label for="matrix1">
+                    <h2>Matrix 1</h2>
+                </label>
+                <input type="text" id="matrix1">
+            </div>
+            <div class="matrix">
+                <label for="matrix2">
+                    <h2>Matrix 2</h2>
+                </label>
+                <input type="text" id="matrix2">
+            </div>
+            <div class="matrix">
+                <h2>Result</h2>
+                <pre id="result"></pre>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function matrixAdditionOpt(firstArr, secondArr) {
+            // Check if matrices are empty or have different dimensions
+            if (firstArr.length !== secondArr.length || firstArr.length === 0 || secondArr.length === 0) {
+                alert("Matrices must have the same dimensions and cannot be empty!");
+                return;
+            }
+
+            let matrixSumResult = [];
+
+            for (let i = 0; i < firstArr.length; i++) {
+                let row = [];
+                for (let j = 0; j < firstArr[i].length; j++) {
+                    let sum = firstArr[i][j] + secondArr[i][j];
+                    row.push(sum);
+                }
+                matrixSumResult.push(row);
+            }
+
+            return matrixSumResult;
+        }
+
+    </script>
+</body>
+
+</html>
