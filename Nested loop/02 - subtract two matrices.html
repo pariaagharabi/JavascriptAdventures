@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subtract two matrices</title>
+</head>
+
+<body>
+    <p>
+        02.Implement a function to subtract two matrices in JavaScript.
+        Note: The two matrices must have the same dimensions.
+    </p>
+
+    <hr>
+
+    <script>
+        function matrixSubtractionOpt(firstMatrix, secondMatrix) {
+            // Check if matrices are empty or have different dimensions
+            if (firstMatrix.length !== secondMatrix.length || firstMatrix.length === 0 || secondMatrix.length === 0) {
+                alert("Matrices must have the same dimensions and cannot be empty!");
+                return;
+            }
+
+            let optResult = [];
+
+            for (let i = 0; i < firstMatrix.length; i++) {
+                let row = [];
+                for (let j = 0; j < firstMatrix[i].length; j++) {
+                    let subtract = firstMatrix[i][j] - secondMatrix[i][j];
+                    row.push(subtract);
+                }
+                optResult.push(row);
+            }
+
+            return optResult;
+        }
+
+        const matrix1 = [
+            [1, 2],
+            [-3, 0],
+            [5, -6]
+        ];
+
+        const matrix2 = [
+            [0, 3],
+            [2, -3],
+            [0, 1]
+        ];
+
+        console.log(matrixSubtractionOpt(matrix1, matrix2));
+    </script>
+
+</body>
+
+</html>
