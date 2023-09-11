@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number of occurrences of each letter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(121, 49, 106, 0.4);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            align-items: center;
+            background-color: rgba(85, 48, 78, 0.4);
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            margin: 20px;
+        }
+
+        button {
+            background-color: rgba(121, 49, 106, 0.4);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        16. Write a JavaScript function to get the number of occurrences of each letter in a specified string.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Count Letters</h3>
+                <div>
+                    <label for="user-input">Enter a string</label>
+                    <input type="text" id="user-input" placeholder="String">
+                </div>
+                <div>
+                    <button id="btn-str-letter-frequency">Letter Frequency</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-str-letter-frequency").addEventListener("click", () => {
+            const usetStr = document.getElementById("user-input").value;
+
+            document.getElementById("showResult").innerHTML = JSON.stringify(getLetterFrequency(usetStr));
+        });
+
+        function getLetterFrequency(str) {
+            let letterFrequency = {};
+
+            // Iterate over values' object
+            for (let letter of str) {
+                if (letterFrequency[letter]) {
+                    letterFrequency[letter]++;
+                } else {
+                    letterFrequency[letter] = 1;
+                }
+            }
+
+            return letterFrequency;
+        }
+
+
+        // function getLetterFrequency(str) {
+        //     let letterFrequency = {};
+
+        //     // Iterate over values' object
+        //     for (let letter of str) {
+        //         (letterFrequency[letter]) ? letterFrequency[letter]++ : letterFrequency[letter] = 1;
+        //     }
+
+
+        //     return letterFrequency;
+        // }
+
+    </script>
+
+</body>
+
+</html>
