@@ -81,7 +81,7 @@
         document.getElementById("btn-str-uniquifier").addEventListener("click", () => {
             const userStr = document.getElementById("user-input").value;
 
-            document.getElementById("showResult").innerHTML = removeDuplicates(userStr);
+            document.getElementById("showResult").innerHTML = JSON.stringify(removeDuplicatesV2(userStr));
         });
 
         function removeDuplicates(orgStr) {
@@ -96,6 +96,16 @@
             return uniqueCharsResult.join("");;
         }
 
+        function removeDuplicatesV2(orgStr) {
+            let letterFrequency = {};
+
+            for (let letter of orgStr) {
+
+                letterFrequency[letter] ? ++letterFrequency[letter] : letterFrequency[letter] = 1;
+            }
+
+            return Object.keys(letterFrequency).join("");
+        }
     </script>
 
 </body>
