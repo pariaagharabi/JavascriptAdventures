@@ -85,10 +85,13 @@
     <script>
         document.getElementById("btn-find-elements").addEventListener("click", () => {
             const listUserNums = (document.getElementById("user-list-input").value).split(",").map(Number);
-            const specificUserNum = Number(document.getElementById("user-num-input").value);
 
-            document.getElementById("showResult").innerHTML = findElementsLargerThanNumber(listUserNums, specificUserNum);
-
+            try {
+                const specificUserNum = Number(document.getElementById("user-num-input").value);
+                document.getElementById("showResult").innerHTML = findElementsLargerThanNumber(listUserNums, specificUserNum);
+            } catch (err) {
+                alert(err.message);
+            }
         });
 
         function findElementsLargerThanNumber(arr, specificNum) {
