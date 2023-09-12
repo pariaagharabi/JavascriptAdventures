@@ -95,10 +95,6 @@
         });
 
         function findElementsLargerThanNumber(arr, specificNum) {
-            console.log(arr);
-            console.log(specificNum);
-
-
             if (!arr.includes(specificNum)) {
                 throw new Error("The entered number is not in the list of numbers!");
             }
@@ -109,7 +105,6 @@
                 if (arr[i] > specificNum) {
                     elesLargerThanNum.push(arr[i])
                 }
-
             }
 
             return elesLargerThanNum;
