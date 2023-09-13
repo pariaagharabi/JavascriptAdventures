@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number of occurrences of the specified letter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(125, 209, 184);
+            height: 100vh;
+            font-family: cursive;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #000;
+            width: 20%;
+        }
+
+        :is(.content-input, .content-output) {
+            text-align: center;
+        }
+
+        .content-input div {
+            margin-bottom: 10px;
+        }
+
+        .content-input label {
+            display: block;
+        }
+
+        button {
+            background-color: rgb(72, 166, 138);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        20. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count
+        the number of occurrences of the specified letter within the string.
+        Sample arguments : 'w3resource.com', 'o'
+        Expected output : 2
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <div>
+                    <label for="user-str">Enter a string</label>
+                    <input type="text" name="user-str" id="user-str" placeholder="String">
+                </div>
+
+                <div>
+                    <label for="user-letter">Enter a specified letter</label>
+                    <input type="text" name="user-letter" id="user-letter" placeholder="Specified Letter">
+                </div>
+
+                <div>
+                    <button id="btn-letter-occurrence">Letter Occurrences</button>
+                </div>
+
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-letter-occurrence").addEventListener("click", () => {
+            const userStr = document.getElementById("user-str").value;
+            const userLetter = document.getElementById("user-letter").value;
+
+            document.getElementById("showResult").innerHTML = countSpecifiedLetter(userStr, userLetter);
+        });
+
+        function countSpecifiedLetter(str, letter) {
+            const strToLowerCase = str.toLowerCase();
+            let counter = 0;
+
+            for (let i = 0; i < strToLowerCase.length; i++) {
+                if (strToLowerCase[i] === letter) {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+    </script>
+
+</body>
+
+</html>
