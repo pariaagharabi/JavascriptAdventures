@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert an amount into coins</title>
+</head>
+
+<body>
+    <p>
+        13. Write a JavaScript function to convert an amount into coins.
+        Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+        Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
+        Output : 25, 10, 10, 1
+    </p>
+
+    <hr>
+
+    <h1>Convert an Amount into Coins</h1>
+    <dl>
+        <dt>
+            <h3>The amount of coins:</h3>
+        </dt>
+        <dd><span id="coins"></span></dd>
+    </dl>
+
+    <label for="amount">Enter an amount:</label>
+    <input type="text" id="amount" placeholder="Enter amount">
+    <button id="convertButton">Convert</button>
+
+    <dl>
+        <dt>
+            <h3>Result::</h3>
+        </dt>
+        <dd><span id="result"></span></dd>
+    </dl>
+
+    <script>
+        const coins = [25, 10, 5, 2, 1];
+        document.getElementById("coins").innerHTML = JSON.stringify(coins);
+
+        document.getElementById("convertButton").addEventListener("click", () => {
+            const amount = Number(document.getElementById("amount").value);
+            const result = amountTocoins(amount, coins);
+
+            document.getElementById("result").innerHTML = JSON.stringify(result);
+        });
+
+
+        function amountTocoins(amount, coins) {
+            let result = [];
+            const coinsSorted = coins.sort((a, b) => b - a);
+
+            for (let i = 0; i < coinsSorted.length; i++) {
+                let coinsCount = Math.floor(amount / coinsSorted[i]);
+
+                if (coinsCount === 0) {
+                    continue;
+                }
+
+                amount -= coinsCount * coinsSorted[i];
+
+                result.push([coinsSorted[i], coinsCount]);
+            }
+
+            return result;
+        }
+    </script>
+
+</body>
+
+</html>

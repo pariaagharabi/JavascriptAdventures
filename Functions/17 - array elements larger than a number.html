@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array elements larger than a number</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(121, 49, 106, 0.4);
+            padding: 15px;
+            font-family: cursive;
+        }
+
+        .container {
+            display: grid;
+            grid-template: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            align-items: center;
+            background-color: rgba(85, 48, 78, 0.4);
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            margin: 20px;
+        }
+
+        button {
+            background-color: rgba(237, 179, 225, 0.4);
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        button:hover {
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        017. Write a JavaScript function that returns array elements larger than a number.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Find Elements Larger Than Number</h3>
+                <dl>
+                    <dt><b>Enter a list of numbers:</b></dt>
+                    <dd><input type="text" id="user-list-input"></dd>
+
+                    <dt><b>Enter a number from the numbers list:</b></dt>
+                    <dd><input type="text" id="user-num-input"></dd>
+                </dl>
+
+                <div>
+                    <button id="btn-find-elements">Find Elements</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-find-elements").addEventListener("click", () => {
+            const listUserNums = (document.getElementById("user-list-input").value).split(",").map(Number);
+
+            try {
+                const specificUserNum = Number(document.getElementById("user-num-input").value);
+                document.getElementById("showResult").innerHTML = findElementsLargerThanNumber(listUserNums, specificUserNum);
+            } catch (err) {
+                alert(err.message);
+            }
+        });
+
+        function findElementsLargerThanNumber(arr, specificNum) {
+            if (!arr.includes(specificNum)) {
+                throw new Error("The entered number is not in the list of numbers!");
+            }
+
+            let elesLargerThanNum = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > specificNum) {
+                    elesLargerThanNum.push(arr[i])
+                }
+            }
+
+            return elesLargerThanNum;
+        }
+
+    </script>
+</body>
+
+</html>
