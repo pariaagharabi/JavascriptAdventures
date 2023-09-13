@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class ToDoList</title>
+</head>
+
+<body>
+    <p>
+        16. Build a JavaScript class called "TodoList" that manages a list of tasks. Include methods to add a task, mark
+        a task as completed, and display the list of tasks. Create an instance of the 'TodoList' class, add tasks, mark
+        some as completed, and display the list.
+    </p>
+
+    <hr>
+
+    <script>
+        class ToDoList {
+            #tasks;
+            constructor() {
+                this.#tasks = [];
+            }
+
+            addTask(task) {
+                return this.#tasks.push(task);
+            }
+
+            display() {
+                const result = this.#tasks.map((x) => x.toStr());
+                return result;
+            }
+
+        }
+
+        class Task {
+            #name;
+            #priority;
+            #status;
+
+            constructor(name, priority) {
+                this.#name = name;
+                this.priority = priority;
+                this.#status = "ready";
+            }
+
+            toStr() {
+                return `name: ${this.#name}, status: ${this.#status}, priority: ${this.#priority}`;
+            }
+
+            get priority() {
+                return this.#priority;
+            }
+
+            // setter, the code executed on setting obj.propName = value
+            set priority(value) {
+                let validPriorities = ["low", "medium", "high"];
+                if (validPriorities.includes(value)) {
+                    this.#priority = value;
+                } else {
+                    throw new Error("It is not a valid value!");
+                }
+            }
+
+            ready() {
+                return this.#status = "ready";
+            }
+
+            start() {
+                return this.#status = "in-progress";
+            }
+
+            complete() {
+                return this.#status = "complete";
+            }
+
+            get status() {
+                return this.#status;
+            }
+        }
+
+        let task_1 = new Task("task1", "low");
+        let task_2 = new Task("task2", "high");
+        let task_3 = new Task("task3", "medium");
+
+        task_2.start();
+        task_3.complete();
+
+        let todoList = new ToDoList();
+        todoList.addTask(task_1);
+        todoList.addTask(task_2);
+        todoList.addTask(task_3);
+
+        console.log(todoList.display());
+
+    </script>
+
+</body>
+
+</html>
