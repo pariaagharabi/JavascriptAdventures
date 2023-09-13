@@ -114,11 +114,11 @@
 
                 if (targetEle === sortedArr[middleIndex]) {
                     return middleIndex;
-                } else if (targetEle < sortedArr[middleIndex]) {
-                    //??????????????????
+                }
+
+                if (targetEle < sortedArr[middleIndex]) {
                     rightIndex = middleIndex - 1;
                 } else {
-                    //??????????????????
                     leftIndex = middleIndex + 1;
                 }
             }
