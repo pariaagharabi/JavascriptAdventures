@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class ToDoList</title>
+</head>
+
+<body>
+    <p>
+        16. Build a JavaScript class called "TodoList" that manages a list of tasks. Include methods to add a task, mark
+        a task as completed, and display the list of tasks. Create an instance of the 'TodoList' class, add tasks, mark
+        some as completed, and display the list.
+    </p>
+
+    <hr>
+
+    <script>
+        class ToDoList {
+            #tasks;
+            constructor() {
+                if (this.constructor === ToDoList) {
+                    throw new Error("You cannot instantiate from class ToDoList!");
+                }
+                this.#tasks = [];
+            }
+
+            addTask(task) {
+                return this.#tasks.push(task);
+            }
+
+            markTask() {
+
+            }
+
+            display() {
+                return `
+                // <dl>
+                //     <dt><b>Tasks:</b></dt>
+                //     <dd>${}</dd>
+                //     <dt><b>Mark:</b></dt>
+                //     <dd>${}</dd>
+                  
+                // </dl>
+                `;
+            }
+
+        }
+
+        class Task {
+            #name;
+            #priority;
+            #status;
+
+            constructor(name, priority) {
+                this.#name = name;
+                this.priority = priority;
+                this.status = "ready";
+            }
+
+            get priority() {
+                return this.#priority;
+            }
+
+            // setter, the code executed on setting obj.propName = value
+            set priority(value) {
+                let validPriorities = ["low", "medium", "high"];
+                if (validPriorities.includes(value)) {
+                    this.#priority = value;
+                } else {
+                    throw new Error("It is not a valid value!");
+                }
+            }
+
+            get status() {
+                return this.#status;
+            }
+
+            set status(value) {
+                let validStatus = ["ready", "in progress", "completed"];
+                if (validStatus.includes(value)) {
+                    this.#status = value;
+                } else {
+                    throw new Error("The status is not valid!");
+                }
+            }
+
+        }
+
+        let task = new Task("task1", "low", "in progress");
+        console.log(task);
+
+    </script>
+
+</body>
+
+</html>
