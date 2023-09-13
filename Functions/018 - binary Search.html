@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binary search</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(121, 49, 106, 0.4);
+            padding: 15px;
+            font-family: cursive;
+        }
+
+        .container {
+            display: grid;
+            grid-template: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            align-items: center;
+            background-color: rgba(85, 48, 78, 0.4);
+            width: 40%;
+        }
+
+        [class^="content-"] {
+            margin: 20px;
+        }
+
+        button {
+            background-color: rgba(237, 179, 225, 0.4);
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        button:hover {
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        018. Write a function for searching JavaScript arrays with binary searches.
+        Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired
+        value.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-input">
+                <h3>Arrays with Binary Search</h3>
+                <dl>
+                    <dt><b>Enter a list of numbers:</b></dt>
+                    <dd><input type="text" id="user-list-input"></dd>
+
+                    <button id="btn-sort">Sort</button>
+                    <dt><b>The sorted list:</b></dt>
+                    <dd><input type="text" id="user-sorted-num-input"></dd>
+
+                    <dt><b>Enter a number from the numbers list:</b></dt>
+                    <dd><input type="text" id="user-num-input"></dd>
+                </dl>
+
+                <div>
+                    <button id="btn-find-index">Find Index</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-sort").addEventListener("click", () => {
+            const listUserNums = (document.getElementById("user-list-input").value).split(",").map(Number);
+            const sortedNums = listUserNums.sort((a, b) => a - b);
+
+            document.getElementById("user-sorted-num-input").value = sortedNums.join(",");
+        });
+
+        document.getElementById("btn-find-index").addEventListener("click", () => {
+            const listUserNums = (document.getElementById("user-list-input").value).split(",").map(Number);
+            const sortedNums = listUserNums.sort((a, b) => a - b);
+
+            const specificUserNum = Number(document.getElementById("user-num-input").value);
+
+            document.getElementById("showResult").innerHTML = binarySearch(sortedNums, specificUserNum);
+        });
+
+        function binarySearch(sortedArr, targetEle) {
+            let leftIndex = 0;
+            let rightIndex = sortedArr.length - 1;
+
+            while (leftIndex <= rightIndex) {
+                const middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+                if (targetEle === sortedArr[middleIndex]) {
+                    return middleIndex;
+                } else if (targetEle < sortedArr[middleIndex]) {
+                    //??????????????????
+                    rightIndex = middleIndex - 1;
+                } else {
+                    //??????????????????
+                    leftIndex = middleIndex + 1;
+                }
+            }
+
+            return -1;
+        }
+
+    </script>
+</body>
+
+</html>
