@@ -5,6 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate a string ID</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(169, 118, 169);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template: repeat(1 1fr);
+            place-items: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            text-align: center;
+            width: 30%;
+            background-color: rgb(114, 79, 114);
+        }
+
+        [class^="content-"] {
+            margin: 10px;
+        }
+
+        button {
+            background-color: rgb(169, 118, 169);
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,26 +55,44 @@
 
     <hr>
 
-    <script>
-        function generateStrID(len) {
-            // Convert the number to str to itrate on it
-            const convertToStr = len.toString();
+    <div class="container">
+        <div class="content-container">
+            <h3>Generate a string ID</h3>
+            <div class="content-input">
+                <label for="user-input">Enter a number:</label>
+                <input type="text" id="user-input" name="user-input" placeholder="Number">
+                <div>
+                    <button id="btn-id-generation">ID generation</button>
+                </div>
+            </div>
 
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-id-generation").addEventListener("click", () => {
+            const userNum = Number(document.getElementById("user-input").value);
+
+            document.getElementById("showResult").innerHTML = generateStrID(userNum);
+        });
+
+        function generateStrID(len) {
             const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             const charLength = charList.length;
-            let strResult = "";
+            let strResult = [];
 
-            for (let i = 0; i < convertToStr.length; i++) {
-                let randomCharList = (Math.random() * charLength);
-                console.log(randomCharList);
-                strResult += randomCharList;
+            for (let i = 0; i < len; i++) {
+                const randomChars = Math.floor(Math.random() * charLength);
+                strResult.push(charList[randomChars]);
             }
 
-            // return strResult;
+            return strResult.join("");
         }
-
-        let myLen = 6;
-        console.log(generateStrID(myLen));
 
     </script>
 
