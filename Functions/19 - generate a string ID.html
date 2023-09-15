@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate a string ID</title>
+</head>
+
+<body>
+    <p>
+        19. Write a JavaScript function that generates a string ID (specified length) of random characters.
+        Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    </p>
+
+    <hr>
+
+    <script>
+        function generateStrID(len) {
+            // Convert the number to str to itrate on it
+            const convertToStr = len.toString();
+
+            const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const charLength = charList.length;
+            let strResult = "";
+
+            for (let i = 0; i < convertToStr.length; i++) {
+                let randomCharList = (Math.random() * charLength);
+                console.log(randomCharList);
+                strResult += randomCharList;
+            }
+
+            // return strResult;
+        }
+
+        let myLen = 6;
+        console.log(generateStrID(myLen));
+
+    </script>
+
+</body>
+
+</html>
