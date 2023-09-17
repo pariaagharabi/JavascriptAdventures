@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort algorithm</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(133, 101, 133);
+            font-family: cursive;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            margin: 10px;
+            background-color: rgb(196, 164, 196);
+        }
+
+        button {
+            background-color: rgb(133, 101, 133);
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        22. Write a JavaScript function to apply the Bubble Sort algorithm.
+        Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm
+        that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and
+        swapping them if they are in the wrong order".
+        Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+        Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <h3>Bubble Sort</h3>
+            <div class="content-input">
+                <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                <input type="text" name="user-input" id="user-input" placeholder="List of Numbers">
+                <div>
+                    <button id="btn-bubble-sort">Run</button>
+                </div>
+            </div>
+
+            <div class="content-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-bubble-sort").addEventListener("click", () => {
+            try {
+                const userNums = document.getElementById("user-input").value.split(",").map(Number);
+                document.getElementById("showResult").innerHTML = bubbleSort(userNums);
+            } catch (error) {
+                alert("Insufficient numbers!");
+                return;
+            }
+
+        });
+
+        function bubbleSort(arr) {
+            if (arr.length < 2) {
+                throw new Error("Please enter more numbers!");
+            }
+
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return arr;
+        }
+    </script>
+
+</body>
+
+</html>
