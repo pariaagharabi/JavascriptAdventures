@@ -85,15 +85,14 @@
                 const userNums = document.getElementById("user-input").value.split(",").map(Number);
                 document.getElementById("showResult").innerHTML = bubbleSort(userNums);
             } catch (error) {
-                alert("Insufficient numbers!");
-                return;
+                alert(error.message);
             }
 
         });
 
         function bubbleSort(arr) {
             if (arr.length < 2) {
-                throw new Error("Please enter more numbers!");
+                throw new Error("Insufficient numbers!");
             }
 
             for (let i = 0; i < arr.length - 1; i++) {
