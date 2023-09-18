@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(114, 89, 114);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-area,
+        .content-circumference {
+            border-style: outset;
+            background-color: rgb(151, 123, 151);
+            margin: 15px;
+            width: 50%;
+        }
+
+        button {
+            background-color: rgb(114, 89, 114);
+            cursor: pointer;
+            padding: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(229, 201, 229);
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>
+        17. Create a JavaScript class called "Circle" with a property for "radius." Add methods to calculate the area
+        and circumference of the circle. Create an instance of the 'Circle' class and calculate these values.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-area">
+            <div>
+                <h3>Area of a Circle Calculator</h3>
+                <div>
+                    <label for="user-radius"></label>
+                </div>
+                <div>
+                    <input type="text" name="user-radius" id="user-radius" placeholder="Radius">
+                </div>
+                <div>
+                    <button id="btn-calc-area">Area</button>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="show-result-area"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-circumference">
+            <div>
+                <h3>Circumference of a Circle Calculator</h3>
+                <div>
+                    <label for="user-radius"></label>
+                </div>
+                <div>
+                    <input type="text" name="user-radius" id="user-radius" placeholder="Radius">
+                </div>
+                <div>
+                    <button id="btn-calc-circumference">Circumference</button>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="show-result-circumference"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class Circle {
+            constructor(radius) {
+                this.radius = radius;
+            }
+
+            area() {
+                return Math.PI * (this.radius * this.radius);
+            }
+
+            circumference() {
+                return 2 * Math.PI * this.radius;
+            }
+        }
+
+        document.getElementById("btn-calc-area").addEventListener("click", () => {
+            calcArea();
+        });
+
+        document.getElementById("btn-calc-circumference").addEventListener("click", () => {
+            calcCircumference();
+        });
+
+        let circleObj;
+        function createCircle() {
+            const radius = Number(document.getElementById("user-radius").value);
+
+            if (isNaN(radius)) {
+                alert("Enter a number as a radius!");
+                return;
+            }
+
+            circleObj = new Circle(radius);
+        }
+
+        function calcArea() {
+            createCircle();
+
+            const resultArea = circleObj.area();
+
+            document.getElementById("show-result-area").innerHTML = resultArea;
+        }
+
+        function calcCircumference() {
+            createCircle();
+
+            const resultCircumference = circleObj.circumference();
+
+            document.getElementById("show-result-circumference").innerHTML = resultCircumference;
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find palindrome in a given string</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(128, 103, 128);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(159, 128, 159);
+            margin: 15px;
+            padding: 15px;
+            width: 50%;
+        }
+
+        button {
+            background-color: rgb(128, 103, 128);
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(229, 209, 229);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>
+        Write a JavaScript function that returns the longest palindrome in a given string.
+
+        Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor
+        problem is the problem of finding a maximum-length contiguous substring of a given string that is also a
+        palindrome. For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic
+        substring is not guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic
+        substring with length greater than three, but there are two palindromic substrings with length three, namely,
+        "aca" and "ada".
+        In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings
+        that are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning
+        only one substring or returning the maximum length of a palindromic substring.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <h3>Longest Palindrome in a String</h3>
+            <div class="user-input">
+                <div>
+                    <label for="user-input">Enter a string</label>
+                </div>
+                <div>
+                    <input type="text" name="user-input" id="user-input" placeholder="String">
+                </div>
+                <div>
+                    <button id="btn-longest-palindrome">Longest Palindrome</button>
+                </div>
+            </div>
+
+
+            <div class="user-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById("btn-longest-palindrome").addEventListener("click", () => {
+        //     try {
+        //         const userStr = document.getElementById("user-input").value;
+
+        // if (usrStr.length === 0) {
+        //     throw new Error("Enter a string!");
+        // }
+
+        // document.getElementById("showResult").innerHTML = getLongestPalindromic(usrStr);
+
+        //     } catch (err) {
+        //         alert(err);
+        //     }
+        // });
+
+        function isPalindromic(str) {
+            let halfLen = Math.floor(str.length / 2);
+            for (let i = 0; i < halfLen; i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // function getSubstrs(str) {
+        //     let result = [];
+
+        //     for (let i = 1; i <= str.length; i++) {
+        //         for (let j = 0; j < str.length - i + 1; j++) {
+        //             let subStr = str.substr(j, i);
+        //             result.push(subStr);
+        //         }
+        //     }
+
+        //     return result;
+        // }
+
+        function getSubstrsV2(str) {
+            let result = [];
+
+            for (let i = 0; i < str.length; i++) {
+                for (let j = i; j < str.length; j++) {
+                    let subStr = str.substr(i, j - i + 1);
+                    result.push(subStr);
+                }
+            }
+
+            return result;
+        }
+
+
+        let exampleStr = "abcd";
+        console.log(getSubstrsV2(exampleStr));
+
+        // function getLongestPalindromic(str) {
+        //     if (str.length === 0) {
+        //         throw new Error("Enter a string!");
+        //     }
+
+        //     for (let i = 0; i < str.length; i++) {
+        //         if (isPalindromic(str[i]) === true) {
+        //             let palindromeWords = [];
+        //             palindromeWords.push(str[i]);
+        //             console.log(palindromeWords);
+        //         }
+        //     }
+
+
+        // }
+
+        // const str = `
+        // According to Wikipedia In computer science, the longest palindromic substring or longest symmetric factor
+        // problem is the problem of finding a maximum-length contiguous substring of a given string that is also a
+        // palindrome. For example, the longest palindromic substring of bananas is anana. The longest palindromic
+        // substring is not guaranteed to be unique; for example, in the string abracadabra, there is no palindromic
+        // substring with length greater than three, but there are two palindromic substrings with length three, namely,
+        // aca and ada.`;
+
+        // console.log(getLongestPalindromic(str));
+    </script>
+
+</body>
+
+</html>
