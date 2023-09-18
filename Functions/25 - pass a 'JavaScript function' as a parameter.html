@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pass a 'JavaScript function' as a parameter</title>
+</head>
+
+<body>
+
+    <script>
+        // Define a greeting function
+        function sayHello(name) {
+            return `Hello, ${name}!`;
+        }
+
+        // Define a function that takes another function as a parameter
+        function greet(name, greetingFunction) {
+            const message = greetingFunction(name);
+            return message;
+        }
+
+        // Pass the greeting function as a parameter to the greet function
+        console.log(greet("Alice", sayHello));
+    </script>
+
+</body>
+
+</html>
