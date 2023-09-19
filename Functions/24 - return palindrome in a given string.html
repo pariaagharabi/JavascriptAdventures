@@ -92,22 +92,23 @@
     </div>
 
     <script>
-        // document.getElementById("btn-longest-palindrome").addEventListener("click", () => {
-        //     try {
-        //         const userStr = document.getElementById("user-input").value;
+        document.getElementById("btn-longest-palindrome").addEventListener("click", () => {
+            try {
+                const userStr = document.getElementById("user-input").value;
 
-        // if (usrStr.length === 0) {
-        //     throw new Error("Enter a string!");
-        // }
+                if (userStr.length === 0) {
+                    throw new Error("Enter a string!");
+                }
 
-        // document.getElementById("showResult").innerHTML = getLongestPalindromic(usrStr);
+                document.getElementById("showResult").innerHTML = getLongestPalindromic(userStr);
 
-        //     } catch (err) {
-        //         alert(err);
-        //     }
-        // });
+            } catch (err) {
+                alert(err);
+            }
+        });
 
         function isPalindromic(str) {
+            str = str.toLowerCase();
             let halfLen = Math.floor(str.length / 2);
             for (let i = 0; i < halfLen; i++) {
                 if (str[i] !== str[str.length - 1 - i]) {
@@ -144,35 +145,21 @@
             return result;
         }
 
+        function getLongestPalindromic(str) {
+            let substrings = getSubstrsV2(str);
+            let longestPalindromic = "";
 
-        let exampleStr = "abcd";
-        console.log(getSubstrsV2(exampleStr));
+            for (let i = 0; i < substrings.length; i++) {
+                let subStr = substrings[i];
+                if (isPalindromic(subStr) && subStr.length > longestPalindromic.length) {
+                    longestPalindromic = subStr;
+                }
+            }
 
-        // function getLongestPalindromic(str) {
-        //     if (str.length === 0) {
-        //         throw new Error("Enter a string!");
-        //     }
-
-        //     for (let i = 0; i < str.length; i++) {
-        //         if (isPalindromic(str[i]) === true) {
-        //             let palindromeWords = [];
-        //             palindromeWords.push(str[i]);
-        //             console.log(palindromeWords);
-        //         }
-        //     }
+            return longestPalindromic;
+        }
 
 
-        // }
-
-        // const str = `
-        // According to Wikipedia In computer science, the longest palindromic substring or longest symmetric factor
-        // problem is the problem of finding a maximum-length contiguous substring of a given string that is also a
-        // palindrome. For example, the longest palindromic substring of bananas is anana. The longest palindromic
-        // substring is not guaranteed to be unique; for example, in the string abracadabra, there is no palindromic
-        // substring with length greater than three, but there are two palindromic substrings with length three, namely,
-        // aca and ada.`;
-
-        // console.log(getLongestPalindromic(str));
     </script>
 
 </body>
