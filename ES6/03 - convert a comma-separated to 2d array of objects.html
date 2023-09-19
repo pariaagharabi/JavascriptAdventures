@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert CSV to Objects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(138, 181, 174);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+            margin: 15px;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(168, 219, 211);
+            padding: 20px;
+        }
+
+        button {
+            background-color: rgb(138, 181, 174);
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        3. Write a JavaScript program to convert a comma-separated value (CSV) string to a 2D array of objects. The
+        first row of the string is used as the title row.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <h3>Convert CSV to Objects</h3>
+            <div>
+                <button id="btn-convert-2D-arr">Convert CSV file To Objects</button>
+            </div>
+
+            <div>
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let orgStr = "Name,Profession,Age,Hobby\n\
+Alan Walker,Singer,34,Travelling\n\
+Cristiano Ronaldo,Footballer,22,Learning\n\
+Saina Nehwal,Badminton Player,39,Cooking\n\
+Arijit Singh,Hacker,19,Writing\n\
+Terence Lewis,Dancer,37,Hiking"
+        console.log(orgStr);
+
+        let splitByEnter = orgStr.split("\n");
+
+        let convertedArr = [];
+
+        for (let i = 0; i < splitByEnter.length; i++) {
+            let values = splitByEnter[i].split(",");
+            convertedArr.push(values);
+        }
+
+        let result = [];
+
+
+        for (let i = 1; i < convertedArr.length; i++) {
+            let obj = {};
+
+            for (let j = 0; j < convertedArr[i].length; j++) {
+                obj[`${convertedArr[0][j]}`] = convertedArr[i][j]
+            }
+
+            result.push(obj);
+        }
+
+        console.log(JSON.stringify(result));
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert a comma-separated to a 2D array</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(148, 122, 148);
+            font-family: cursive;
+            padding: 15px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            place-items: center;
+            margin: 15px;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(194, 164, 194);
+            padding: 20px;
+        }
+
+        button {
+            background-color: rgb(148, 122, 148);
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        2. Write a JavaScript program to convert a comma-separated value (CSV) string to a 2D array.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <h3>Covert CSV file to a 2D array:</h3>
+            <div>
+                <button id="btn-convert-2D-arr">Convert CSV file To 2D Array</button>
+            </div>
+
+            <div>
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById("btn-convert-2D-arr").addEventListener("click", () => {
+
+        //     document.getElementById("showResult").innerHTML = converCSVTo2DArr();
+        // });
+
+        // function converCSVTo2DArr() {
+        //     // Create XHR Object
+        //     let xhr = new XMLHttpRequest();
+
+        //     xhr.open("GET", "simple.csv", true);
+
+        //     xhr.onload = function () {
+        //         if (this.status === 200) {
+        //             console.log(this.responseText);
+        //         }
+        //     }
+
+        //     // Send request
+        //     xhr.send();
+        // }
+
+        let orgStr = "Name,Profession,Age,Hobby\n\
+Alan Walker,Singer,34,Travelling\n\
+Cristiano Ronaldo,Footballer,22,Learning\n\
+Saina Nehwal,Badminton Player,39,Cooking\n\
+Arijit Singh,Hacker,19,Writing\n\
+Terence Lewis,Dancer,37,Hiking"
+        console.log(orgStr);
+
+        let splitStrByEnter = orgStr.split("\n");
+
+        let convertStrTo2DArr = [];
+
+        for (let i = 0; i < splitStrByEnter.length; i++) {
+            let values = splitStrByEnter[i].split(",");
+            convertStrTo2DArr.push(values);
+        }
+
+        console.log(JSON.stringify(convertStrTo2DArr));
+
+
+
+    </script>
+
+</body>
+
+</html>
