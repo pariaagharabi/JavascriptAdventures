@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: cursive;
+            background-color: rgb(161, 135, 161);
+            padding: 20px;
+            font-size: 20px;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .content-container {
+            border-style: outset;
+            background-color: rgb(141, 119, 141);
+            width: 50%;
+        }
+
+        .content-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content-result-counter {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content-increase-decrease {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            background-color: rgb(161, 135, 161);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 50px;
+            text-align: center;
+            border: none;
+            border-radius: 9px;
+            box-shadow: 0 3px #999;
+        }
+
+        button:hover {
+            background-color: rgb(206, 174, 206);
+        }
+
+        button:active {
+            background-color: rgb(206, 174, 206);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <p> JavaScript function to increment and decrement a counter after clicking on a button.</p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <h3>Click Counter</h3>
+            <div class="content-body">
+                <div class="content-result-counter">
+                    <span id="showResult"></span>
+                </div>
+
+                <div class="content-increase-decrease">
+                    <div>
+                        <button id="btn-increment">&plus;</button>
+                    </div>
+                    <div id="btn-decrement">
+                        <button id="btn-decrement">&minus;</button>
+                    </div>
+                </div>
+
+                <div class="content-reset">
+                    <button id="btn-reset">&#10227;</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize a counter variable
+        let counter = 0;
+        refreshCounterTag();
+
+        // Create addEventListener
+        document.getElementById("btn-increment").addEventListener("click", () => {
+            ++counter;
+            refreshCounterTag();
+        });
+
+        document.getElementById("btn-decrement").addEventListener("click", () => {
+            --counter;
+            refreshCounterTag();
+        });
+
+        document.getElementById("btn-reset").addEventListener("click", () => {
+            counter = 0;
+            refreshCounterTag();
+        });
+
+        function refreshCounterTag() {
+            document.getElementById("showResult").innerHTML = counter;
+        }
+
+    </script>
+
+</body>
+
+</html>
