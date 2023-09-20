@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+</head>
+
+<body>
+    <p>
+        02. Implement a stack data structure in JavaScript that contains the following operations:
+        - Class: Stack
+        - Methodes: push, pop, isEmpty, peek, length
+    </p>
+
+    <hr>
+
+    <script>
+        class Stack {
+            constructor() {
+                this.array = [];
+            }
+
+            push(item) {
+                // Pushes an item onto the top of the stack.
+                return this.array.push(item);
+            }
+
+            pop() {
+                // Removes an item at the top of the stack and returns that item. 
+                return this.array.pop();
+            }
+
+            isEmpty() {
+                // Determines if the stack is empty. 
+                return this.array.length === 0;
+            }
+
+            peek() {
+                // Returns the item at the top of the stack without removing it from the stack.
+                if (this.isEmpty()) {
+                    return undefined; // Handle the case when the stack is empty
+                }
+                return this.array[this.array.length - 1];
+            }
+
+            length() {
+                // Returns the number of items in the stack.
+                return this.array.length;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
