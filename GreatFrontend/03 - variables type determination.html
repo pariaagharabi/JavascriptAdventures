@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Type Determination</title>
+</head>
+
+<body>
+    <p></p>
+
+    <hr>
+
+    <script>
+        function isBoolean(value) {
+            if (typeof value === 'boolean') {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isNumber(value) {
+            if (typeof value === 'number') {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isNull(value) {
+            if (value === null) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isString(value) {
+            if (typeof value === 'string') {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isSymbol(value) {
+            if (typeof value === 'symbol') {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isUndefined(value) {
+            if (typeof value === 'undefined') {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
