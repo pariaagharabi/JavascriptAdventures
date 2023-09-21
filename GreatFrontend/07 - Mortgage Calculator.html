@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(55, 54, 55);
+        }
+
+        :is(.container, p) {
+            color: thistle;
+            font-family: 'Poppins', cursive;
+        }
+
+        p {
+            text-align: center;
+            padding: 5px 8px;
+        }
+
+        .content-cotainer {
+            width: 500px;
+            height: 450px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 251, 251, 0.13);
+            border-radius: 10px;
+            padding: 50px 35px;
+            text-align: center;
+        }
+
+        [class^="content-"] {
+            line-height: 40px;
+            font-weight: 600;
+        }
+
+        input {
+            height: 30px;
+            padding: 0 10px;
+            margin-top: 8px;
+            background-color: rgba(253, 240, 251, 0.7);
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(210, 156, 201, 0.7);
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            color: thistle;
+            padding: 5px 10px;
+            margin: 10px 10px;
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        07. Build a simple mortgage calculator widget that takes in a loan amount, interest rate, loan term, and
+        calculates the monthly mortgage payment, total payment amount, and total interest paid.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-cotainer">
+            <h3>Mortgage Calculator</h3>
+            <div class="content-user-input">
+                <div>
+                    <label for="">Mortgage Amount</label>
+                    <input type="text" id="mortgage-amount" placeholder="Mortgage Amount">
+                </div>
+                <div>
+                    <label for="">Mortgage Term (Year)</label>
+                    <input type="text" id="mortgage-term" placeholder="Mortgage Term">
+                </div>
+                <div>
+                    <label for="">Interest Rate (%)</label>
+                    <input type="text" id="interest-rate" placeholder="Interest Rate">
+                </div>
+
+            </div>
+
+            <div>
+                <button id="btn-calculate">Calculate</button>
+            </div>
+
+            <hr>
+
+            <div class="content-user-output">
+                <div>
+                    <label for="">Monthly Payment: </label>
+                    <span id="monthly-payment"></span>
+                </div>
+                <div>
+                    <label for="">Total Payment: </label>
+                    <span id="total-payment"></span>
+                </div>
+                <div>
+                    <label for="">Total Interest Paid: </label>
+                    <span id="total-interest-paid"></span>
+                </div>
+            </div>
+
+            <div>
+                <button id="btn-reset">Reset</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        class MortgageCalculator {
+            #loan
+            #term
+            #interest
+
+            constructor(loan, term, interest) {
+                this.#loan = loan;
+                this.#term = term;
+                this.#interest = interest;
+            }
+
+            monthlyPayment() {
+                let dividend = Math.round(this.#loan * (Math.abs(this.#interest / 100) / 12));
+                let divisor = Math.pow(Math.abs(1 - (1 + dividend)), (-12 * this.#term));
+                const monthlyPaymentAmount = Math.round(dividend / divisor);
+
+                return monthlyPaymentAmount;
+            }
+
+
+            totalPayment() {
+                return (this.monthlyPayment() * 12) * this.#term;
+            }
+
+            totalInterestPaid() {
+                return this.totalPayment() - this.#loan;
+            }
+        }
+
+        document.getElementById("btn-calculate").addEventListener("click", () => {
+            calcMonthlyPayment();
+            calcTotalPayment();
+            calcTotalInterestPaid();
+        });
+
+        document.getElementById("btn-reset").addEventListener("click", () => {
+            restCalculator();
+        });
+
+
+        let mortgageCalculatorObj;
+
+        // Create instance of MortgageCalculator
+        function createMortgageCalculator() {
+            const loan = Number(document.getElementById("mortgage-amount").value);
+            const term = Number(document.getElementById("mortgage-term").value);
+            const interest = Number(document.getElementById("interest-rate").value);
+
+            if (isNaN(loan) || isNaN(term || interest)) {
+                throw new Error("Mortgage Amount, Mortgage Term and Interest Rate must be filled!");
+            }
+
+            mortgageCalculatorObj = new MortgageCalculator(loan, term, interest);
+        }
+
+        function calcMonthlyPayment() {
+            createMortgageCalculator();
+
+            document.getElementById("monthly-payment").innerHTML = mortgageCalculatorObj.monthlyPayment();
+        }
+
+
+        function calcTotalPayment() {
+            createMortgageCalculator();
+
+            document.getElementById("total-payment").innerHTML = mortgageCalculatorObj.totalPayment();
+        }
+
+        function calcTotalInterestPaid() {
+            createMortgageCalculator();
+
+            document.getElementById("total-interest-paid").innerHTML = mortgageCalculatorObj.totalInterestPaid();
+        }
+
+        function restCalculator() {
+            document.getElementById("mortgage-amount").value = "";
+            document.getElementById("mortgage-term").value = "";
+            document.getElementById("interest-rate").value = "";
+            document.getElementById("monthly-payment").innerHTML = "";
+            document.getElementById("total-payment").innerHTML = "";
+            document.getElementById("total-interest-paid").innerHTML = "";
+        }
+    </script>
+
+</body>
+
+</html>
