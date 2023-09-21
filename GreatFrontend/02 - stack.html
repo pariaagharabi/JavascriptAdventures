@@ -39,10 +39,9 @@
 
             peek() {
                 // Returns the item at the top of the stack without removing it from the stack.
-                if (this.isEmpty()) {
-                    return undefined; // Handle the case when the stack is empty
+                if (!this.isEmpty()) {
+                    return this.array[this.array.length - 1];
                 }
-                return this.array[this.array.length - 1];
             }
 
             length() {
@@ -50,6 +49,11 @@
                 return this.array.length;
             }
         }
+
+        const stackObj = new Stack();
+
+        stackObj.push(10);
+        stackObj.push(20);
 
     </script>
 
