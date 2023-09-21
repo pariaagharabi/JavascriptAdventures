@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Utilities II</title>
+</head>
+
+<body>
+    <p>
+        06. Write a JS program that determines the types of non-primitive values.
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        function isArray(value) {
+            if (Array.isArray(value)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isFunction(value) {
+            if (typeof value === "function") {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isObject(value) {
+            if (typeof value === "object" || typeof value === "function") {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isPlainObject(value) {
+
+        }
+
+        console.log(isArray("book"));
+        console.log(isFunction([1, 2, 3]));
+        console.log(isObject({}));
+    </script>
+
+</body>
+
+</html>
