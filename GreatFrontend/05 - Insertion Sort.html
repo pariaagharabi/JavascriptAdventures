@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(35, 35, 35);
+        }
+
+        :is(.container, p) {
+            color: wheat;
+            font-family: 'Poppins', Lucida Sans Unicode, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            padding: 5px 8px;
+        }
+
+        .cotent-container {
+            background-color: rgba(255, 251, 251, 0.13);
+            height: 350px;
+            width: 500px;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 35px rgba(8, 7, 16, 0.6);
+            border-radius: 10px;
+            padding: 50px 35px;
+            text-align: center;
+
+        }
+
+        [class^="content-"] {
+            line-height: 40px;
+            font-weight: 600;
+        }
+
+        input {
+            display: block;
+            background-color: rgba(253, 244, 209, 0.7);
+            border: none;
+            width: 100%;
+            height: 30px;
+            padding: 0 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(253, 244, 209, 0.7);
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            width: 20%;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            color: rgb(117, 90, 40);
+        }
+
+        button:hover {
+            background-color: rgba(247, 240, 213, 0.8);
+        }
+
+        /* Background design */
+        .bg {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 20%;
+            opacity: 0.7;
+        }
+
+        /* Create multiple shapes */
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #D5B56E, #DEB887, #D2B48C);
+            left: 10%;
+            top: 10%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .shape:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #D5B56E, #DEB887, #D2B48C);
+            right: 0%;
+            bottom: 0%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .shape:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #D5B56E, #DEB887, #D2B48C);
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        /* Add more shapes */
+        .shape:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #D5B56E, #DEB887, #D2B48C);
+            right: 20%;
+            top: 60%;
+            transform: translate(50%, -50%) rotate(-45deg);
+        }
+
+        .shape:nth-child(5) {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #D5B56E, #DEB887, #D2B48C);
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -50%) rotate(30deg);
+        }
+
+        /* Add more shapes as needed */
+    </style>
+</head>
+
+<body>
+
+    <p>
+        05. Implement a function that performs an insertion sort. The function should take in an array of integers and
+        return an array with the integers sorted in ascending order.
+    </p>
+
+    <hr>
+
+    <div class="bg">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <div class="cotent-container">
+            <h1>Insertion Sort</h1>
+            <div class="content-user-input">
+                <div>
+                    <label for="">Enter a list of numbers, seprated by commas:</label>
+                </div>
+                <div>
+                    <input type="text" id="user-input" placeholder="Numbers">
+                </div>
+                <div>
+                    <button id="sort-button">Sort</button>
+                </div>
+
+            </div>
+
+            <div class="content-user-output">
+                <hr>
+                <h3>Result:</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event listener for the button click
+        document.getElementById("sort-button").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+            const userNums = userInput.split(",").map(Number);
+
+            document.getElementById("showResult").innerHTML = sortUsingInsertion(userNums);
+        });
+
+        function sortUsingInsertion(array) {
+            if (array.length === 0) {
+                throw new Error("Array cannot be empty!");
+            }
+
+            for (let i = 0; i < array.length - 1; i++) {
+                for (let j = 0; j < array.length - 1 - i; j++) {
+                    if (array[j] > array[j + 1]) {
+                        let temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+
+            return JSON.stringify(array);
+        }
+
+        // let myArr = [9, 3, 6, 2, 1, 11];
+        // console.log(sortUsingInsertion(myArr));
+    </script>
+
+</body>
+
+</html>
