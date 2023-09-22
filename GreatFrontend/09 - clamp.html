@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clamp a number</title>
+</head>
+
+<body>
+    <p>
+        09. Implement a function to clamp a number within the inclusive lower and upper bounds.
+    </p>
+
+    <hr>
+
+    <script>
+        function clamp(value, lowerBound, upperBound) {
+            lowerBound = Math.min(lowerBound, upperBound);
+
+            if (value < lowerBound) {
+                return lowerBound;
+            }
+
+            if (value > upperBound) {
+                return upperBound;
+            }
+
+            return value;
+        }
+
+    </script>
+</body>
+
+</html>
