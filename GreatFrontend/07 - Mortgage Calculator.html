@@ -139,8 +139,9 @@
             }
 
             monthlyPayment() {
-                let dividend = Math.round(this.#loan * (Math.abs(this.#interest / 100) / 12));
-                let divisor = Math.pow(Math.abs(1 - (1 + dividend)), (-12 * this.#term));
+                let x = this.#interest / 100 / 12;
+                let dividend = Math.round(this.#loan * x);
+                let divisor = 1 - Math.pow((1 + x), (-12 * this.#term));
                 const monthlyPaymentAmount = Math.round(dividend / divisor);
 
                 return monthlyPaymentAmount;

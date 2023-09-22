@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(35, 35, 35);
+            min-height: 100vh;
+        }
+
+        :is(.container, p) {
+            color: rgb(107, 192, 113);
+            font-family: 'Poppins', Lucida Sans Unicode, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            padding: 5px 8px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: rgba(255, 251, 251, 0.13);
+            width: 500px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(107, 192, 113);
+            box-shadow: 0 0 35px rgba(82, 143, 116, 0.6);
+            border-radius: 10px;
+            padding: 50px 35px;
+        }
+
+        [class^="content-"] {
+            line-height: 40px;
+            font-weight: 600;
+        }
+
+        input {
+            background-color: rgba(163, 192, 158, 0.7);
+            border: none;
+            width: 100%;
+            height: 30px;
+            padding: 0 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        ::placeholder {
+            color: rgb(90, 106, 90);
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(163, 192, 158, 0.7);
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            width: 50%;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            color: rgba(44, 56, 42, 0.7);
+        }
+
+        button:hover {
+            background-color: rgba(234, 252, 231, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        08. Implement a function that performs binary search on an array of numbers. The function should take in a
+        sorted array of integers and a target integer to find. It returns the index of the target element or -1, if the
+        target element doesn't exist in the array.
+    </p>
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+                <div class="user-input">
+                    <h2>Binary Search</h2>
+                    <div>
+                        <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="user-input" placeholder="List of Numbers">
+                    </div>
+                    <div>
+                        <label for="user-specific-num">Enter the specific number:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="user-specific-num" placeholder="Specific Number">
+                    </div>
+                    <div>
+                        <button id="btn-binary-search">Binary Search</button>
+                    </div>
+                </div>
+
+                <div class="user-output">
+                    <hr>
+                    <h2>Result</h2>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create Event Listener
+        document.getElementById("btn-binary-search").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+            const userNums = userInput.split(",").map(Number);
+
+            const specificNum = Number(document.getElementById("user-specific-num").value);
+
+            document.getElementById("showResult").innerHTML = binarySearch(userNums, specificNum);
+        });
+
+        function binarySearch(array, target) {
+            let leftSide = 0;
+            let midel = 0;
+            let rightSide = array.length - 1;
+
+            while (leftSide <= rightSide) {
+                midel = Math.floor((leftSide + rightSide) / 2);
+
+                if (target === array[midel]) {
+                    return midel;
+                }
+
+                if (target < array[midel]) {
+                    rightSide = midel - 1;
+                } else {
+                    leftSide = midel + 1;
+                }
+            }
+
+            return -1;
+        }
+
+    </script>
+
+</body>
+
+</html>
