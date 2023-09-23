@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Length</title>
+</head>
+
+<body>
+    <p>
+        10. Implement a function that returns the number of parameters expected by the function.
+    </p>
+
+    <hr>
+
+    <script>
+
+        function countParameters(parameters) {
+            let counter = 0;
+
+            for (let i = 0; i < parameters.length; i++) {
+                counter++;
+            }
+
+            return counter;
+        }
+
+        function exampleFunction(a, b, c, d, f) {
+        }
+
+        console.log(countParameters(exampleFunction));
+
+    </script>
+</body>
+
+</html>
