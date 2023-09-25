@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Time</title>
+
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(26, 25, 25);
+            min-height: 100vh;
+            color: wheat;
+            font-family: cursive;
+        }
+
+        p {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            padding: 50px;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 500px;
+
+            background-color: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(5px);
+
+            border: 3px solid tan;
+            border-radius: 10px;
+            box-shadow: 0 0 20px wheat, 0 0 60px wheat, 0 0 20px wheat;
+        }
+
+        .content-container-inner {
+            line-height: 80px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            height: 50px;
+            padding: 0 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            font-size: 15px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            padding: 0 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            font-size: 35px;
+            border: none;
+            background-color: rgba(211, 191, 125, 0.51);
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            color: rgb(93, 76, 54);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, wheat, #9a814a);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        13. Implement a function that pauses for a specified duration before resuming execution.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+                <h1>Sleep Time</h1>
+
+                <div class="contetn-input">
+                    <label for="user-input"></label>
+                    <input type="text" id="user-input" placeholder="Enter a number of seconds">
+                    <div>
+                        <button type="button" id="btn-timeout">Set Timeout</button>
+                    </div>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h1>Result</h1>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-timeout").addEventListener("click", async () => {
+            const userInput = Number(document.getElementById("user-input").value);
+
+            if (isNaN(userInput)) {
+                document.getElementById("showResult").innerHTML = "Invalid input. Please enter a valid number.";
+                return;
+            }
+
+            document.getElementById("showResult").innerHTML = "Sleeping...";
+
+            await sleep(userInput);
+
+            document.getElementById("showResult").innerHTML = "Done!";
+        });
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // sleep(1000).then(() => console.log('done'));
+    </script>
+
+</body>
+
+</html>
