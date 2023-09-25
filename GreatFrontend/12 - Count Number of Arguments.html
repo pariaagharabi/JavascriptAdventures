@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Number of Arguments</title>
+</head>
+
+<body>
+    <p>
+        12. Implement a function that returns number of arguments it was called with</p>
+    </p>
+
+    <hr>
+
+    <script>
+        // First Solution
+        // function argumentsCounter(arguments) {
+        //     let counter = 0;
+
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         counter++;
+        //     }
+
+        //     return counter;
+        // }
+
+        // function exampleFunction(a, b, c, d) { }
+
+        // console.log(argumentsCounter(exampleFunction));
+
+
+
+        // Second Solution
+
+        // Using the rest parameter (...args) to accept an indefinite number of arguments 
+        function argumentsCounter(...args) {
+            return args.length;
+        }
+
+        const argsCounter = argumentsCounter(1, 2, 3, 4, 5);
+
+        console.log(argsCounter);
+
+    </script>
+
+</body>
+
+</html>
