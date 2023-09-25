@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Counter</title>
+</head>
+
+<body>
+    <p>
+        11. Implement a function that accepts an integer value and returns a function that can be repeatedly called to
+        return an increasing value.
+    </p>
+
+    <hr>
+
+    <script>
+
+        function functionCounter() {
+            let counter = 0;
+            return () => counter++;
+        }
+
+        const counter = functionCounter();
+
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+
+    </script>
+
+</body>
+
+</html>
