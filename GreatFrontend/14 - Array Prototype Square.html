@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Prototype Square</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(37, 37, 37);
+            color: coral;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .content-container {
+            border: 2px solid chocolate;
+            border-radius: 10px;
+            box-shadow: 0px 20px 20px 0px;
+            padding: 30px;
+        }
+
+        input {
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+        }
+
+        ::placeholder {
+            color: rgb(220, 180, 151);
+        }
+
+        button {
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            cursor: pointer;
+            background-color: chocolate;
+            color: rgb(104, 64, 31);
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        button:hover {
+            background-color: rgb(104, 64, 31);
+            color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        14. Implement a custom Array.prototype.square() method that squares the values in an array.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-square-container">
+                <h3>Square of the values in an array</h3>
+
+                <div class="content-input">
+                    <label for="user-input">Enter a list of numbers, separated by commas:</label>
+                    <input type="text" name="user-input" id="user-input" placeholder="List of Numbers">
+                    <button id="btn-square">Square</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Define the custom square method for arrays
+        Array.prototype.square = function () {
+            // Use map to create a new array where each element is squared
+            return this.map(item => item * item);
+        };
+
+        // Create Addlistener
+        document.getElementById("btn-square").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+            const userNums = userInput.split(",").map(Number);
+
+            // Call the custom square method on userNums
+            const squaredNumbers = userNums.square();
+
+            // Display the squared numbers
+            document.getElementById("showResult").innerHTML = JSON.stringify(squaredNumbers);
+        });
+
+        // Solution #2: Regular function to calculate
+        // function squareNum(array) {
+        //     let squareValues = [];
+
+        //     for (let i = 0; i < array.length; i++) {
+        //         array[i] = array[i] * array[i];
+        //         squareValues.push(array[i]);
+        //     }
+
+        //     return squareValues;
+        // }
+
+    </script>
+</body>
+
+</html>
