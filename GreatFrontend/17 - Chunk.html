@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk</title>
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: rgba(47, 47, 48, 013);
+            color: cadetblue;
+        }
+
+        p {
+            text-align: center;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+
+            height: 100vh;
+            width: 100vw;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .content-conainer {
+            border: 3px solid cadetblue;
+            border-radius: 10px;
+            border-style: outset;
+            box-shadow: 0px 0px 60px 70px;
+
+            width: 400px;
+            height: 500px;
+            padding: 20px;
+
+            background-color: rgba(98, 98, 98, 0.5);
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: cadetblue;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(100, 100, 100);
+            color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        17. Implement a function that creates an array of elements split into smaller groups of a specified size.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-conainer">
+            <div class="content-container-inner">
+                <h3>Chunk Function</h3>
+
+                <div class="content-input">
+                    <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                    <input type="text" id="user-input" placeholder="List of Numbers">
+
+                    <label for="user-size">Enter a specified size:</label>
+                    <input type="text" id="user-size" placeholder="Specified size">
+
+                    <button id="btn-chunk">Chunk</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create addEventListener
+        document.getElementById("btn-chunk").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+            const userNums = userInput.split(",").map(Number);
+
+            const userSize = Number(document.getElementById("user-size").value);
+
+            document.getElementById("showResult").innerHTML = JSON.stringify(chunk(userNums, userSize));
+        });
+
+        function chunk(array, size) {
+            let result = [];
+
+            if (array.length === 0 || size <= 0) {
+                throw new Error("Invalid input. The array must not be empty, and size should be greater than 0.");
+            }
+
+            for (let i = 0; i < array.length; i += size) {
+                const chunkArr = array.slice(i, i + size);
+
+                result.push(chunkArr);
+            }
+
+            return result;
+        }
+
+    </script>
+
+</body>
+
+</html>
