@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>difference between arrays</title>
+
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(45, 45, 45);
+            color: rosybrown;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            padding: 10px 0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+
+            height: 100vh;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .content-container {
+            border: 2px solid rosybrown;
+            border-radius: 10px;
+            box-shadow: 0px 20px 20px 0px;
+
+            background-color: rgba(231, 203, 185, 0.13);
+
+            padding: 30px;
+        }
+
+        input {
+            border-radius: 5px;
+            border: none;
+            outline: none;
+
+            padding: 5px 10px;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+
+            font-weight: bold;
+            font-size: large;
+            color: rosybrown;
+            background-color: rgba(231, 203, 185, 0.13);
+            cursor: pointer;
+
+            margin: 15px 0px;
+        }
+
+        button:hover {
+            background-color: rgba(250, 233, 222, 0.2);
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        18. JS program to find the difference in values between arrays.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+
+                <div class="content-input">
+                    <label for="user-input-arr1">Enter the first list of numbers, seprated by commas:</label>
+                    <input type="text" id="user-input-arr1" name="user-input-arr1" placeholder="First List">
+
+                    <label for="user-input-arr2">Enter the second list of numbers, seprated by commas:</label>
+                    <input type="text" id="user-input-arr2" name="user-input-arr2" placeholder="Second List">
+
+                    <button id="btn-difference">Get Difference</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-difference").addEventListener("click", () => {
+            const userArr1 = document.getElementById("user-input-arr1").value;
+            const userArr1Nums = userArr1.split(",").map(Number);
+
+            const userArr2 = document.getElementById("user-input-arr2").value;
+            const userArr2Nums = userArr2.split(",").map(Number);
+
+            document.getElementById("showResult").innerHTML = JSON.stringify(getDifference(userArr1Nums, userArr2Nums));
+        });
+
+        function getDifference(arr1, arr2) {
+            let result = [];
+
+            for (let i = 0; i < arr1.length; i++) {
+                if (!arr2.includes(arr1[i])) {
+                    result.push(arr1[i]);
+                }
+            }
+
+            for (let i = 0; i < arr2.length; i++) {
+                if (!arr1.includes(arr2[i])) {
+                    result.push(arr2[i]);
+                }
+            }
+
+            return result;
+        }
+
+    </script>
+
+</body>
+
+</html>
