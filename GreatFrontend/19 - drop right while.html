@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop right while</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(44, 45, 44);
+            color: honeydew;
+            font-family: cursive;
+        }
+
+        p {
+            text-align: center;
+            margin: 5px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 500px;
+            height: 400px;
+            background-color: rgb(82, 83, 82);
+            backdrop-filter: blur(10px);
+
+            border: 3px solid honeydew;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px honeydew;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+
+            cursor: pointer;
+
+            background-color: honeydew;
+            color: rgb(70, 85, 70);
+            font-size: large;
+            font-weight: bold;
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(135, 139, 135);
+            color: honeydew;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        19. Implement a function that excludes elements from the end of an array until the predicate returns false.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+                <h3>Drop Right While</h3>
+
+                <div class="content-input">
+                    <label for="user-input-arr">Enter a list of numbers, seprated by commas:</label>
+                    <input id="user-input-arr" type="text" placeholder="List of numbers">
+
+                    <label for="user-input-predicate">Predicate:</label>
+                    <input id="user-input-predicate" type="text" placeholder="Predicate">
+
+                    <button id="btn-run">Run</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-run").addEventListener("click", () => {
+            try {
+                let userInput = document.getElementById("user-input-arr").value;
+                let userNums = userInput.split(",").map(Number);
+
+                let predicate = Number(document.getElementById("predicate-arr").value);
+            }
+            catch (e) {
+                alert(e.message);
+            }
+
+            document.getElementById("showResults").innerHTML = dropRightWhile(userNums, predicate);
+        });
+
+        function dropRightWhile(array, predicate) {
+            if (array.length === 0 || isNaN(predicate)) {
+                throw new Error("The predicate and array must be filled!");
+                return;
+            }
+
+            let result = [];
+
+            for (let i = array.length - 1; i >= 0; i--) {
+                if (array[i] >= predicate) {
+                    result.push(array[i]);
+                }
+            }
+
+            return result;
+        }
+    </script>
+
+    </script>
+
+</body>
+
+</html>
