@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop while</title>
+</head>
+
+<body>
+    <p>
+        20. Implement a function that excludes elements from the begining of an array until the predicate returns false.
+    </p>
+
+    <hr>
+
+    <script>
+        function dropWhile(array, predicate) {
+            let result = [];
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > predicate) {
+                    result.push(array[i]);
+                }
+            }
+
+            return result;
+        }
+
+
+        console.log(dropWhile([2, 4, 6, 8, 9], 6));
+    </script>
+
+
+</body>
+
+</html>
