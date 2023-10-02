@@ -118,29 +118,20 @@
 
     <script>
         document.getElementById("btn-run").addEventListener("click", () => {
-            try {
-                let userInput = document.getElementById("user-input-arr").value;
-                let userNums = userInput.split(",").map(Number);
+            let userInput = document.getElementById("user-input-arr").value;
+            let userNums = userInput.split(",").map(Number);
 
-                let predicate = Number(document.getElementById("predicate-arr").value);
-            }
-            catch (e) {
-                alert(e.message);
-            }
+            let predicate = Number(document.getElementById("user-input-predicate").value);
 
-            document.getElementById("showResults").innerHTML = dropRightWhile(userNums, predicate);
+            let result = dropRightWhile(userNums, predicate);
+            document.getElementById("showResult").textContent = result.join(', ');
         });
 
         function dropRightWhile(array, predicate) {
-            if (array.length === 0 || isNaN(predicate)) {
-                throw new Error("The predicate and array must be filled!");
-                return;
-            }
-
             let result = [];
 
             for (let i = array.length - 1; i >= 0; i--) {
-                if (array[i] >= predicate) {
+                if (array[i] <= predicate) {
                     result.push(array[i]);
                 }
             }
@@ -148,9 +139,6 @@
             return result;
         }
     </script>
-
-    </script>
-
 </body>
 
 </html>
