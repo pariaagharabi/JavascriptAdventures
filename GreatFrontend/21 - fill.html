@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Array</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(66, 66, 66);
+            color: rgb(129, 171, 216);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+            width: 100vh;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 30px;
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+
+            width: 350px;
+            height: 400px;
+            background-color: rgb(82, 83, 82);
+            backdrop-filter: blur(10px);
+
+            border: 3px solid rgb(129, 171, 216);
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px rgb(151, 198, 249);
+        }
+
+        input {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+
+            padding: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+
+            cursor: pointer;
+
+            background-color: rgb(49, 64, 81);
+            color: rgb(129, 171, 216);
+            font-size: large;
+            font-weight: bold;
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(129, 171, 216);
+            color: rgb(49, 64, 81);
+        }
+
+        hr {
+            width: 100%;
+            height: 1px;
+        }
+
+        /* Style Background */
+    </style>
+</head>
+
+<body>
+    <p>
+        21. Implement a function that fill an array within values whitin specified indices.
+    </p>
+
+    <hr>
+
+    <div class="bg-shap"></div>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+
+                <div class="content-input">
+                    <label for="user-input1">Enter your first number:</label>
+                    <input type="text" id="user-input" placeholder="First Number">
+
+                    <label for="user-input2">Enter your second number:</label>
+                    <input type="text" id="user-input2" placeholder="Second Number">
+
+                    <button id="btn-arr-creation">Fill Array</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fillArray(firstVal, lastVal) {
+            let resultArr = [];
+
+            for (let i = firstVal; i <= lastVal; i++) {
+                resultArr.push(i);
+            }
+
+            return resultArr;
+        }
+
+        console.log(fillArray(1, 10));
+
+    </script>
+
+</body>
+
+</html>
