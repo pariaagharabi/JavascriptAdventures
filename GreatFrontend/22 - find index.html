@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Index</title>
+
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(90, 89, 90);
+            color: rgb(173, 127, 168);
+            font-family: sans-serif;
+        }
+
+        p {
+            text-align: center;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 30px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .content-container {
+            border: 2px solid rgba(231, 190, 228, 0.1);
+            border-radius: 5px;
+            background-color: rgba(231, 190, 228, 0.1);
+            backdrop-filter: blur(4px);
+
+            padding: 20px;
+            margin: 20px;
+
+            width: 400px;
+            height: 400px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+
+            font-weight: bold;
+            cursor: pointer;
+
+            color: rgb(173, 127, 168);
+            background-color: rgb(96, 73, 96);
+
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: rgb(173, 127, 168);
+            color: rgb(96, 73, 96);
+        }
+
+        hr {
+            height: 2px;
+        }
+
+        /* Background Style */
+        .cube {
+            height: 10px;
+            width: 10px;
+            border: 2px solid rgb(173, 127, 168);
+            animation: rotate 5s linear infinite alternate;
+            position: absolute;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>
+        22. Implement a function that returns the index of the first elements in the array that satisfied the provided
+        testting function.
+    </p>
+
+    <hr>
+
+    <div class="cubes-container">
+        <!-- Generate cubes dynamically using JavaScript -->
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+                <div class="content-input">
+                    <h3>Find Index</h3>
+
+                    <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                    <input type="text" name="user-input" id="user-input" placeholder="List Numbers">
+                    <button id="btn-index-finder">Index Finder</button>
+                </div>
+
+                <div class="content-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-index-finder").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+
+            if (userInput.length === 0) {
+                alert("Please enter numbers!");
+                return;
+            }
+
+            const numbers = userInput.split(",").map(Number);
+
+            document.getElementById("showResult").innerHTML = findIndex(numbers);
+
+        });
+
+
+        // function findIndex(array, condition) {
+        //     for (let i = 0; i < array.length; i++) {
+        //         if (condition) {
+        //             return i;
+        //         }
+        //     }
+
+        //     return -1;
+        // }
+
+
+        // Background Design
+        const cubesContainer = document.querySelector('.cubes-container');
+
+        // Create and append cubes to the container with random positions
+        for (let i = 0; i < 80; i++) {
+            const cube = document.createElement('div'); // Fix the variable name here
+            cube.classList.add('cube');
+            cube.style.left = `${Math.random() * 100}%`;
+            cube.style.top = `${Math.random() * 100}%`;
+            cube.style.animationDelay = `${Math.random() * 6}s`;
+            cubesContainer.appendChild(cube);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
