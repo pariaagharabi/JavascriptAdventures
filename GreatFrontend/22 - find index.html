@@ -87,19 +87,19 @@
             height: 10px;
             width: 10px;
             border: 2px solid rgb(173, 127, 168);
-            animation: rotate 5s linear infinite alternate;
             position: absolute;
+            animation: drop 0s;
+            animation-fill-mode: forwards;
         }
 
-        @keyframes rotate {
-            0% {
-                transform: rotate(0);
+        @keyframes drop {
+            from {
+                transform: translateX(0%);
             }
 
-            50% {
-                transform: rotate(180deg);
+            to {
+                transform: translateY(100%);
             }
-
         }
     </style>
 </head>
