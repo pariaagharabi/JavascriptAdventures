@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Elements</title>
+</head>
+
+<body>
+
+    <script>
+        function getUniqueElements(array) {
+            let uniqueEles = [];
+
+            for (let i = 0; i < array.length; i++) {
+                if (!uniqueEles.includes(array[i])) {
+                    uniqueEles.push(array[i]);
+                }
+            }
+
+            return uniqueEles;
+        }
+
+        let arr = [2, 3, 4, 5, 2, 5, 7, 2];
+        console.log(getUniqueElements(arr))
+    </script>
+
+</body>
+
+</html>
