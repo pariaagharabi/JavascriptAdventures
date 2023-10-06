@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: rgb(42, 41, 41);
+        }
+
+        .bubbles-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .bubble {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(210, 184, 132, 0.6);
+            border-radius: 50%;
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Randomize the bubble positions */
+        .bubble:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+
+        .bubble:nth-child(2) {
+            top: 20%;
+            left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bubbles-container">
+        <!-- Generate bubbles dynamically using JavaScript -->
+    </div>
+    <script>
+        const bubblesContainer = document.querySelector('.bubbles-container');
+
+        // Create and append bubbles to the container with random positions
+        for (let i = 0; i < 80; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.top = `${Math.random() * 100}%`;
+            bubble.style.animationDelay = `${Math.random() * 6}s`;
+            bubblesContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+
+</html>
