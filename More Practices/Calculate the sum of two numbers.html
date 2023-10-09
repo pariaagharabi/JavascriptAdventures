@@ -5,6 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sum of two numbers</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: burlywood;
+            color: rgb(63, 44, 19);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .content-container {
+            border: 2px solid rgb(174, 138, 89);
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(251, 230, 202, 0.12);
+            color: rgb(63, 44, 19);
+
+            width: 400px;
+            height: 300px;
+
+            padding: 30px;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 5px;
+            caret-color: rgb(144, 114, 75);
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgb(63, 44, 19);
+        }
+
+        button {
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(63, 44, 19);
+            color: tan;
+            padding: 5px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: rgb(183, 149, 100);
+            color: rgb(63, 44, 19);
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +88,7 @@
     <div class="container">
         <div class="content-container">
             <div class="content-container-inner">
-                <div class="user-input">
+                <div class="content-user-input">
                     <label for="user-input-num1">Enter the first number:</label>
                     <input type="text" id="user-input-num1" placeholder="First Number">
 
