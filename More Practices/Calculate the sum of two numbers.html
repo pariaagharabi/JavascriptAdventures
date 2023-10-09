@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of two numbers</title>
+</head>
+
+<body>
+    <p>
+        1. Write a JavaScript function to calculate the sum of two numbers.
+    </p>
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-container-inner">
+                <div class="user-input">
+                    <label for="user-input-num1">Enter the first number:</label>
+                    <input type="text" id="user-input-num1" placeholder="First Number">
+
+                    <label for="user-input-num2">Enter the second number:</label>
+                    <input type="text" id="user-input-num2" placeholder="Second Number">
+
+                    <button id="btn-sum">Calculate Sum</button>
+                </div>
+
+                <div class="user-output">
+                    <hr>
+                    <h3>Result</h3>
+                    <span id="showResult"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-sum").addEventListener("click", () => {
+            const userInput1 = document.getElementById("user-input-num1").value;
+            const userNum1 = Number(userInput1);
+
+            const userInput2 = document.getElementById("user-input-num2").value;
+            const userNum2 = Number(userInput2);
+
+            if (userInput1.length === 0 || userInput2.length === 0) {
+                alert("Please enter numbers! The first number or the second number must be filled.");
+                return;
+            }
+
+
+            document.getElementById("showResult").innerHTML = calcSum(userNum1, userNum2);
+        });
+
+        function calcSum(num1, num2) {
+            let sumResult = num1 + num2;
+
+            return sumResult;
+        }
+    </script>
+
+</body>
+
+</html>
