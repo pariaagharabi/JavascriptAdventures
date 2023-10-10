@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum number</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-container">
+            <div class="content-user-input">
+
+            </div>
+
+            <div class="user-output">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        Write a JavaScript program to find the maximum number in an array.
+    </p>
+
+    <hr>
+
+    <script>
+        document.getElementById("btn-max-num").addEventListener("click", () => {
+
+        });
+
+        function getMaxNum(array) {
+            let maxNum = array[0];
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > maxNum) {
+                    maxNum = array[i];
+                }
+            }
+
+            return maxNum;
+        }
+
+        let arr = [3, 4, 5, 69, 25, 30];
+        console.log(getMaxNum(arr));
+    </script>
+
+</body>
+
+</html>
