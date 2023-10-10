@@ -5,13 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maximum number</title>
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(41, 41, 41);
+            color: salmon;
+            font-family: cursive;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            height: 100vh;
+        }
+
+        [class^="content-"] {
+            display: grid;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .content-container {
+            border: 2px solid salmon;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 251, 251, 0.1);
+
+            width: 380px;
+            height: 200px;
+
+            padding: 15px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 0 8px;
+            caret-color: salmon;
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px salmon;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: salmon;
+            font-weight: bold;
+            margin: 15px 0;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            color: salmon;
+            background-color: rgb(97, 88, 87);
+        }
+    </style>
 </head>
 
 <body>
+    <p>
+        Write a JavaScript program to find the maximum number in an array.
+    </p>
+
+    <hr>
+
     <div class="container">
         <div class="content-container">
             <div class="content-user-input">
+                <label for="user-input">Enter a list of numbers, seprated by commas:</label>
+                <input type="text" id="user-input" placeholder="Numbers List">
 
+                <button id="btn-max-num">Maximum number</button>
             </div>
 
             <div class="user-output">
@@ -22,15 +100,17 @@
         </div>
     </div>
 
-    <p>
-        Write a JavaScript program to find the maximum number in an array.
-    </p>
-
-    <hr>
-
     <script>
         document.getElementById("btn-max-num").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+            const userNum = userInput.split(",").map(Number);
 
+            if (userInput.length === 0) {
+                alert("User input is empty!");
+                return;
+            }
+
+            document.getElementById("showResult").innerHTML = getMaxNum(userNum);
         });
 
         function getMaxNum(array) {
@@ -45,8 +125,6 @@
             return maxNum;
         }
 
-        let arr = [3, 4, 5, 69, 25, 30];
-        console.log(getMaxNum(arr));
     </script>
 
 </body>
