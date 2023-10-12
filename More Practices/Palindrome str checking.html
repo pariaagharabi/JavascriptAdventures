@@ -11,7 +11,6 @@
 
     <script>
         function isPalindrome(str) {
-            console.log(str);
             const helfLen = Math.floor(str.length / 2);
             for (let i = 0; i < helfLen; i++) {
                 if (str[i] !== str[str.length - 1 - i]) {
@@ -20,6 +19,11 @@
             }
 
             return true;
+        }
+
+        // Second solution
+        function isPalindrome_v2(str) {
+            return str === str.split("").reverse().join("");
         }
 
         let myStr = "bob";
