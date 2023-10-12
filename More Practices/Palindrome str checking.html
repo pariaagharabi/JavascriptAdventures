@@ -5,11 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome</title>
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(32, 32, 32);
+            color: rgb(45, 92, 127);
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            line-height: 30px;
+            border: 2px solid rgb(45, 92, 127);
+            border-radius: 5px;
+
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 251, 251, 0.1);
+
+            width: 300px;
+            height: 200px;
+        }
+
+        :is(input, button) {
+            width: 100%;
+        }
+
+        input {
+            padding: 0px 5px;
+            caret-color: rgb(45, 92, 127);
+            outline: none;
+        }
+
+        button {
+            border: none;
+            border-radius: 2px;
+            background-color: rgb(45, 92, 127);
+            color: rgb(209, 222, 249);
+            font-weight: bold;
+            padding: 2px 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: rgb(45, 92, 127);
+            background-color: rgb(135, 147, 157);
+        }
+    </style>
 </head>
 
 <body>
+    <p>
+        Write a JavaScript function to check if a given string is a palindrome (reads the same forwards and backwards).
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="content-user-input">
+                <div>
+                    <label for="user-input">Enter a string:</label>
+                </div>
+                <div>
+                    <input type="text" id="user-input" placeholder="String">
+                </div>
+                <div>
+                    <button id="btn-palindrome">Check Palindrome</button>
+                </div>
+            </div>
+
+            <div class="show-result">
+                <hr>
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
 
     <script>
+        document.getElementById("btn-palindrome").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
+
+            document.getElementById("showResult").innerHTML = isPalindrome(userInput);
+        })
+
         function isPalindrome(str) {
             const helfLen = Math.floor(str.length / 2);
             for (let i = 0; i < helfLen; i++) {
@@ -26,8 +122,8 @@
             return str === str.split("").reverse().join("");
         }
 
-        let myStr = "bob";
-        console.log(isPalindrome(myStr));
+        let myStr = "boba";
+        console.log(isPalindrome_v2(myStr));
     </script>
 
 </body>
