@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even numbers</title>
+</head>
+
+<body>
+    <p></p>
+
+    <hr>
+
+    <script>
+        function evenNums(array) {
+            let resultEvenNums = [];
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] % 2 === 0) {
+                    resultEvenNums.push(array[i]);
+                }
+            }
+
+            return resultEvenNums;
+        }
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+        const evenNumbers = evenNums(numbers);
+        console.log(evenNumbers);
+    </script>
+
+</body>
+
+</html>
