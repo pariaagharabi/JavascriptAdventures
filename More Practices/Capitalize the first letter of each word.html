@@ -26,7 +26,21 @@
         //     return result.trim(); // Trim to remove the extra space at the end
         // }
 
+        // Second solution
+        function capitalize(string) {
+            let result = "";
+            let strSplitted = string.split(" ");
 
+            for (let i = 0; i < strSplitted.length; i++) {
+                let eachWord = strSplitted[i];
+                let firstLetterCapitalized = eachWord.charAt(0).toUpperCase();
+                let restOfWord = eachWord.slice(1);
+
+                result += firstLetterCapitalized + restOfWord + " ";
+            }
+
+            return result.trim();
+        }
 
         let mySentence = "hello javascript, world!";
         console.log(capitalize(mySentence));
