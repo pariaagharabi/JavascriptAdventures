@@ -8,6 +8,14 @@
 </head>
 
 <body>
+
+    <div>
+        <h1>Debounce Example</h1>
+        <p>This is an example of a debounce function in JavaScript. It delays the execution of a function until a specified amount of time has passed since the last action.</p>
+        
+        <button onclick="debouncedSearchData()">Click Me</button>
+    </div>
+
     <script>
 
         // mainFunction: is a function that you want to execute after the debounce time
@@ -29,6 +37,17 @@
                 }, delay);
             };
         };
+
+        // Define a function called 'searchData' that logs a message to the console
+        function searchData() {
+            console.log("searchData executed");
+        }
+
+        // Create a new debounced version of the 'searchData' function with a delay of 3000 milliseconds (3 seconds)
+        const debouncedSearchData = debounce(searchData, 3000);
+
+        // Call the debounced version of 'searchData'
+        debouncedSearchData();
     </script>
 
 </body>
