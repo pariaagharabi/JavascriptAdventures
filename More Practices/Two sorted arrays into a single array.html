@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two sorted arrays into a single array</title>
+</head>
+
+<body>
+
+    <script>
+        let merge = function (nums1, m, nums2, n) {
+            m--;
+            n--;
+            for (let i = nums1.length - 1; i >= 0; i--) {
+                if (n > -1 && m > -1 && nums1[m] >= nums2[n]) {
+                    nums1[i] = nums1[m];
+                    nums1[m] = nums2[n];
+                    m--;
+                }
+                else if (n > -1) {
+                    nums1[i] = nums2[n--];
+                }
+            }
+        };
+
+        // Second solution
+
+        var nums1 = [1, 2, 3, 0, 0, 0];
+        var nums2 = [2, 5, 6];
+        var m = 3;
+        var n = 3;
+
+        // Call the merge function
+        merge(nums1, m, nums2, n);
+
+        // Log the resulting nums1 array
+        console.log(nums1);
+
+    </script>
+
+</body>
+
+</html>
