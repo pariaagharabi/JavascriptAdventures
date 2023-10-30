@@ -20,7 +20,23 @@
             return true;
         }
 
+        // Second solution
+        function isPalindrome(str) {
+            str = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); // Remove non-alphanumeric characters and convert to lowercase
 
+            let left = 0;
+            let right = str.length - 1;
+
+            while (left < right) {
+                if (str[left] !== str[right]) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+
+            return true;
+        }
 
         const word = "bobw";
         console.log(isPalindrome(word))
