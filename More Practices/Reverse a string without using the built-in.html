@@ -11,6 +11,7 @@
     <script>
         function reverseString(string) {
             let reversedResult = "";
+
             for (let i = string.length - 1; i >= 0; i--) {
                 reversedResult += string[i];
             }
@@ -18,8 +19,18 @@
             return reversedResult;
         }
 
+        // Using Recursion:
+        function reverseString2(str) {
+            if (str === '') {
+                return '';
+            } else {
+                return reverseString(str.substr(1)) + str[0];
+            }
+        }
+
         const myStr = "hello";
         console.log(reverseString(myStr));
+        console.log(reverseString2(myStr));
     </script>
 
 </body>
