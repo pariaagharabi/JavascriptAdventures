@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Number Generator</title>
+</head>
+
+<body>
+
+    <script>
+        function generateNums(digits) {
+            if (digits <= 0) {
+                return 0;
+            }
+
+            const min = Math.pow(10, digits - 1);
+            const max = Math.pow(10, digits) - 1;
+            let randomNumbers = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            return randomNumbers;
+        }
+
+        console.log(generateNums(5));
+
+    </script>
+
+</body>
+
+</html>
