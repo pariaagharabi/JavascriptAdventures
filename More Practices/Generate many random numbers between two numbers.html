@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate many random numbers between two numbers</title>
+</head>
+
+<body>
+    <script>
+        function generateRandomNumbers(min, max, many) {
+            let randomResult = [];
+            min = Math.ceil(min);
+            max = Math.floor(max);
+
+            for (var i = 0; i < many; i++) {
+                let randomNumbers = Math.random() * ((max - min) + min);
+                randomResult.push(Math.floor(randomNumbers));
+            }
+
+            return randomResult;
+        }
+
+        console.log(generateRandomNumbers(35, 66, 4));
+    </script>
+
+</body>
+
+</html>
