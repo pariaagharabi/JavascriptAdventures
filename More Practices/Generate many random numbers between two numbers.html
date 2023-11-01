@@ -15,8 +15,8 @@
             max = Math.floor(max);
 
             for (var i = 0; i < many; i++) {
-                let randomNumbers = Math.random() * ((max - min) + min);
-                randomResult.push(Math.floor(randomNumbers));
+                let randomNumbers = Math.floor(Math.random() * (max - min) + min);
+                randomResult.push(randomNumbers);
             }
 
             return randomResult;
