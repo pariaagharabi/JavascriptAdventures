@@ -18,8 +18,9 @@
 
         // Solution Two
         function getDigits(number) {
+            // Special case for num = 0
             if (number === 0) {
-                return 1; // Special case for num = 0
+                return 1; 
             }
 
             // Initialize a count to 0
@@ -31,7 +32,7 @@
                 count++;
             }
 
-            return coount;
+            return count;
         }
 
         const myNum = "25790346";
