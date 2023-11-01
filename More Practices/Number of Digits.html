@@ -11,21 +11,30 @@
 
     <script>
         // Solution One
-        function getDigits(number) {
-            let numStr = Math.abs(number).toString()
-            return numStr.length;
-        }
+        // function getDigits(number) {
+        //     let numStr = Math.abs(number).toString()
+        //     return numStr.length;
+        // }
 
         // Solution Two
         function getDigits(number) {
-            let coount = 0;
-
-            for (let i = 0; i < number; i++) {
-
+            if (number === 0) {
+                return 1; // Special case for num = 0
             }
+
+            // Initialize a count to 0
+            let count = 0;
+            number = Math.abs(number);
+
+            while (number > 0) {
+                number = Math.floor(number / 10);
+                count++;
+            }
+
+            return coount;
         }
 
-        const myNum = "257903";
+        const myNum = "25790346";
         console.log(getDigits(myNum));
     </script>
 
