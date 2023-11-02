@@ -10,21 +10,36 @@
 <body>
 
     <script>
-        function reverseNumber(num) {
-            let reversed = 0;
+        // Solution One:
+        // function reverseNumber(num) {
+        //     let reversed = 0;
 
-            while (num !== 0) {
-                reversed = reversed * 10 + (num % 10);
-                num = Math.floor(num / 10);
-            }
+        //     while (num !== 0) {
+        //         let lastDigit = (num % 10);
+        //         num = Math.floor(num / 10);
+        //         reversed = reversed * 10 + lastDigit;
+        //     }
 
-            return reversed;
+        //     return reversed;
+        // }
+
+        // // Example usage:
+        // let num = 12345;
+        // let reversedNum = reverseNumber(num);
+        // console.log(reversedNum);
+
+        // Solution Two:
+        let num = 10;
+
+        if (num > 9) {
+            let ones = num % 10;
+            let tens = (num - ones) / 10;
+            let reverse = ((ones * 10) + tens);
+            console.log(reverse);
+        } else {
+            console.log(num);
         }
 
-        // Example usage:
-        let num = 12345;
-        let reversedNum = reverseNumber(num);
-        console.log(reversedNum);
     </script>
 
 </body>
