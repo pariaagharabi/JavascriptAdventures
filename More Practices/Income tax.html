@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax</title>
+</head>
+
+<body>
+    <script>
+
+        // let income = 170000;
+        // let tax;
+        // let surplusIncome;
+
+        // if (income <= 100000) {
+        //     tax = income * 0.1;
+        // } else {
+        //     let surplusTax = (income - 100000) * 0.2;
+        //     tax = (100000 * 0.1) + surplusTax;
+        // }
+
+        // console.log(tax);
+
+        let income = 170000;
+        let tax = (income <= 100000) ? income * 0.1 : (100000 * 0.1) + ((income - 100000) * 0.2);
+
+        console.log(tax);
+
+    </script>
+
+
+</body>
+
+</html>
