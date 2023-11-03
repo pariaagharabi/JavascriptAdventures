@@ -55,8 +55,9 @@
                 return
             }
 
-            let firstString = str1.split('').sort().join('');
-            let secondString = str2.split('').sort().join('');
+            let firstString = str1.split("").sort().join("");
+            let secondString = str2.split("").sort().join("");
+
             if (firstString === secondString) {
                 return true;
             } else {
@@ -77,12 +78,12 @@
             }
 
             // Sort both strings
-            let firstString = str1.split('').sort().join('');
-            let secondString = str2.split('').sort().join('');
+            let firstString = str1.split("").sort().join("");
+            let secondString = str2.split("").sort().join("");
 
             // Compare sorted strings
             for (let i = 0; i < firstString.length; i++)
-                if (firstString.length[i] != secondString[i])
+                if (firstString.length[i] !== secondString[i])
                     return false;
 
             return true;
