@@ -11,20 +11,69 @@
 
     <script>
         function isAnagram(str1, str2) {
-            for (let i = 0; i < str1.length; i++) {
-                for (let j = 0; j < str2.length; j++) {
-                    if (str1[i].includes(str2[j])) {
-                        return true;
-                    }
+            // Check if the lengths of both strings are equal
+            if (str1.length !== str2.length) {
+                return false;
+            }
+
+            // Create objects to count character occurrences
+            const charCount1 = {};
+            const charCount2 = {};
+
+            // Count character occurrences in str1
+            for (const char of str1) {
+                charCount1[char] = (charCount1[char] || 0) + 1;
+            }
+
+            // Count character occurrences in str2
+            for (const char of str2) {
+                charCount2[char] = (charCount2[char] || 0) + 1;
+            }
+
+            // Compare character counts
+            for (const char in charCount1) {
+                if (charCount1[char] !== charCount2[char]) {
+                    return false;
                 }
             }
 
-            return false;
+            return true;
         }
 
         const myStr1 = "abcd";
-        const myStr2 = "eops";
+        const myStr2 = "dcba";
         console.log(isAnagram(myStr1, myStr2));
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // Solution Two
+        function checkAnagram(str1, str2) {
+            let len1 = str1.length;
+            let len2 = str2.length;
+            if (len1 !== len2) {
+                console.log('Invalid Input');
+                return
+            }
+
+            let firstString = str1.split('').sort().join('');
+            let secondString = str2.split('').sort().join('');
+            if (firstString === secondString) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        const firstStr = "anna";
+        const secondStr = "nana";
+        console.log(checkAnagram(firstStr, secondStr));
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // Solution Three
+        function anagramFinder(str1, str2) {
+
+        }
     </script>
 
 </body>
