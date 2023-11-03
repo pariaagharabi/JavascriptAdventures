@@ -72,8 +72,25 @@
 
         // Solution Three
         function anagramFinder(str1, str2) {
+            if (str1.length !== str2.length) {
+                return false;
+            }
 
+            // Sort both strings
+            str1.sort();
+            str2.sort()
+
+            // Compare sorted strings
+            for (let i = 0; i < str1.length; i++)
+                if (str1.length[i] != str2[i])
+                    return false;
+
+            return true;
         }
+
+        const string1 = "bobb";
+        const string2 = "nana";
+        console.log(anagramFinder(string1, string2));
     </script>
 
 </body>
