@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram</title>
+</head>
+
+<body>
+
+    <script>
+        function isAnagram(str1, str2) {
+            for (let i = 0; i < str1.length; i++) {
+                for (let j = 0; j < str2.length; j++) {
+                    if (str1[i].includes(str2[j])) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        const myStr1 = "abcd";
+        const myStr2 = "eops";
+        console.log(isAnagram(myStr1, myStr2));
+    </script>
+
+</body>
+
+</html>
