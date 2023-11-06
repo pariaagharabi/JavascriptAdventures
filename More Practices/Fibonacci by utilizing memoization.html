@@ -10,17 +10,27 @@
 <body>
 
     <script>
-        function Fibonachi(num) {
-            let firstSecondEles = [0, 1];
-            let resultFib = [];
-
-            for (let i = 2; i < number; i++) {
-                const nextFibonacci = firstSecondEles[i - 1] + firstSecondEles[i - 2];
-                resultFib.push(nextFibonacci);
+        // Function to calculate Fibonacci numbers with memoization
+        function memoizedFibonacci(n, memo = {}) {
+            // Check if the result is already memoized and return it
+            if (n in memo) {
+                return memo[n];
             }
 
-            return resultFib;
+            // Base case: If n is 1 or 2, return 1 (Fibonacci base cases)
+            if (n <= 2) {
+                return 1;
+            }
+
+            // Calculate Fibonacci number for n by recursively using memoization
+            memo[n] = memoizedFibonacci(n - 1, memo) + memoizedFibonacci(n - 2, memo);
+
+            // Store the result in the memo object for future use
+            return memo[n];
         }
+
+        const num = 10;
+        console.log(memoizedFibonacci(num));
     </script>
 
 </body>
