@@ -21,16 +21,17 @@
                 if (digits.includes(digit)) {
                     return true; // Found a repeated digit
                 }
-                digits.push(digit);
-                number = Math.floor(number / 10);
+                digits.push(digit); // Add the digit is not in the digits array
+                number = Math.floor(number / 10); // Remove the last digit from the number
             }
+
             return false; // No repeated digits found
         }
 
 
         const num1 = 12345;
         const num2 = 122345;
-        console.log(hasRepeatedDigits(num1)); 
+        console.log(hasRepeatedDigits(num1));
         console.log(hasRepeatedDigits(num2));
     </script>
 
