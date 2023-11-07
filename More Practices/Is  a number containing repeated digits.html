@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is a number containing repeated digits</title>
+</head>
+
+<body>
+
+    <script>
+        function hasRepeatedDigits(number) {
+            if (number < 10) {
+                return false; // Single-digit numbers cannot have repeated digits
+            }
+
+            const digits = [];
+            while (number > 0) {
+                const digit = number % 10;
+                if (digits.includes(digit)) {
+                    return true; // Found a repeated digit
+                }
+                digits.push(digit);
+                number = Math.floor(number / 10);
+            }
+            return false; // No repeated digits found
+        }
+    </script>
+
+</body>
+
+</html>
