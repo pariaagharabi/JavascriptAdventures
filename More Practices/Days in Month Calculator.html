@@ -29,34 +29,42 @@
 
         // console.log(daysInMonth);
 
-        function daysInMonth(year, month) {
-            // Validate the year and month input
-            if (year < 1 || month < 1 || month > 12) {
-                return -1; // Invalid input
-            }
+        // Second solution
+        // function daysInMonth(year, month) {
+        //     // Validate the year and month input
+        //     if (year < 1 || month < 1 || month > 12) {
+        //         return -1; // Invalid input
+        //     }
 
-            // Check if it's a leap year
-            const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        //     // Check if it's a leap year
+        //     const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 
-            // Define an array with the number of days in each month
-            const daysInMonthArray = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //     // Define an array with the number of days in each month
+        //     const daysInMonthArray = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-            // Get the number of days for the specified month
-            const days = daysInMonthArray[month - 1];
+        //     // Get the number of days for the specified month
+        //     const days = daysInMonthArray[month - 1];
 
-            return days;
-        }
+        //     return days;
+        // }
 
-        // Example usage:
-        const year = 2023;
-        const month = 4; // April
-        const result = daysInMonth(year, month);
+        // // Example usage:
+        // const year = 2023;
+        // const month = 4; // April
+        // const result = daysInMonth(year, month);
 
-        if (result === -1) {
-            console.log("Invalid input. Please check the year and month.");
-        } else {
-            console.log(`There are ${result} days in ${month}/${year}.`);
-        }
+        // if (result === -1) {
+        //     console.log("Invalid input. Please check the year and month.");
+        // } else {
+        //     console.log(`There are ${result} days in ${month}/${year}.`);
+        // }
+
+
+        // Thired solution
+        // Set the days parameter to 0 to get the last day of the previous month, as months are zero-indexed
+        const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
+
+        console.log(daysInMonth(2020, 12));
     </script>
 
 </body>
