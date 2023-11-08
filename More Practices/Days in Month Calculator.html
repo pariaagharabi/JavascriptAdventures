@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days in Month Calculator</title>
+</head>
+
+<body>
+    <script>
+        let month = 2;
+        let year = 2000;
+
+        let daysInMonth;
+        if (month === 2) { // February logic
+            // This block works properly and doesn't need any change!
+            if ((year % 400 === 0)
+                || (year % 4 === 0 && year % 100 !== 0)) {
+                daysInMonth = 29; // leap year!
+            } else {
+                daysInMonth = 28;
+            }
+        } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+            daysInMonth = 30;
+        } else {
+            daysInMonth = 31;
+        }
+
+        console.log(daysInMonth);
+    </script>
+
+</body>
+
+</html>
