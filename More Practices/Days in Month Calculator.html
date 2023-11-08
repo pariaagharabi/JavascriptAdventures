@@ -9,25 +9,54 @@
 
 <body>
     <script>
-        let month = 2;
-        let year = 2000;
+        // let month = 2;
+        // let year = 2000;
 
-        let daysInMonth;
-        if (month === 2) { // February logic
-            // This block works properly and doesn't need any change!
-            if ((year % 400 === 0)
-                || (year % 4 === 0 && year % 100 !== 0)) {
-                daysInMonth = 29; // leap year!
-            } else {
-                daysInMonth = 28;
+        // let daysInMonth;
+        // if (month === 2) { // February logic
+        //     // This block works properly and doesn't need any change!
+        //     if ((year % 400 === 0)
+        //         || (year % 4 === 0 && year % 100 !== 0)) {
+        //         daysInMonth = 29; // leap year!
+        //     } else {
+        //         daysInMonth = 28;
+        //     }
+        // } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+        //     daysInMonth = 30;
+        // } else {
+        //     daysInMonth = 31;
+        // }
+
+        // console.log(daysInMonth);
+
+        function daysInMonth(year, month) {
+            // Validate the year and month input
+            if (year < 1 || month < 1 || month > 12) {
+                return -1; // Invalid input
             }
-        } else if (month === 4 || month === 6 || month === 9 || month === 11) {
-            daysInMonth = 30;
-        } else {
-            daysInMonth = 31;
+
+            // Check if it's a leap year
+            const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+            // Define an array with the number of days in each month
+            const daysInMonthArray = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            // Get the number of days for the specified month
+            const days = daysInMonthArray[month - 1];
+
+            return days;
         }
 
-        console.log(daysInMonth);
+        // Example usage:
+        const year = 2023;
+        const month = 4; // April
+        const result = daysInMonth(year, month);
+
+        if (result === -1) {
+            console.log("Invalid input. Please check the year and month.");
+        } else {
+            console.log(`There are ${result} days in ${month}/${year}.`);
+        }
     </script>
 
 </body>
