@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        // First Solution
         function largestSmallestNum(array) {
             if (array.length < 2) {
                 return "Array should have at least two elements";
@@ -38,6 +39,19 @@
 
         console.log(`Largest number: ${result.largest}`);
         console.log(`Smallest number: ${result.smallest}`);
+
+        // Second Solution: With build-in function
+        function findMinMaxUsingMath(array) {
+            return {
+                smallest: Math.min(...array),
+                largest: Math.max(...array)
+            };
+        }
+
+        let arr = [3, 7, 99, -1, 111, 5, 8, 0];
+        console.log(findMinMaxUsingMath(arr));
+
+        // Third Solution
     </script>
 
 </body>
