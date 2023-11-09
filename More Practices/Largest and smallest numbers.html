@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>largest and smallest numbers</title>
+</head>
+
+<body>
+    <script>
+        function largestSmallestNum(array) {
+            if (array.length < 2) {
+                return "Array should have at least two elements";
+            }
+
+            let largest = array[0];
+            let smallest = array[0];
+
+            for (let i = 1; i < array.length; i++) {
+                if (largest < array[i]) {
+                    largest = array[i];
+                }
+
+                if (smallest > array[i]) {
+                    smallest = array[i];
+                }
+            }
+
+            return {
+                largest: largest,
+                smallest: smallest
+            };
+        }
+
+        const numbers = [3, 1, 7, 2, 8, 5];
+        const result = largestSmallestNum(numbers);
+
+        console.log(`Largest number: ${result.largest}`);
+        console.log(`Smallest number: ${result.smallest}`);
+    </script>
+
+</body>
+
+</html>
