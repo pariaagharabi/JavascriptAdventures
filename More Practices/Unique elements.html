@@ -15,7 +15,7 @@
             let resultUniqueEles = [];
 
             for (let i = 0; i < array.length; i++) {
-                if (resultUniqueEles.includes(array[i]) !== array[i]) {
+                if (!resultUniqueEles.includes(array[i])) {
                     resultUniqueEles.push(array[i]);
                 }
 
@@ -24,8 +24,18 @@
             return resultUniqueEles;
         }
 
-        const arrayExample = [2, 4, 5, 7, 8, 2, 5, 0, -19];
-        console.log(getUniqueElements(arrayExample));
+        // const arrayExample = [2, 4, 5, 7, 8, 2, 5, 0, -19];
+        // console.log(getUniqueElements(arrayExample));
+
+        // Second Solution: using reduce
+        function getUniqueElements2(array) {
+            console.log(array);
+
+            return array.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
+        }
+
+        const arrayExample2 = [2, 4, 6, 2, 4, 6, 2]
+        console.log(getUniqueElements2(arrayExample2));
     </script>
 
 </body>
