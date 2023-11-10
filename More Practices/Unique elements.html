@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unique elements</title>
+</head>
+
+<body>
+
+    <script>
+        function getUniqueElements(array) {
+            console.log(array);
+            let resultUniqueEles = [];
+
+            for (let i = 0; i < array.length; i++) {
+                if (resultUniqueEles.includes(array[i]) !== array[i]) {
+                    resultUniqueEles.push(array[i]);
+                }
+
+            }
+
+            return resultUniqueEles;
+        }
+
+        const arrayExample = [2, 4, 5, 7, 8, 2, 5, 0, -19];
+        console.log(getUniqueElements(arrayExample));
+    </script>
+
+</body>
+
+</html>
