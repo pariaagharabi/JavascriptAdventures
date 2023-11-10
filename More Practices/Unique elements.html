@@ -34,8 +34,19 @@
             return array.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
         }
 
-        const arrayExample2 = [2, 4, 6, 2, 4, 6, 2]
-        console.log(getUniqueElements2(arrayExample2));
+        // const arrayExample2 = [2, 4, 6, 2, 4, 6, 2]
+        // console.log(getUniqueElements2(arrayExample2));
+
+        // Third Solution: using filtter
+        function getUniqueElements3(array) {
+            console.log(array);
+            let resultUniqueEles = array.filter((value, index, self) => self.indexOf(value) === index);
+
+            return resultUniqueEles;
+        }
+
+        const arrayExample3 = [1, 3, 5, -1, -3, 3, 5]
+        console.log(getUniqueElements2(arrayExample3));
     </script>
 
 </body>
