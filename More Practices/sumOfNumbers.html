@@ -11,7 +11,13 @@
 
     <script>
         function sumOfNumbers(array) {
-            let sumNums = 0;
+            let sumResult = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                sumResult += array[i];
+            }
+
+            return sumResult;
         }
 
         let arrExample = [1, 2, 3, 4, 5];
