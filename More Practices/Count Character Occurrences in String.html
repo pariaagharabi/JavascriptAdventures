@@ -11,10 +11,22 @@
 
     <script>
         function countCharOccurrences(string) {
+            console.log(string);
+            let counter = 0;
+            // only count letters
+            let regex = /[a-zA-Z]/g;
 
+            // Match only letters (A-Z and a-Z)
+            let matches = string.match(regex);
+
+            for (let i = 0; i < matches.length; i++) {
+                counter++;
+            }
+
+            return counter;
         }
 
-        let strExample = "string";
+        let strExample = "string123AS";
         console.log(countCharOccurrences(strExample));
     </script>
 
