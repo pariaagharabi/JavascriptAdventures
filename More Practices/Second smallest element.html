@@ -34,18 +34,32 @@
         // Scond Solution
         function getSecondSmallestV2(array) {
             console.log(array);
-            let lastElement = array[array.length - 1];
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] < lastElement) {
-                    lastElement = array[i];
-                }
-            }
 
-            return lastElement;
+            // Sort the array
+            let sortedArray = array.sort((a, b) => a - b);
+
+            return sortedArray[1];
         }
 
         let arrExample2 = [200, 300, 700, 500, 120];
         console.log(getSecondSmallestV2(arrExample2));
+
+        /////////////////////////////////////////////////////////////////////////
+        // Third solution
+        function getSecondSmallestV3(array) {
+            let smallest = Math.min(...array);
+            let secondSmallest = Infinity;
+
+            for (let num of array) {
+                if (num > smallest && num < secondSmallest) {
+                    secondSmallest = num;
+                }
+            }
+
+            return secondSmallest;
+        }
+
+        console.log(getSecondSmallestV3([2, 4, 6, 8]))
     </script>
 
 </body>
