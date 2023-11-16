@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converts a number to its Roman numeral</title>
+</head>
+
+<body>
+    <script>
+        function convertNumsToRoman(number) {
+
+            const map = {
+                M: 1000,
+                CM: 900,
+                D: 500,
+                CD: 400,
+                C: 100,
+                XC: 90,
+                L: 50,
+                XL: 40,
+                X: 10,
+                IX: 9,
+                V: 5,
+                IV: 4,
+                I: 1,
+            };
+            
+            let result = '';
+
+            for (key in map) {
+                const repeatCounter = Math.floor(number / map[key]);
+
+                if (repeatCounter !== 0) {
+                    result += key.repeat(repeatCounter);
+                }
+
+                number %= map[key];
+
+                if (number === 0) return result;
+            }
+
+            return result;
+        };
+
+        const numExample = 209;
+        console.log(convertNumsToRoman(numExample));
+    </script>
+
+</body>
+
+</html>
