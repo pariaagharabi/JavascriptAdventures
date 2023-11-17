@@ -10,7 +10,7 @@
 <body>
 
     <script>
-        function getMaxNum(array) {
+        function getMaxNumV1(array) {
             console.log(array);
             let maxNum = array[0];
 
@@ -23,8 +23,19 @@
             return maxNum;
         }
 
-        const arrExample = [2, 4, 6, 0, 1];
-        console.log(getMaxNum(arrExample));
+        const arrExampleV1 = [2, 4, 6, 0, 1];
+        console.log(getMaxNumV1(arrExampleV1));
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // Second solution
+        function getMaxNumV2(array) {
+            console.log(array);
+
+            return Math.max(...array);
+        }
+
+        const arrExampleV2 = [33, 56, 87, 2, 13, -88];
+        console.log(getMaxNumV2(arrExampleV2));
     </script>
 
 </body>
