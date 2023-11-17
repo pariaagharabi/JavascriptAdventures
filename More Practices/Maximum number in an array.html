@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum number in an array</title>
+</head>
+
+<body>
+
+    <script>
+        function getMaxNum(array) {
+            console.log(array);
+            let maxNum = array[0];
+
+            for (let number of array) {
+                if (maxNum < number) {
+                    maxNum = number;
+                }
+            }
+
+            return maxNum;
+        }
+
+        const arrExample = [2, 4, 6, 0, 1];
+        console.log(getMaxNum(arrExample));
+    </script>
+
+</body>
+
+</html>
