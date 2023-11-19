@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>average value of numbers</title>
+</head>
+
+<body>
+
+    <script>
+        function averageNum(array) {
+            let sumArr = 0;
+            for (let ave of array) {
+                sumArr += ave;
+            }
+
+            return sumArr / array.length;
+        }
+
+        const arrExample = [1, 2, 3, 4];
+        console.log(averageNum(arrExample));
+    </script>
+
+</body>
+
+</html>
