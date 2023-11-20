@@ -10,12 +10,25 @@
 <body>
 
     <script>
-        function sortAlphabeticalOrder(strings) {
+        function sortAlphabeticalOrderV1(strings) {
+            let lowerCaseStr = strings.toLowerCase();
+            const sortedChars = lowerCaseStr.split("").sort().join("");
 
+            return sortedChars;
         }
 
-        const strExample = "hello";
-        console.log(sortAlphabeticalOrder(strExample));
+        const strExample1 = "heLlO";
+        console.log(sortAlphabeticalOrderV1(strExample1));
+
+        // Second solution
+        function sortAlphabeticalOrderV2(strings) {
+            let sortedChars = strings.split('').sort((a, b) => a.localeCompare(b)).join('');
+
+            return sortedChars;
+        }
+
+        const strExample2 = "heLlO";
+        console.log(sortAlphabeticalOrderV2(strExample2));
     </script>
 
 </body>
