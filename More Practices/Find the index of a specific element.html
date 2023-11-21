@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the index of a specific element</title>
+</head>
+
+<body>
+
+    <script>
+        // First solution
+        function findIndex(array, specificEle) {
+            const index = array.indexOf(specificEle);
+
+            return index !== -1 ? index : -1;
+
+        }
+
+        const myArray = [1, 2, 3, 4, 5];
+        const elementToFind = 3;
+
+        console.log(findIndex(myArray, elementToFind));
+
+
+        // Second solution
+        function findElementIndex(array, specificEle) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === specificEle) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        // Third solution
+        function findElementIndexV2(array, specificEle){
+            
+        }
+    </script>
+
+</body>
+
+</html>
