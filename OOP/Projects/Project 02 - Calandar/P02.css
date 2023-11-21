@@ -1,0 +1,65 @@
+Css Code
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    padding: 20px 20px;
+}
+
+.header-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 70px;
+    text-align: center;
+    place-items: center;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) minmax(100px, 1fr);
+    column-gap: 28px;
+    row-gap: 15px;
+}
+
+
+/* center text vertically and horizontally inside CSS grid items */
+.cell-days-week, .cell-days-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e8e8e8;
+}
+
+
+.cell-days-week {
+    height: 40px;
+    color: white;
+    background-color: #2dc2c9;
+}
+
+.cell-days-number {
+    height: 70px;
+}
+
+.highlight{
+    background-color: #2dc2c9;
+}
+
+.hidden{
+    display: none;
+}

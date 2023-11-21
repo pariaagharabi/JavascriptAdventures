@@ -35,8 +35,10 @@
         }
 
         // Third solution
-        function findElementIndexV2(array, specificEle){
-            
+        function findElementIndexV2(array, specificEle) {
+            let result = array.includes(specificEle) ? array.indexOf(specificEle) : -1;
+
+            return result;
         }
     </script>
 
