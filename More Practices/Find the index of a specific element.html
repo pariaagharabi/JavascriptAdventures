@@ -34,12 +34,16 @@
             return -1;
         }
 
+        const arrExample = [3, 5, 8, 0, -1];
+        console.log(findElementIndex(arrExample, 6));
+
         // Third solution
         function findElementIndexV2(array, specificEle) {
-            let result = array.includes(specificEle) ? array.indexOf(specificEle) : -1;
-
-            return result;
+            return array.includes(specificEle) ? array.indexOf(specificEle) : -1;
         }
+
+        const arrayExample = [3, 5, 8, 0, 11, 3, 4];
+        console.log(findElementIndexV2(arrayExample, 4));
     </script>
 
 </body>
