@@ -25,6 +25,14 @@
 
         const arrayExample = [1, 3, 0, null, undefined, NaN, 5, 9];
         console.log(removeFalsyValues(arrayExample));
+
+        // Solution 2: Using filter 
+        function removeFalsyValuesV2(array) {
+            return array.filter(Boolean);
+        }
+
+        const arrayExampleV2 = [1, 3, 0, null, undefined, NaN, 12, 45];
+        console.log(removeFalsyValuesV2(arrayExampleV2));
     </script>
 
 </body>
