@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping even and odd numbers into separate arrays. </title>
+</head>
+
+<body>
+
+    <script>
+        function groupElementsByCondition(array, condition) {
+            // Create an empty object to store the groups
+            const groups = {};
+
+            for (let element of array) {
+                const key = condition(element);
+
+                // If a group for the current condition doesn't exist yet, create it
+                if (!groups[key]) {
+                    groups[key] = [];
+                }
+
+                groups[key].push(element);
+            }
+
+            return groups;
+        }
+
+        // Define the condition function to group by evenness
+        function isEven(number) {
+            return number % 2 === 0;
+        }
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+        const groupedNumbers = groupElementsByCondition(numbers, isEven);
+        console.log(groupedNumbers);
+    </script>
+
+</body>
+
+</html>
