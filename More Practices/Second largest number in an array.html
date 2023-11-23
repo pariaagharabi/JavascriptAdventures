@@ -10,12 +10,32 @@
 <body>
 
     <script>
-        function getSecondLargestNum(array) {
+        function getSecondLargestNumSort(array) {
+            console.log(array);
+            const sortedArray = array.sort((a, b) => b - a);
 
+            return sortedArray[1];
         }
 
-        const arrExample = [1, 2, 3, 4];
-        console.log(getSecondLargestNum(arrExample)); 
+        function getSecondLargestNumBubble(array) {
+            for (let i = 0; i < array.length - 1; i++) {
+                for (let j = 0; j < array.length - 1 - i; j++) {
+                    if (array[j + 1] > array[j]) {
+                        let temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+
+            }
+
+            return array[1];
+        }
+
+        const arrExample = [3, 4, 0, 14, 22, -14];
+        console.log(getSecondLargestNumSort(arrExample));
+        console.log(getSecondLargestNumBubble(arrExample));
+
     </script>
 
 </body>
