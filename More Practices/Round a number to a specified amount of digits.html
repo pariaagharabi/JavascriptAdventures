@@ -19,8 +19,15 @@
             return Math.floor(number * factor) / factor;
         }
 
+        function roundNumberWithoutBuiltInFunctions(number, digits) {
+            const multiplier = Math.pow(10, digits);
+            const rounded = number * multiplier + (number >= 0 ? 0.5 : -0.5);
+            return Math.floor(rounded) / multiplier;
+        }
+
         console.log(roundNumberUsingMathRound(123.456789, 2));
         console.log(roundNumberUsingMathFloor(123.456789, 2));
+        console.log(roundNumberWithoutBuiltInFunctions(567.89412, 3));
 
     </script>
 
