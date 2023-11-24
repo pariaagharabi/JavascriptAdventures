@@ -21,7 +21,10 @@
 
         function roundNumberWithoutBuiltInFunctions(number, digits) {
             const multiplier = Math.pow(10, digits);
-            const rounded = number * multiplier + (number >= 0 ? 0.5 : -0.5);
+            // Adjust rounding behavior based on the sign of the original number
+            const roundingAdjustment = (number >= 0 ? 0.5 : -0.5);
+
+            const rounded = number * multiplier + roundingAdjustment;
             return Math.floor(rounded) / multiplier;
         }
 
