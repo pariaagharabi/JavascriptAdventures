@@ -9,16 +9,19 @@
 
 <body>
     <script>
-        function roundNum(number, digits) {
-            let roundedNum;
-
-            for (let i = 0; i < number.length; i++) {
-                
-            }
-
+        function roundNumberUsingMathRound(number, digits) {
+            const factor = Math.pow(10, digits);
+            return Math.round(number * factor) / factor;
         }
 
-        console.log(roundNum());
+        function roundNumberUsingMathFloor(number, digits) {
+            const factor = Math.pow(10, digits);
+            return Math.floor(number * factor) / factor;
+        }
+
+        console.log(roundNumberUsingMathRound(123.456789, 2));
+        console.log(roundNumberUsingMathFloor(123.456789, 2));
+
     </script>
 
 </body>
