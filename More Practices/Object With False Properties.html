@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object With False Properties</title>
+</head>
+
+<body>
+
+    <script>
+        function createObjectWithFalseProperties(obj, fn) {
+            const result = {};
+
+            for (let [key, value] of Object.entries(obj)) {
+                if (!fn(value, key)) {
+                    result[key] = value;
+                }
+            }
+
+            return result;
+        }
+    </script>
+
+</body>
+
+</html>
