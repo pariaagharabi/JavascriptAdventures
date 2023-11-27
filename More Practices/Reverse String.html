@@ -10,15 +10,25 @@
 <body>
 
     <script>
-        function reverseStr(string) {
+        function reverseStrUsingReverse(string) {
+            console.log(string);
+            return string.split("").reverse().join("");
+        }
+
+        function reverseStrForLoop(string) {
             console.log(string);
             let reversedStr = "";
+            for (let i = string.length - 1; i >= 0; i--) {
+                reversedStr += string[i];
+            }
 
-
+            return reversedStr;
         }
 
         const strExample = "example";
-        console.log(reverseStr(strExample));
+        console.log(reverseStrUsingReverse(strExample));
+        console.log(reverseStrForLoop(strExample));
+
     </script>
 
 </body>
