@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter arrays based on specific criteria</title>
+</head>
+
+<body>
+
+    <script>
+        function filterFalse(predicate, array) {
+            return array.filter((element) => !predicate(element));
+        }
+
+        // Example usage:
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        // Define a predicate function that returns true for even numbers
+        const isEven = (number) => number % 2 === 0;
+
+        // Use filterFalse to keep elements for which isEven returns false
+        const result = filterFalse(isEven, numbers);
+        console.log(result);
+    </script>
+
+</body>
+
+</html>
