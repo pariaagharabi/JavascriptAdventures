@@ -10,7 +10,9 @@
 <body>
 
     <script>
+        // Step 1: Define a function arrangeAndInvoke that takes a function (fn), indexes, and arguments (...args)
         function arrangeAndInvoke(fn, indexes, ...args) {
+            // Step 2: Use the map method to rearrange arguments based on the specified indexes
             const arrangedArgs = indexes.map(index => args[index]);
             fn(...arrangedArgs);
         }
