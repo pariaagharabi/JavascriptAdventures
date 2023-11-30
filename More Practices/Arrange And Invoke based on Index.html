@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrange And Invoke</title>
+</head>
+
+<body>
+
+    <script>
+        function arrangeAndInvoke(fn, indexes, ...args) {
+            const arrangedArgs = indexes.map(index => args[index]);
+            fn(...arrangedArgs);
+        }
+
+        // Example usage
+        function exampleFunction(a, b, c) {
+            console.log(a, b, c);
+        }
+
+        const customIndexes1 = [2, 0, 1];
+        arrangeAndInvoke(exampleFunction, customIndexes1, 'One', 'Two', 'Three');
+    </script>
+
+</body>
+
+</html>
