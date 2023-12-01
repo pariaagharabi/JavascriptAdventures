@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Lines From File</title>
+</head>
+
+<body>
+
+    <script>
+        // Import the 'fs' (File System) module to provide an API for interacting with the file system
+        const fs = require('fs');
+
+        // Define a function getLinesFromFile that takes a filePath as a parameter
+        const getLinesFromFile = (filePath) => {
+            // Try to execute the following block of code
+            try {
+                // Read the content of the file synchronously and store it in fileContent
+                const fileContent = fs.readFileSync(filePath, 'utf8');
+
+                // Split the file content into an array of lines using the newline character as a delimiter
+                const lines = fileContent.split('\n');
+
+                // Return the array of lines
+                return lines;
+            } catch (error) {
+                // If an error occurs during file reading, catch the error and handle it
+                console.error('Error reading file:', error.message);
+
+                // Return an empty array in case of an error
+                return [];
+            }
+        };
+
+        // Example usage:
+        // Specify the file path (replace 'your_file.txt' with the actual file path)
+        const filePath = 'your_file.txt';
+
+        // Call the getLinesFromFile function with the specified file path
+        const linesFromFile = getLinesFromFile(filePath);
+
+        // Log the array of lines to the console
+        console.log(linesFromFile);
+    </script>
+
+</body>
+
+</html>
