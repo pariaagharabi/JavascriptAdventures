@@ -20,6 +20,22 @@
                 break; // If you want to stop the loop after finding the index
             }
         }
+
+        // Second Solution
+        function findIndexItem(array, targetItem) {
+            console.log(array);
+
+            for (let i = 0; i <= array.length - 1; i++) {
+                if (array[i] === targetItem) {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        const arrayExample = [2, 6, 9, 32];
+        console.log(findIndexItem(arrayExample, 32));
     </script>
 
 </body>
