@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Metadata for the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read File Lines in Browser</title>
@@ -9,20 +10,37 @@
 
 <body>
 
+    <!-- File input element allowing the user to select a file -->
     <input type="file" id="fileInput" />
 
+    <!-- JavaScript code for handling file input -->
     <script>
+        // Attach an event listener to the file input element
         document.getElementById('fileInput').addEventListener('change', handleFile);
 
+        // Function to handle file selection and reading
         function handleFile(event) {
+            // Get the selected file from the event
             const file = event.target.files[0];
+
+            // Check if a file is selected
             if (file) {
+                // Create a FileReader object for reading the file
                 const reader = new FileReader();
+
+                // Define the behavior when the file reading is complete (onload event)
                 reader.onload = function (e) {
+                    // Get the content of the file as a string
                     const fileContent = e.target.result;
+
+                    // Split the file content into an array of lines using the newline character as a delimiter
                     const lines = fileContent.split('\n');
+
+                    // Log the array of lines to the console
                     console.log(lines);
                 };
+
+                // Read the file as text
                 reader.readAsText(file);
             }
         }
