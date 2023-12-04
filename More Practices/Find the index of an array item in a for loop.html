@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the index of an array item in a for loop</title>
+</head>
+
+<body>
+
+    <script>
+        // First solution
+        const targetItem = "apple";
+        const fruits = ["banana", "orange", "apple", "grape"];
+
+        for (let i = 0; i < fruits.length; i++) {
+            if (fruits[i] === targetItem) {
+                console.log(`Index of ${targetItem}: ${i}`);
+                break; // If you want to stop the loop after finding the index
+            }
+        }
+    </script>
+
+</body>
+
+</html>
