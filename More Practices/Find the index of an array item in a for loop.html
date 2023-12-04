@@ -24,7 +24,7 @@
         // Second Solution
         function findIndexItem(array, targetItem) {
             console.log(array);
-
+            const convertToLowerCase = array.toLowerCase();
             for (let i = 0; i <= array.length - 1; i++) {
                 if (array[i] === targetItem) {
                     return i;
@@ -36,6 +36,14 @@
 
         const arrayExample = [2, 6, 9, 32];
         console.log(findIndexItem(arrayExample, 32));
+
+        // Third Solution: using Array.findIndex Method:
+        const markItem = "lily";
+        const flowers = ["rose", "orchid", "iris", "Lotus"];
+
+        const index = flowers.findIndex((flower) => flower === markItem);
+        console.log(`Index of ${markItem}: ${index}`);
+
     </script>
 
 </body>
