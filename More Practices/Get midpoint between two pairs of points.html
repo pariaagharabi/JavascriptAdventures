@@ -10,12 +10,20 @@
 <body>
 
     <script>
-        function getMidpointValueOfPairs(firstValue, secondValue) {
+        function calculateMidpoint(pointA, pointB) {
+            const midpointX = (pointA.x + pointB.x) / 2;
+            const midpointY = (pointA.y + pointB.y) / 2;
 
+            return { x: midpointX, y: midpointY };
         }
 
-        const example =
-            console.log(getMidpointValueOfPairs());
+        // Example points
+        const pointA = { x: 2, y: 5 };
+        const pointB = { x: 8, y: 10 };
+
+        // Calculate and log the midpoint
+        const midpoint = calculateMidpoint(pointA, pointB);
+        console.log("Midpoint:", midpoint);
     </script>
 
 </body>
