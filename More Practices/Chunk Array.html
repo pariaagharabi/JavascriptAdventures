@@ -32,17 +32,23 @@
             return resultChunked;
         }
 
-        function chunkArray2(array, size) {
+        // Second solution
+        function chunkArrayV2(array, size) {
             console.log(array);
             let resultChunked = [];
-            while (resultChunked.length <= size) {
-                resultChunked.push
+            let index = 0;
 
+            while (index < array.length) {
+                resultChunked.push(array.slice(index, index + size));
+                index += size;
             }
+
+            return resultChunked;
         }
 
         const example = [5, 6, 7, 8, 9, 0, -3];
         console.log(chunkArray(example, 3));
+        console.log(chunkArrayV2(example, 2));
     </script>
 
 </body>
