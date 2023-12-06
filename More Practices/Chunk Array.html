@@ -11,11 +11,38 @@
 
     <script>
         function chunkArray(array, size) {
+            console.log(array);
+            let resultChunked = [];
+            let chunk = [];
 
+            for (let item of array) {
+                chunk.push(item);
+
+                if (chunk.length === size) {
+                    resultChunked.push([...chunk]);
+                    chunk = [];
+                }
+            }
+
+            // Handle the last chunk (if it's not a full-sized chunk)
+            if (chunk.length > 0) {
+                resultChunked.push([...chunk]);
+            }
+
+            return resultChunked;
+        }
+
+        function chunkArray2(array, size) {
+            console.log(array);
+            let resultChunked = [];
+            while (resultChunked.length <= size) {
+                resultChunked.push
+
+            }
         }
 
         const example = [5, 6, 7, 8, 9, 0, -3];
-        console.log(chunkArray(example));
+        console.log(chunkArray(example, 3));
     </script>
 
 </body>
