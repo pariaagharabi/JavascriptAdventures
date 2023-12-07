@@ -10,13 +10,16 @@
 <body>
 
     <script>
-    
+
         function capitalizeEachStr(str) {
             let capitalizedResult = "";
             let sepratedEachWord = str.split(" ");
 
             for (let word of sepratedEachWord) {
-                capitalizedResult += word.charAt(0).toUpperCase() + word.slice(1) + " ";
+                let firstLetterCapitalized = word.charAt(0).toUpperCase();
+                let resrWord = word.slice(1) + " ";
+
+                capitalizedResult += firstLetterCapitalized + resrWord;
             }
 
             return capitalizedResult;
