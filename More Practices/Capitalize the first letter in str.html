@@ -9,6 +9,24 @@
 
 <body>
 
+    <script>
+    
+        function capitalizeEachStr(str) {
+            let capitalizedResult = "";
+            let sepratedEachWord = str.split(" ");
+
+            for (let word of sepratedEachWord) {
+                capitalizedResult += word.charAt(0).toUpperCase() + word.slice(1) + " ";
+            }
+
+            return capitalizedResult;
+        }
+
+        // Example usage
+        const example = "Capitalize the first letter in THE strinG!";
+        console.log(capitalizeEachStr(example));
+    </script>
+
 </body>
 
 </html>
