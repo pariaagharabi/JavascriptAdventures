@@ -12,12 +12,14 @@
     <script>
         function capitalizeStr(str) {
             let capitalizedResult = "";
-            for (let letter of str) {
-                let firstWord = letter[0];
+            let splitedEachWord = str.split(" ");
+
+            for (let letter of splitedEachWord) {
+                let firstWord = splitedEachWord[0];
                 console.log(firstWord);
             }
 
-            return capitalizedResult;
+            // return capitalizedResult;
 
         }
 
