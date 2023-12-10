@@ -16,10 +16,13 @@
 
             for (let letter of splitedEachWord) {
                 let firstWord = splitedEachWord[0];
-                console.log(firstWord);
+                let capitalizedFirstWord = firstWord.charAt(0).toUpperCase();
+                let restOfStr = splitedEachWord.slice(1) + " ";
+
+                capitalizedResult += capitalizedFirstWord + restOfStr;
             }
 
-            // return capitalizedResult;
+            return capitalizedResult.trim();
 
         }
 
