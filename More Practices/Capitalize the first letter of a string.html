@@ -10,24 +10,22 @@
 <body>
 
     <script>
-        function capitalizeStr(str) {
-            let capitalizedResult = "";
-            let splitedEachWord = str.split(" ");
+        function capitalizeFirstWord(str) {
+            let words = str.split(" ");
 
-            for (let letter of splitedEachWord) {
-                let firstWord = splitedEachWord[0];
-                let capitalizedFirstWord = firstWord.charAt(0).toUpperCase();
-                let restOfStr = splitedEachWord.slice(1) + " ";
-
-                capitalizedResult += capitalizedFirstWord + restOfStr;
+            // Check if there are any words in the array
+            if (words.length > 0) {
+                // Capitalize the first word and keep the rest in lowercase
+                let firstWord = words[0].charAt(0).toUpperCase();
+                let restOfStr = words[0].slice(1).toLowerCase();
+                words[0] = firstWord + restOfStr;
             }
 
-            return capitalizedResult.trim();
-
+            return words.join(" ");
         }
 
-        const example = "example for this function."
-        console.log(capitalizeStr(example));
+        const example = "example for this function.";
+        console.log(capitalizeFirstWord(example));
     </script>
 
 </body>
