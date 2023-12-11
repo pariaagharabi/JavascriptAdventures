@@ -20,10 +20,19 @@
             return base64;
         }
 
+        // Second solution
+        function base64EncodeAscii(str) {
+            // Use btoa directly for ASCII characters
+            const base64 = btoa(str);
+
+            return base64;
+        }
+
+
         // Example usage
         const inputString = "Hello";
-        const encodedString = base64Encode(inputString);
-        console.log(encodedString);
+        console.log(base64Encode(inputString));
+        console.log(base64EncodeAscii(inputString));
     </script>
 
 </body>
