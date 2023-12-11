@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode a string to base64</title>
+</head>
+
+<body>
+
+    <script>
+        function base64Encode(str) {
+            // Encode the string using encodeURIComponent to handle non-ASCII characters
+            const encoded = encodeURIComponent(str);
+
+            // Use btoa to create a base64 encoded ASCII string
+            const base64 = btoa(encoded);
+
+            return base64;
+        }
+
+        // Example usage
+        const inputString = "Hello, World!";
+        const encodedString = base64Encode(inputString);
+        console.log(encodedString);
+    </script>
+
+</body>
+
+</html>
