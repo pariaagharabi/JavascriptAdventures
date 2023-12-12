@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate binomial coefficient</title>
+</head>
+
+<body>
+
+    <script>
+        function factorial(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            } else {
+                return num * factorial(num - 1);
+            }
+        }
+
+        // Function to calculate binomial coefficient C(n, k)
+        function binomialCoefficient(n, k) {
+            if (k < 0 || k > n) {
+                return 0;
+            }
+            return factorial(n) / (factorial(k) * factorial(n - k));
+        }
+
+        // Example usage
+        const result = binomialCoefficient(5, 2);
+        console.log(result);
+    </script>
+
+</body>
+
+</html>
