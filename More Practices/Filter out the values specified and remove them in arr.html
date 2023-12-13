@@ -11,13 +11,15 @@
 
     <script>
         function filterRemove(array, specifiedValue) {
-            let romovedResult = [];
+            let removedResult = [];
 
             for (let item of array) {
-                
+                if (!item.includes(specifiedValue)) {
+                    removedResult.push(item);
+                }
             }
 
-            return romovedResult;
+            return removedResult;
         }
     </script>
 
