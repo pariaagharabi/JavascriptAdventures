@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert an asynchronous function to return a promise.</title>
+</head>
+
+<body>
+
+    <script>
+        // Asynchronous function without Promise
+        async function fetchDataAsync() {
+            // Simulate an asynchronous operation
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const data = "Async data";
+                    resolve(data);
+                }, 1000);
+            });
+        }
+
+        // Using the function
+        fetchDataAsync().then((result) => {
+            console.log(result); // Output: Async data
+        });
+
+        // Converting the asynchronous function to return a Promise
+        function fetchDataPromise() {
+            return new Promise((resolve) => {
+                fetchDataAsync().then((data) => {
+                    resolve(data);
+                });
+            });
+        }
+
+        // Using the converted function
+        fetchDataPromise().then((result) => {
+            console.log(result);
+        });
+    </script>
+
+</body>
+
+</html>
