@@ -14,13 +14,17 @@
             let removedResult = [];
 
             for (let item of array) {
-                if (!item.includes(specifiedValue)) {
+                if (item !== specifiedValue) {
                     removedResult.push(item);
                 }
             }
 
             return removedResult;
         }
+
+        // Usage example
+        const arrayExample = [3, 5, 8, 0, -1, 2, 4, 11];
+        console.log(filterRemove(arrayExample, 4));
     </script>
 
 </body>
