@@ -11,13 +11,16 @@
 
     <script>
         function convertNumInBytes(number) {
-
-
-            return number;
+            const bytes = [];
+            while (number > 0) {
+                bytes.push(number & 0xff);
+                number >>= 8; // Right shift by 8 bits
+            }
+            return bytes.reverse();
         }
 
         // Example usage:
-        let example = 12;
+        let example = 16909060;
         console.log(convertNumInBytes(example));
     </script>
 
