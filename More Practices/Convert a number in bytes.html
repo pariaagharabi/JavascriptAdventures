@@ -13,9 +13,12 @@
         function convertNumInBytes(number) {
             const bytes = [];
             while (number > 0) {
+                // 0xff is a hexadecimal (base-16) literal representing the value 255 in decimal or 11111111 in binary
                 bytes.push(number & 0xff);
                 number >>= 8; // Right shift by 8 bits
             }
+
+            // Reverse the array to get the correct byte order (from most significant to least significant)
             return bytes.reverse();
         }
 
