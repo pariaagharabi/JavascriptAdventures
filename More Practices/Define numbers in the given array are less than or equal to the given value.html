@@ -23,6 +23,15 @@
 
             return { count, percentileRank };
         }
+
+        // Example usage
+        const numbersArray = [12, 8, 15, 5, 20, 10];
+        const targetValue = 15;
+
+        const result = calculatePercentile(numbersArray, targetValue);
+
+        console.log(`Number of elements less than or equal to ${targetValue}: ${result.count}`);
+        console.log(`Percentile rank of ${targetValue}: ${result.percentileRank}%`);
     </script>
 
 </body>
