@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Define numbers in the given array are less than or equal to the given value</title>
+</head>
+
+<body>
+
+    <script>
+        function calculatePercentile(numbers, value) {
+            // Sort the array in ascending order
+            const sortedNumbers = numbers.sort((a, b) => a - b);
+
+            // Calculate the percentile rank of the given value
+            const percentileRank = (value / sortedNumbers[sortedNumbers.length - 1]) * 100;
+
+            // Calculate the number of elements less than or equal to the given value
+            const count = sortedNumbers.filter((number) => number <= value).length;
+
+            return { count, percentileRank };
+        }
+    </script>
+
+</body>
+
+</html>
