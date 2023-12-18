@@ -7,11 +7,49 @@
     <title>Current day and time</title>
 </head>
 
+<style>
+    :is(*, ::after, ::before) {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(77, 76, 75);
+        color: burlywood;
+        font-family: cursive;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 300px;
+        height: 100px;
+        line-height: 30px;
+
+        border: 1px solid burlywood;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 5px;
+    }
+</style>
+
 <body>
 
-    <div>
-        <p>Today is:</p>
-        <p>Current time is:</p>
+    <div class="flex-container">
+        <div class="content-container">
+            <div>Today is: </div>
+            <div>Current Time is:</div>
+        </div>
     </div>
 
 </body>
