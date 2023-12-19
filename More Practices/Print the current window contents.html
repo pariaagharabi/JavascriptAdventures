@@ -28,6 +28,16 @@
 
     .content-container {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 200px;
+        width: 600px;
+        line-height: 100px;
+
+        border: 2px solid aqua;
+        box-shadow: 0px 10px 10px 0px;
 
     }
 </style>
@@ -36,7 +46,8 @@
 
     <div class="container">
         <div class="content-container">
-            <h1>Click to Button to Print the Current Window Contents</h1>
+            <h1>Print the Current Window Contents</h1>
+            <button onclick="printCurrentWindow()">Click Here</button>
         </div>
     </div>
 
