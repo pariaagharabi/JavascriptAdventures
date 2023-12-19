@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print the current window contents</title>
+</head>
+<style>
+    :is(*, *::after, *::before) {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(58, 58, 59);
+        color: aquamarine;
+        font-family: cursive;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .content-container {
+        display: flex;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="content-container">
+            <h1>Click to Button to Print the Current Window Contents</h1>
+        </div>
+    </div>
+
+    <script>
+        function printCurrentWindow() {
+            window.print();
+        }
+    </script>
+
+</body>
+
+</html>
