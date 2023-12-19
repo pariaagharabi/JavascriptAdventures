@@ -5,52 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current day and time</title>
+
+    <style>
+        :is(*, ::after, ::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(77, 76, 75);
+            color: burlywood;
+            font-family: cursive;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 300px;
+            height: 100px;
+            line-height: 30px;
+
+            border: 1px solid burlywood;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 5px;
+        }
+    </style>
 </head>
-
-<style>
-    :is(*, ::after, ::before) {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: rgb(77, 76, 75);
-        color: burlywood;
-        font-family: cursive;
-    }
-
-    .flex-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        width: 300px;
-        height: 100px;
-        line-height: 30px;
-
-        border: 1px solid burlywood;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px 5px;
-    }
-</style>
 
 <body>
 
     <div class="flex-container">
         <div class="content-container">
-            <div>Today is: </div>
-            <div>Current Time is:</div>
+            <div id="today">Today is: </div>
+            <div id="currentTime">Current Time is:</div>
         </div>
     </div>
+
+    <script>
+        function getCurrentDayAndTime() {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const now = new Date();
+
+            const dayOfWeek = daysOfWeek[now.getDay()];
+            const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+            const amPm = now.getHours() >= 12 ? "PM" : "AM";
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+
+            const currentTime = `${hours} ${amPm} : ${minutes} : ${seconds}`;
+
+            document.getElementById("today").innerText = `Today is: ${dayOfWeek}.`;
+            document.getElementById("currentTime").innerText = `Current time is: ${currentTime}`;
+        }
+
+        // Call the function to display initial values
+        getCurrentDayAndTime();
+
+        // Update the time every second
+        setInterval(getCurrentDayAndTime, 1000);
+    </script>
 
 </body>
 
