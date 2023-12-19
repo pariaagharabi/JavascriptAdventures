@@ -54,17 +54,27 @@
 
     <script>
         function getCurrentDayAndTime() {
+            // Array of days of the week
             const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            // Get the current date and time
             const now = new Date();
 
+            // Get the day of the week
             const dayOfWeek = daysOfWeek[now.getDay()];
+
+            // Get hours in 12-hour format, determine AM or PM
             const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
             const amPm = now.getHours() >= 12 ? "PM" : "AM";
+
+            // Get minutes and seconds with leading zeros
             const minutes = now.getMinutes().toString().padStart(2, "0");
             const seconds = now.getSeconds().toString().padStart(2, "0");
 
+            // Create the formatted current time string
             const currentTime = `${hours} ${amPm} : ${minutes} : ${seconds}`;
 
+            // Update the content of HTML elements with the calculated values
             document.getElementById("today").innerText = `Today is: ${dayOfWeek}.`;
             document.getElementById("currentTime").innerText = `Current time is: ${currentTime}`;
         }
