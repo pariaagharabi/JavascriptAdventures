@@ -60,14 +60,18 @@
             // Get the current date
             const now = new Date();
 
-            // Get month
-            const month = now.getMonth().toString().padStart(2, "0");
-            console.log(month);
+            // Get month: to get the month with a 1-based index, need to Plus 1 cuz getMonth() returns a zero-based index (0 for January, 1 for February, etc.)
+            const currentMonth = (now.getMonth() + 1).toString().padStart(2, "0");
+            console.log(currentMonth);
 
 
             // Get day
             const currentDay = now.getDay();
             console.log(currentDay);
+
+            // Get year
+            const currentYear = now.getFullYear();
+            console.log(currentYear);
 
         }
 
