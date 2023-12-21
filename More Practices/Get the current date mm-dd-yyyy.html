@@ -6,13 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get the current date mm-dd-yyyy</title>
 </head>
+<style>
+    :is(*, *::after, *::before) {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(62, 63, 63);
+        color: teal;
+        font-family: cursive;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 200px;
+        width: 600px;
+        line-height: 100px;
+
+        border: 2px solid teal;
+        box-shadow: 0px 10px 10px 0px;
+    }
+</style>
 
 <body>
 
     <div class="container">
         <div class="content-container">
             <h1>
-                The current date in mm-dd-yyyy
+                The current date in mm-dd-yyyy:
             </h1>
         </div>
     </div>
