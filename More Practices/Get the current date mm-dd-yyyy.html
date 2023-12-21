@@ -57,8 +57,21 @@
 
     <script>
         function getCurrentDate() {
+            // Get the current date
+            const now = new Date();
+
+            // Get month
+            const month = now.getMonth().toString().padStart(2, "0");
+            console.log(month);
+
+
+            // Get day
+            const currentDay = now.getDay();
+            console.log(currentDay);
 
         }
+
+        getCurrentDate();
     </script>
 
 </body>
