@@ -36,7 +36,7 @@
         box-shadow: 0px 10px 10px 0px;
         border-radius: 10px;
 
-        width: 600px;
+        width: 650px;
         height: 300px;
         line-height: 50px;
     }
@@ -46,16 +46,24 @@
 
     <div class="container">
         <div class="contetnt-container">
-            <h1>Enter Three Sides of Triangle</h1>
-            <h3>Hypotenuse: </h3>
-            <h3>Opposite: </h3>
-            <h3>Adjacent: </h3>
+            <h1>Enter the base and height of Triangle</h1>
+            <h3>Base: </h3>
+            <h3>Height: </h3>
             <div>
-                <button id="area-result">Area</button>
+                <button>Area</button>
+                <div>
+                    <span id="area-result">Result: </span>
+                </div>
             </div>
-
         </div>
     </div>
+
+    <script>
+        function getTriangleAre(base, height) {
+            const areaResult = (base * height) / 2;
+            return areaResult;
+        }
+    </script>
 
 </body>
 
