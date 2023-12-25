@@ -34,7 +34,7 @@
 
         height: 200px;
         width: 600px;
-        line-height: 100px;
+        line-height: 50px;
 
         border: 2px solid teal;
         box-shadow: 0px 10px 10px 0px;
@@ -48,9 +48,7 @@
             <h1>
                 The current date in mm-dd-yyyy:
             </h1>
-            <span>
-
-            </span>
+            <span id="display-result"></span>
         </div>
     </div>
 
@@ -62,17 +60,19 @@
 
             // Get month: to get the month with a 1-based index, need to Plus 1 cuz getMonth() returns a zero-based index (0 for January, 1 for February, etc.)
             const currentMonth = (now.getMonth() + 1).toString().padStart(2, "0");
-            console.log(currentMonth);
 
-
-            // Get day
-            const currentDay = now.getDay();
-            console.log(currentDay);
+            // Get day: to get the day of the month, use getDate()
+            const currentDay = now.getDate();
 
             // Get year
             const currentYear = now.getFullYear();
-            console.log(currentYear);
 
+            const result = `${currentMonth}/${currentDay}/${currentYear}`;
+            // Get the span element by id
+            const displayResultSpan = document.getElementById("display-result");
+
+            // Set the innerText of the span to the result
+            displayResultSpan.innerText = result;
         }
 
         getCurrentDate();
