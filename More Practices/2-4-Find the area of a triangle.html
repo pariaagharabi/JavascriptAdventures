@@ -26,7 +26,7 @@
         height: 100vh;
     }
 
-    .contetnt-container {
+    .content-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,12 +45,12 @@
 <body>
 
     <div class="container">
-        <div class="contetnt-container">
+        <div class="content-container">
             <h1>Enter the base and height of Triangle</h1>
-            <h3>Base: </h3>
-            <h3>Height: </h3>
+            <input type="number" id="baseInput" placeholder="Base">
+            <input type="number" id="heightInput" placeholder="Height">
             <div>
-                <button>Area</button>
+                <button onclick="calculateTriangleArea()">Area</button>
                 <div>
                     <span id="area-result">Result: </span>
                 </div>
@@ -59,9 +59,22 @@
     </div>
 
     <script>
-        function getTriangleAre(base, height) {
-            const areaResult = (base * height) / 2;
-            return areaResult;
+        function calculateTriangleArea() {
+            // Get the values from the input fields
+            const base = parseFloat(document.getElementById("baseInput").value);
+            const height = parseFloat(document.getElementById("heightInput").value);
+
+            // Check if the values are valid numbers
+            if (!isNaN(base) && !isNaN(height)) {
+                // Calculate the area
+                const areaResult = (base * height) / 2;
+
+                // Display the result
+                document.getElementById("area-result").innerText = "Result: " + areaResult;
+            } else {
+                // Display an error if the input is not a valid number
+                document.getElementById("area-result").innerText = "Invalid input. Please enter valid numbers.";
+            }
         }
     </script>
 
