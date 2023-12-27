@@ -10,16 +10,15 @@
 <body>
 
     <script>
-        function rotateStr(str) {
-            const resultRotated = "";
-            for (let i = str.length; i > 0; i--) {
-                console.log(i);
+        function rotateStringRight(str) {
+            let rotatedString = str;
+            for (let i = 0; i < str.length; i++) {
+                rotatedString = rotatedString.slice(-1) + rotatedString.slice(0, -1);
             }
-
-
         }
 
-        console.log(rotateStr("paria"));
+        // Example usage
+        console.log(rotateStringRight("Parian"));
     </script>
 
 </body>
