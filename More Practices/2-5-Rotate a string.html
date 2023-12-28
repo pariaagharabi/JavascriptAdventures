@@ -6,19 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotate a string</title>
 </head>
+<style>
+    :is(*, ::after, ::before) {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(62, 61, 62);
+        color: greenyellow;
+        font-family: cursive;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border: 2px solid thistle;
+        box-shadow: 0px 10px 10px 0px;
+        border-radius: 10px;
+
+        width: 650px;
+        height: 300px;
+        line-height: 50px;
+    }
+</style>
 
 <body>
 
+    <div class="container">
+        <div class="content-container">
+            <h1>Enter a string</h1>
+            <input type="text" id="strInput" placeholder="String">
+            <div>
+                <button onclick="buttonClickHandler()">Rotaed String</button>
+                <div>
+                    <span id="showResult">Result: </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function rotateStringRight(str) {
-            let rotatedString = str;
-            for (let i = 0; i < str.length; i++) {
-                rotatedString = rotatedString.slice(-1) + rotatedString.slice(0, -1);
-            }
+        function rotateString(str) {
+            const [lastChar, ...rest] = str.split('');
+            return lastChar + rest.join('');
         }
 
         // Example usage
-        console.log(rotateStringRight("Parian"));
+        console.log(rotateString("hello"));
     </script>
 
 </body>
