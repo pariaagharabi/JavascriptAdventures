@@ -5,51 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotate a string</title>
+    <style>
+        :is(*, ::after, ::before) {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(62, 61, 62);
+            color: greenyellow;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid greenyellow;
+            box-shadow: 0px 10px 10px 0px;
+            border-radius: 10px;
+
+            width: 450px;
+            height: 300px;
+            line-height: 50px;
+        }
+    </style>
 </head>
-<style>
-    :is(*, ::after, ::before) {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: rgb(62, 61, 62);
-        color: greenyellow;
-        font-family: cursive;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        height: 100vh;
-    }
-
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        border: 2px solid greenyellow;
-        box-shadow: 0px 10px 10px 0px;
-        border-radius: 10px;
-
-        width: 450px;
-        height: 300px;
-        line-height: 50px;
-    }
-</style>
 
 <body>
-
     <div class="container">
         <div class="content-container">
             <h1>Enter a string</h1>
             <input type="text" id="strInput" placeholder="String">
             <div>
-                <button onclick="buttonClickHandler()">Rotaed String</button>
+                <button onclick="buttonClickHandler()">Rotate String</button>
                 <div>
                     <span id="showResult">Result: </span>
                 </div>
@@ -59,8 +58,9 @@
 
     <script>
         function rotateString(str) {
-            const [lastChar, ...rest] = str.split('');
-            return lastChar + rest.join('');
+            let firstPart = str.slice(0, -1);
+            let lastElement = str.slice(-1);
+            return lastElement + firstPart;
         }
 
         function buttonClickHandler() {
@@ -68,15 +68,14 @@
             const resultElement = document.getElementById("showResult");
 
             const inputValue = inputElement.value;
-            const rotatedString = rotateString(inputValue);
+            let rotatedString = inputValue;
 
-            resultElement.innerText = `Result: ${rotatedString}`;
-            setInterval(rotateString, 1000);
+            setInterval(() => {
+                rotatedString = rotateString(rotatedString);
+                resultElement.innerText = `Result: ${rotatedString}`;
+            }, 1000);
         }
-
-
     </script>
-
 </body>
 
 </html>
