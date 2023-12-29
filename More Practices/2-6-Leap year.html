@@ -5,6 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leap Year</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(53, 52, 52);
+            color: coral;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            border: 2px solid coral;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,10 +43,9 @@
             <h1>Leap Yaer Checker</h1>
             <lable>Enter a Year: </lable>
             <input type="text" id="inputUser" placeholder="Year">
+            <button onclick="buttonClickHandler()" id="result">Check</button>
+            <span>Result:</span>
         </div>
-        <button 
-       onclick="buttonClickHandler()" id="result">Check</button>
-        <span>Result:</span>
     </div>
 
     <script>
