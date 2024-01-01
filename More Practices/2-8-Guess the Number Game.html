@@ -37,8 +37,17 @@
             box-shadow: 0px 10px 10px 0px;
 
             width: 450px;
-            height: 300px;
-            line-height: 50px;
+            height: 200px;
+            line-height: 80px;
+        }
+
+        .btn-startGame {
+            padding: 5px;
+            background-color: rosybrown;
+            border: none;
+            color: rgb(46, 46, 46);
+            font-weight: bold;
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -48,9 +57,27 @@
     <div class="container">
         <div class="content-container">
             <h1>Guess the Number Game</h1>
-            <button onclick="startGame()">Start Game</button>
+            <button class=btn-startGame onclick="startGame()">Start Game</button>
         </div>
     </div>
+
+
+    <script>
+        function startGame() {
+            // Generate a random integer between 1 and 10
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+            // Prompt the user to input a guess
+            const userGuess = prompt("Guess a number between 1 and 10:");
+
+            // Check if the guess matches the random number
+            if (userGuess && parseInt(userGuess) === randomNumber) {
+                alert("Good Work! You guessed the correct number.");
+            } else {
+                alert(`Not matched. The correct number was ${randomNumber}.`);
+            }
+        }
+    </script>
 
 
 </body>
