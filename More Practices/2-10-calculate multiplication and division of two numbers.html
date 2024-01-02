@@ -42,7 +42,38 @@
         width: 400px;
         height: 300px;
         line-height: 30px;
+    }
 
+    input {
+        caret-color: violet;
+        padding: 3px;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input::placeholder {
+        color: rgb(158, 157, 157);
+    }
+
+    button {
+        color: rgb(57, 57, 57);
+        background-color: rgb(153, 101, 153);
+
+        font-weight: bold;
+
+        padding: 3px;
+        border: none;
+        border-radius: 3px;
+
+        cursor: pointer;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        margin: 10px;
     }
 </style>
 
@@ -51,22 +82,48 @@
         <div class="content-container">
             <h3>Multiplication and Division Calculation</h3>
 
-            <div>
-                <label for="">Enter First Number</label>
-                <input type="number" name="firstNum" id="firstNum" placeholder="First Number">
-            </div>
-            <div>
-                <label for="">Enter Second Number</label>
-                <input type="number" name="secondNum" id="secondNum" placeholder="Second Number">
+            <div class="content-user-input">
+                <div>
+                    <label for="firstNum">Enter First Number:</label>
+                    <input type="number" name="firstNum" id="firstNum" placeholder="First Number">
+                </div>
+                <div>
+                    <label for="secondNum">Enter Second Number:</label>
+                    <input type="number" name="secondNum" id="secondNum" placeholder="Second Number">
+                </div>
             </div>
 
+            <div class="btn-group">
+                <button id="btn-multiplication">Multiply</button>
+                <button id="btn-division">Divide</button>
+            </div>
+
+            <div class="content-user-output">
+                <hr>
+                <h3>Result:</h3>
+                <span id="showResult"></span>
+            </div>
 
         </div>
     </div>
 
 
-    <script>
 
+    <script>
+        // Event listener for the button click
+        document.getElementById("btn-multiplication").addEventListener("click", () => {
+            const firstNumInput = document.getElementById("firstNum").value;
+
+            // Display the multiplication result
+            document.getElementById("showResult").textContent = "Result: [insert result here]";
+        });
+
+        document.getElementById("btn-division").addEventListener("click", () => {
+            const secondNumInput = document.getElementById("secondNum").value;
+
+            // Display the division result
+            document.getElementById("showResult").textContent = "Result: [insert result here]";
+        });
     </script>
 
 </body>
