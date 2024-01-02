@@ -28,12 +28,38 @@
         align-items: center;
         height: 100vh;
     }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        border: 2px solid rgb(144, 42, 144);
+        border-radius: 10px;
+        box-shadow: 0px 10px 10px 0px;
+
+        width: 400px;
+        height: 300px;
+        line-height: 30px;
+
+    }
 </style>
 
 <body>
     <div class="container">
         <div class="content-container">
-            <h1>Multiplication and Division Calculation</h1>
+            <h3>Multiplication and Division Calculation</h3>
+
+            <div>
+                <label for="">Enter First Number</label>
+                <input type="number" name="firstNum" id="firstNum" placeholder="First Number">
+            </div>
+            <div>
+                <label for="">Enter Second Number</label>
+                <input type="number" name="secondNum" id="secondNum" placeholder="Second Number">
+            </div>
+
 
         </div>
     </div>
