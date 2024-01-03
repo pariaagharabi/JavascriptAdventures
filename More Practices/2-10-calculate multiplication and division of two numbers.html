@@ -75,6 +75,13 @@
 
         margin: 10px;
     }
+
+    /* Styles for the result display */
+    .content-user-output {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 </style>
 
 <body>
@@ -99,7 +106,6 @@
             </div>
 
             <div class="content-user-output">
-                <hr>
                 <h3>Result:</h3>
                 <span id="showResult"></span>
             </div>
@@ -112,18 +118,51 @@
     <script>
         // Event listener for the button click
         document.getElementById("btn-multiplication").addEventListener("click", () => {
-            const firstNumInput = document.getElementById("firstNum").value;
-
-            // Display the multiplication result
-            document.getElementById("showResult").textContent = "Result: [insert result here]";
+            performCalculation(calcMultiplication);
         });
 
         document.getElementById("btn-division").addEventListener("click", () => {
+            performCalculation(calcDivision);
+        });
+
+        function performCalculation(calculationFunction) {
+            const firstNumInput = document.getElementById("firstNum").value;
             const secondNumInput = document.getElementById("secondNum").value;
 
-            // Display the division result
-            document.getElementById("showResult").textContent = "Result: [insert result here]";
-        });
+            // Perform calculation using the provided function
+            const result = calculationFunction(firstNumInput, secondNumInput);
+
+            // Display the result
+            document.getElementById("showResult").innerHTML = result;
+        }
+
+        function calcMultiplication(firstNum, secondNum) {
+            if (!isValidInput(firstNum, secondNum)) {
+                return "Enter valid numbers for both first and second!";
+            }
+
+            const result = parseInt(firstNum) * parseInt(secondNum);
+            return result;
+        }
+
+        function calcDivision(firstNum, secondNum) {
+            if (!isValidInput(firstNum, secondNum)) {
+                return "Enter valid numbers for both first and second!";
+            }
+
+            if (parseInt(secondNum) === 0) {
+                return "Division by zero is not allowed!";
+            }
+
+            const result = parseFloat(firstNum) / parseFloat(secondNum);
+            return result.toFixed(0);
+        }
+
+        function isValidInput(num1, num2) {
+            // Check if both inputs are not empty and can be converted to a number
+            return num1 !== "" && num2 !== "" && !isNaN(num1) && !isNaN(num2);
+        }
+
     </script>
 
 </body>
