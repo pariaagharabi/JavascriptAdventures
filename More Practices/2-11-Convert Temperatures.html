@@ -119,16 +119,26 @@
             performCalculation(calcFahrenheit);
         });
 
-        function calcCelsius() {
-
+        function calcCelsius(celsiusInput, fahrenheitInput) {
+            if (isValidInput(celsiusInput, fahrenheitInput)) {
+                const celsiusResult = (parseFloat(fahrenheitInput) - 32) * (5 / 9);
+                return `Celsius: ${celsiusResult.toFixed(2)}`;
+            } else {
+                return "Enter valid numbers for both Celsius and Fahrenheit!";
+            }
         }
 
-        function calcFahrenheit() {
-
+        function calcFahrenheit(celsiusInput, fahrenheitInput) {
+            if (isValidInput(celsiusInput, fahrenheitInput)) {
+                const fahrenheitResult = (parseFloat(celsiusInput) * (9 / 5)) + 32;
+                return `Fahrenheit: ${fahrenheitResult.toFixed(2)}`;
+            } else {
+                return "Enter valid numbers for both Celsius and Fahrenheit!";
+            }
         }
 
-        function isValidInput(firstInput, secondInput) {
-            return firstInput !== "" && secondInput !== "" && !isNaN(firstInput) && !isNaN(secondInput);
+        function isValidInput(celsiusInput, fahrenheitInput) {
+            return celsiusInput !== "" && fahrenheitInput !== "" && !isNaN(celsiusInput) && !isNaN(fahrenheitInput);
         }
 
         function performCalculation(calculationFunction) {
