@@ -32,8 +32,28 @@
     <script>
         // Add the event listeners
         document.getElementById("btn-sum").addEventListener("click", () => {
+            performCalculation(calcSum())
+        });
 
-        })
+        function calcSum(numbers) {
+            let sumResult = 0;
+
+            if (isValidInput(numbers)) {
+                for (let value of numbers) {
+                    sumResult += value;
+                }
+            }
+
+            return sumResult;
+        }
+
+        function isValidInput(nums) {
+            return !isNaN(nums);
+        }
+
+        function performCalculation(calculationFunction) {
+
+        }
     </script>
 
 </body>
