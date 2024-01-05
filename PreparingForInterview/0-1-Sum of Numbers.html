@@ -5,6 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sum of numbers</title>
+    <style>
+        /* Remove the default style for all elements */
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style body */
+        body {
+            background-color: rgb(61, 61, 61);
+            color: tan;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid;
+            border-radius: 15px;
+            box-shadow: 0 0 15px;
+
+            width: 400px;
+            height: 250px;
+            line-height: 40px;
+        }
+
+        input {
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+            caret-color: burlywood;
+        }
+
+        ::placeholder {
+            color: rgb(196, 182, 164);
+        }
+
+        button {
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+            font-weight: bold;
+            color: rgb(62, 56, 49);
+            background-color: rgb(185, 170, 148);
+
+            cursor: pointer;
+        }
+
+        .user-output {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +98,7 @@
     <script>
         // Add the event listeners
         document.getElementById("btn-sum").addEventListener("click", () => {
-            performCalculation(calcSum())
+            performCalculation(calcSum());
         });
 
         function calcSum(numbers) {
@@ -45,15 +111,17 @@
             }
 
             return sumResult;
-        }
+        };
 
         function isValidInput(nums) {
             return !isNaN(nums);
-        }
+        };
 
         function performCalculation(calculationFunction) {
+            const userInputs = document.getElementById("list-numbers").value;
 
-        }
+            document.getElementById("showResult").innerHTML = performCalculation(userInputs);
+        };
     </script>
 
 </body>
