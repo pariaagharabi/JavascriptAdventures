@@ -38,7 +38,7 @@
             border-radius: 15px;
             box-shadow: 0 0 15px;
 
-            width: 400px;
+            width: 650px;
             height: 250px;
             line-height: 40px;
         }
@@ -74,13 +74,13 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="content-container">
-            <h3>Sum of numbers</h3>
+            <h3>Sum of Numbers</h3>
+
             <div class="user-inputs">
-                <label>Enter list of numbers</label>
-                <input type="number" id="list-numbers" placeholder="Enter list of numbers">
+                <label>Enter a list of numbers separated by commas:</label>
+                <input type="text" id="list-numbers" placeholder="Enter list of numbers">
             </div>
 
             <div class="btn-group">
@@ -88,42 +88,48 @@
             </div>
 
             <div class="user-output">
-                <h3>Result: </h3>
+                <h3>Result:</h3>
                 <span id="showResult"></span>
             </div>
-
         </div>
     </div>
 
     <script>
-        // Add the event listeners
+        // Add the event listener
         document.getElementById("btn-sum").addEventListener("click", () => {
-            performCalculation(calcSum());
+            const userInputs = document.getElementById("list-numbers").value;
+            performCalculation(userInputs);
         });
+
+        function performCalculation(userInputs) {
+            const numbersArray = userInputs.split(",").map(Number);
+
+            if (isValidInput(numbersArray)) {
+                const sumResult = calcSum(numbersArray);
+                document.getElementById("showResult").innerHTML = sumResult;
+            } else {
+                document.getElementById("showResult").innerHTML = "Invalid input. Please enter a valid list of numbers.";
+            }
+        }
 
         function calcSum(numbers) {
             let sumResult = 0;
 
-            if (isValidInput(numbers)) {
-                for (let value of numbers) {
-                    sumResult += value;
-                }
+            for (let value of numbers) {
+                sumResult += value;
             }
 
             return sumResult;
-        };
+        }
 
         function isValidInput(nums) {
-            return !isNaN(nums);
-        };
+            if (!Array.isArray(nums) || nums.length === 0) {
+                return false;
+            }
 
-        function performCalculation(calculationFunction) {
-            const userInputs = document.getElementById("list-numbers").value;
-
-            document.getElementById("showResult").innerHTML = performCalculation(userInputs);
-        };
+            return nums.every(num => !isNaN(parseFloat(num)));
+        }
     </script>
-
 </body>
 
 </html>
