@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome</title>
 </head>
+
 <body>
-    
+
+
+    <script>
+        function isPalindrome(string) {
+            const halfLen = Math.floor(string.length) / 2;
+
+            for (let i = 0; i < halfLen; i++) {
+                if (string[i] !== string[string.length - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        console.log(isPalindrome("madam"));
+    </script>
 </body>
+
 </html>
