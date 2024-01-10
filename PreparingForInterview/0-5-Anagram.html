@@ -21,12 +21,17 @@
             let secondString = str2.split("").sort().join("");
 
             // Compare sorted strings
-            for (let i = 0; i < firstString.length; i++)
-                if (firstString.length[i] !== secondString[i])
-                    return false;
+
+            if (firstString !== secondString) {
+                return false;
+            }
 
             return true;
         }
+
+        console.log(anagramFinder("evil", "vile"));
+        console.log(anagramFinder("jak", "jok"));
+
 
     </script>
 
