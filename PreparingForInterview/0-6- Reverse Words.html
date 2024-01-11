@@ -5,9 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse Words</title>
+    <style>
+        :is(*, *::after, *::before) {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: rgb(63, 63, 63);
+            color: palevioletred;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            border: 2px solid palevioletred;
+            border-radius: 15px;
+            box-shadow: 0 0 15px;
+
+            width: 400px;
+            height: 250px;
+            line-height: 40px;
+        }
+
+        
+
+
+
+        .user-output {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="content-container">
+
+            <h1>Get Reverse Words</h1>
+
+            <div class="user-input">
+                <label for=""></label>
+                <input type="text" id="user-words" placeholder="Enter a words">
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn-reverse">Reverse Words</button>
+            </div>
+
+            <div class="user-output">
+                <h3>Result:</h3>
+                <span id="showResult"></span>
+            </div>
+        </div>
+    </div>
 
 
     <script>
