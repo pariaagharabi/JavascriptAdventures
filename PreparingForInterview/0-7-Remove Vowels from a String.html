@@ -32,14 +32,15 @@
     <script>
         function removeVowels(str) {
             let removedVowelsResult = "";
-            let vowelsChars = ["A", "E", "I", "O", "U", "a", "e", "i","o","u"];
+            let vowelsChars = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
 
             for (let i = 0; i < str.length; i++) {
-                if(){
-                    
+                if (!vowelsChars.includes(str[i])) {
+                    removedVowelsResult.push(str[i]);
                 }
-
             }
+
+            return removedVowelsResult;
         }
 
         console.log(removeVowels());
