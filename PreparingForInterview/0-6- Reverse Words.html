@@ -109,7 +109,18 @@
             return words.split("").reverse().join("");
         }
 
-        console.log(reverseWords("hello"));
+        function isValidInput(words) {
+            // Check if the input is not empty or just spaces
+            return words.trim() !== "";
+        }
+
+        function calcPerformance(userInput) {
+            if (isValidInput(userInput)) {
+                document.getElementById("showResult").innerHTML = reverseWords(userInput);
+            } else {
+                document.getElementById("showResult").innerHTML = "Invalid input. Please enter a valid string.";
+            }
+        }
     </script>
 
 </body>
