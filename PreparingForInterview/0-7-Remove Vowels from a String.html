@@ -36,14 +36,14 @@
 
             for (let i = 0; i < str.length; i++) {
                 if (!vowelsChars.includes(str[i])) {
-                    removedVowelsResult.push(str[i]);
+                    removedVowelsResult += str[i];
                 }
             }
 
             return removedVowelsResult;
         }
 
-        console.log(removeVowels());
+        console.log(removeVowels("sometimes"));
     </script>
 
 </body>
