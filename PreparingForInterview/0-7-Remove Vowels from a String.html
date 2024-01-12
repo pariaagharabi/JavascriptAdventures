@@ -23,13 +23,70 @@
             color: purple;
             font-family: cursive;
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid purple;
+            border-radius: 15px;
+            box-shadow: 0 0 15px;
+
+            width: 600px;
+            height: 300px;
+
+            line-height: 40px;
+        }
+
+        .user-output {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
 
+    <div class="container">
+        <div class="content-container">
+            <h1>Remove Vowels from a String</h1>
+            <div class="user-input">
+                <label for=""></label>
+                <input type="text" id="user-words" placeholder="Enter a words">
+            </div>
+
+            <div class="btn-group">
+                <button id="btn-vowels-remover">Vowels Remover</button>
+            </div>
+
+            <div class="user-output">
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+
+        </div>
+    </div>
+
+
 
     <script>
+
+        // Add the event listeners
+        document.getElementById("btn-vowels-remover").addEventListener("click", () => {
+            const userInput = document.getElementById("user-words").value;
+            calcPerformance(userInput);
+        });
+
         function removeVowels(str) {
             let removedVowelsResult = "";
             let vowelsChars = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
@@ -43,7 +100,17 @@
             return removedVowelsResult;
         }
 
-        console.log(removeVowels("sometimes"));
+        function isValidInput(input) {
+            return !isNaN(input) && input !== "";
+        }
+
+        function calcPerformance(userInput) {
+            if (isValidInput(userInput)) {
+                document.getElementById("showResult").innerHTML = removeVowels(userInput);
+            } else {
+                document.getElementById("showResult").innerHTML = "Invalid input. Please enter a valid string.";
+            }
+        }
     </script>
 
 </body>
