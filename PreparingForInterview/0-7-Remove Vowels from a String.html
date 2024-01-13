@@ -61,7 +61,7 @@
         <div class="content-container">
             <h1>Remove Vowels from a String</h1>
             <div class="user-input">
-                <label for=""></label>
+                <label for="user-words">Enter a word:</label>
                 <input type="text" id="user-words" placeholder="Enter a words">
             </div>
 
@@ -89,7 +89,8 @@
 
         function removeVowels(str) {
             let removedVowelsResult = "";
-            let vowelsChars = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"];
+            str = str.toLowerCase();
+            let vowelsChars = ["a", "e", "i", "o", "u"];
 
             for (let i = 0; i < str.length; i++) {
                 if (!vowelsChars.includes(str[i])) {
@@ -101,7 +102,7 @@
         }
 
         function isValidInput(input) {
-            return !isNaN(input) && input !== "";
+            return input !== "";
         }
 
         function calcPerformance(userInput) {
