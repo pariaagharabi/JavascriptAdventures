@@ -10,15 +10,28 @@
 <body>
 
     <script>
-        function findLongestPalindromicSub(string) {
+        function findLongestPalindromicSub(sentence) {
             function isPalindrome(str) {
                 return str === str.split("").reverse().join("");
             }
 
-            function logest() {
+            let wordArray = sentence.match(/\b\w+\b/g),
+                longestWord = 0,
+                word = " ";
 
+            for (let i = 0; i < wordArray.length; i++) {
+                if (longestWord < wordArray[i].length && isPalindrome(wordArray[i])) {
+                    longestWord = wordArray[i].length;
+                    word = wordArray[i]
+                }
             }
+
+            return word;
         }
+
+        console.log(
+            findLongestPalindrome('This is an interesting sentence: kayak, november, anna')
+        )
 
     </script>
 
