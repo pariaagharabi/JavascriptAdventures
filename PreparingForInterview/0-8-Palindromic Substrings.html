@@ -32,12 +32,12 @@
             justify-content: center;
             align-items: center;
 
-            border: 2 px solid aquamarine;
+            border: 2px solid aquamarine;
             box-shadow: 0 0 15px;
             border-radius: 15px;
             border-style: outset;
 
-            width: 500px;
+            width: 580px;
             height: 300px;
             line-height: 40px;
         }
@@ -52,8 +52,9 @@
         .btn-group button {
             border: none;
             border-radius: 3px;
+            border-style: outset;
 
-            background-color: rgb(158, 241, 215);
+            background-color: rgb(125, 203, 179);
             color: rgb(36, 74, 61);
 
             font-weight: bold;
@@ -72,6 +73,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
     </style>
 </head>
@@ -101,9 +103,56 @@
     </div>
 
     <script>
-        function{
+        document.getElementById("palindromic-substrings").addEventListener("click", () => {
+            const userInput = document.getElementById("user-string").value;
+            calcPerformance(userInput);
+        });
 
+        function getPalindromicSubstrings(inputString) {
+
+            function isPalindrome(str) {
+                return str === str.split('').reverse().join('');
+            }
+
+            // [char, ...rest]: This is using destructuring to separate the first character (char) from the rest of the characters (rest) in the input array.
+            function generateSubstrings([char, ...rest], currentSubstring = '', result = []) {
+
+                //  Checks if the current substring is a palindrome and is not already included in the result array. If true, it adds the current substring to the result.
+                if (isPalindrome(currentSubstring) && !result.includes(currentSubstring)) {
+                    result.push(currentSubstring);
+                }
+
+                //Checks if there are no more characters left in the input string. If true, it returns the result array.
+                if (!char) {
+                    return result;
+                }
+
+                // Calls the function recursively by including the current character in the substring.
+                generateSubstrings(rest, currentSubstring + char, result);  // Include the current character
+
+                // Calls the function recursively without including the current character in the substring.
+                generateSubstrings(rest, currentSubstring, result);         // Exclude the current character
+
+                return result;
+            }
+
+            // Return the result of generateSubstrings
+            return generateSubstrings([...inputString]);
         }
+
+        function isValidInput(input) {
+            return input.trim() !== "";
+        }
+
+        function calcPerformance(userInput) {
+            if (isValidInput(userInput)) {
+                const palindromicSubstrings = getPalindromicSubstrings(userInput);
+                document.getElementById("showResult").innerHTML = JSON.stringify(palindromicSubstrings, null, 2);
+            } else {
+                document.getElementById("showResult").innerHTML = "Invalid input. Please enter a valid string.";
+            }
+        }
+
     </script>
 
 </body>
