@@ -12,25 +12,25 @@
     <script>
         function findLongestPalindromicSub(sentence) {
             function isPalindrome(str) {
-                return str === str.split("").reverse().join("");
+                return str.toLowerCase() === str.toLowerCase().split("").reverse().join("");
             }
 
-            let wordArray = sentence.match(/\b\w+\b/g),
+            let wordArray = sentence.match(/\w+/g),
                 longestWord = 0,
-                word = " ";
+                result = "";
 
             for (let i = 0; i < wordArray.length; i++) {
                 if (longestWord < wordArray[i].length && isPalindrome(wordArray[i])) {
                     longestWord = wordArray[i].length;
-                    word = wordArray[i]
+                    result = wordArray[i];
                 }
             }
 
-            return word;
+            return result;
         }
 
         console.log(
-            findLongestPalindrome('This is an interesting sentence: kayak, november, anna')
+            findLongestPalindromicSub('nan noon is redder')
         )
 
     </script>
