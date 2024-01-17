@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longest Word in a String</title>
 </head>
+
 <body>
-    
+
+
+    <script>
+        function findLongestWord(string) {
+            let words = string.toLowerCase().match(/\w+/g);
+            let longestStr = "";
+
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > longestStr.length) {
+                    longestStr = words[i];
+                }
+            }
+
+            return longestStr;
+        }
+
+        console.log(findLongestWord("hello world! from Canada."));
+    </script>
+
 </body>
+
 </html>
