@@ -6,7 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longest Word in a String</title>
     <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background-color: rgb(51, 50, 51);
+            color: plum;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-width: 100vw;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid;
+            border-radius: 15px;
+            box-shadow: 0 0 15px;
+
+            width: 500px;
+            height: 300px;
+            line-height: 40px;
+        }
+
+        .user-input input {
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            padding: 3px;
+        }
+
+        .btn-group button {
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            padding: 3px;
+
+            font-weight: bold;
+            background-color: rgb(232, 179, 232);
+            color: rgb(111, 28, 111);
+
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-group button:hover {
+            background-color: rgb(190, 116, 190);
+        }
+
+        .user-output {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -14,6 +78,7 @@
 
     <div class="container">
         <div class="content-container">
+            <h1>Longest Word in a String</h1>
 
             <div class="user-input">
                 <label>Enter a String</label>
@@ -21,7 +86,7 @@
             </div>
 
             <div class="btn-group">
-                <button id="longest-word">Longest Word</button>
+                <button id="btn-longest-word">Longest Word</button>
             </div>
 
             <div class="user-output">
@@ -33,18 +98,10 @@
 
 
     <script>
-        // function findLongestWord(string) {
-        //     let words = string.toLowerCase().match(/\w+/g);
-        //     let longestStr = "";
+        // Add the Event Listener
+        document.getElementById("btn-longest-word").addEventListener("click", () => {
 
-        //     for (var i = 0; i < words.length; i++) {
-        //         if (words[i].length > longestStr.length) {
-        //             longestStr = words[i];
-        //         }
-        //     }
-
-        //     return longestStr;
-        // }
+        })
 
         function findLongestWord(string) {
             let variablesGroups = lowerCaseStr = string.toLowerCase(),
