@@ -100,7 +100,8 @@
     <script>
         // Add the Event Listener
         document.getElementById("btn-longest-word").addEventListener("click", () => {
-
+            let userInput = document.getElementById("user-input-str").value;
+            calcPerformance(userInput);
         })
 
         function findLongestWord(string) {
@@ -115,6 +116,18 @@
             }
 
             return longest;
+        }
+
+        function isValidInput(input) {
+            return input !== undefined && input !== null && input.trim() !== "";
+        }
+
+        function calcPerformance(userInput) {
+            if (isValidInput(userInput)) {
+                document.getElementById("showResult").innerHTML = `Longest word: ${findLongestWord(userInput)}`;
+            } else {
+                document.getElementById("showResult").innerHTML = "Please enter a valid input!";
+            }
         }
 
 
