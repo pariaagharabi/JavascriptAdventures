@@ -73,7 +73,18 @@
         <div class="content-container">
             <h1>Array and Index</h1>
 
-            <div class="user-input"></div>
+            <div class="user-input">
+
+                <div>
+                    <label>Enter a list, seprated by comma!</label>
+                    <input type="text" name="list-user-input" id="list-user-input">
+                </div>
+                <div>
+                    <label>Enter a specific element:</label>
+                    <input type="text" name="spec-user-input" id="spec-user-input">
+                </div>
+
+            </div>
 
             <div class="btn-group">
                 <button id="btn-get-index">Get Index</button>
@@ -87,17 +98,24 @@
 
         <script>
             document.getElementById("btn-get-index").addEventListener("click", () => {
+                let userInputList = document.getElementById("list-user-input").value.split(',').map(Number);
+                let userInputEle = Number(document.getElementById("spec-user-input").value);
 
+                calcPerformance(userInputList, userInputEle);
             })
 
             function findIndexSpecificEle(array, element) {
                 for (let i = 0; i < array.length; i++) {
                     if (element === array[i]) {
-                        return i;;
+                        return i;
                     }
                 }
 
                 return -1;
+            }
+
+            function calcPerformance(array, element) {
+                
             }
 
 
