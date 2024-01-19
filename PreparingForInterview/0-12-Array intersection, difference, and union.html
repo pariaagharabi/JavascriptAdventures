@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Intersection Difference</title>
+</head>
+
+<body>
+
+
+    <script>
+        const array1 = [1, 2, 3, 4, 5];
+        const array2 = [3, 4, 5, 6, 7];
+
+        // Intersection: elements that are common to both arrays
+        const intersectionResult = array1.filter(value => array2.includes(value));
+        console.log("Intersection:", intersectionResult);
+
+        // Difference: elements that are in array1 but not in array2
+        const differenceResult = array1.filter(value => !array2.includes(value));
+        console.log("Difference (array1 - array2):", differenceResult);
+
+        // Difference: elements that are in array2 but not in array1
+        const differenceResultReverse = array2.filter(value => !array1.includes(value));
+        console.log("Difference (array2 - array1):", differenceResultReverse);
+
+        // Union: elements that are in either array1 or array2 or in both
+        const unionResult = [...new Set([...array1, ...array2])];
+        console.log("Union:", unionResult);
+    </script>
+</body>
+
+</html>
