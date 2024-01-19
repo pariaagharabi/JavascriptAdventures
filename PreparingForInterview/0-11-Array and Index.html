@@ -38,6 +38,7 @@
 
             width: 500px;
             height: 300px;
+            line-height: 40px;
         }
 
         .btn-group button {
@@ -115,7 +116,12 @@
             }
 
             function calcPerformance(array, element) {
-                
+                if (array.length > 0 && element !== null) {
+                    const result = findIndexSpecificEle(array, element);
+                    document.getElementById("showResult").innerHTML = "Index: " + result;
+                } else {
+                    document.getElementById("showResult").innerHTML = "Please enter valid input!";
+                }
             }
 
 
