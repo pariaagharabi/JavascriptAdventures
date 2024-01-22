@@ -24,13 +24,53 @@
             align-items: center;
             height: 100vh;
         }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid tomato;
+            box-shadow: 0 0 15px;
+
+            width: 500px;
+            height: 350px;
+            line-height: 40px;
+        }
+
+        .input-user input {
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+            outline: none;
+
+            caret-color: tomato;
+        }
+
+        .btn-group button {
+            background-color: rgb(253, 127, 105);
+            color: rgb(85, 25, 15);
+            font-weight: bold;
+            padding: 3px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+            transition: background-color 0.5s ease;
+        }
+
+        .output-user {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="contetn-container">
+        <div class="content-container">
             <h1>Remove Duplicate Elements</h1>
 
             <div class="input-user">
@@ -39,7 +79,7 @@
             </div>
 
             <div class="btn-group">
-                <button>Get Unique</button>
+                <button id="get-unique">Get Unique</button>
             </div>
 
             <div class="output-user">
