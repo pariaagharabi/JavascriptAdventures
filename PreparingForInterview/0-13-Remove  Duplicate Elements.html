@@ -10,16 +10,19 @@
 <body>
 
     <script>
-        function removeDuplicates(array, element) {
+        function removeDuplicates(array) {
             let uniqueElements = [];
 
             for (let i = 0; i < array.length; i++) {
                 if (!uniqueElements.includes(array[i])) {
-
+                    uniqueElements.push(array[i]);
                 }
             }
+
+            return uniqueElements;
         }
 
+        console.log(removeDuplicates([3, 5, 3, 7, 8, 3, 6]));
     </script>
 
 </body>
