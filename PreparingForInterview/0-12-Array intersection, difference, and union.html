@@ -29,6 +29,9 @@
         // Union: elements that are in either array1 or array2 or in both
         const unionResult = [...new Set([...array1, ...array2])];
         console.log("Union:", unionResult);
+        // Second solution: union
+        const union = new Set([...array1, ...array2]);
+        console.log("Union:", union);
     </script>
 </body>
 
