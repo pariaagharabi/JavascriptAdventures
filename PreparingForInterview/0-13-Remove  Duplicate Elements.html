@@ -75,7 +75,7 @@
 
             <div class="input-user">
                 <label>Enter list of elements, seprated by comma:</label>
-                <input type="text" placeholder="Enter Elements..." id="btn-eles">
+                <input type="text" placeholder="Enter Elements..." id="user-eles">
             </div>
 
             <div class="btn-group">
@@ -91,6 +91,13 @@
     </div>
 
     <script>
+        // Add the event listeners
+        document.getElementById("get-unique").addEventListener("click", () => {
+            const userInput = document.getElementById("user-eles").value.split(",").map(Number);
+            calcPerformance(userInput);
+        })
+
+
         function removeDuplicates(array) {
             let uniqueElements = [];
 
@@ -103,7 +110,12 @@
             return uniqueElements;
         }
 
-        console.log(removeDuplicates([3, 5, 3, 7, 8, 3, 6]));
+        function calcPerformance(userInput) {
+            if(!isNaN(userInput)){
+                document.getElementById("showResult").innerHTML = removeDuplicates(userInput);
+            }
+        }
+
     </script>
 
 </body>
