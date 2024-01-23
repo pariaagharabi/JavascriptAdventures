@@ -113,7 +113,7 @@
         function calcPerformance(userInput) {
             const areAllNumbers = userInput.every(num => !isNaN(num));
 
-            if (areAllNumbers) {
+            if (areAllNumbers === undefined || areAllNumbers.length === 0) {
                 document.getElementById("showResult").innerHTML = removeDuplicates(userInput);
             } else {
                 document.getElementById("showResult").innerHTML = "Please enter a valid input!";
