@@ -34,7 +34,7 @@
             border: 2px solid tomato;
             box-shadow: 0 0 15px;
 
-            width: 500px;
+            width: 700px;
             height: 350px;
             line-height: 40px;
         }
@@ -111,8 +111,12 @@
         }
 
         function calcPerformance(userInput) {
-            if(!isNaN(userInput)){
+            const areAllNumbers = userInput.every(num => !isNaN(num));
+
+            if (areAllNumbers) {
                 document.getElementById("showResult").innerHTML = removeDuplicates(userInput);
+            } else {
+                document.getElementById("showResult").innerHTML = "Please enter a valid input!";
             }
         }
 
