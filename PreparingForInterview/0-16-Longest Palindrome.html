@@ -8,9 +8,33 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="content-container">
+
+            <div class="user-input">
+                <label>Enter a sentence:</label>
+                <input type="text" id="user-sentence" placeholder="Sentence..." />
+            </div>
+
+            <div class="btn-group">
+                <button id="longest-palindrome">Longest Palindrome</button>
+            </div>
+
+            <div class="user-output">
+                <h3>Result</h3>
+                <span id="showResult"></span>
+            </div>
+
+        </div>
+    </div>
 
 
     <script>
+        document.getElementById("longest-palindrome").addEventListener("click", () => {
+            let userInput = document.getElementById("user-sentence").value;
+            calcPerformance(userInput);
+        })
+
         function isPalindrome(str) {
             const halfLen = Math.floor(str.length / 2);
 
@@ -24,18 +48,28 @@
         }
 
         function getLongestPalindrome(str) {
-            let longest = str[0];
+            const words = str.split(" ");
+            let longest = "";
 
-            if (isPalindrome(str)) {
-                for (let i = 1; i < str.length; i++) {
-                    if (str[i] > longest) {
-                        longest = str[i];
-                    }
+            for (const word of words) {
+                const cleanWord = word.replace(/[^a-zA-Z]/g, "").toLowerCase();
+                if (isPalindrome(cleanWord) && cleanWord.length > longest.length) {
+                    longest = cleanWord;
                 }
             }
 
             return longest;
         }
+
+        function calcPerformance(str) {
+            if (str.length > 0) {
+                document.getElementById("showResult").innerHTML = getLongestPalindrome(str);
+            } else {
+                document.getElementById("showResult").innerHTML = "Enter valid input!";
+            }
+        }
+
+
     </script>
 
 </body>
