@@ -9,6 +9,35 @@
 
 <body>
 
+
+    <script>
+        function isPalindrome(str) {
+            const halfLen = Math.floor(str.length / 2);
+
+            for (let i = 0; i < halfLen; i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function getLongestPalindrome(str) {
+            let longest = str[0];
+
+            if (isPalindrome(str)) {
+                for (let i = 1; i < str.length; i++) {
+                    if (str[i] > longest) {
+                        longest = str[i];
+                    }
+                }
+            }
+
+            return longest;
+        }
+    </script>
+
 </body>
 
 </html>
