@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non Repeating Words</title>
+</head>
+
+<body>
+
+    <script>
+        // function getNonRepeating(sentence) {
+        //     let unique = [...new Set(sentence.split(" "))];
+
+        //     let text = unique.join(" ");
+
+        //     return text;
+        // }
+
+
+        // let string = "spanner span spaniel span";
+        // console.log(getNonRepeating(string));
+
+
+        function getNonRepe(sentence) {
+            let words = sentence.split(" "),
+                seenWords = {},
+                result = "";
+
+            for (let i = 0; i < words.length; i++) {
+                if (!seenWords.hasOwnProperty(words[i])) {
+                    seenWords[words[i]] = true;
+                    result += words[i] + " ";
+                }
+            }
+
+            return result.trim();
+        }
+
+        let string = "spanner span spaniel span";
+        console.log(getNonRepe(string));
+
+    </script>
+
+</body>
+
+</html>
