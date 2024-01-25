@@ -5,11 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longest Palindrome</title>
+    <style>
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(25, 31, 31);
+            color: tan;
+            font-family: cursive;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid tan;
+            box-shadow: 0 0 15px;
+
+            width: 400px;
+            height: 300px;
+            line-height: 40px;
+        }
+
+        .user-input input {
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            background-color: rgb(249, 226, 195);
+            padding: 3px;
+        }
+
+        .btn-group button {
+            border: none;
+            outline: none;
+
+            border-radius: 3px;
+            background-color: rgb(217, 172, 112);
+            color: rgb(61, 44, 19);
+            font-weight: bold;
+            padding: 3px;
+            cursor: pointer;
+            transition: background-color .8s linear;
+        }
+
+        .btn-group button:hover {
+            background-color: rgb(234, 206, 169);
+        }
+
+        .user-output {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="content-container">
+            <h1>Longest Palindrome</h1>
 
             <div class="user-input">
                 <label>Enter a sentence:</label>
@@ -21,7 +87,7 @@
             </div>
 
             <div class="user-output">
-                <h3>Result</h3>
+                <h3>Result:</h3>
                 <span id="showResult"></span>
             </div>
 
@@ -58,7 +124,7 @@
                 }
             }
 
-            return longest;
+            return longest !== "" ? longest : "There is NO Palindrome!";
         }
 
         function calcPerformance(str) {
