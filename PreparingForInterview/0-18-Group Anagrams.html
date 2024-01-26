@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Anagrams</title>
+</head>
+
+<body>
+
+    <script>
+
+        function groupAnagrams(strs) {
+            let allGroups = [];
+
+            const validAnagram = (s1, s2) => {
+                return s1.split('').sort().join('') === s2.split('').sort().join('');
+            }
+
+            for (let i = 0; i < strs.length; i++) {
+                // Initialize the group array for each word
+                let group = [strs[i]];
+
+                for (let j = i + 1; j < strs.length; j++) {
+                    if (validAnagram(strs[i], strs[j])) {
+                        group.push(strs[j]);
+                    }
+                }
+
+                allGroups.push(group);
+            }
+
+            return allGroups;
+        }
+
+        // Example usage:
+        const words = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'];
+        const groupedAnagrams = groupAnagrams(words);
+        console.log(groupedAnagrams);
+
+    </script>
+
+</body>
+
+</html>
