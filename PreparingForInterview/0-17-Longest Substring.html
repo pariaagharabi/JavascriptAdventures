@@ -9,6 +9,51 @@
 
 <body>
 
+    <script>
+        // const hasCommon = (a, b) => {
+        //     for (let i = 0; i < a.length; i++) {
+        //         for (let j = i + 1; j <= a.length; j++) {
+        //             if (b.includes(a.slice(i, j))) return true;
+        //         }
+        //     }
+        //     return false;
+        // };
+
+        // console.log(hasCommon('Animation', 'sssrtAnimyt5678'));
+
+        function longestSubstring(str) {
+            let longest = 0; // Length of the longest substring
+            let start = 0; // Start index of the current substring
+
+            // Map to store the most recent index of each character
+            const charMap = new Map();
+
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+
+                // If the character is already in the substring,
+                // move the start index to the next index of the repeated character
+                if (charMap.has(char) && charMap.get(char) >= start) {
+                    start = charMap.get(char) + 1;
+                }
+
+                // Update the most recent index of the character in the map
+                charMap.set(char, i);
+
+                // Update the length of the longest substring if necessary
+                longest = Math.max(longest, i - start + 1);
+            }
+
+            return longest;
+        }
+
+        // Example usage:
+        const input = "abcabcbb";
+        const length = longestSubstring(input);
+        console.log(length); // Output: 3
+
+    </script>
+
 </body>
 
 </html>
