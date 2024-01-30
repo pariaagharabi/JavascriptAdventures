@@ -56,8 +56,8 @@
             <header>Remove duplicates from an array</header>
 
             <div class="input-user">
-                <label>Enter a list, seprated by comma:</label>
-                <input type="text" placeholder="Enter a list...">
+                <label>Enter a list, separated by comma:</label>
+                <input type="text" placeholder="Enter a list..." id="user-input">
             </div>
 
             <div class="btn-group">
@@ -73,6 +73,12 @@
     </div>
 
     <script>
+        document.getElementById("btn-remove").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value.split(",");
+            calcPerformance(userInput);
+
+        });
+
         function removeDuplicates(array) {
             let result = [];
 
@@ -85,7 +91,11 @@
             return result;
         }
 
-        console.log(removeDuplicates(["foo", "bar", "baz", "foo"]));
+        function calcPerformance(input) {
+            document.getElementById("showResult").innerHTML = JSON.stringify(removeDuplicates(input));
+        }
+
+        // console.log(removeDuplicates(["foo", "bar", "baz", "foo"]));
     </script>
 
 </body>
