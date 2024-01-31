@@ -31,11 +31,40 @@
             justify-content: center;
             align-items: center;
 
+            border: 2px solid;
+            border-radius: 10px;
+            box-shadow: 0 0 15px;
+
+            width: 500px;
+            height: 200px;
+            line-height: 40px;
         }
     </style>
 </head>
 
 <body>
+
+    <div class="container">
+        <div class="content-container">
+
+            <header>Remove duplicates from an array</header>
+
+            <div class="input-user">
+                <label>Enter a number:</label>
+                <input type="text" placeholder="Enter a number..." id="user-input">
+            </div>
+
+            <div class="btn-group">
+                <button id="btn-remove">Find Missing Number</button>
+            </div>
+
+            <div class="output-user">
+                <h3>Result:</h3>
+                <span id="showResult"></span>
+            </div>
+
+        </div>
+    </div>
 
     <script>
         function findMissingNumber(num) {
