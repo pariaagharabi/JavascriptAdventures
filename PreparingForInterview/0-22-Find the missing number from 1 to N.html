@@ -61,7 +61,7 @@
             </div>
 
             <div class="btn-group">
-                <button id="btn-remove">Find Missing Number</button>
+                <button id="btn-find-missing-num">Find Missing Number</button>
             </div>
 
             <div class="output-user">
@@ -73,6 +73,11 @@
     </div>
 
     <script>
+        document.getElementById("btn-find-missing-num").addEventListener("click", () => {
+            let userInput = document.getElementById("user-input").value;
+            calcPerformance(userInput);
+        });
+
         function findMissingNumber(num) {
             const max = Math.max(...num);
             const min = Math.min(...num);
@@ -85,6 +90,10 @@
             }
 
             return missing;
+        }
+
+        function calcPerformance(userInput) {
+
         }
 
         console.log(findMissingNumber([1, 6]));
