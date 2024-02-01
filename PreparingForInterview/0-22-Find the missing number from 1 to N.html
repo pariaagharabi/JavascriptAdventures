@@ -56,8 +56,8 @@
             <header>Find the missing number from 1 to N</header>
 
             <div class="input-user">
-                <label>Enter a number:</label>
-                <input type="text" placeholder="Enter a number..." id="user-input">
+                <label>Enter a list of number:</label>
+                <input type="text" placeholder="Enter a list of number..." id="user-input">
             </div>
 
             <div class="btn-group">
@@ -74,17 +74,17 @@
 
     <script>
         document.getElementById("btn-find-missing-num").addEventListener("click", () => {
-            let userInput = document.getElementById("user-input").value;
+            let userInput = document.getElementById("user-input").value.split(',').map(Number);;
             calcPerformance(userInput);
         });
 
-        function findMissingNumber(num) {
-            const max = Math.max(...num);
-            const min = Math.min(...num);
+        function findMissingNumber(array) {
+            const max = Math.max(...array);
+            const min = Math.min(...array);
             const missing = [];
 
             for (let i = min; i <= max; i++) {
-                if (!num.includes(i)) {
+                if (!array.includes(i)) {
                     missing.push(i);
                 }
             }
@@ -93,14 +93,14 @@
         }
 
         function calcPerformance(userInput) {
-            if () {
-
+            if (isNaN(userInput)) {
+                document.getElementById("showResult").innerHTML =
+                    JSON.stringify(findMissingNumber(userInput));
             } else {
-                document.getElementById("user-input").innerHTML = findMissingNumber(userInput)
+                document.getElementById("showResult").innerHTML = "Enter a valid input! 😕";
             }
         }
 
-        console.log(findMissingNumber([1, 6]));
 
     </script>
 
