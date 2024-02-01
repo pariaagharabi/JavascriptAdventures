@@ -12,6 +12,13 @@
     <script>
         function isPalindrome(string) {
             let halfLen = Math.floor(string.length) / 2;
+
+            for (let i = 0; i < string; i++) {
+                if (string[i] !== halfstringLen[string - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
         }
     </script>
 
