@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Min and Max</title>
 </head>
+
 <body>
-    
+
+    <script>
+        function findMaxMin(array) {
+            let maxItem = array[0];
+            let minItem = array[0];
+
+            for (let i = 1; i < array.length; i++) {
+                if ((maxItem[i] < array[i]) && (minItem[i] > array[i])) {
+                    maxItem = array[i];
+                    minItem = array[i];
+                }
+
+                return `Max: ${maxItem} And Min: ${minItem}`;
+            }
+        }
+
+        console.log(findMaxMin());
+    </script>
+
 </body>
+
 </html>
