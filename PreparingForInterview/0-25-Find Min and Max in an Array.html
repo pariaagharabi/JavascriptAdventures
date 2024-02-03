@@ -15,16 +15,36 @@
             let minItem = array[0];
 
             for (let i = 1; i < array.length; i++) {
-                if ((maxItem[i] < array[i]) && (minItem[i] > array[i])) {
+                if (maxItem < array[i]) {
                     maxItem = array[i];
-                    minItem = array[i];
                 }
 
-                return `Max: ${maxItem} And Min: ${minItem}`;
+                if (minItem > array[i]) {
+                    minItem = array[i];
+                }
             }
+
+            return `Max: ${maxItem} And Min: ${minItem}`;
         }
 
-        console.log(findMaxMin([1, 2, 3, 4, 5]));
+        console.log(findMaxMin([60, 94, 101, -1]));
+
+        function findMaxMinV2(array) {
+            let maxItem = Math.max(...array);
+            let minItem = Math.min(...array);
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === maxItem) {
+                    array[i] = "Max";
+                } else if (array[i] === minItem) {
+                    array[i] = "Min";
+                }
+            }
+
+            return `Max: ${maxItem} And Min: ${minItem}`;
+        }
+
+        console.log(findMaxMin(["aa", "bb", "cc", "dddd", ""]));
     </script>
 
 </body>
