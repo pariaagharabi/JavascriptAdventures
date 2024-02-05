@@ -10,22 +10,21 @@
 <body>
 
     <script>
-        function findFrequency(ele) {
-            let frequency = {};
-
-            for (let i = 0; i < ele.length; i++) {
-                var elements = arr[i];
-                if (frequency[elements]) {
-                    frequency[elements]++;
+        function findFrequency(arr) {
+            var frequency = {};
+            for (var i = 0; i < arr.length; i++) {
+                var element = arr[i];
+                if (frequency[element]) {
+                    frequency[element]++;
                 } else {
-                    frequency[elements] = 1;
+                    frequency[element] = 1;
                 }
             }
             return frequency;
         }
 
         // Example usage:
-        var array = [1, 2, 3, 2, 4, 1, 3, 2, 4, 4, 4];
+        let array = [1, 2, 3, 2, 4, 1, 3, 2, 4, 4, 4];
         console.log(findFrequency(array));
     </script>
 
