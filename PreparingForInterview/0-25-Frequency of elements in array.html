@@ -10,15 +10,15 @@
 <body>
 
     <script>
-        function findFrequency(arr) {
+        function findFrequency(ele) {
             let frequency = {};
-            
-            for (let i = 0; i < arr.length; i++) {
-                var element = arr[i];
-                if (frequency[element]) {
-                    frequency[element]++;
+
+            for (let i = 0; i < ele.length; i++) {
+                var elements = arr[i];
+                if (frequency[elements]) {
+                    frequency[elements]++;
                 } else {
-                    frequency[element] = 1;
+                    frequency[elements] = 1;
                 }
             }
             return frequency;
@@ -26,8 +26,7 @@
 
         // Example usage:
         var array = [1, 2, 3, 2, 4, 1, 3, 2, 4, 4, 4];
-        var frequency = findFrequency(array);
-        console.log(frequency);
+        console.log(findFrequency(array));
     </script>
 
 </body>
