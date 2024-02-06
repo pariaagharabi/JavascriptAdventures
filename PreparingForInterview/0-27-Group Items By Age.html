@@ -10,19 +10,32 @@
 <body>
 
     <script>
-        function groupItemsByAge(items) {
-            const groups = items.reduce((acc, item) => {
-                const ageGroup = item.age;
-                if (!acc[ageGroup]) {
-                    acc[ageGroup] = [];
+        const people = [
+            { name: 'John', age: 25 },
+            { name: 'Alice', age: 30 },
+            { name: 'Bob', age: 25 },
+            { name: 'Eve', age: 30 },
+        ];
+
+        // Function to group items based on age
+        function groupByAge(people) {
+            return people.reduce((groups, person) => {
+                const { age } = person;
+                if (!groups[age]) {
+                    groups[age] = [];
                 }
-                acc[ageGroup].push(item);
-
-                return acc;
+                groups[age].push(person);
+                return groups;
             }, {});
-
-            return groups;
         }
+
+        // Using for...of loop:
+
+        // Group the people by age
+        const groupedPeople = groupByAge(people);
+
+        // Output the grouped people
+        console.log(groupedPeople);
     </script>
 
 </body>
