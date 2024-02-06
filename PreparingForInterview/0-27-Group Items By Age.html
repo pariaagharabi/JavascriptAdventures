@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Items By Age</title>
+</head>
+
+<body>
+
+    <script>
+        function groupItemsByAge(items) {
+            const groups = items.reduce((acc, item) => {
+                const ageGroup = item.age;
+                if (!acc[ageGroup]) {
+                    acc[ageGroup] = [];
+                }
+                acc[ageGroup].push(item);
+
+                return acc;
+            }, {});
+
+            return groups;
+        }
+    </script>
+
+</body>
+
+</html>

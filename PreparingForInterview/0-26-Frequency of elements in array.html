@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency of elements in array</title>
+</head>
+
+<body>
+
+    <script>
+        function findFrequency(arr) {
+            let frequency = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                if (frequency[arr[i]]) {
+                    frequency[arr[i]]++;
+                } else {
+                    frequency[arr[i]] = 1;
+                }
+            }
+            return frequency;
+        }
+
+        // Example usage:
+        let array = [1, 2, 3, 2, 4, 1, 6, 8, 6];
+        console.log(findFrequency(array));
+
+        function findFrequencyV2(arr) {
+            return arr.reduce((frequency, element) => {
+                frequency[element] = (frequency[element] || 0) + 1;
+                return frequency;
+            }, {});
+        }
+
+        // Example usage:
+        let array2 = ["a", "b", "c", "d", "e", "f", "b"];
+        let result = findFrequencyV2(array2);
+        console.log(result);
+    </script>
+
+</body>
+
+</html>
