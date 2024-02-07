@@ -21,7 +21,7 @@
             let missingNumbers = [];
 
             // Iterate over the indices of the sparse array
-            for (let i = 1; i <= sparse.length; i++) {
+            for (let i = 1; i < sparse.length; i++) {
                 // If the value at an index is not 1, it means the number is missing
                 if (sparse[i] !== 1) {
                     missingNumbers.push(i);
@@ -31,6 +31,7 @@
             return missingNumbers;
         }
 
+        console.log(`Orginal Array: ${[2, 5, 3, 1, 4, 7, 10, 15]}`);
         console.log(findMissingNumbers([2, 5, 3, 1, 4, 7, 10, 15]));
     </script>
 
