@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missing number from an unsorted array</title>
 </head>
+
 <body>
-    
+
+    <script>
+        function findMissingNumbers(arr) {
+            var sparse = [];
+
+            // Mark presence of each number in the input array in the sparse array
+            for (let num of arr) {
+                sparse[num] = 1;
+            }
+
+            var missingNumbers = [];
+
+            // Iterate over the indices of the sparse array
+            for (let i = 1; i <= sparse.length; i++) {
+                // If the value at an index is not 1, it means the number is missing
+                if (sparse[i] !== 1) {
+                    missingNumbers.push(i);
+                }
+            }
+
+            return missingNumbers;
+        }
+    </script>
+
 </body>
+
 </html>
