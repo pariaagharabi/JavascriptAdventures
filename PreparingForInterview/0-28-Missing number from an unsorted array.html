@@ -11,14 +11,14 @@
 
     <script>
         function findMissingNumbers(arr) {
-            var sparse = [];
+            let sparse = [];
 
             // Mark presence of each number in the input array in the sparse array
             for (let num of arr) {
                 sparse[num] = 1;
             }
 
-            var missingNumbers = [];
+            let missingNumbers = [];
 
             // Iterate over the indices of the sparse array
             for (let i = 1; i <= sparse.length; i++) {
