@@ -29,13 +29,40 @@
             }, {});
         }
 
-        // Using for...of loop:
-
         // Group the people by age
         const groupedPeople = groupByAge(people);
 
         // Output the grouped people
         console.log(groupedPeople);
+
+
+
+        /////////////////////////////// Using for...of loop: ////////////////// 
+        function groupByAge(people) {
+            const groups = {};
+
+            for (let i = 0; i < people.length; i++) {
+                const person = people[i];
+                const { age } = person;
+                if (!groups[age]) {
+                    groups[age] = [];
+                }
+                groups[age].push(person);
+            }
+            return groups;
+        }
+
+        const people2 = [
+            { name: 'John', age: 25 },
+            { name: 'Alice', age: 30 },
+            { name: 'Bob', age: 25 },
+            { name: 'Eve', age: 30 },
+            { name: 'Anna', age: 45 },
+        ];
+
+        console.log(groupByAge(people2));
+
+
     </script>
 
 </body>
