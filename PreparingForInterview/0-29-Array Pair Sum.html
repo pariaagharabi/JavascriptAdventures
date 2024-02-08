@@ -20,6 +20,33 @@
             }
             return sum;
         }
+
+
+
+
+        //////////////////////////////////////// Solution #2
+        function findPairsWithSum(arr, targetSum) {
+            arr.sort((a, b) => a - b); // Sort the array
+
+            const pairs = [];
+            let left = 0;
+            let right = arr.length - 1;
+
+            while (left < right) {
+                const currentSum = arr[left] + arr[right];
+                if (currentSum === targetSum) {
+                    pairs.push([arr[left], arr[right]]);
+                    left++;
+                    right--;
+                } else if (currentSum < targetSum) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+
+            return pairs;
+        }
     </script>
 
 </body>
