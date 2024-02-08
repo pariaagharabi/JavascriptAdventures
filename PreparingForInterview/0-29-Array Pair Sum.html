@@ -4,10 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Pair Sum</title>
+    <title>Find Pairs With Sum</title>
 </head>
 
 <body>
+
+    <script>
+        function arrayPairSum(array, targetNumber) {
+            let sum = [];
+            for (let i = 0; i < numbers.length; i++) {
+                for (let j = i + 1; j < numbers.length; j++) {
+                    if (numbers[i] + numbers[j] === targetNumber)
+                        sum.push([numbers[i], numbers[j]]);
+                }
+            }
+            return sum;
+        }
+    </script>
 
 </body>
 
