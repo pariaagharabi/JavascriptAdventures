@@ -11,13 +11,19 @@
 
     <script>
 
-        function getNthLargestElement(array, element) {
-            let largestElement = array[0];
+        function getNthLargestElement(array, n) {
+            // Sort the array in ascending order
+            let sortedArr = array.sort((a, b) => a - b);
+            // Access the nth largest element
+            const nthLargest = sortedArr[sortedArr.length - n];
 
-            for (let i = 0; i < array.length; i++) {
-
-            }
+            return nthLargest;
         }
+
+        // Example usage:
+        const array = [1, 5, 2, 9, 8, 3];
+        const nthLargest = getNthLargestElement(array, 3);
+        console.log(`The ${nthLargest}rd largest element is:, nthLargest`);
 
     </script>
 
