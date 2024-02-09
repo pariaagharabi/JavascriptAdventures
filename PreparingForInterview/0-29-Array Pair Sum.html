@@ -12,10 +12,10 @@
     <script>
         function arrayPairSum(array, targetNumber) {
             let sum = [];
-            for (let i = 0; i < numbers.length; i++) {
-                for (let j = i + 1; j < numbers.length; j++) {
-                    if (numbers[i] + numbers[j] === targetNumber)
-                        sum.push([numbers[i], numbers[j]]);
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] + array[j] === targetNumber)
+                        sum.push([array[i], array[j]]);
                 }
             }
             return sum;
@@ -47,6 +47,8 @@
 
             return pairs;
         }
+
+        console.log(findPairsWithSum([1, 2, 3, 4, 5, 6], 9));
     </script>
 
 </body>
