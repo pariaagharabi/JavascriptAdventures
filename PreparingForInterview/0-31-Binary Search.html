@@ -21,15 +21,16 @@
                 if (array[midle] === search) {
                     return midle;
                 }
-                if (target < array[midel]) {
+
+                if (array[midel] > search) {
                     rightSide = midel - 1;
                 } else {
                     leftSide = midel + 1;
                 }
+
             }
 
             return -1;
-
         }
     </script>
 
