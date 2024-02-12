@@ -15,7 +15,20 @@
             let midle = 0;
             let rightSide = array.length - 1;
 
+            while (leftSide <= rightSide) {
+                midle = Math.floor((leftSide + rightSide) / 2);
 
+                if (array[midle] === search) {
+                    return midle;
+                }
+                if (target < array[midel]) {
+                    rightSide = midel - 1;
+                } else {
+                    leftSide = midel + 1;
+                }
+            }
+
+            return -1;
 
         }
     </script>
