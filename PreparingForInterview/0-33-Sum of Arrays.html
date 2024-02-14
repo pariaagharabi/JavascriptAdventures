@@ -11,7 +11,18 @@
 
     <script>
         function sumOfArrays(...arrays) {
+            let sum = 0;
 
+            for (let i = 0; i < arrays.length; i++) {
+                const currentArray = arrays[i];
+
+                // Iterate over each element in the current array and add it to the sum
+                for (let j = 0; j < currentArray.length; j++) {
+                    sum += currentArray[j];
+                }
+            }
+
+            return sum;
         }
     </script>
 
