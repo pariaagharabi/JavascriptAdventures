@@ -10,19 +10,23 @@
 <body>
 
     <script>
-        function powerOfNumbers(num) {
+
+        function powerOfNumbersV1(base, exponent) {
             let powResult = 1;
 
-            powResult *= num;
-
+            for (let i = 0; i < exponent; i++) {
+                powResult *= base;
+            }
             return powResult;
-
-
         }
 
+        // Second Solution
+        let powerOfNumbersV2 = Math.pow(base, exponent);
+
+        // Third Solution
 
         // Usage example
-        console.log(powerOfNumbers(3));
+        console.log(powerOfNumbersV1(8, 2));
 
     </script>
 
