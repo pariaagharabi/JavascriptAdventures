@@ -31,6 +31,12 @@
         const totalSum = sumOfArrays(array1, array2, array3);
         console.log(totalSum);
 
+
+        /// Scond Solution 
+        function sumOfArrays(...arrays) {
+            return arrays.reduce((sum, array) => sum + array.reduce((acc, curr) => acc + curr, 0), 0);
+        }
+
     </script>
 
 </body>
