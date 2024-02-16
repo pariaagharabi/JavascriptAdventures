@@ -20,8 +20,10 @@
             let mapStr2toMapStr1 = new Map();
 
             for (let i = 0; i < str1.length; i++) {
-                if(!str1[i].includes(mapStr1toMapStr2) && !str2[i].includes(mapStr2toMapStr1)){
-                    mapStr1toMapStr2[i].push.str1[i];
+                if (mapStr1toMapStr2.has(str1[i]) && mapStr1toMapStr2.get(str1[i])
+                    && mapStr2toMapStr1.has(str2[i]) && mapStr2toMapStr1.get(str2[i])
+                ) {
+                    return false;
                 }
 
 
