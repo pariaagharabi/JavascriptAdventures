@@ -12,6 +12,7 @@
     <script>
 
         function isomorphicCheck(str1, str2) {
+
             if (str1.length !== str2.length) {
                 return false;
             }
@@ -23,12 +24,15 @@
                 if (mapStr1toMapStr2.has(str1[i]) && mapStr1toMapStr2.get(str1[i])
                     && mapStr2toMapStr1.has(str2[i]) && mapStr2toMapStr1.get(str2[i])
                 ) {
-                    return false;
+                    console.log(true);
                 }
 
 
             }
         }
+
+
+        console.log(isomorphicCheck("ACAB", "XCXY"));
 
     </script>
 
