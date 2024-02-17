@@ -12,17 +12,19 @@
     <script>
 
         function isomorphicCheck(str1, str2) {
+            const lowerCaseStr1 = str1.toLowerCase();
+            const lowerCaseStr2 = str2.toLowerCase();
 
-            if (str1.length !== str2.length) {
+            if (lowerCaseStr1.length !== lowerCaseStr2.length) {
                 return false;
             }
 
             let mapStr1toMapStr2 = new Map();
             let mapStr2toMapStr1 = new Map();
 
-            for (let i = 0; i < str1.length; i++) {
-                if (mapStr1toMapStr2.has(str1[i]) && mapStr1toMapStr2.get(str1[i])
-                    && mapStr2toMapStr1.has(str2[i]) && mapStr2toMapStr1.get(str2[i])
+            for (let i = 0; i < lowerCaseStr1.length; i++) {
+                if (mapStr1toMapStr2.has(lowerCaseStr1[i]) && mapStr1toMapStr2.get(lowerCaseStr1[i])
+                    && mapStr2toMapStr1.has(lowerCaseStr2[i]) && mapStr2toMapStr1.get(lowerCaseStr2[i])
                 ) {
                     console.log(true);
                 }
