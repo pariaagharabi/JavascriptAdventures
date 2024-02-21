@@ -13,15 +13,19 @@
             return arr.length === 0 ? arr : [];
         }
 
-        // function emptyArray(arr) {
-        //     if (arr.length !== 0) {
-        //         arr.push(null);
-        //     }
+        function emptyArrayV2(arr) {
+            if (arr.length !== 0) {
+                arr.length = 0;
+            }
 
-        //     return arr;
-        // }
+            return arr;
+        }
 
+        console.log(`Org Arr v1: ${[1, 2, 3, 9, 8]}`);
         console.log(emptyArray([1, 2, 3, 9, 8]));
+
+        console.log(`Org Arr v2: ${[44, 65, 67]}`);
+        console.log(emptyArrayV2([44, 65, 67]));
     </script>
 
 </body>
