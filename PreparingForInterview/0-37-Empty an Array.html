@@ -9,17 +9,19 @@
 
 <body>
     <script>
-        // function emptyArray(arr){
-        //     arr.length === 0 ? null : arr
+        function emptyArray(arr) {
+            return arr.length === 0 ? arr : [];
+        }
+
+        // function emptyArray(arr) {
+        //     if (arr.length !== 0) {
+        //         arr.push(null);
+        //     }
+
+        //     return arr;
         // }
 
-        function emptyArray(arr) {
-            if (arr.length !== 0) {
-                arr.push(null);
-            }
-
-            return arr;
-        }
+        console.log(emptyArray([1, 2, 3, 9, 8]));
     </script>
 
 </body>
