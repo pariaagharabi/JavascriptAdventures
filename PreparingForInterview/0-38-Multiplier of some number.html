@@ -17,7 +17,18 @@
             return resultMultiplier;
         }
 
-        console.log(multiplier[2, 3, 4]);
+        console.log(multiplier([2, 3, 7]));
+
+        // Scond solution
+        function multiplier(x) {
+            return function (y) {
+                return function (z) {
+                    return x * y * z;
+                };
+            };
+        }
+
+        console.log(multiplier(2)(3)(4));
     </script>
 
 </body>
