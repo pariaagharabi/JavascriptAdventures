@@ -28,11 +28,13 @@
             let splitSentence = sentence.split(" ");
             let reversedResult = "";
 
-            for (var i = splitSentence.length - 1; i >= 0; i--) {
-                reversedResult += splitSentence.charAt(i);
+            for (let i = splitSentence.length - 1; i >= 0; i--) {
+                reversedResult += splitSentence[i];
             }
             return reversedResult;
         }
+
+        console.log(reverseEachWordV2("This is a book"));
 
     </script>
 
