@@ -28,8 +28,8 @@
             let splitSentence = sentence.split(" ");
             let reversedResult = "";
 
-            for (var i = str.length - 1; i >= 0; i--) {
-                reversedResult += str.charAt(i);
+            for (var i = splitSentence.length - 1; i >= 0; i--) {
+                reversedResult += splitSentence.charAt(i);
             }
             return reversedResult;
         }
