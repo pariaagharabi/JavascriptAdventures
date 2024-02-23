@@ -10,14 +10,14 @@
 <body>
 
     <script>
-        function multiplier(array) {
+        function multiplierV1(array) {
             const resultMultiplier = array.reduce(
                 (accumulator, currentValue) => accumulator * currentValue);
 
             return resultMultiplier;
         }
 
-        console.log(multiplier([2, 3, 7]));
+        console.log(multiplierV1([2, 3, 7]));
 
         // Scond solution
         function multiplier(x) {
