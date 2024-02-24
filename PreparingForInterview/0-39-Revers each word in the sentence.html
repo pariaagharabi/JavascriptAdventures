@@ -10,7 +10,7 @@
 <body>
 
     <script>
-        function reverseEachWordV1(sentence) {
+        function reverseEachWord(sentence) {
             let splitSentence = sentence.split(" ");
             let reversedResult = "";
 
@@ -23,18 +23,7 @@
 
         console.log(reverseEachWordV1("I am happy and blessed."));
 
-        // Second Solution
-        function reverseEachWordV2(sentence) {
-            let splitSentence = sentence.split(" ");
-            let reversedResult = "";
 
-            for (let i = splitSentence.length - 1; i >= 0; i--) {
-                reversedResult += splitSentence[i];
-            }
-            return reversedResult;
-        }
-
-        console.log(reverseEachWordV2("This is a book"));
 
     </script>
 
