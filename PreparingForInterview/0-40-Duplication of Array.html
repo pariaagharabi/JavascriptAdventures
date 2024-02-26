@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duplication of Arry</title>
+    <title>Duplication of Array</title>
 </head>
 
 <body>
 
     <script>
-        function getDuplication(arr) {
-            let duplicatedArrResult = [];
-            
-            for (let value of arr) {
+        function makeDuplication(arr) {
+            let duplicatedArrResult = arr.concat(arr);
 
-            }
+            return duplicatedArrResult;
         }
+
+        function makeDuplicationV2(arr) {
+            return [...arr, ...arr];
+        }
+
+        console.log(makeDuplication([1, 2, 3]));
     </script>
 
 </body>
