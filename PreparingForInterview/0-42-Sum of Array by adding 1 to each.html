@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum of an Arry by adding 1 to each</title>
+    <title>Sum of an Array by adding 1 to each</title>
 </head>
 
 <body>
@@ -18,6 +18,13 @@
         }
 
         console.log(getSumOfArry([9, 8, 7]));
+
+        // Second Solution
+        function getSumOfArrayV2(arr) {
+            return arr.reduce((sum, item) => sum + item + 1, 0);
+        }
+
+        // Third Solution
     </script>
 
 </body>
