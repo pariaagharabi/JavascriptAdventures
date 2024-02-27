@@ -13,9 +13,14 @@
             let rotatedStr = "";
 
             for (let i = 0; i < str.length; i++) {
-
+                let partTwo = str.slice(1);
+                rotatedStr = partTwo + str[0];
             }
+
+            return rotatedStr;
         }
+
+        console.log(strRotation("abcd"));
     </script>
 
 </body>
