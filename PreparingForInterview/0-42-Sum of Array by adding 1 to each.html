@@ -10,10 +10,9 @@
 <body>
     <script>
         function getSumOfArry(arr) {
-            const addedOneToEach = arr.map(item => item += 1);
+            const addedOneToEach = arr.map(item => item + 1);
 
-            const sumResult = addedOneToEach.reduce((sum, item) => (sum + item, 0));
-
+            const sumResult = addedOneToEach.reduce((sum, item) => sum + item, 0);
 
             return sumResult;
         }
