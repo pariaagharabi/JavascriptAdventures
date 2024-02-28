@@ -24,8 +24,13 @@
 
         // Second Solution
         function sumOfOddElementsV2(arr) {
-            
+            let oddElements = [];
+
+            let filteredOddEles = arr.filter((ele) => ele % 2 !== 0);
+
+            return filteredOddEles;
         }
+        console.log(sumOfOddElementsV2([2, 4, 6, 8, 11, 2, 13]));
     </script>
 </body>
 
