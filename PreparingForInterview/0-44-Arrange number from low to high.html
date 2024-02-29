@@ -9,9 +9,7 @@
 
 <body>
     <script>
-        function arrangeNumbersDivisibleByThree(orgArr) {
-            // let arrangedResult = [];
-
+        function arrangeNumbersLowToHigh(orgArr) {
             for (let i = 0; i < orgArr.length - 1; i++) {
                 for (let j = 0; j < orgArr.length - 1 - i; j++) {
                     if (orgArr[j] > orgArr[j + 1]) {
@@ -26,15 +24,19 @@
         }
 
         function getNumsDivisibleByThree(arr) {
-            const sortedArr = arrangeNumbersDivisibleByThree(arr);
+            const sortedArr = arrangeNumbersLowToHigh(arr);
+            let dividedByThreeResult = [];
 
             for (let i = 0; i < sortedArr.length; i++) {
-
+                if (sortedArr[i] % 3 === 0) {
+                    dividedByThreeResult.push(sortedArr[i]);
+                }
             }
 
+            return dividedByThreeResult;
         }
 
-        console.log(arrangeNumbersDivisibleByThree([6, 2, 4, 12, 3]));
+        console.log(getNumsDivisibleByThree([6, 2, 4, 12, 3]));
     </script>
 
 </body>
