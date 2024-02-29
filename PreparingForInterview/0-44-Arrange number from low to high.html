@@ -12,8 +12,8 @@
         function arrangeNumbersDivisibleByThree(orgArr) {
             // let arrangedResult = [];
 
-            for (var i = 0; i < orgArr.length - 1; i++) {
-                for (var j = 0; j < orgArr.length - 1 - i; j++) {
+            for (let i = 0; i < orgArr.length - 1; i++) {
+                for (let j = 0; j < orgArr.length - 1 - i; j++) {
                     if (orgArr[j] > orgArr[j + 1]) {
                         let temp = orgArr[j];
                         orgArr[j] = orgArr[j + 1];
@@ -25,8 +25,13 @@
             return orgArr;
         }
 
-        function getNumsDivisibleByThree(arr){
-            
+        function getNumsDivisibleByThree(arr) {
+            const sortedArr = arrangeNumbersDivisibleByThree(arr);
+
+            for (let i = 0; i < sortedArr.length; i++) {
+
+            }
+
         }
 
         console.log(arrangeNumbersDivisibleByThree([6, 2, 4, 12, 3]));
