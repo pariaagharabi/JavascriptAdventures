@@ -9,25 +9,27 @@
 
 <body>
     <script>
-        function arrangeNumbersDivisibleByThree(arr) {
-            let arrangedResult = [];
+        function arrangeNumbersDivisibleByThree(orgArr) {
+            // let arrangedResult = [];
 
-            for (let i = 0; i < arr.length - 1; i++) {
-                for (let j = 0; j < arr.length - 1 - i; j++) {
-                    if (arr[j] < arr[j - 1]) {
-                        let temp = arr[j];
-                        arr[j] = arr[j - 1];
-                        arr[j - 1] = temp;
+            for (var i = 0; i < orgArr.length - 1; i++) {
+                for (var j = 0; j < orgArr.length - 1 - i; j++) {
+                    if (orgArr[j] > orgArr[j + 1]) {
+                        let temp = orgArr[j];
+                        orgArr[j] = orgArr[j + 1];
+                        orgArr[j + 1] = temp;
                     }
                 }
-
-                arrangedResults.push(temp);
             }
 
-            return arrayResults;
+            return orgArr;
         }
 
-        
+        function getNumsDivisibleByThree(arr){
+            
+        }
+
+        console.log(arrangeNumbersDivisibleByThree([6, 2, 4, 12, 3]));
     </script>
 
 </body>
