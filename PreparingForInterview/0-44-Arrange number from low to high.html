@@ -25,15 +25,18 @@
 
         function getNumsDivisibleByThree(arr) {
             const sortedArr = arrangeNumbersLowToHigh(arr);
-            let dividedByThreeResult = [];
+            let numsResult = [];
 
             for (let i = 0; i < sortedArr.length; i++) {
                 if (sortedArr[i] % 3 === 0) {
-                    dividedByThreeResult.push(sortedArr[i]);
+                    numsResult.push(`${sortedArr[i]}:div3`);
+                }
+                else {
+                    numsResult.push(sortedArr[i]);
                 }
             }
 
-            return dividedByThreeResult;
+            return numsResult;
         }
 
         console.log(getNumsDivisibleByThree([6, 2, 4, 12, 3]));
