@@ -9,19 +9,20 @@
 
 <body>
     <script>
-        function sumOfSeveralArrays(array) {
+        function sumOfSeveralArrays(arrays) {
             let sumResult = 0;
 
-            for (let i = 0; i < array.length; i++) {
-                for (let j = 0; j < sumResult; j++) {
-                    sumResult += array[i][j];
+            for (let i = 0; i < arrays.length; i++) {
+                for (let j = 0; j < arrays[i].length; j++) {
+                    sumResult += arrays[i][j];
                 }
             }
 
             return sumResult;
         }
 
-        console.log(sumOfSeveralArrays([1, 2, 3], [4, 5, 6], [7, 8, 9]));
+        console.log(sumOfSeveralArrays([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+
     </script>
 
 </body>
