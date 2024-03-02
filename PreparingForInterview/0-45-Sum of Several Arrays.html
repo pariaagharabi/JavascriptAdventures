@@ -26,7 +26,7 @@
         // Second Solution
         function sumOfSeveralArraysV2(arrays) {
             return arrays.reduce((sum, array) => {
-                return (sum + array).reduce((acc, num) => acc + num, 0);
+                return sum + array.reduce((acc, num) => acc + num, 0);
             }, 0);
         }
 
