@@ -27,7 +27,16 @@
 
         console.log(luckySevens([2, 3, 2, 6, 8]));
 
+        // Second Solution
+        function luckySevensV2(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr.slice(i, i + 2).reduce((a, c) => a + c) === 7) return true;
+                else if (arr.slice(i, i + 3).reduce((a, c) => a + c) === 7) return true;
+            }
+            return false;
+        }
 
+        console.log(luckySevensV2([2, 1, 5, 1, 0]));
     </script>
 </body>
 
