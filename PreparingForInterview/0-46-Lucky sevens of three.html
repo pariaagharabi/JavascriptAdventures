@@ -18,7 +18,8 @@
             const arrayOfInt = array.map(item => parseInt(item, 10));
 
             for (let i = 0; i < arrayOfInt.length; i++) {
-                if (arrayOfInt[i] + arrayOfInt[i + 1] + arrayOfInt[i + 2] === 7) {
+                let threeEles = arrayOfInt[i] + arrayOfInt[i + 1] + arrayOfInt[i + 2];
+                if (threeEles === 7) {
                     return true;
                 }
             }
@@ -36,7 +37,7 @@
             return false;
         }
 
-        console.log(luckySevensV2([2, 1, 5, 1, 0]));
+        console.log(luckySevensV2([2, 1, 1, 0]));
     </script>
 </body>
 
