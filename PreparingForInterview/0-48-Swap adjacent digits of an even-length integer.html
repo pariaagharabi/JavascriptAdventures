@@ -11,13 +11,13 @@
     <script>
         function swapAdjacent(arr) {
             if (arr.length % 2 === 0) {
-                return true;
+                arr.map((i, j) => arr[j, i])
             }
 
-            return false;
+
         }
 
-        console.log(swapAdjacent([1, 2, 3]));
+        console.log(swapAdjacent([1, 2, 3, 4]));
     </script>
 
 </body>
