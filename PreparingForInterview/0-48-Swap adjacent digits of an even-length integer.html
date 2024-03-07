@@ -11,7 +11,12 @@
     <script>
         function swapAdjacent(arr) {
             if (arr.length % 2 === 0) {
-                arr.map((i, j) => arr[j, i])
+                for (let i = 0; i < arr.length; i += 2) {
+                    let temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+                return arr;
             }
 
 
