@@ -18,10 +18,10 @@
                 let firstChar = splitedStr[i][0];
                 let capitalizedFirstChar = firstChar.toUpperCase();
 
-                capitalizedResult += capitalizedFirstChar.split("").join() + "";
+                capitalizedResult += capitalizedFirstChar + splitedStr[i].substring(1) + " ";;
             }
 
-
+            return capitalizedResult;
         }
 
         console.log(CapitalizeAllLetter("This is a capitalized string function."));
