@@ -13,13 +13,16 @@
             let capitalizedResult = "";
             const splitedStr = str.split(" ");
 
-            for (let i = 0; i < splitedStr.length(); i++) {
-                let sliceStr = splitedStr[i];
-                console.log(sliceStr);
+            for (let i = 0; i < splitedStr.length; i++) {
+                // let firstChar = splitedStr[i].substring(0, 1);
+                let firstChar = splitedStr[i][0];
+                console.log(firstChar);
             }
+
+
         }
 
-        console.log("This is a capitalized string function.");
+        console.log(CapitalizeAllLetter("This is a capitalized string function."));
     </script>
 </body>
 
