@@ -14,11 +14,13 @@
 
     <script>
         function findMaxInteger(target) {
-            letsumResult = 0;
-
-            for (let i = 0; i < target.length; i++) {
-
+            let sumResult = 0;
+            let n = 0;
+            while (sumResult <= target) {
+                n++;
+                sumResult += n;
             }
+            return n - 1;
         }
     </script>
 
