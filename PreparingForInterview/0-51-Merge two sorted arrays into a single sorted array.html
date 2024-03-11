@@ -23,8 +23,10 @@
 
     <script>
         document.getElementById("mergeArrays").addEventListener("click", () => {
-            const firstArrayVakue = document.getElementById("firstArr").value.split(',').map(Number);
-            const secondArrayVakue = document.getElementById("secondArr").value.split(',').map(Number);
+            const firstArrayValue = document.getElementById("firstArr").value.split(',').map(Number);
+            const secondArrayValue = document.getElementById("secondArr").value.split(',').map(Number);
+
+            calcPerformance(firstArrayValue, secondArrayValue);
         })
 
 
