@@ -26,12 +26,14 @@
             const firstArrayValue = document.getElementById("firstArr").value.split(',').map(Number);
             const secondArrayValue = document.getElementById("secondArr").value.split(',').map(Number);
 
-            calcPerformance(firstArrayValue, secondArrayValue);
+            const result = mergeTwoSortedArrays(firstArrayValue, secondArrayValue);
+            document.getElementById("showResult").innerText = result.join(', ');
         })
 
 
         function mergeTwoSortedArrays(arr1, arr2) {
-
+            const mergedArray = [...arr1, ...arr2].sort((a, b) => a - b);
+            return mergedArray;
         }
     </script>
 
