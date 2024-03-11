@@ -11,15 +11,23 @@
     <h1>Merge two sorted arrays into a single sorted array</h1>
     <div>
         <label>Enter first array, seprated by comma: </label>
-        <input type="number" id="firstArr" placeholder="First Array">
+        <input type="text" id="firstArr" placeholder="First Array">
     </div>
     <div>
         <label>Enter second array, seprated by comma: </label>
-        <input type="number" id="secondArr" placeholder="Second Array">
+        <input type="text" id="secondArr" placeholder="Second Array">
     </div>
-    <button>Merge Two Arrays</button>
+    <button id="mergeArrays">Merge Two Arrays</button>
+    <h1>Result: </h1>
+    <span id="showResult"></span>
 
     <script>
+        document.getElementById("mergeArrays").addEventListener("click", () => {
+            const firstArrayVakue = document.getElementById("firstArr").value.split(',').map(Number);
+            const secondArrayVakue = document.getElementById("secondArr").value.split(',').map(Number);
+        })
+
+
         function mergeTwoSortedArrays(arr1, arr2) {
 
         }
