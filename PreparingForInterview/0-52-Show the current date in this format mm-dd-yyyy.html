@@ -29,6 +29,10 @@
 
             const getCurrentDay = currentDate.getDate();
             // console.log(getCurrentDay);
+
+            const getCurrentYear = currentDate.getFullYear();
+
+            return `${getCurrentMonth}-${getCurrentDay}-${getCurrentYear}`;
         }
 
         console.log(getCurrentDate());
