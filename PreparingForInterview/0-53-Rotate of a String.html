@@ -10,21 +10,18 @@
 <body>
     <h1>String Rotation</h1>
     <input type="text" id="inputStr" placeholder="Enter a String" />
-    <button id="rotateBtn">Rotate</button>
+    <button id="rotateBtn" onclick="animationRotateStr()">Rotate</button>
     <span id="showResult">Result</span>
 
     <script>
-        document.getElementById("rotateBtn").addEventListener("click", () => {
-            const strValue = document.getElementById("inputStr").value;
+        function animationRotateStr() {
+            let text = document.getElementById("inputStr").value;
 
-
-        });
-        
-        function rotateStr(strValue) {
-            setTimeout(() => { }, 2000)
-        };
-
-
+            setInterval(function () {
+                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                document.getElementById("showResult").textContent = text;
+            }, 2000);
+        }
     </script>
 </body>
 
