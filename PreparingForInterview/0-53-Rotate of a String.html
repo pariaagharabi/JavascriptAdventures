@@ -17,8 +17,10 @@
         function animationRotateStr() {
             let text = document.getElementById("inputStr").value;
 
-            setInterval(function () {
-                text = text[text.length - 1] + text.substring(0, text.length - 1);
+            setInterval(() => {
+                // text = text[text.length - 1] + text.substring(0, text.length - 1);
+                text = text[text.length - 1] + text.slice(0, -1);
+
                 document.getElementById("showResult").textContent = text;
             }, 2000);
         }
