@@ -12,12 +12,15 @@
     <script>
         function multiplicationDivision(number1, number2) {
             const multiplicationOpt = number1 * number2;
+            let divisionOpt;
 
             if (number2 !== 0) {
-                const divisionOpt = number1 / number2;
-            };
+                divisionOpt = number1 / number2;
+            } else {
+                divisionOpt = "Division by zero is not defined";
+            }
 
-            return
+            return `Multiplication: ${multiplicationOpt} and division: ${divisionOpt}`;
         }
     </script>
 
