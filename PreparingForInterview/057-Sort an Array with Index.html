@@ -4,12 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sort an Array with Index </title>
+    <title>Sort an Array with Index</title>
 </head>
 
 <body>
 
     <script>
+        function sortPeopleByAge(people) {
+            // Step 1: Create an array of index-value pairs
+            const indexedArray = people.map((item, index) => ({ index, value: item }));
+
+            // Step 2: Sort the index-value pairs based on the requirement (based on age)
+            indexedArray.sort((a, b) => a.value.age - b.value.age);
+
+            // Step 3: Use the sorted values the original array based on the sorted indices
+            const sortedPeople = indexedArray.map((item) => item.value);
+
+            return sortedPeople;
+        }
+
         // Sample array of objects
         const people = [
             { name: "Alice", age: 32 },
@@ -17,19 +30,8 @@
             { name: "Charlie", age: 45 },
         ];
 
-        // Step 1: Create an array of index-value pairs
-        const indexedArray = people.map((item, index) => ({ index, value: item }));
-
-
-
-        // Step 2: Sort the index-value pairs based on the requirement (based on age)
-        indexedArray.sort((a, b) => a.value.age - b.value.age);
-
-
-
-        // Step 3: Use the sorted values the original array based on the sorted indices
-        const sortedPeople = indexedArray.map((item) => item.value);
-
+        // Call the function with the sample array
+        const sortedPeople = sortPeopleByAge(people);
         console.log(sortedPeople);
     </script>
 
