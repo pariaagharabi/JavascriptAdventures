@@ -12,10 +12,12 @@
     <script>
 
         function checkForPalindrome(string) {
-            const halfLength = string.length / 2
+            const halfLength = Math.floor(string.length) / 2;
 
             for (let i = 0; i < halfLength; i++) {
-
+                if (string[i] !== string[string.length - 1 - i]){
+                    
+                }
             }
         }
 
