@@ -10,8 +10,23 @@
 <body>
 
     <script>
-        function checkExistence(target){
-            
+        function binarySearch(arr, target) {
+            let left = 0;
+            let right = arr.length - 1;
+
+            while (left <= right) {
+                let mid = Math.floor((left + right) / 2);
+
+                if (arr[mid] === target) {
+                    return true; // Found the target
+                } else if (arr[mid] < target) {
+                    left = mid + 1; // Discard left half
+                } else {
+                    right = mid - 1; // Discard right half
+                }
+            }
+
+            return false; // Target not found
         }
     </script>
 
