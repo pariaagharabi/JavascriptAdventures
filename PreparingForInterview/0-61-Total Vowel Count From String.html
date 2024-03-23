@@ -11,10 +11,10 @@
     <script>
         function getTotalVowelCount(string) {
             let count = 0;
-            let totalVowels = "a,o,i,u,e";
+            let totalVowels = "aoiue";
 
             for (let i = 0; i < string.length; i++) {
-                if (string[i] === totalVowels) {
+                if (totalVowels.includes(string[i])) {
                     count = count + 1;
                 }
             }
