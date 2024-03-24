@@ -11,17 +11,17 @@
 
     <script>
         function getFactorial(num) {
-            let factResult = "";
+            let factResult = 1;
 
             if (num === 1 || num === 0) {
                 return 1;
             }
 
             for (let i = 2; i < num; i++) {
-
+                factResult *= i;
             }
 
-            return
+            return factResult;
         }
     </script>
 
