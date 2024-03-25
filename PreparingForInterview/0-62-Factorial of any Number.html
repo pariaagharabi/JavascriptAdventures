@@ -26,7 +26,12 @@
 
         // Second Solution
         function getFactorialV2(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            }
 
+
+            return num * getFactorialV2(num - 1);
         }
     </script>
 
