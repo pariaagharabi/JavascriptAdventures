@@ -18,6 +18,12 @@
             margin-top: 40px;
         }
 
+        .inner-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
         #user-input input {
             background-color: transparent;
             color: teal;
@@ -47,13 +53,26 @@
 
             <div>
                 <button id="check-btn">Check</button>
-                <span id="show-result">Result: </span>
             </div>
+            <span id="show-result">Result: </span>
+
         </div>
     </div>
 
 
     <script>
+        document.getElementById("check-btn").addEventListener("click", () => {
+            const userInputValue = parseInt(document.getElementById("user-input").value);
+            const resultElement = document.getElementById("show-result");
+
+            if (isPerfect(userInputValue)) {
+                resultElement.textContent = "Result: It is a perfect number.";
+            } else {
+                resultElement.textContent = "Result: It is not a perfect number.";
+            }
+        });
+
+
         function isPerfect(num) {
             if (num <= 1) {
                 return false;
