@@ -5,9 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check perfect number</title>
+
+    <style>
+        body {
+            color: teal;
+            background-color: rgb(64, 66, 66);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        #user-input input {
+            background-color: transparent;
+            color: teal;
+            border: 3px solid teal;
+        }
+
+        #check-btn button {
+            cursor: pointer;
+            width: 50px;
+            height: 30px;
+            background-color: transparent;
+            color: teal;
+            border: 3px solid teal;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="container">
+        <div class="inner-container">
+            <h1>Check Perfect Number</h1>
+
+            <div>
+                <input type="text" placeholder="Enter a number" id="user-input">
+            </div>
+
+            <div>
+                <button id="check-btn">Check</button>
+                <span id="show-result">Result: </span>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         function isPerfect(num) {
             if (num <= 1) {
