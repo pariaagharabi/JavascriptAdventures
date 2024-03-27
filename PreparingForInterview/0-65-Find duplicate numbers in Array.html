@@ -14,10 +14,12 @@
             let duplicatedResult = [];
 
             for (let i = 0; i < array.length; i++) {
-                if(!duplicatedResult.includes(array[i])) {
-
+                if (!duplicatedResult.includes(array[i])) {
+                    duplicatedResult.push(array[i]);
                 }
             }
+
+            return duplicatedResult;
         }
     </script>
 
