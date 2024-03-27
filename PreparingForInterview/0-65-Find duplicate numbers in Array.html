@@ -11,21 +11,17 @@
 
     <script>
         function findDuplicates(array) {
-            let duplicates = [];
-            let count = {};
+            let duplicateEleArr = [];
+            let uniqueArr = [];
 
             for (let i = 0; i < array.length; i++) {
-                let num = array[i];
-                count[num] = count[num] ? count[num] + 1 : 1;
+                if (!uniqueArr.includes(array[i]))
+                    uniqueArr.push(array[i])
+                else
+                    duplicateEleArr.push(array[i])
             }
 
-            for (let num in count) {
-                if (count[num] > 1) {
-                    duplicates.push(Number(num));
-                }
-            }
-
-            return duplicatedResult;
+            return duplicateEleArr;
         }
 
         // Example usage:
