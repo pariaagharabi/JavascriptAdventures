@@ -11,11 +11,17 @@
 
     <script>
         function findDuplicates(array) {
-            let duplicatedResult = [];
+            let duplicates = [];
+            let count = {};
 
             for (let i = 0; i < array.length; i++) {
-                if (!duplicatedResult.includes(array[i])) {
-                    duplicatedResult.push(array[i]);
+                let num = array[i];
+                count[num] = count[num] ? count[num] + 1 : 1;
+            }
+
+            for (let num in count) {
+                if (count[num] > 1) {
+                    duplicates.push(Number(num));
                 }
             }
 
@@ -23,7 +29,7 @@
         }
 
         // Example usage:
-        console.log(duplicatedResult([2, 5, 3, 2, 6, 7, 8, 9, 2]));
+        console.log(findDuplicates([2, 5, 3, 2, 6, 7, 8, 9, 2]));
     </script>
 
 </body>
