@@ -5,10 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remove Even ints from an Array</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rosybrown;
+            color: rgb(234, 189, 189);
+            border: 2px solid rgb(127, 89, 89);
+            border-radius: 15px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="header">
+                <h1>Remove Even ints from an Array</h1>
+            </div>
+
+            <div class="box-container">
+                <input type="text" id="user-input" placeholder="Enter a list of numbers, seprated by commas...">
+            </div>
+
+            <div class="btns-container">
+                <button id="run-btn">Run</button>
+                <br>
+                <span id="show-result">Result: </span>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script>
+        document.getElementById("run-btn").addEventListener("click", () => {
+            const userInputs = document.getElementById("user-input").value;
+            const userNums = userInputs.split(",").Number(map);
+
+            document.getElementById("show-result").innerHTML = removeEvenInts(userNums);
+        })
+
         function removeEvenInts(arr) {
             let removedEvens = [];
 
