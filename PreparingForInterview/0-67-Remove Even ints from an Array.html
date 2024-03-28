@@ -49,7 +49,7 @@
     <script>
         document.getElementById("run-btn").addEventListener("click", () => {
             const userInputs = document.getElementById("user-input").value;
-            const userNums = userInputs.split(",").Number(map);
+            const userNums = userInputs.split(",").map(Number);
 
             document.getElementById("show-result").innerHTML = removeEvenInts(userNums);
         })
