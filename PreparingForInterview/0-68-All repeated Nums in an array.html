@@ -10,10 +10,11 @@
 <body>
     <script>
         function allRepeatedNums(arr) {
+            let sortedArr = arr.slice().sort();
             let repetatedResult = [];
 
-            for (let i = 0; i < arr.length; i++) {
-                if (repetatedResult.includes(arr[i])) {
+            for (let i = 0; i < sortedArr.length - 1; i++) {
+                if (arr[i] === arr[i]) {
                     repetatedResult.push(arr[i]);
                 }
             }
