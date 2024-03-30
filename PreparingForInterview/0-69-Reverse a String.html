@@ -9,15 +9,17 @@
 
 <body>
     <script>
-        function reverse(str) {
+        function reverseString(str) {
             let reversedstr = "";
 
             for (let i = str.length; i >= 0; i++) {
                 reversedstr += str[i];
             }
+
+            return reversedstr;
         }
 
-        console.log(reverse("Test"));
+        console.log(reverseString("Test"));
 
     </script>
 
