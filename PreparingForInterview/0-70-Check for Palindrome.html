@@ -10,20 +10,17 @@
 <body>
     <script>
         function checkPalindrome(str) {
-            let result = "";
-            let hafLength = (str.length / 2);
+            let hafLength = Math.floor(str.length / 2);
 
             for (let i = 0; i < hafLength; i++) {
-                let firstPart = str.slice(0, hafLength);
-                let secondPart = str.slice(hafLength);
-
-                if (firstPart === secondPart) {
-                    return true;
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
                 }
             }
 
             return false;
         }
+
     </script>
 
 </body>
