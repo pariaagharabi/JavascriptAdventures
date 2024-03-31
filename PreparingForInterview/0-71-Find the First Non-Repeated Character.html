@@ -16,9 +16,11 @@
 
             for (let i = 0; i < convertedLower.length; i++) {
                 if (!allUniqueChar.includes(convertedLower[i])) {
-                    
-                 }
+                    allUniqueChar += convertedLower[i];
+                }
             }
+
+            return allUniqueChar;
         }
     </script>
 
