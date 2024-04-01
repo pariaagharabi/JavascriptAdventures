@@ -20,6 +20,22 @@
                 this.stack1.push(item);
             }
 
+            dequeue() {
+                if (this.stack2.length === 0 && this.stack1.length === 0) {
+                    return undefined; // Queue is empty
+                }
+                // Transfer all items from stack1 to stack2
+                while (this.stack1.length > 0) {
+                    this.stack2.push(this.stack1.pop());
+                }
+                // Return and remove the front element from stack2
+                return this.stack2.pop();
+            }
+
+
+
+
+
 
 
         }
