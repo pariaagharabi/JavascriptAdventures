@@ -9,20 +9,27 @@
 
 <body>
     <script>
-        function findFirstNonRepeated(str) {
-            const convertedLower = str.toLowerCase();
-            let allUniqueChar = "";
+        function firstNonRepeatedChar(str) {
+            const charCount = {};
 
-            for (let i = 0; i < convertedLower.length; i++) {
-                if (!allUniqueChar.includes(convertedLower[i])) {
-                    allUniqueChar += convertedLower[i];
+            // Count occurrences of each character
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            // Find the first non-repeated character
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                if (charCount[char] === 1) {
+                    return char;
                 }
             }
 
-            return allUniqueChar[0];
+            return null;
         }
 
-        console.log(findFirstNonRepeated("test first"));
+        console.log(firstNonRepeatedChar("programming point"));
     </script>
 
 </body>
