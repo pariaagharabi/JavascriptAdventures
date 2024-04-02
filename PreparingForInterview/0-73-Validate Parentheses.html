@@ -10,9 +10,10 @@
 <body>
 
     <script>
-        function validateParentheses() {
+        function validateParentheses(string) {
             const stack = [];
             const pairs = { '(': ')', '{': '}', '[': ']' };
+
             for (const char of s) {
                 if (char in pairs) {
                     stack.push(char);
