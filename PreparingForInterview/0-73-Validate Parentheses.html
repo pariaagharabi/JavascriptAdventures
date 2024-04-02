@@ -14,7 +14,7 @@
             const stack = [];
             const pairs = { '(': ')', '{': '}', '[': ']' };
 
-            for (const char of s) {
+            for (const char of string) {
                 if (char in pairs) {
                     stack.push(char);
                 } else {
