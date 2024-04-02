@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merge Two Sorted Arrays</title>
 </head>
+
 <body>
 
     <script>
-        function mergeTwo(arr1, arr2){
-            const sortedArr1 = arr1.split().sort(a,b => a -b).join();
-            const sortedArr2 = arr2.split().sort(a,b => a -b).join();
+        function mergeTwo(arr1, arr2) {
+            const sortedArr1 = arr1.split().sort(a, b => a - b).join();
+            const sortedArr2 = arr2.split().sort(a, b => a - b).join();
 
-            
+            let mergedArrays = sortedArr1.concatinate(sortedArr2);
+
+
+
 
 
         }
     </script>
-    
+
 </body>
+
 </html>
