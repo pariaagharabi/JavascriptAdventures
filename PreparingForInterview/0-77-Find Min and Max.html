@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Min and Max</title>
+</head>
+
+<body>
+
+    <script>
+        function findMaxMinV1(arr) {
+            let maxNum = arr[0];
+            let minNum = arr[1];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > maxNum) {
+                    maxNum = arr[i];
+                }
+
+                if (arr[i] < minNum) {
+                    minNum = arr[i];
+                }
+            }
+
+            return `Max: ${maxNum} Min: ${minNum}`;
+        }
+
+
+        // Second Solution
+        function findMaxMinV2(arr) {
+            let maxItem = Math.max(...arr);
+            let minItem = Math.min(...arr);
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === maxItem) {
+                    arr[i] = "Max";
+                }
+                if (arr[i] === minItem) {
+                    arr[i] = "Min";
+                }
+            }
+
+            return `Max: ${maxItem} And Min: ${minItem}`;
+        }
+
+        console.log(findMaxMinV2([3, 5, 7, 9]));
+
+
+    </script>
+
+</body>
+
+</html>
