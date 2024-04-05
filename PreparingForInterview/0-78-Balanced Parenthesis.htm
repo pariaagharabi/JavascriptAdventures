@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanced Parenthesis</title>
+</head>
+
+<body>
+
+    <script>
+        function balancedParenthesis(str) {
+            const stack = [];
+            let signsObj = {
+                "[": "]",
+                "{": "}",
+                "(": ")",
+            };
+
+            for (const sign of str) {
+                if (sign in signsObj) {
+                    stack.push(sign);
+                } else {
+                    let lastOpeningBracket = stack.pop();
+                    if (signsObj[lastOpeningBracket] !== sign) {
+                        return false;
+                    }
+                }
+            }
+
+            return stack.length === 0;
+        }
+
+    </script>
+
+</body>
+
+</html>
