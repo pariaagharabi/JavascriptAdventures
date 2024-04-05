@@ -15,8 +15,14 @@
                 return false;
             }
 
-            const sortedStr1 = str1.split("").reverse().join("");
-            const sortedStr2 = str2.split("").reverse().join("");
+            const sortedStr1 = str1.split("").sort().join("");
+            const sortedStr2 = str2.split("").sort().join("");
+
+            if (sortedStr1 === sortedStr2) {
+                return true;
+            }
+
+            return false;
         }
     </script>
 
