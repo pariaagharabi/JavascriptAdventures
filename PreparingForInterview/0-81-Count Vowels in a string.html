@@ -14,13 +14,15 @@
             let counter = 0;
 
             for (let i = 0; i < str.length; i++) {
-                if (str[i] === vowelsList) {
+                if (vowelsList.includes(str[i].toLowerCase())) {
                     counter += 1;
                 }
             }
 
             return counter;
         }
+
+        console.log(countVowels("Ali test"));
     </script>
 
 </body>
