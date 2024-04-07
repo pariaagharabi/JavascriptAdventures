@@ -12,12 +12,15 @@
     <script>
         function capitalizeWords(sentence) {
             const splitedSectences = sentence.split(" ");
+            let capitalizedResult = "";
 
             for (let i = 0; i < splitedSectences.length; i++) {
                 let firstCharEachWord = splitedSectences.slice(0, 1);
-                const restCars = splitedSectences.slice(1);
-
+                let restChars = splitedSectences.slice(1);
+                capitalizedResult += firstCharEachWord + restChars;
             }
+
+            return capitalizedResult;
         }
 
     </script>
