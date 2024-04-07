@@ -15,15 +15,17 @@
             let capitalizedResult = "";
 
             for (let i = 0; i < splitedSectences.length; i++) {
-                let firstCharEachWord = splitedSectences.slice(0, 1);
-                let restChars = splitedSectences.slice(1);
-                capitalizedResult += firstCharEachWord + restChars;
+                let firstCharEachWord = splitedSectences[i][0];
+                let capitalizedFirstChar = firstCharEachWord.toUpperCase();
+                let restChars = splitedSectences[i].slice(1) + (" ");
+
+                capitalizedResult += capitalizedFirstChar + restChars;
             }
 
             return capitalizedResult;
         }
 
-        console.log(capitalizeWords("English is the only language."));
+        console.log(capitalizeWords("capitalze function id done."));
 
     </script>
 
