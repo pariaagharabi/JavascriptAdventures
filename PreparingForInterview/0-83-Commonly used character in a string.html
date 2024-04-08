@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commonly used character in a string</title>
 </head>
+
 <body>
 
     <script>
-        function commonlyChar(str){
-            let result = "";
-            let counter = 0;
-            
+        function findMostCommonCharacter(str) {
+            let charCount = {};
+
+            // Loop through the string and count each character
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            let mostCommonChar;
+            let highestCount = 0;
+
+            // Find the most common character
+            for (let char in charCount) {
+                if (charCount[char] > highestCount) {
+                    mostCommonChar = char;
+                    highestCount = charCount[char];
+                }
+            }
+
+            return mostCommonChar;
         }
+
+        // Example usage
+        let inputString = "abcaabbcbb";
+        let mostCommon = findMostCommonCharacter(inputString);
+        console.log("The most common character is: " + mostCommon);
     </script>
-    
+
 </body>
+
 </html>
