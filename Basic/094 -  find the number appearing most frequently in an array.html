@@ -14,43 +14,29 @@
     <div id="showResult"></div>
 
     <script>
-        function eventHandler() {
-            const userNums = prompt("Enter a list of numbers seprated by commas:");
-            const userArr = userNums.split(",").map(Number);
+        function findMostCommonCharacters(arr) {
+            var charCount = {};
 
-            const displayResult = (
-                "The user array: " +
-                userArr +
-                "<br>" +
-                "The result :" +
-                findTheMostFrequentNum(userArr)
-            );
-
-            const tagResult = document.getElementById("showResult");
-            tagResult.innerHTML = displayResult;
-        }
-
-        function findTheMostFrequentNum(orgArr) {
-            let numWithMaxFrequency;
-            let maxFrequency = 0;
-
-            for (var i = 0; i < orgArr.length; i++) {
-                let currentFrequency = 0;
-
-                for (var j = 0; j < orgArr.length; j++) {
-                    if (orgArr[i] === orgArr[j]) {
-                        currentFrequency++;
-                    }
-                }
-
-                if (currentFrequency >= maxFrequency) {
-                    maxFrequency = currentFrequency;
-                    numWithMaxFrequency = orgArr[i];
+            for (var i = 0; i < arr.length; i++) {
+                var char = arr[i];
+                if (charCount[char]) {
+                    charCount[char]++;
+                } else {
+                    charCount[char] = 1;
                 }
             }
 
-            return numWithMaxFrequency;
+            return charCount;
         }
+
+        // Example usage
+        var inputArray = ['a', 'b', 'c', 'a', 'a', 'b', 'b', 'c', 'b', 'b'];
+        var mostCommon = findMostCommonCharacters(inputArray);
+        console.log("The most common characters and their counts are:");
+        for (var char in mostCommon) {
+            console.log("Character: " + char + ", Count: " + mostCommon[char]);
+        }
+
     </script>
 
 </body>
