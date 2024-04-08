@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if a string is a palindrome</title>
+</head>
+
+<body>
+
+    <script>
+
+        function checkPalindrome(str) {
+            const halfLen = Math.floor(str.length / 2);
+
+            for (let i = 0; i < halfLen; i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        console.log(checkPalindrome("chrome"));
+        console.log(checkPalindrome("bob"));
+
+    </script>
+
+</body>
+
+</html>
