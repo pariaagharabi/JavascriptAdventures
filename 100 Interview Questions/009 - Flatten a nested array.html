@@ -27,9 +27,9 @@
                 let curr = queue.pop();
 
                 if (Array.isArray(curr)) {
-                    queue.push(...curr);
+                    queue.push(...curr); // If the element is an array, add its elements to the queue
                 } else {
-                    result.push(curr);
+                    result.push(curr); // If the element is not an array, add it to the result array
                 }
             }
 
