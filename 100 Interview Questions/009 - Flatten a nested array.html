@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatten a nested array</title>
+</head>
+
+<body>
+
+    <script>
+        function flattenArray(nestedArrays) {
+            return nestedArrays.reduce((acc, current) => acc.concat(current), []);
+        }
+
+        console.log(flattenArray([[1, 2], [3, 4], [5, 6]]));
+    </script>
+
+</body>
+
+</html>
