@@ -15,7 +15,8 @@
             let fibSequence = [0, 1];
 
             for (let i = 2; i < num; i++) {
-
+                let nextFibonacciNumber = fibSequence[i - 1] + fibSequence[i - 2];
+                fibSequence.push(nextFibonacciNumber);
             }
         }
 
