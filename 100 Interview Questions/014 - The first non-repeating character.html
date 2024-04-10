@@ -11,13 +11,35 @@
 
     <script>
         function firstNonRepeatingCharacter(str) {
-            let uniqueResult = [];
+            let charCount = {};
 
             for (let i = 0; i < str.length; i++) {
-                if (!uniqueResult.includes(str[i])) uniqueResult.push(str[i]);
+                const char = str[i];
+                charCount[char] = charCount[char] ? charCount[char] + 1 : 1;
             }
 
-            return uniqueResult[0];
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                if (charCount[char] === 1) {
+                    return char;
+                }
+            }
+
+            return null; // Return null if there are no non-repeating characters
+        }
+
+        // Example Usage:
+        console.log(firstNonRepeatingCharacter("arena"));
+
+        // 
+        function firstNonRepeatingCharacter(str) {
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                if (str.indexOf(char) == i && str.indexOf(char, i + 1) == -1) {
+                    return char;
+                }
+            }
+            return "_";
         }
     </script>
 
