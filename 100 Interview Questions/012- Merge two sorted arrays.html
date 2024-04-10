@@ -22,6 +22,21 @@
 
         // Example Usage:
         console.log(mergeTwoArrays([5, 3], [9, 4]));
+
+
+
+        ///////////////Scond Solution
+        function mergeTwoArraysBySpread(arr1, arr2) {
+            const sortedArr1 = arr1.sort((a, b) => b - a);
+            const sortedArr2 = arr2.sort((a, b) => b - a);
+
+            let mergedArrsResult = [...sortedArr1, ...sortedArr2];
+
+            return mergedArrsResult;
+        }
+
+        // Example Usage:
+        console.log(mergeTwoArraysBySpread([203, 204], [101, 102]));
     </script>
 
 </body>
