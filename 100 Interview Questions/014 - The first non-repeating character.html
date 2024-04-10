@@ -16,6 +16,7 @@
             for (let i = 0; i < str.length; i++) {
                 const char = str[i];
                 charCount[char] = charCount[char] ? charCount[char] + 1 : 1;
+
             }
 
             for (let i = 0; i < str.length; i++) {
@@ -29,18 +30,20 @@
         }
 
         // Example Usage:
-        console.log(firstNonRepeatingCharacter("arena"));
+        console.log(firstNonRepeatingCharacter("arenar"));
 
-        // 
-        function firstNonRepeatingCharacter(str) {
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Second Solution:
+        function firstNonRepeatingCharacterV2(str) {
             for (let i = 0; i < str.length; i++) {
                 let char = str[i];
-                if (str.indexOf(char) == i && str.indexOf(char, i + 1) == -1) {
+                if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
                     return char;
                 }
             }
-            return "_";
+            return null;
         }
+        console.log(firstNonRepeatingCharacterV2("abcbca"));
     </script>
 
 </body>
