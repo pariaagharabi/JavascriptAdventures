@@ -12,8 +12,8 @@
     <script>
 
         function mergeTwoArrays(arr1, arr2) {
-            const sortedArr1 = arr1.sort((a, b) => b - a);
-            const sortedArr2 = arr2.sort((a, b) => b - a);
+            const sortedArr1 = arr1.slice().sort((a, b) => a - b);
+            const sortedArr2 = arr2.slice().sort((a, b) => a - b);
 
             let mergedArrsResult = sortedArr1.concat(sortedArr2);
 
@@ -27,8 +27,8 @@
 
         ///////////////Scond Solution
         function mergeTwoArraysBySpread(arr1, arr2) {
-            const sortedArr1 = arr1.sort((a, b) => b - a);
-            const sortedArr2 = arr2.sort((a, b) => b - a);
+            const sortedArr1 = arr1.slice().sort((a, b) => a - b);
+            const sortedArr2 = arr2.slice().sort((a, b) => a - b);
 
             let mergedArrsResult = [...sortedArr1, ...sortedArr2];
 
