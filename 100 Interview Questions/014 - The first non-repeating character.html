@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The first non-repeating character</title>
+</head>
+
+<body>
+
+    <script>
+        function firstNonRepeatingCharacter(str) {
+            let uniqueResult = [];
+
+            for (let i = 0; i < str.length; i++) {
+                if (!uniqueResult.includes(str[i])) uniqueResult.push(str[i]);
+            }
+
+            return uniqueResult[0];
+        }
+    </script>
+
+</body>
+
+</html>
