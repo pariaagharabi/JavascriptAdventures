@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if a given string contains only digits</title>
+</head>
+
+<body>
+    <script>
+
+        function checkDigits(str) {
+            return /^\d+$/.test(str);
+        }
+
+        console.log(checkDigits("123"));
+        console.log(checkDigits("123abc"));
+
+    </script>
+
+</body>
+
+</html>
