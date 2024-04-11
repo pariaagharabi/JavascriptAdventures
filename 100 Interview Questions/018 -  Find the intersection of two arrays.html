@@ -32,8 +32,13 @@
         /////////////////////////////////////////////////////////
         //Second solution
         function findIntersectionWithFilter(arr1, arr2) {
+            let intersectionResult = arr1.filter(
+                (element) => arr2.includes(element));
 
+            return intersectionResult;
         }
+        // Exmple usage
+        console.log(findIntersectionWithFilter([200, 300, 400, 500], [300, 700, 800, 200]));
 
     </script>
 
