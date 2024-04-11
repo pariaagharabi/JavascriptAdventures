@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert a binary number to a decimal number</title>
+</head>
+
+<body>
+    <script>
+
+        function binToDec(num) {
+            let dec = 0;
+
+            for (let i = 0; i < num.length; i++) {
+                if (num[num.length - 1 - i] === '1') {
+                    dec += 2 ** i;
+                }
+            }
+
+            return dec;
+        }
+        console.log(binToDec('1010'));
+    </script>
+
+</body>
+
+</html>
