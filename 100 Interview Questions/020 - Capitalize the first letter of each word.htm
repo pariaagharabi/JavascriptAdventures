@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize the first letter of each word</title>
+</head>
+
+<body>
+    <script>
+
+        function capitalize(sentence) {
+            const splitedSentences = sentence.split(" ");
+            let capitalizedResult = "";
+
+            for (let i = 0; i < splitedSentences.length; i++) {
+                let firstLetter = splitedSentences[i][0].toUppercase();
+                let restLetters = splitedSentences[i].slice(1);
+
+                capitalizedResult += firstLetter + restLetters + " ";
+            }
+
+            return capitalizedResult;
+        }
+
+    </script>
+
+</body>
+
+</html>
