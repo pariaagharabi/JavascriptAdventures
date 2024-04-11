@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generates a random hexadecimal color</title>
+</head>
+
+<body>
+    <script>
+
+        function generateRandomHexColor() {
+            let hexNumber = (Math.random() * 0xFFFFFF * 1000000).toString(16).slice(0, 6);
+
+            return '#' + hexNumber;
+        }
+
+        console.log(generateRandomHexColor());
+
+    </script>
+
+</body>
+
+</html>
