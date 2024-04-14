@@ -9,11 +9,20 @@
 
 <body>
     <script>
+
+        function rotateArrayLeft(arr, positions) {
+            const rotations = positions % arr.length; // Adjust positions if it exceeds array length
+            const rotated = arr.splice(rotations).concat(arr);
+            return rotated;
+        }
+
+        //////////////Second Solution
         function rotate(array) {
             let firstElement = array.shift();
             array.push(firstElement);
             return array;
         }
+
     </script>
 
 </body>
