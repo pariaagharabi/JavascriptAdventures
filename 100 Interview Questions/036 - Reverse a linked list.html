@@ -8,6 +8,49 @@
 </head>
 
 <body>
+    <script>
+        class ListNode {
+            constructor(val) {
+                this.data = val;
+                this.next = null;
+            }
+        }
+
+        function reverse(node) {
+            let prev = null;
+            let current = node;
+            let next = null;
+
+            while (current !== null) {
+                next = current.next;
+                current.next = prev;
+                prev = current;
+                current = next;
+            }
+
+            node = prev;
+            return node;
+        }
+
+        function printList(node) {
+            while (node !== null) {
+                document.write(node.data + " ");
+                node = node.next;
+            }
+        }
+
+        let head = new ListNode(85);
+        head.next = new ListNode(15);
+        head.next.next = new ListNode(4);
+        head.next.next.next = new ListNode(20);
+
+        document.write("Given linked list:<br/>");
+        printList(head);
+        document.write("<br/>");
+        head = reverse(head);
+        document.write("Reversed linked list:<br/>");
+        printList(head);
+    </script>
 
 </body>
 
