@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove all falsy values from an array</title>
+</head>
+
+<body>
+    <script>
+        function removeFalsyValues(arr) {
+            const listOfFalsyValues = ["", 0, NaN, undefined, null, false];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (listOfFalsyValues.includes(arr[i])) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
