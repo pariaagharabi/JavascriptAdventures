@@ -11,15 +11,33 @@
     <script>
 
         function checkPowerOfTwo(number) {
-            for (let i = 0; i < number.length; i++) {
-                if (number[i]) {
-                    return true;
-                }
+            if (number <= 0) {
+                return false; // Negative numbers and zero are not powers of two
             }
 
-            return false;
+            while (number > 1) {
+                if (number % 2 !== 0) {
+                    return false; // If the number is not divisible by 2, it's not a power of two
+                }
+                number /= 2;
+            }
+
+            return true; // The number is a power of two
         }
-        
+        console.log(checkPowerOfTwo(3));
+
+
+
+        ////////////////Solution two
+        function checkPowerOfTwoLog(number) {
+            if (number <= 0) {
+                return false; // Negative numbers and zero are not powers of two
+            }
+
+            return Math.log2(number) % 1 === 0;
+        }
+        console.log(checkPowerOfTwoLog(4));
+
     </script>
 
 </body>
