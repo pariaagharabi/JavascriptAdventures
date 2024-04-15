@@ -12,8 +12,12 @@
     <script>
         function calculateAve(arr) {
             const lenArr = arr.length;
-            console.log(lenArr);
 
+            const sumOfArr = arr.reduce((acc, cur) => acc + cur, 0);
+
+            const calAverage = sumOfArr / lenArr;
+
+            return calAverage;
         }
 
         console.log(calculateAve([4, 5, 1, 2]));
