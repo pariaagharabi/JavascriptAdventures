@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two objects into one.</title>
+</head>
+
+<body>
+    <script>
+        function mergeTwoObjects(obj1, obj2) {
+            const shadowObjs = { ...obj1, ...obj2 };
+
+            return shadowObjs;
+        }
+
+        // Example usage:
+        const obj1 = { a: 1, b: 2 };
+        const obj2 = { b: 3, c: 4 };
+
+        console.log(mergeTwoObjects(obj1, obj2));
+
+        /// Second solution
+        function mergeTwoObjectsV2(obj1, obj2) {
+            const mergedObject = {};
+
+            for (let key in obj1) {
+                mergedObject[key] = obj1[key];
+            }
+
+            for (let key in obj2) {
+                mergedObject[key] = obj2[key];
+            }
+
+            return mergedObject;
+        }
+    </script>
+
+</body>
+
+</html>
