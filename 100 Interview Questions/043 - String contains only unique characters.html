@@ -12,15 +12,18 @@
     <script>
         function checkUniqueChars(str) {
             let uniqueResult = "";
+            const convertToLowerCase = str.toLowerCase();
 
-            for (let i = 0; i < str.length; i++) {
-                if (!uniqueResult.includes(str.charAt(i))) {
-                    uniqueResult += str.charAt(i);
+            for (let i = 0; i < convertToLowerCase.length; i++) {
+                if (!uniqueResult.includes(convertToLowerCase.charAt(i))) {
+                    uniqueResult += convertToLowerCase.charAt(i);
                 }
             }
 
             return uniqueResult;
         }
+
+        console.log(checkUniqueChars("see that"));
     </script>
 
 </body>
