@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the median of two sorted arrays.</title>
+</head>
+
+<body>
+
+    <script>
+        function getMedian(arr1, arr2) {
+            const sortedArr1 = arr1.sort((a, b) => a - b);
+            const sortedArr2 = arr2.sort((a, b) => a - b);
+
+            const concatTwoSortedArrs = sortedArr1.concat(sortedArr2);
+
+            const concatArrLength = concatTwoSortedArrs.length;
+            const middleIndex = Math.floor(concatArrLength / 2);
+
+            if (concatArrLength % 2 === 0) {
+                return (concatTwoSortedArrs[middleIndex - 1] + concatTwoSortedArrs[middleIndex]) / 2;
+            } else {
+                return concatTwoSortedArrs[middleIndex];
+            }
+        }
+
+        const arr1 = [1, 3];
+        const arr2 = [2, 4];
+        console.log(getMedian(arr1, arr2));
+    </script>
+
+</body>
+
+</html>
