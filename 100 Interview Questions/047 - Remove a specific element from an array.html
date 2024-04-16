@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove a specific element from an array.</title>
+</head>
+
+<body>
+
+    <script>
+        function removeSpecificElement(arr, specificIndex) {
+            let filteredArray = arr.filter(element => element !== specificElement);
+            return filteredArray;
+        }
+
+        /////////////////
+
+        function removeElement(arr, element) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === element) {
+                    arr.splice(i, 1);
+                    i--; // Decrement the index to account for the removed element
+                }
+            }
+            return arr;
+        }
+    </script>
+
+</body>
+
+</html>
