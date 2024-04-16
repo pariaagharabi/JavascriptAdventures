@@ -10,15 +10,27 @@
 <body>
 
     <script>
-        // function calcFactorialV1(num) {
-        //     let result = ;
+        function calcFactorialV1(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            }
 
-        //     for (let i = 0; i < num; i++) {
-        //         result = num * num(i - 1);
-        //     }
-        // }
+            let factorialResult = 1;
+            for (let i = 2; i <= num; i++) {
+                factorialResult *= i;
+            }
+
+            return factorialResult;
+        }
+
+
+        //////////////////////////////////////////////
 
         function calcFactorialV2(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            }
+
             return num * calcFactorialV2(num - 1);
         }
     </script>
