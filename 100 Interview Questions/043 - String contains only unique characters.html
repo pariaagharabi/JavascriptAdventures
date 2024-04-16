@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String contains only unique characters</title>
 </head>
+
 <body>
-    
+
+    <script>
+        function checkUniqueChars(str) {
+            let uniqueResult = "";
+
+            for (let i = 0; i < str.length; i++) {
+                if (!uniqueResult.includes(str.charAt(i))) {
+                    uniqueResult += str.charAt(i);
+                }
+            }
+
+            return uniqueResult;
+        }
+    </script>
+
 </body>
+
 </html>
