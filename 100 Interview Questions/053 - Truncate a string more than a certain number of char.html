@@ -15,12 +15,14 @@
                 return false;
             }
 
-            const truncatedStr = str.slice(0, specificIndex) + str.slice(specificIndex + 1);
-
-            return truncatedStr;
+            if (str.length > specificIndex) {
+                return str.slice(0, specificIndex) + "...";
+            } else {
+                return str;
+            }
         }
 
-
+        console.log(truncateStr("javascript", 5));
     </script>
 
 </body>
