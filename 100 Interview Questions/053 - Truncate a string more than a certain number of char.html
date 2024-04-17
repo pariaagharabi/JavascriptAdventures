@@ -9,6 +9,20 @@
 
 <body>
 
+    <script>
+        function truncateStr(str, specificIndex) {
+            if (str.length === 0) {
+                return false;
+            }
+
+            const truncatedStr = str.slice(0, specificIndex) + str.slice(specificIndex + 1);
+
+            return truncatedStr;
+        }
+
+
+    </script>
+
 </body>
 
 </html>
