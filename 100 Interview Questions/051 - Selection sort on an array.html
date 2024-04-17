@@ -11,19 +11,29 @@
 
     <script>
 
-        function bubbleSort(arr) {
-            for (let i = 0; i < arr.length; i++) {
-                for (let j = 0; j < arr.length - 1 - i; j++) {
-                    if (arr[j + 1] < arr[j]) {
-                        let temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+        function selectionSort(arr) {
+            const arrLen = arr.length;
+
+            for (let i = 0; i < arrLen - 1; i++) {
+                let minIndex = i;
+
+                for (let j = i + 1; j < arrLen; j++) {
+                    if (arr[j] < arr[minIndex]) {
+                        minIndex = j;
                     }
+                }
+
+                if (minIndex !== i) {
+                    let temp = arr[i];
+                    arr[i] = arr[minIndex];
+                    arr[minIndex] = temp;
                 }
             }
 
             return arr;
         }
+
+        console.log(selectionSort([64, 25, 12, 22, 11]));
     </script>
 
 </body>
