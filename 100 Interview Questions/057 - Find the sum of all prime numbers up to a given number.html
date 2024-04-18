@@ -10,7 +10,29 @@
 <body>
 
     <script>
+        function isPrimeNumber(num) {
+            if (num < 1) {
+                return false;
+            }
 
+            for (let i = 0; i < Math.sqrt(num); i++) {
+                if (num % i !== 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function getSumOfPrimeNumbers(nums, givenNum){
+            let sumResult = 0;
+
+
+            
+            if(isPrimeNumber(nums)){
+                
+            }
+        }
     </script>
 
 </body>
