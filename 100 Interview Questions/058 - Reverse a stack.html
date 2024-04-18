@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a stack</title>
+</head>
+
+<body>
+    <script>
+        function reverseStack(stack) {
+            // Create a new empty array to store the reversed stack
+            let reversedStack = [];
+
+            // Loop through the original stack and push each element to the new array
+            while (stack.length > 0) {
+                reversedStack.push(stack.pop());
+            }
+
+            // Return the reversed stack
+            return reversedStack;
+        }
+
+        let stack = [1, 2, 3, 4, 5];
+        let reversedStack = reverseStack(stack);
+        console.log(reversedStack); 
+    </script>
+
+</body>
+
+</html>
