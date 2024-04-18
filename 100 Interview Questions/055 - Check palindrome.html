@@ -14,13 +14,15 @@
             const halfLen = Math.floor(str.halfLen / 2);
 
             for (let i = 0; i < halfLen; i++) {
-                if (halfLen[i] === halfLen[halfLen.length - 1 - i]) {
+                if (str[i] === str[str.length - 1 - i]) {
                     return true;
                 }
             }
 
             return false;
         }
+
+        console.log(checkPalindrome("radar "));
     </script>
 
 </body>
