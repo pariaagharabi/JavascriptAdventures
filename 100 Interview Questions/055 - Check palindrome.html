@@ -13,7 +13,13 @@
         function checkPalindrome(str) {
             const halfLen = Math.floor(str.halfLen / 2);
 
-            
+            for (let i = 0; i < halfLen; i++) {
+                if (halfLen[i] === halfLen[halfLen.length - 1 - i]) {
+                    return true;
+                }
+            }
+
+            return false;
         }
     </script>
 
