@@ -11,18 +11,19 @@
 
     <script>
         function checkPalindrome(str) {
-            const halfLen = Math.floor(str.halfLen / 2);
+            const halfLen = Math.floor(str.length / 2);
 
             for (let i = 0; i < halfLen; i++) {
-                if (str[i] === str[str.length - 1 - i]) {
-                    return true;
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
                 }
             }
 
-            return false;
+            return true;
         }
 
-        console.log(checkPalindrome("radar "));
+        console.log(checkPalindrome("radar"));
+        console.log(checkPalindrome("palindrome"));
     </script>
 
 </body>
