@@ -11,18 +11,47 @@
 
     <script>
         function checkContainsDuplicate(nums) {
-            // Create a new object to store unique elements
-            const uniqueObj = {};
+            // Create an object to store the count of each number
+            let numsCount = {};
 
             // Iterate through the array
             for (let i = 0; i < nums.length; i++) {
-                // If the current element is already in the object, it's a duplicate
-                if (uniqueObj[nums[i]]) {
+                let num = nums[i];
+
+                // If the number is already in the object, increment its count
+                if (numsCount[num]) {
+                    numsCount[num]++;
+
+                    // If the count is greater than 1, it means we found a duplicate
+                    if (numsCount[num] > 1) {
+                        return true;
+                    }
+                }
+                // Otherwise, add the number to the object with a count of 1
+                else {
+                    numsCount[num] = 1;
+                }
+            }
+
+            // If we reached this point, it means there are no duplicates
+            return false;
+        }
+
+
+
+        ////// Solution with set
+        function checkContainsDuplicatesWithSet(nums) {
+            const uniqueSet = new Set();
+
+            // Iterate through the array
+            for (let i = 0; i < nums.length; i++) {
+                // If the current element is already in the Set, it's a duplicate
+                if (uniqueSet.has(nums[i])) {
                     return true;
                 }
 
-                // Otherwise, add the current element to the object
-                uniqueObj[nums[i]] = true;
+                // Otherwise, add the current element to the Set
+                uniqueSet.add(nums[i]);
             }
 
             // If we reached this point, it means there are no duplicates
