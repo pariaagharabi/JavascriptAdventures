@@ -10,7 +10,24 @@
 <body>
 
     <script>
+        function checkContainsDuplicate(nums) {
+            // Create a new object to store unique elements
+            const uniqueObj = {};
 
+            // Iterate through the array
+            for (let i = 0; i < nums.length; i++) {
+                // If the current element is already in the object, it's a duplicate
+                if (uniqueObj[nums[i]]) {
+                    return true;
+                }
+
+                // Otherwise, add the current element to the object
+                uniqueObj[nums[i]] = true;
+            }
+
+            // If we reached this point, it means there are no duplicates
+            return false;
+        }
     </script>
 
 </body>
