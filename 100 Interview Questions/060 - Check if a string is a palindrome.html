@@ -10,8 +10,18 @@
 <body>
     <script>
         function checkPalindrome(str) {
+            for (let i = 0; i < Math.floor(str.length / 2); i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
 
+            return true;
         }
+
+        // Example usage
+        console.log(checkPalindrome("check"));
+        console.log(checkPalindrome("nana"));
     </script>
 
 </body>
