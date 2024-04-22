@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find the factorial of a given number.</title>
 </head>
+
 <body>
 
     <script>
-        function findFactorial(number){
-            
+        function findFactorialRecursive(number) {
+            if (number < 0) {
+                return false;
+            }
+
+            if (number === 0 || number === 1) {
+                return 1;
+            }
+
+            return number * findFactorialRecursive(number - 1);
         }
+
+        /////////////////////////
+
+        function findFactorialReg(num) {
+            if (num < 0) {
+                return false;
+            }
+
+            let factorialResult = 1;
+            for (let i = 2; i <= num; i++) {
+                factorialResult *= i;
+            }
+
+
+            return factorialResult;
+        }
+
+        // Example usage
+        console.log(findFactorialReg(3));
     </script>
-    
+
 </body>
+
 </html>
