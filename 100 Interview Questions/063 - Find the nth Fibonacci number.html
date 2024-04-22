@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the nth Fibonacci number</title>
+</head>
+
+<body>
+    <script>
+        function findNthFibonacciNumber(num) {
+            let fibSequence = [0, 1];
+
+            for (let i = 2; i < num; i++) {
+                let nextFibonacciNumber = fibSequence[i - 1] + fibSequence[i - 2];
+                fibSequence.push(nextFibonacciNumber);
+            }
+
+            return fibSequence;
+        }
+    </script>
+</body>
+
+</html>
