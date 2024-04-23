@@ -11,11 +11,18 @@
     <script>
         function findLongestWord(sentence) {
             const splitedSentences = sentence.split(" ");
+            let longestWord = splitedSentences[0];
 
-            for (let i = 0; i < splitedSentences.length; i++) {
-
+            for (let i = 1; i < splitedSentences.length; i++) {
+                if (longestWord.length < splitedSentences[i].length) {
+                    longestWord = splitedSentences[i];
+                }
             }
+
+            return longestWord;
         }
+
+        console.log(findLongestWord("This is the longest word."));
     </script>
 
 </body>
