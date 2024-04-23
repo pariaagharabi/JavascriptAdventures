@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merge two sorted arrays.</title>
 </head>
+
 <body>
 
     <script>
-        
+        function mergeTwoSortedArrays(arr1, arr2) {
+            const storedArr1 = arr1.sort((a, b) => a - b);
+            const storedArr2 = arr2.sort((a, b) => a - b);
+
+            let meregedArrResult = storedArr1.concat(storedArr2);
+
+            return meregedArrResult;
+        }
+
+        console.log(mergeTwoSortedArrays([5, 4, 3], [9, 10, 8]));
     </script>
-    
+
 </body>
+
 </html>
