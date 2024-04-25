@@ -9,6 +9,24 @@
 
 <body>
 
+    <script>
+        function capitalizeEachWord(sentence) {
+            const splitedSentence = sentence.split(" ");
+            let result = "";
+
+            for (let i = 0; i < splitedSentence.length; i++) {
+                let firstEachChar = splitedSentence[i][0].toUpperCase();
+                let restOfWords = splitedSentence[i].slice(1);
+
+                result += firstEachChar + restOfWords + " ";
+            }
+
+            return result;
+        }
+
+        console.log(capitalizeEachWord("hello world!"));
+    </script>
+
 </body>
 
 </html>
