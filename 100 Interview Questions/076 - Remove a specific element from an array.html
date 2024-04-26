@@ -10,8 +10,22 @@
 <body>
     <script>
         function removeSelectedEle(arr, specificEle) {
-            
+            for (let i = 0; i < arr.array.length; i++) {
+                if (arr[i] === specificEle) {
+
+                }
+            }
+
         }
+
+        function removeSelectedEleByFilterMethod(arr, specificEle) {
+            const filteredArr = arr.filter((ele) => ele !== specificEle);
+
+            return filteredArr;
+        }
+
+        console.log([20, 30, 40, 50], 40);
+
     </script>
 
 </body>
