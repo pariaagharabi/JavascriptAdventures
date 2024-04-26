@@ -11,7 +11,7 @@
     <script>
         function removeSelectedEle(arr, specificEle) {
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i] === element) {
+                if (arr[i] === specificEle) {
                     arr.splice(i, 1);
                     i--; // Decrement the index to account for the removed element
                 }
@@ -20,6 +20,9 @@
             return arr;
         }
         console.log(removeSelectedEle([6, 5, 4, 3, 2], 3));
+
+
+        ///////////////////////////
 
         function removeSelectedEleByFilterMethod(arr, specificEle) {
             const filteredArr = arr.filter((ele) => ele !== specificEle);
