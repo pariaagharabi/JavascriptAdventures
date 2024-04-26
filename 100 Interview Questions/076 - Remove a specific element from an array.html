@@ -10,21 +10,23 @@
 <body>
     <script>
         function removeSelectedEle(arr, specificEle) {
-            for (let i = 0; i < arr.array.length; i++) {
-                if (arr[i] === specificEle) {
-
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === element) {
+                    arr.splice(i, 1);
+                    i--; // Decrement the index to account for the removed element
                 }
             }
 
+            return arr;
         }
+        console.log(removeSelectedEle([6, 5, 4, 3, 2], 3));
 
         function removeSelectedEleByFilterMethod(arr, specificEle) {
             const filteredArr = arr.filter((ele) => ele !== specificEle);
-
             return filteredArr;
         }
 
-        console.log([20, 30, 40, 50], 40);
+        console.log(removeSelectedEleByFilterMethod([20, 30, 40, 50], 40));
 
     </script>
 
