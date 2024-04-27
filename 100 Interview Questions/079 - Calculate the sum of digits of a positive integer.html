@@ -9,8 +9,15 @@
 
 <body>
     <script>
-        function calculateSumOfPositiveInteger(arr){
-            
+        function calculateSumOfPositiveInteger(arr) {
+            let calcSum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] >= 0) {
+                    calcSum += arr[i];
+                }
+            }
+
+            return calcSum;
         }
     </script>
 
