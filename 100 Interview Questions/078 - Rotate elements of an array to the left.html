@@ -9,9 +9,13 @@
 
 <body>
     <script>
-        function rotateElesToLeft(arr) {
-
+        function rotateElesToLeft(arr, positions) {
+            const rotations = positions % arr.length;
+            const rotated = arr.splice(rotations).concat(arr);
+            return rotated;
         }
+
+        
     </script>
 
 </body>
