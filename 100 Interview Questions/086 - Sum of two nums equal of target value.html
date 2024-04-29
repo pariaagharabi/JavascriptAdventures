@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the sum of two integers in an array that equals a target value.</title>
+</head>
+
+<body>
+
+    <script>
+        function findTwoSum(nums, target) {
+            // Create a hash map to store the complement of each number
+            let complementMap = {};
+
+            // Iterate through the array
+            for (let i = 0; i < nums.length; i++) {
+                // Calculate the complement
+                let complement = target - nums[i];
+
+                // Check if the complement is in the hash map
+                if (complementMap[complement] !== undefined) {
+                    // If it is, return the indices of the two numbers
+                    return [complementMap[complement], i];
+                }
+
+                // Otherwise, add the current number and its index to the hash map
+                complementMap[nums[i]] = i;
+            }
+
+            // If no two numbers sum up to the target, return an empty array
+            return [];
+        }
+
+        // Example usage
+        let nums = [2, 7, 11, 15];
+        let target = 9;
+        console.log(findTwoSum(nums, target)); // Output: [0, 1]
+
+    </script>
+
+</body>
+
+</html>
