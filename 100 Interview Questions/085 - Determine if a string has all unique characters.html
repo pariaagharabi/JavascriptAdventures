@@ -10,8 +10,21 @@
 <body>
     <script>
         function determineUnique(str) {
+            let uniqueChars = {};
 
+            for (let i = 0; i < str.length; i++) {
+                if (uniqueChars[str[i]]) {
+                    return false;
+                } else {
+                    uniqueChars[str[i]] = true;
+                }
+            }
+
+            return true;
         }
+
+        // Example usage
+        console.log(determineUnique("abcdefgh"));
     </script>
 
 </body>
