@@ -9,7 +9,43 @@
 
 <body>
     <script>
-        
+        class Stack {
+            constructor() {
+                this.array = [];
+            }
+
+            push(item) {
+                // Pushes an item onto the top of the stack.
+                return this.array.push(item);
+            }
+
+            pop() {
+                // Removes an item at the top of the stack and returns that item. 
+                return this.array.pop();
+            }
+
+            isEmpty() {
+                // Determines if the stack is empty. 
+                return this.array.length === 0;
+            }
+
+            peek() {
+                // Returns the item at the top of the stack without removing it from the stack.
+                if (!this.isEmpty()) {
+                    return this.array[this.array.length - 1];
+                }
+            }
+
+            length() {
+                // Returns the number of items in the stack.
+                return this.array.length;
+            }
+        }
+
+        const stackObj = new Stack();
+
+        stackObj.push(10);
+        stackObj.push(20);
     </script>
 
 </body>
