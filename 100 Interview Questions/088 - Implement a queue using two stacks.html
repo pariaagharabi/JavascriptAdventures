@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implement a queue using two stacks.</title>
+</head>
+
+<body>
+
+    <script>
+        class Queue {
+            constructor() {
+                this.enqueueStack = [];
+                this.dequeueStack = [];
+            }
+            enqueue(item) {
+                this.enqueueStack.push(item);
+            }
+            dequeue() {
+                if (this.dequeueStack.length === 0) {
+
+                    // move everything from enqueueStack to dequeueStack
+                    while (this.enqueueStack.length > 0) {
+                        const item = this.enqueueStack.pop();
+                        this.dequeueStack.push(item);
+                    }
+                }
+
+                // dequeue from dequeueStack
+                return this.dequeueStack.pop();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
