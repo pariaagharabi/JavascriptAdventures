@@ -10,14 +10,21 @@
 <body>
     <script>
         function checkAnagram(str1, str2) {
-            const sortedStr1 = str1.sort((a, b) => a - b);
-            const sortedStr2 = str2.sort((a, b) => a - b);
-
-            if (sortedStr1.length !== sortedStr2.length) {
+            if (str1.length !== str2.length) {
                 return false;
             }
 
+            const sortedStr1 = str1.split("").sort().join("");
+            const sortedStr2 = str2.split("").sort().join("");
+
+            if (sortedStr1 === sortedStr2) {
+                return true;
+            }
+
+            return false;
         }
+
+        console.log(checkAnagram("anna", "nana"));
     </script>
 
 </body>
