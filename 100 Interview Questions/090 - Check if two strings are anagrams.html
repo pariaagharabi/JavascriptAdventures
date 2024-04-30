@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check if two strings are anagrams.</title>
 </head>
+
 <body>
     <script>
-        
+        function checkAnagram(str1, str2) {
+            const sortedStr1 = str1.sort((a, b) => a - b);
+            const sortedStr2 = str2.sort((a, b) => a - b);
+
+            if (sortedStr1.length !== sortedStr2.length) {
+                return false;
+            }
+
+        }
     </script>
-    
+
 </body>
+
 </html>
