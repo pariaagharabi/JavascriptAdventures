@@ -11,16 +11,21 @@
 
     <script>
         function reverseInPlace(str) {
-            let words = [];
-            words = str.match(/\S+/g);
-            let result = "";
+            // Split the string into an array of words
+            let words = str.split(/\s+/);
+
+            // Iterate through each word
             for (let i = 0; i < words.length; i++) {
-                result += words[i].split('').reverse().join('') + " ";
+                // Convert the word to an array of characters, reverse it, then join it back into a string
+                words[i] = words[i].split('').reverse().join('');
             }
-            return result
+
+            // Join the reversed words back into a string
+            return words.join(' ');
         }
 
-        console.log(reverseInPlace("abd fhe kdjnd"))
+        console.log(reverseInPlace("abd fhe kdjnd"));
+
     </script>
 
 </body>
