@@ -15,7 +15,7 @@
             let middleIndex = 0;
             let rightIndex = arr.length - 1;
 
-            while (leftIndex < rightIndex) {
+            while (leftIndex <= rightIndex) {
                 middleIndex = Math.max((leftIndex + rightIndex) / 2);
 
                 if (target === arr[middleIndex]) {
@@ -30,7 +30,9 @@
             }
 
             return -1;
-        } 
+        }
+
+        console.log(binarySearch([4, 7, 2, 9, 10], 2));
     </script>
 
 </body>
