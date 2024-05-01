@@ -22,10 +22,14 @@
                     return middleIndex;
                 }
 
-                if(leftIndex < middleIndex) {
-                    
+                if (target < arr[middleIndex]) {
+                    rightIndex = middleIndex - 1;
+                } else {
+                    leftIndex = middleIndex + 1;
                 }
             }
+
+            return -1;
         } 
     </script>
 
