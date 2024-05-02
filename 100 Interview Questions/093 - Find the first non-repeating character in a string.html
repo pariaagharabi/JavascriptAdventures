@@ -15,7 +15,7 @@
 
             for (let i = 0; i < str.length; i++) {
                 let eachChar = str[i];
-                
+
                 if (charObj[eachChar]) {
                     charObj[eachChar] += 1;
                 } else {
@@ -27,12 +27,14 @@
             for (let i = 0; i < str.length; i++) {
                 let eachChar = str[i];
                 if (charObj[eachChar] === 1) {
-                    return eachChar; // First non-repeating character found
+                    return eachChar;
                 }
             }
 
             return null;
         }
+
+        console.log(findFirstNonRepeatingChar("rrreepeating"));
     </script>
 
 </body>
