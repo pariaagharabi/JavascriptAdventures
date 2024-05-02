@@ -14,8 +14,24 @@
             let charObj = {};
 
             for (let i = 0; i < str.length; i++) {
-
+                let eachChar = str[i];
+                
+                if (charObj[eachChar]) {
+                    charObj[eachChar] += 1;
+                } else {
+                    charObj[eachChar] = 1;
+                }
             }
+
+            // Find the first non-repeating character
+            for (let i = 0; i < str.length; i++) {
+                let eachChar = str[i];
+                if (charObj[eachChar] === 1) {
+                    return eachChar; // First non-repeating character found
+                }
+            }
+
+            return null;
         }
     </script>
 
