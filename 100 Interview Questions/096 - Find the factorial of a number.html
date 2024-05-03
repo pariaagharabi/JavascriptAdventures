@@ -10,9 +10,19 @@
 <body>
     <script>
         function factorialByRecursive(number) {
-            
+            let factResult = "";
+            if (number < 0) {
+                return false;
+            }
 
+            if (number === 0 || number === 1) {
+                return 1;
+            }
+
+            return number * factorialByRecursive(number - 1);
         }
+
+        console.log(factorialByRecursive(5));
     </script>
 
 </body>
