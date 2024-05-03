@@ -23,6 +23,21 @@
         }
 
         console.log(factorialByRecursive(5));
+
+        //// Second solution
+        function factorialByRegular(number) {
+            if (number === 0 || number === 1) {
+                return 1;
+            }
+
+            let factResult = 1;
+            for (let i = 2; i < number; i++) {
+                factResult *= i;
+            }
+
+            return factResult;
+        }
+        console.log(factorialByRegular(5));
     </script>
 
 </body>
