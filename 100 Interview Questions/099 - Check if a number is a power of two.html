@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if a number is a power of two</title>
+</head>
+
+<body>
+    <script>
+        function isPowerOfTwo(num) {
+            if (num < 1) return false;
+            
+            while (num > 1) {
+                if (num % 2 !== 0) return false;
+                num /= 2;
+            }
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>
