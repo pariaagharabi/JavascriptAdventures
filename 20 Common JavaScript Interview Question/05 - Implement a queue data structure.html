@@ -21,10 +21,9 @@
 
             // Remove and return the element at the front of the queue
             dequeue() {
-                if (this.isEmpty()) {
-                    return "Underflow"; // Queue is empty
+                if (!this.isEmpty()) {
+                    return this.items.shift();
                 }
-                return this.items.shift();
             }
 
             // Check if the queue is empty
@@ -39,10 +38,9 @@
 
             // Get the element at the front of the queue without removing it
             peek() {
-                if (this.isEmpty()) {
-                    return "No elements in queue";
+                if (!this.isEmpty()) {
+                    return this.items[0];
                 }
-                return this.items[0];
             }
 
             // Print the queue
@@ -50,6 +48,35 @@
                 console.log(this.items.toString());
             }
         }
+
+
+        // Example usage
+        // Create a new instance of the Queue class
+        const myQueue = new Queue();
+
+        // Enqueue some elements
+        myQueue.enqueue(10);
+        myQueue.enqueue(20);
+        myQueue.enqueue(30);
+
+        // Print the queue
+        console.log("Queue after enqueuing 10, 20, 30:");
+        myQueue.print(); // Output: 10,20,30
+
+        // Check the size of the queue
+        console.log("Size of the queue:", myQueue.size()); // Output: 3
+
+        // Peek at the front element
+        console.log("Front element of the queue:", myQueue.peek()); // Output: 10
+
+        // Dequeue an element
+        const dequeuedElement = myQueue.dequeue();
+        console.log("Dequeued element:", dequeuedElement); // Output: 10
+
+        // Print the queue after dequeuing
+        console.log("Queue after dequeuing:");
+        myQueue.print(); // Output: 20,30
+
     </script>
 
 </body>
