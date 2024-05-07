@@ -13,8 +13,11 @@
             // Calculate the expected sum of the array
             const arrLen = arr.length + 1; // Plus one because a number is missing
             const expectedSum = (arrLen * (arrLen + 1)) / 2; // Sum of consecutive integers formula
+
             const actualSum = arr.reduce((sum, num) => sum + num, 0);
+
             const missingNumber = expectedSum - actualSum;
+
             return missingNumber;
         }
     </script>
