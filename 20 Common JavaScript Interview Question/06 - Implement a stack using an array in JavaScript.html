@@ -19,7 +19,7 @@
             }
 
             pop() {
-                if (!this.isEmpty) return this.arr.pop();
+                if (!this.isEmpty()) return this.arr.pop();
             }
 
             isEmpty() {
@@ -31,7 +31,7 @@
             }
 
             peek() {
-                if (!this.isEmpty) return this.arr[this.arr.length - 1];
+                if (!this.isEmpty()) return this.arr[this.arr.length - 1];
             }
 
             clear() {
