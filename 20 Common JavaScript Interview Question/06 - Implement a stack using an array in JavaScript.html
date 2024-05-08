@@ -10,7 +10,33 @@
 <body>
     <script>
         class Stack {
+            constructor() {
+                this.arr = [];
+            }
 
+            push(item) {
+                return this.arr.push(item);
+            }
+
+            pop() {
+                if (!this.isEmpty) return this.arr.pop();
+            }
+
+            isEmpty() {
+                return this.arr.length === 0;
+            }
+
+            size() {
+                return this.arr.length;
+            }
+
+            peek() {
+                if (!this.isEmpty) return this.arr[this.arr.length - 1];
+            }
+
+            clear() {
+                this.arr = [];
+            }
         }
     </script>
 </body>
