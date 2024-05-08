@@ -41,6 +41,25 @@
 
         //Example usage
         const stackObj = new Stack();
+
+        stackObj.push(5);
+        stackObj.push(10);
+        stackObj.push(15);
+
+        // Get the size of the stack
+        console.log("Size of the stack:", stackObj.size()); // Output: 3
+
+        // Peek at the top element of the stack
+        console.log("Top element:", stackObj.peek()); // Output: 15
+
+        // Pop elements from the stack until it's empty
+        console.log("Popping elements:");
+        while (!stackObj.isEmpty()) {
+            console.log(stackObj.pop());
+        }
+
+        // Check if the stack is empty
+        console.log("Is the stack empty?", stackObj.isEmpty());
     </script>
 </body>
 
