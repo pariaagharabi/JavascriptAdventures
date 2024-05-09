@@ -9,19 +9,20 @@
 
 <body>
     <script>
-        function getMedianElement(arr) {
+        function getMedian(arr) {
             const sortedArr = arr.sort((a, b) => a - b);
-            const middleLen = Math.floor(sortedArr.length / 2);
+            const middleIndex = Math.floor(sortedArr.length / 2);
 
-
-            for (let i = 0; i < sortedArr.length; i++) {
-                if (middleLen % 2 !== 0) {
-                    return middleLen;
-                }
+            if (sortedArr.length % 2 === 0) {
+                return (sortedArr[middleIndex - 1] + sortedArr[middleIndex]) / 2;
+            } else {
+                return sortedArr[middleIndex];
             }
-
-
         }
+
+        const arr = [4, 1, 7, 3, 5];
+        const median = getMedian(arr);
+        console.log(median); 
     </script>
 
 </body>
