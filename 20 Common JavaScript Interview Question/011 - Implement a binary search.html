@@ -10,8 +10,24 @@
 <body>
     <script>
         function binarySearch(arr, target) {
+            let leftSide = 0;
+            let rightSide = arr.length - 1;
 
+            while (leftSide <= rightSide) {
+                let middle = Math.floor((leftSide + rightSide) / 2);
 
+                if (target === arr[middle]) {
+                    return middle;
+                }
+
+                if (target < arr[middle]) {
+                    rightSide = middle - 1;
+                } else {
+                    leftSide = middle + 1;
+                }
+            }
+
+            return -1; // return -1 if target element is not found
         }
     </script>
 
