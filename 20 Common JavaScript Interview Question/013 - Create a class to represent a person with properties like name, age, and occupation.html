@@ -9,11 +9,24 @@
 
 <body>
     <script>
-        class person {
+        class Person {
             constructor(name, age, occupation) {
+                this.name = name;
+                this.age = age;
+                this.occupation = occupation;
+            }
 
+            // Method to introduce themselves
+            introduce() {
+                console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and I work as a ${this.occupation}.`);
+            }
+
+            // Method to get a person's details
+            getDetails() {
+                return `Name: ${this.name}, Age: ${this.age}, Occupation: ${this.occupation}`;
             }
         }
+
     </script>
 
 </body>
