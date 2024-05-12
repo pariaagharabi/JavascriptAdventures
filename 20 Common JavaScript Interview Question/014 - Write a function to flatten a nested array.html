@@ -9,8 +9,8 @@
 
 <body>
     <script>
-        function flatten(arr) {
-
+        function flatten(nestedArrays) {
+            return nestedArrays.reduce((acc, current) => acc.concat(current), []);
         }
     </script>
 
