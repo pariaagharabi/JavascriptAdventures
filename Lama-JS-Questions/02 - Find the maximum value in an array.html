@@ -24,6 +24,16 @@
         const orgArr = [9, 28, 4, 0, 2];
         console.log(`Orginal Array: ${orgArr}`);
         console.log(findMaxValue(orgArr));
+
+
+        ///////////// Second solution
+        function findMaxValueByUsingMaxMethod(arr) {
+            let maxValue = Math.max(...arr);
+            return maxValue;
+        }
+
+        console.log(findMaxValueByUsingMaxMethod([-9, -4, -2, -5])); // Output: -2
+
     </script>
 
 </body>
