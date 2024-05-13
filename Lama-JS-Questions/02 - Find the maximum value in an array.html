@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find the maximum value in an array.</title>
 </head>
+
 <body>
-    
+    <script>
+        function findMaxValue(arr) {
+            let maxValue = arr[0];
+
+            for (let i = 0; i <= arr.length; i++) {
+                if (arr[i] > maxValue) {
+                    maxValue = arr[i];
+                }
+            }
+
+            return maxValue;
+        }
+
+        const orgArr = [9, 28, 4, 0, 2];
+        console.log(`Orginal Array: ${orgArr}`);
+        console.log(findMaxValue(orgArr));
+    </script>
+
 </body>
+
 </html>
