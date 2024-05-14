@@ -8,7 +8,15 @@
 </head>
 
 <body>
-    
+    <script>
+        function flatten(nestedArr) {
+            let flattenedResult = nestedArr.reduce((acc, cur) => acc.concat(cur), []);
+
+            return flattenedResult;
+        }
+
+        console.log(flatten([1, 2, [9, 8], 10, 11, [[5, 4]]]));
+    </script>
 
 </body>
 
