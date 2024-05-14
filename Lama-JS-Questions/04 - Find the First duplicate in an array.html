@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find the first duplicate in an array.</title>
 </head>
+
 <body>
-    
+
+    <script>
+        function findFirstDuplicate(arr) {
+            let charObj = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                let char = arr[i];
+
+                if (charObj[char]) {
+                    return char;
+                } else {
+                    charObj[char] = 1;
+                }
+            }
+
+            return -1;
+        }
+
+        console.log(findFirstDuplicate([3, 5, 7, 5, 8, 0]));
+    </script>
+
 </body>
+
 </html>
