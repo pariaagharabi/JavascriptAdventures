@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find the intersection of two arrays.</title>
 </head>
+
 <body>
-    
+    <script>
+        function findIntersection(arr1, arr2) {
+            let intersectionResult = [];
+
+            for (let i = 0; i < arr1.length; i++) {
+                for (let j = 0; j < arr2.length; j++) {
+                    if (arr1[i] === arr2[j]) {
+                        intersectionResult.push(arr1[i]);
+                    }
+                }
+            }
+
+            return intersectionResult;
+        }
+    </script>
+
 </body>
+
 </html>
