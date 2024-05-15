@@ -9,11 +9,15 @@
 
 <body>
     <script>
-        function unionArrays(arr1, arr2) {
+        function findUnion(array1, array2) {
             let unionArrs = new Set([...array1, ...array2]);
 
             return unionArrs;
         }
+
+        let arr1 = [1, 2, 3, 4, 5];
+        let arr2 = [3, 4, 5, 6, 7];
+        console.log(findUnion(arr1, arr2)); 
     </script>
 
 </body>
