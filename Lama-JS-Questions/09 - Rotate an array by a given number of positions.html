@@ -9,15 +9,16 @@
 
 <body>
     <script>
-        function rotateArrByPosition(array, target) {
-            let rotatedResult = [];
-
-            for (let i = 0; i < array.length; i++) {
-
-            }
-
-            return rotatedResult;
+        function rotateArrByPosition(array, position) {
+            const rotations = position % array.length;
+            const rotated = array.slice(rotations).concat(array.slice(0, rotations));
+            return rotated;
         }
+
+        // Example usage:
+        const array = [1, 2, 3, 4, 5];
+        const position = 2;
+        console.log(rotateArrByPosition(array, position));
     </script>
 
 </body>
