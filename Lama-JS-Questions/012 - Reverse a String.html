@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse a String</title>
 </head>
+
 <body>
     <script>
-        function reverse(str){
-            
+        function reverse(str) {
+            let reversedResult = "";
+
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversedResult += str[i];
+            }
+
+            return reversedResult;
         }
+
+        console.log(reverse("JavaScript"));
     </script>
-    
+
 </body>
+
 </html>
