@@ -11,14 +11,17 @@
     <script>
         function chunk(array, chunk) {
             let result = [];
+
             for (let i = 0; i < array.length; i += chunk) {
                 result.push(array.slice(i, i + chunk));
             }
+
             return result;
         }
 
         // Example usage
         console.log(chunk([1, 2, 3, 4, 5], 2));
+
     </script>
 
 </body>
