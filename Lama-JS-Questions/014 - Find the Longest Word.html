@@ -10,13 +10,20 @@
 <body>
     <script>
         function getLongestWord(sectence) {
-            let longestWord = "";
             let splitedWord = sectence.split(" ");
+            let longestWord = splitedSentences[0];
 
             for (let i = 0; i < splitedWord.length; i++) {
-
+                if (splitedWord[i].length > longestWord.length) {
+                    longestWord = splitedWord[i];
+                }
             }
+
+            return longestWord;
         }
+
+        // Example usage
+        console.log(getLongestWord("hello Javascript and Html!"));
     </script>
 
 </body>
