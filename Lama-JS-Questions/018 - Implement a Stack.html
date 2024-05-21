@@ -9,8 +9,30 @@
 
 <body>
     <script>
-        class Stack{
-            
+        class Stack {
+            constructor() {
+                this.arr = [];
+            }
+
+            push(item) {
+                return this.arr.push(item);
+            }
+
+            shift() {
+                return this.arr.shift();
+            }
+
+            isEmpty() {
+                if (this.arr.length === 0) {
+                    return this.arr.length;
+                }
+            }
+
+            peek() {
+                if (this.arr === isEmpty()) {
+
+                }
+            }
         }
     </script>
 
