@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remove Duplicates</title>
 </head>
+
 <body>
     <script>
-        function removeDuplicates(arr){
-            
+        function removeDuplicates(arr) {
+            let unique = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (!unique.includes(arr[i])) {
+                    unique.push(arr[i]);
+                }
+            }
+
+            return unique;
         }
     </script>
-    
+
 </body>
+
 </html>
