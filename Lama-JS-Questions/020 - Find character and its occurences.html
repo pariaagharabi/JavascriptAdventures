@@ -13,6 +13,15 @@
         function charWithItsOccurences(str) {
             let charObj = {};
 
+            for (let i = 0; i < str.length; i++) {
+                let eachChar = str[i];
+                
+                if (charObj[eachChar]) {
+                    charObj[eachChar]++;
+                } else {
+                    charObj[eachChar] = 1;
+                }
+            }
 
         }
     </script>
