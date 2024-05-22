@@ -15,7 +15,7 @@
 
             for (let i = 0; i < str.length; i++) {
                 let eachChar = str[i];
-                
+
                 if (charObj[eachChar]) {
                     charObj[eachChar]++;
                 } else {
@@ -23,7 +23,11 @@
                 }
             }
 
+            return charObj;
         }
+
+        // Example usage
+        console.log(charWithItsOccurences("hello"));
     </script>
 
 </body>
