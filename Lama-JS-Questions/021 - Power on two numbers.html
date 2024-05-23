@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power of base and exponent</title>
     <style>
-        body {
+        :is(*, *::after, *::before) {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
 
+        body {
             color: rosybrown;
             background-color: rgb(72, 71, 71);
             font-family: monospace;
@@ -20,6 +22,7 @@
         .main-container {
             display: flex;
             justify-content: center;
+            margin-top: 20px;
         }
 
         .inner-container {
@@ -48,6 +51,12 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        .show-result {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -62,18 +71,18 @@
             <main class="power-container">
                 <div>
                     <label>Base</label>
-                    <input type="text" placeholder="Enter the base...">
+                    <input type="text" id="base-user-input" placeholder="Enter the base...">
                 </div>
 
                 <div>
                     <label>exponent</label>
-                    <input type="text" placeholder="Enter the exponent...">
+                    <input type="text" id="exponent-user-input" placeholder="Enter the exponent...">
                 </div>
             </main>
 
             <div class="show-result">
                 <button id="btn-result">Calc Power</button>
-                <span></span>
+                <span id="result"></span>
             </div>
 
         </div>
@@ -81,7 +90,13 @@
 
 
     <script>
-        
+        document.getElementById("btn-result").addEventListener("click", () => {
+            const userNum1 = parseFloat(document.getElementById("base-user-input").value);
+            const userNum2 = parseFloat(document.getElementById("exponent-user-input").value);
+
+
+            document.getElementById("result").innerHTML = calcPowerV1(userNum1, userNum2);
+        });
 
         function calcPowerV1(base, exponent) {
             if (exponent === 0) return 1;
