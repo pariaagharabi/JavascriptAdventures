@@ -5,10 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power of base and exponent</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
+    <div class="main-container">
+        <div class="inner-container">
+
+            <header class="header-container">
+                <h1>Power of base and exponent</h1>
+            </header>
+
+            <main class="power-container">
+                <label>Base</label>
+                <input type="text" placeholder="Enter the base...">
+
+                <label>exponent</label>
+                <input type="text" placeholder="Enter the exponent...">
+            </main>
+
+            <div class="show-result">
+                <button id="btn-result">Calc Power</button>
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+
     <script>
+        
+
         function calcPowerV1(base, exponent) {
             if (exponent === 0) return 1;
 
