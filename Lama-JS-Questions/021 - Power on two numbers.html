@@ -6,7 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power of base and exponent</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
 
+            color: rosybrown;
+            background-color: rgb(72, 71, 71);
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 50px;
+        }
+
+        .power-container {
+            justify-content: space-between;
+
+        }
     </style>
 </head>
 
@@ -19,11 +43,15 @@
             </header>
 
             <main class="power-container">
-                <label>Base</label>
-                <input type="text" placeholder="Enter the base...">
+                <div>
+                    <label>Base</label>
+                    <input type="text" placeholder="Enter the base...">
+                </div>
 
-                <label>exponent</label>
-                <input type="text" placeholder="Enter the exponent...">
+                <div>
+                    <label>exponent</label>
+                    <input type="text" placeholder="Enter the exponent...">
+                </div>
             </main>
 
             <div class="show-result">
@@ -36,7 +64,7 @@
 
 
     <script>
-        
+
 
         function calcPowerV1(base, exponent) {
             if (exponent === 0) return 1;
