@@ -9,7 +9,7 @@
 
 <body>
     <script>
-        function calcPower(base, exponent) {
+        function calcPowerV1(base, exponent) {
             if (exponent === 0) return 1;
 
             if (exponent % 2 === 0) {
@@ -19,6 +19,11 @@
                 return base * pow(base, exponent - 1);
             }
         }
+
+        // Example usage
+        console.log(calcPowerV1(2, 3));
+
+
     </script>
 
 </body>
