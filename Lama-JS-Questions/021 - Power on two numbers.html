@@ -13,10 +13,10 @@
             if (exponent === 0) return 1;
 
             if (exponent % 2 === 0) {
-                const half = pow(base, exponent / 2);
+                const half = calcPowerV1(base, exponent / 2);
                 return half * half;
             } else {
-                return base * pow(base, exponent - 1);
+                return base * calcPowerV1(base, exponent - 1);
             }
         }
 
@@ -25,7 +25,7 @@
 
         ///////////////// Second solution
         function calcPowerV2(base, exponent) {
-            return pow(base, exponent);
+            return Math.pow(base, exponent);
         }
 
         // Example usage
