@@ -21,6 +21,17 @@
         .main-container {
             display: flex;
             justify-content: center;
+            margin-top: 30px;
+        }
+
+        .inner-container {
+            line-height: 50px;
+        }
+
+        .main-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -34,8 +45,23 @@
             </header>
 
             <main class="main-box">
+                <div class="first-str">
+                    <label>First String</label>
+                    <input type="text" placeholder="Enter first string...">
+                </div>
+                <div class="second-str">
+                    <label>Second String</label>
+                    <input type="text" placeholder="Enter Second string...">
+                </div>
+                <div>
+                    <button>Check isomorphic</button>
 
+                </div>
             </main>
+
+            <footer>
+            </footer>
+
         </div>
     </div>
 
