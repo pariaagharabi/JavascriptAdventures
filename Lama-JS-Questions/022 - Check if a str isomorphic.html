@@ -68,14 +68,31 @@
 
     <script>
         document.getElementById("btn-checher").addEventListener("click", () => {
-            const firstUserStr = parseFloat(document.getElementById("first-input").value);
-            const secondUserStr = parseFloat(document.getElementById("second-input").value);
+            const firstUserStr = document.getElementById("first-input").value;
+            const secondUserStr = document.getElementById("second-input").value;
 
             document.getElementById("result").innerHTML = isIsomorphic(firstUserStr, secondUserStr);
         });
 
         function isIsomorphic(str1, str2) {
+            if (str1.length !== str2.length) return false;
 
+            const mapping = {};
+
+            for (let i = 0; i < str1.length; i++) {
+                const char1 = str1[i];
+                const char2 = str2[i];
+
+                if (mapping[char1] && mapping[char1] !== char2) {
+                    return false;
+                }
+
+                if (!mapping[char1]) {
+                    mapping[char1] = char2;
+                }
+            }
+
+            return true;
         }
 
     </script>
