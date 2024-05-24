@@ -47,11 +47,11 @@
             <main class="main-box">
                 <div class="first-str">
                     <label>First String</label>
-                    <input type="text" placeholder="Enter first string...">
+                    <input type="text" placeholder="Enter first string..." id="first-input">
                 </div>
                 <div class="second-str">
                     <label>Second String</label>
-                    <input type="text" placeholder="Enter Second string...">
+                    <input type="text" placeholder="Enter Second string..." id="second-input">
                 </div>
                 <div>
                     <button id="btn-checher">Check isomorphic</button>
@@ -68,8 +68,15 @@
 
     <script>
         document.getElementById("btn-checher").addEventListener("click", () => {
+            const firstUserStr = parseFloat(document.getElementById("first-input").value);
+            const secondUserStr = parseFloat(document.getElementById("second-input").value);
 
+            document.getElementById("result").innerHTML = isIsomorphic(firstUserStr, secondUserStr);
         });
+
+        function isIsomorphic(str1, str2) {
+
+        }
 
     </script>
 
