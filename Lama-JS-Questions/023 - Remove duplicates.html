@@ -32,7 +32,9 @@
     <script>
         document.getElementById("btn-remove-duplicates").addEventListener("click", () => {
             const userInput = document.getElementById("input-arr").value;
-            
+
+            document.getElementById("result").innerHTML = removeDuplicates(userInput);
+
         });
 
 
