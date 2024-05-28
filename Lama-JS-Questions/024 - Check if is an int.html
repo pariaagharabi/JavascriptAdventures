@@ -31,10 +31,12 @@
     </div>
 
     <script>
-        function checkInt(value) {
-            if (value === "") return false;
+        function isInteger(value) {
+            if (typeof value !== "number") {
+                return false;
+            }
 
-            
+
         }
     </script>
 
