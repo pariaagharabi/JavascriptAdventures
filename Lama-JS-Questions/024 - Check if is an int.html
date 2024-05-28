@@ -32,9 +32,9 @@
 
     <script>
         document.getElementById("btn-int-checker").addEventListener("click", () => {
-            const userInput = document.getElementById("user-input").value;
+            const userInput = parseFloat(document.getElementById("user-input").value);
 
-            
+            document.getElementById("result").innerHTML = isInteger(userInput);
         });
 
         function isInteger(value) {
