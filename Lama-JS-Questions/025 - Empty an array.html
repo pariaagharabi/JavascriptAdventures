@@ -17,7 +17,7 @@
 
             <main>
                 <input type="text" class="user-input" id="user-input" placeholder="Enter an array...">
-                <button>Empty</button>
+                <button id="empty-button">Empty</button>
             </main>
 
             <div class="desplay-result">
@@ -27,15 +27,18 @@
     </div>
 
     <script>
-        document.getElementById("").addEventListener("click", () => {
-            const userInput = parseFloat(document.getElementById("user-input").value);
+        document.getElementById("empty-button").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value; // Get the input value as a string
+            const array = JSON.parse(userInput); // Parse the string into an array
 
-            document.getElementById("result").innerHTML = makeEmpty(userInput);
+            document.getElementById("result").innerHTML = makeEmpty(array); // Display the result
 
         })
 
         function makeEmpty(array) {
-            return array = [];
+            const emptyArray = [];
+
+            return emptyArray;
         }
     </script>
 
