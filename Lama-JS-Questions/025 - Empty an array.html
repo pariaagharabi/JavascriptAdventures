@@ -31,7 +31,7 @@
             const userInput = document.getElementById("user-input").value; // Get the input value as a string
             const array = JSON.parse(userInput); // Parse the string into an array
 
-            document.getElementById("result").innerHTML = makeEmpty(array); // Display the result
+            document.getElementById("result").innerHTML = JSON.stringify(makeEmpty(array)); // Display the result
 
         })
 
