@@ -17,7 +17,7 @@
 
             <main class="main-container">
                 <label>Entry Item</label>
-                <input type="text" placeholder="Enter an item...">
+                <input type="text" placeholder="Enter an item..." id="user-input">
             </main>
 
             <div class="btn-checher-int">
@@ -32,7 +32,9 @@
 
     <script>
         document.getElementById("btn-int-checker").addEventListener("click", () => {
+            const userInput = document.getElementById("user-input").value;
 
+            
         });
 
         function isInteger(value) {
