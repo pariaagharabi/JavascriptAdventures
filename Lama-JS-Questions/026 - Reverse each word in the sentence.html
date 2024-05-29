@@ -10,12 +10,20 @@
 <body>
     <script>
         function reverseEachWord(sentence) {
-            let resesedResult = "";
+            let reversedResult = [];
             const splitSentence = sentence.split(" ");
 
             for (let i = 0; i < splitSentence.length; i++) {
+                let reversedEachWord = "";
 
+                for (let j = splitSentence[i].length - 1; j >= 0; j--) {
+                    reversedEachWord += splitSentence[i][j];
+                }
+
+                reversedResult.push(reversedEachWord);
             }
+
+            return reversedResult;
         }
     </script>
 
