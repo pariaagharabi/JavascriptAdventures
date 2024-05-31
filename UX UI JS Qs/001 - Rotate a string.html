@@ -97,7 +97,8 @@
         })
 
         function rotateString(str, position) {
-            position = position % str.length; // Handle cases where position is greater than str length
+            position = position % str.length;
+
             let rotatedResult = str.slice(position) + str.slice(0, position);
             return rotatedResult;
         }
