@@ -89,19 +89,17 @@
     </div>
 
     <script>
-        function rotateString(str) {
-            let rotatedResult = "";
+        document.getElementById("btn-rotate").addEventListener("click", () => {
+            const userInput = document.getElementById("input-text").value;
+            const position = 1; // You can change this to any desired rotation position
 
-            for (let i = 0; i < str.length; i++) {
-                let partTwo = str.slice(1);
-                rotatedStr = partTwo + str[0];
-            }
+            document.getElementById("result").innerHTML = rotateString(userInput, position);
+        })
 
-            if (rotatedStr === str) {
-                return true;
-            }
-
-            return false;
+        function rotateString(str, position) {
+            position = position % str.length; // Handle cases where position is greater than str length
+            let rotatedResult = str.slice(position) + str.slice(0, position);
+            return rotatedResult;
         }
     </script>
 
