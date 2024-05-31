@@ -89,12 +89,19 @@
     </div>
 
     <script>
-        function rotateString(str, position) {
+        function rotateString(str) {
             let rotatedResult = "";
 
             for (let i = 0; i < str.length; i++) {
-
+                let partTwo = str.slice(1);
+                rotatedStr = partTwo + str[0];
             }
+
+            if (rotatedStr === str) {
+                return true;
+            }
+
+            return false;
         }
     </script>
 
