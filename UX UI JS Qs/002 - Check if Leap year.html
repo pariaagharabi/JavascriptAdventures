@@ -31,7 +31,12 @@
 
     <script>
         function isLeapYear(year) {
-            let leapChecker = Math.floor((year / 100) * (year % 4))
+            let yearInt = Number(year);
+
+            if (yearInt % 400 == 0 || (yearInt % 4 == 0 && yearInt % 100 != 0)) {
+                return ("is a leap year.");
+            }
+            return ("is NOT a leap year!");
         }
     </script>
 
