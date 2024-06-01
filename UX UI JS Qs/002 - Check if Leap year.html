@@ -33,7 +33,7 @@
         function isLeapYear(year) {
             let yearInt = Number(year);
 
-            if (yearInt % 400 == 0 || (yearInt % 4 == 0 && yearInt % 100 != 0)) {
+            if (yearInt % 400 === 0 || (yearInt % 4 === 0 && yearInt % 100 !== 0)) {
                 return ("is a leap year.");
             }
             return ("is NOT a leap year!");
