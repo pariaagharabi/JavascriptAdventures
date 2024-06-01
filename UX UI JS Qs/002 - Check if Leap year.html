@@ -30,17 +30,19 @@
     </div>
 
     <script>
-        document.getElementById("").addEventListener("click", () => {
+        document.getElementById("btn-leap-checker").addEventListener("click", () => {
+            const userInput = parseInt(document.getElementById("user-entry").value);
 
+            document.getElementById("result").innerHTML = isLeapYear(userInput);
         });
 
         function isLeapYear(year) {
             let yearInt = Number(year);
 
             if (yearInt % 400 === 0 || (yearInt % 4 === 0 && yearInt % 100 !== 0)) {
-                return ("is a leap year.");
+                return (`${yearInt} is a leap year.`);
             }
-            return ("is NOT a leap year!");
+            return (`${yearInt} is NOT a leap year!`);
         }
     </script>
 
