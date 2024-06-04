@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Largest number from the two given positive integers</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -36,13 +39,19 @@
     </div>
 
     <script>
+        document.getElementById("btn-largest").addEventListener("click", () => {
+            const userInputNum1 = document.getElementById("first-num").value;
+            const userInputNum2 = document.getElementById("second-num").value;
+
+            document.getElementById("result").innerHTML = largestNumber(userInputNum1, userInputNum2);
+        });
+
         function largestNumber(num1, num2) {
             const convertToNum1 = Number(num1);
             const convertToNum2 = Number(num2);
 
             return Math.max(num1AsNumber, num2AsNumber);
         }
-
     </script>
 
 
