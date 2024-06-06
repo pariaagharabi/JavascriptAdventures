@@ -86,7 +86,9 @@
 
     <script>
         function flatten(nestedArr) {
+            let flattenResult = nestedArr.reduce((acc, cur), acc.concat(cur), []);
 
+            return flattenResult;
         }
     </script>
 
