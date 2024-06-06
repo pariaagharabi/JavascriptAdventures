@@ -74,7 +74,7 @@
             </main>
 
             <div class="btn-container">
-                <button>Flatten</button>
+                <button id="btn-flatten">Flatten</button>
             </div>
 
             <div class="display-result">
@@ -85,6 +85,13 @@
     </div>
 
     <script>
+        document.getElementById("btn-flatten").addEventListener("click", () => {
+            const userInput = Number(document.getElementById("user-array").value);
+
+            document.getElementById("result").innerHTML = flatten(userInput);
+        });
+
+
         function flatten(nestedArr) {
             let flattenResult = nestedArr.reduce((acc, cur), acc.concat(cur), []);
 
