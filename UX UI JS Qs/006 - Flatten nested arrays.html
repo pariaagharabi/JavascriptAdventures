@@ -6,15 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flatten Nested Arrays</title>
     <style>
-        :is(*, *::after, *::before){
+        :is(*, *::after, *::before) {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body{
-            color:rgb(171, 91, 245);
+        body {
+            color: rgb(171, 91, 245);
             background-color: rgb(56, 55, 56);
+        }
+
+        .app-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            line-height: 40px;
+        }
+
+        .inner-container {
+            text-align: center;
+        }
+
+        #header-title {
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .main-container input {
+            color: blueviolet;
+            background-color: transparent;
+            border: 2px solid blueviolet;
+            border-radius: 4px;
+            padding: 3px;
+            outline: none;
         }
     </style>
 </head>
