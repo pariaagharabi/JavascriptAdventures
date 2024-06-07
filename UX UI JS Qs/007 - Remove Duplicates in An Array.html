@@ -87,7 +87,9 @@
 
     <script>
         document.getElementById("btn-remove-duplicate").addEventListener("click", () => {
+            const userInput = JSON.parse(document.getElementById("user-array").value);
 
+            document.getElementById("result").innerHTML = JSON.stringify(removeDuplicate(userInput));
         });
 
         function removeDuplicate(arr) {
