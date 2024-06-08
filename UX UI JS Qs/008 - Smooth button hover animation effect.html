@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smooth button hover animation effect</title>
     <style>
+        :is(*, *::after, ::before) {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
+        .btn-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="btn-box">
         <button>Hover Me!</button>
     </div>
 
