@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build a table with semantic elements.</title>
     <style>
-        
+        :is(*, *::after, *::before) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: rosybrown;
+            background-color: rgb(80, 78, 78);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .header-app {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
