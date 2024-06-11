@@ -32,16 +32,16 @@
 
 
     <script>
-        document.getElementById("bubble-sort").addEventListener("click", ()=>{
+        document.getElementById("bubble-sort").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-arr").value);
 
-            
+            document.getElementById("result").innerHTML = JSON.stringify(bubbleSort(userInput));
         })
 
         function bubbleSort(arr) {
             for (let i = 0; i < arr.length; i++) {
                 for (let j = 0; j < arr.length - 1 - i; j++) {
-                    if (arr[j] <= arr[j + 1]) {
+                    if (arr[j] >= arr[j + 1]) {
                         let temp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
