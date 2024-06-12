@@ -32,8 +32,10 @@
 
     <script>
         document.getElementById("btn-sum").addEventListener("click", () => {
+            const userInput = JSON.parse(document.getElementById("user-array").value);
 
-        })
+            document.getElementById("result").innerHTML = JSON.stringify(sumOfNums(userInput));
+        });
 
         function sumOfNums(nums) {
             const sumResult = nums.reduce((acc, cur) => acc + cur, 0);
