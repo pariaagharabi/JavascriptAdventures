@@ -41,12 +41,21 @@
             border-radius: 4px;
             color: brown;
             padding: 5px;
-            cursor: pointer;
-            transition: 0.3ms ease-in-out;
+            outline: none;
         }
 
-        .main-container input:hover {
-            transform: scale();
+        .btn-container button {
+            background-color: transparent;
+            border: 2px solid brown;
+            border-radius: 4px;
+            color: brown;
+            padding: 5px;
+            cursor: pointer;
+            transition: all 0.3ms ease-in-out;
+        }
+
+        .btn-container button:hover {
+            transform: scale(1.2);
             background-color: brown;
             color: rgb(63, 62, 62);
         }
