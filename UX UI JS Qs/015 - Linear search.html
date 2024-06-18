@@ -17,10 +17,10 @@
 
             <main class="main-container">
                 <div class="input-group">
-                    <label>
-                        
-                    </label>
+                    <label>Array: </label>
+                    <input type="text" id="user-array" placeholder="Enter an Array...">
                 </div>
+                <button id="btn-linear-searh">Linear search</button>
             </main>
 
             <div class="dispaly-result">
@@ -30,6 +30,10 @@
     </div>
 
     <script>
+        document.getElementById("btn-linear-searh").addEventListener("click", () => {
+
+        })
+
         function linearSearch(arr, searchQuery) {
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] === searchQuery) {
