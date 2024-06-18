@@ -10,7 +10,6 @@
 <body>
     <div class="app-container">
         <div class="inner-container">
-
             <header class="header-container">
                 <span>Linear search</span>
             </header>
@@ -36,11 +35,10 @@
     <script>
         document.getElementById("btn-linear-searh").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-array").value);
-
-            const userQueryInput = parseFloat(document.getElementById("user-query").value);
+            const userQueryInput = document.getElementById("user-query").value;
 
             document.getElementById("result").innerHTML = JSON.stringify(linearSearch(userInput, userQueryInput));
-        })
+        });
 
         function linearSearch(arr, searchQuery) {
             for (let i = 0; i < arr.length; i++) {
