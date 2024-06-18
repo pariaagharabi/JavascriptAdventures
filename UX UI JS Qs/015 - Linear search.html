@@ -31,7 +31,9 @@
 
     <script>
         document.getElementById("btn-linear-searh").addEventListener("click", () => {
+            const userInput = JSON.parse(document.getElementById("user-array").value);
 
+            document.getElementById("result").innerHTML = JSON.stringify(linearSearch(userInput));
         })
 
         function linearSearch(arr, searchQuery) {
