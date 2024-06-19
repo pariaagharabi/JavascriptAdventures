@@ -89,9 +89,9 @@
     <script>
         document.getElementById("btn-linear-searh").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-array").value);
-            const userQueryInput = document.getElementById("user-query").value;
+            const userQueryInput = parseInt(document.getElementById("user-query").value);
 
-            document.getElementById("result").innerHTML = JSON.stringify(linearSearch(userInput, userQueryInput));
+            document.getElementById("result").innerHTML = linearSearch(userInput, userQueryInput);
         });
 
         function linearSearch(array, num) {
