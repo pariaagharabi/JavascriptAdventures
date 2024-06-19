@@ -94,13 +94,12 @@
             document.getElementById("result").innerHTML = JSON.stringify(linearSearch(userInput, userQueryInput));
         });
 
-        function linearSearch(arr, searchQuery) {
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] === searchQuery) {
+        function linearSearch(array, num) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === num) {
                     return i;
                 }
             }
-
             return -1;
         }
     </script>
