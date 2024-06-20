@@ -37,7 +37,10 @@
 
     <script>
         document.getElementById("sum-btn").addEventListener("click", () => {
-            
+            const firstUserNum = parseInt(document.getElementById("first-num").value);
+            const secondUserNum = parseInt(document.getElementById("second-num").value);
+
+            document.getElementById("result").innerHTML = calculateSum(firstUserNum, secondUserNum);
         });
 
         function calculateSum(num1, num2) {
