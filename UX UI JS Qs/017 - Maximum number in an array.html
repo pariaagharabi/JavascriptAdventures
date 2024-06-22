@@ -18,14 +18,23 @@
             <main class="main-container">
                 <div class="input-groups">
                     <label>Enter an Array: </label>
-                    <input type="text" id="nput-array" placeholder="Enter an Array...">
+                    <input type="text" id="input-array" placeholder="Enter an Array...">
                 </div>
                 <button id="max-num">Maximum</button>
             </main>
+
+            <div class="dispaly-result">
+                <sapn id="result"></sapn>
+            </div>
+
         </div>
     </div>
 
     <script>
+        document.getElementById("input-array").addEventListener("click", () => {
+
+        });
+
         function getMaxNumber(array) {
             const maxNumber = array[0];
 
