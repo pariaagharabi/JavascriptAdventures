@@ -34,7 +34,7 @@
         document.getElementById("max-num").addEventListener("click", () => {
             const inputUser = JSON.parse(document.getElementById("input-array").value);
 
-            document.getElementById("result").innerHTML = JSON.stringify();
+            document.getElementById("result").innerHTML = JSON.stringify(getMaxNumber(inputUser));
         });
 
         function getMaxNumber(array) {
