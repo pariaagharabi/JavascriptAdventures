@@ -86,7 +86,9 @@
 
     <script>
         document.getElementById("btn-fact").addEventListener("click", () => {
+            const userInput = parseInt(document.getElementById("input-user").value);
 
+            document.getElementById("result").innerHTML = getFactorial(userInput);
         });
 
         function getFactorial(number) {
