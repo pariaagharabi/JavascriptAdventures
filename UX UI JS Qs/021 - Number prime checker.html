@@ -33,14 +33,14 @@
     </div>
 
     <script>
-        document.getElementById("btn-prime").addEventListener("click", ()=>{
+        document.getElementById("btn-prime").addEventListener("click", () => {
             const userInput = parseInt(document.getElementById("userInput").value);
 
             document.getElementById("result").innerHTML = isPrime(userInput);
         });
 
-        function isPrime(num){
-
+        function isPrime(num) {
+            if (num <= 0) return false;
         }
 
     </script>
