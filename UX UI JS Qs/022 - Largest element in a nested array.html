@@ -13,7 +13,11 @@
 <body>
 
     <script>
-        function findLargestElement(nestedArray){
+        function findLargestElement(nestedArray) {
+            nestedArray.reduce((max, current) => {
+                return Math.max(max, ...current);
+            }, -Infinity);
+
             
         }
     </script>
