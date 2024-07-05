@@ -83,8 +83,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-largest").addEventListener("click", ()=>{
+        document.getElementById("btn-largest").addEventListener("click", () => {
+            const userInput = Number(document.getElementById("user-array").value);
 
+            document.getElementById("result").innerHTML = findLargestElement(userInput);
         });
 
         function findLargestElement(nestedArray) {
