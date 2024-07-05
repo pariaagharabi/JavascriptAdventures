@@ -84,7 +84,7 @@
 
     <script>
         document.getElementById("btn-largest").addEventListener("click", () => {
-            const userInput = Number(document.getElementById("user-array").value);
+            const userInput = JSON.parse(document.getElementById("user-array").value);
 
             document.getElementById("result").innerHTML = findLargestElement(userInput);
         });
@@ -97,7 +97,7 @@
             return result;
         }
 
-        console.log(findLargestElement([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+        // console.log(findLargestElement([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
     </script>
 
 </body>
