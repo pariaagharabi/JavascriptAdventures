@@ -76,9 +76,11 @@
         });
 
         function capitalizeFirstLetter(letter) {
-            let splitedLetter = letter.split(" ");
+            const splitedLetter = letter.split(" ");
+            let result = "";
 
-            for (let i = 0; i < splitedLetter; i++) {
+            for (let i = 0; i < splitedLetter.length; i++) {
+                let firstChar = splitedLetter[i][0].toUpperCase();
 
             }
 
