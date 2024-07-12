@@ -80,10 +80,13 @@
             let result = "";
 
             for (let i = 0; i < splitedLetter.length; i++) {
-                let firstChar = splitedLetter[i][0].toUpperCase();
+                let firstEachChar = splitedLetter[i][0].toUpperCase();
+                let restOfChar = splitedLetter[i].slice(1);
 
+                result += firstEachChar + restOfChar;
             }
 
+            return result;
         }
 
     </script>
