@@ -39,22 +39,24 @@
 
     <script>
         document.getElementById("test").addEventListener("click", () => {
-            document.getElementById("result").innerHTML = fizzBuzz();
-
+            const result = fizzBuzz();
+            document.getElementById("result").innerHTML = result;
         });
 
         function fizzBuzz() {
+            let result = '';
             for (let i = 1; i <= 100; i++) {
                 if (i % 3 === 0 && i % 5 === 0) {
-                    console.log("FizzBuzz");
+                    result += "FizzBuzz<br>";
                 } else if (i % 3 === 0) {
-                    console.log("Fizz");
+                    result += "Fizz<br>";
                 } else if (i % 5 === 0) {
-                    console.log("Buzz");
+                    result += "Buzz<br>";
                 } else {
-                    console.log(i);
+                    result += i;
                 }
             }
+            return result;
         }
 
         console.log(fizzBuzz());
