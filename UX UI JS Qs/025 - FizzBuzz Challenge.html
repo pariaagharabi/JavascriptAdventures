@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-        body{
+        body {
             color: rgb(237, 158, 132);
             background-color: rgb(234, 209, 200);
         }
@@ -20,6 +20,12 @@
 </head>
 
 <body>
+    <div class="app-container">
+        <div class="inner-container">
+
+            
+        </div>
+    </div>
 
     <script>
         function fizzBuzz() {
@@ -30,7 +36,9 @@
                     console.log("Fizz");
                 } else if (i % 5 === 0) {
                     console.log("Buzz");
-                } else console.log(i);
+                } else {
+                    console.log(i);
+                }
             }
         }
 
