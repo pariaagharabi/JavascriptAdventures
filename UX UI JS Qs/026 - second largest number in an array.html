@@ -19,7 +19,7 @@
                     <lable>Array: </lable>
                     <input type="text" placeholder="Array of numbers...">
                 </div>
-                <button>Second Largest</button>
+                <button id="second-num">Second Largest</button>
             </main>
 
             <div class="display-result">
@@ -29,6 +29,10 @@
     </div>
 
     <script>
+        document.getElementById("second-num").addEventListener("click", () => {
+
+        })
+
         function secondLargestNm(arr) {
             const sortedArr = arr.sort((a, b) => b - a);
 
