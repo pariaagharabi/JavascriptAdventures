@@ -30,7 +30,7 @@
 
     <script>
         document.getElementById("second-num").addEventListener("click", () => {
-            const userInput = Number(document.getElementById("array-nums").value);
+            const userInput = JSON.parse(document.getElementById("array-nums").value);
 
             document.getElementById("result").innerHTML = secondLargestNm(userInput);
         })
@@ -41,7 +41,7 @@
             return sortedArr[1];
         }
 
-        console.log((secondLargestNm([3, 6, 4, 9, 23])));
+        // console.log((secondLargestNm([3, 6, 4, 9, 23])));
     </script>
 </body>
 
