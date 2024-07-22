@@ -17,7 +17,7 @@
             <main class="main-container">
                 <div class="input-group">
                     <lable>Array: </lable>
-                    <input type="text" placeholder="Array of numbers...">
+                    <input type="text" placeholder="Array of numbers..." id="array-nums">
                 </div>
                 <button id="second-num">Second Largest</button>
             </main>
@@ -30,7 +30,7 @@
 
     <script>
         document.getElementById("second-num").addEventListener("click", () => {
-
+            const userInput = Number(document.getElementById("array-nums").value);
         })
 
         function secondLargestNm(arr) {
