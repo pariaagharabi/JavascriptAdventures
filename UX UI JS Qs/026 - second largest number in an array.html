@@ -16,8 +16,8 @@
 
             <main class="main-container">
                 <div class="input-group">
-                    <lable>Array: </lable>
-                    <input type="text" placeholder="Array of numbers..." id="array-nums">
+                    <label>Array: <label>
+                            <input type="text" placeholder="Array of numbers..." id="array-nums">
                 </div>
                 <button id="second-num">Second Largest</button>
             </main>
@@ -31,14 +31,12 @@
     <script>
         document.getElementById("second-num").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("array-nums").value);
+            document.getElementById("result").innerHTML = secondLargestNum(userInput);
+        });
 
-            document.getElementById("result").innerHTML = secondLargestNm(userInput);
-        })
-
-        function secondLargestNm(arr) {
+        function secondLargestNum(arr) {
             const sortedArr = arr.sort((a, b) => b - a);
-
-            return sortedArr[1];
+            return sortedArr.length > 1 ? sortedArr[1] : "No second largest number";
         }
 
         // console.log((secondLargestNm([3, 6, 4, 9, 23])));
