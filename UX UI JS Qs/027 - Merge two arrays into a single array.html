@@ -89,7 +89,7 @@
             const userArr1 = JSON.parse(document.getElementById("arr1").value);
             const userArr2 = JSON.parse(document.getElementById("arr2").value);
 
-            
+            document.getElementById("result").innerHTML = mergeTwoArrays(userArr1, userArr2);
         });
 
         function mergeTwoArrays(arr1, arr2) {
