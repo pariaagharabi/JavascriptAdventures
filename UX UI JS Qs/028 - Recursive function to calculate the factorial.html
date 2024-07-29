@@ -14,8 +14,12 @@
 
     <script>
         function recursiveCalcFact(number) {
-            for (let i = 0; i <= number; i++) {
+            if (number < 0) {
+                return false;
+            }
 
+            if (number === 0 || number === 1) {
+                return 1;
             }
 
             return number * recursiveCalcFact(number - 1);
