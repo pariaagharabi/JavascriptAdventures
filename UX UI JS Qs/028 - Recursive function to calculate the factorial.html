@@ -82,6 +82,8 @@
     <script>
         document.getElementById("btn-fact").addEventListener("click", () => {
             const userInput = Number(document.getElementById("user-num").value);
+
+            document.getElementById("result").innerHTML = recursiveCalcFact(userInput);
         });
 
         function recursiveCalcFact(number) {
