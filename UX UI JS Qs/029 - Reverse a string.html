@@ -19,10 +19,14 @@
         function reverseStr(string) {
             let reversedStr = "";
 
-            for (let i = 0; i < string.length; i++) {
-
+            for (let i = string.length; i >= 0; i--) {
+                reverseStr += string[i];
             }
+
+            return reversedStr;
         }
+
+        console.log(reverseStr("hello!"));
     </script>
 
 </body>
