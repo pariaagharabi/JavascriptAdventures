@@ -80,9 +80,9 @@
     </div>
 
     <script>
-        document.getElementById("btn-fact").addEventListener("click", ()=>{
-            
-        })
+        document.getElementById("btn-fact").addEventListener("click", () => {
+            const userInput = Number(document.getElementById("user-num").value);
+        });
 
         function recursiveCalcFact(number) {
             if (number < 0) {
