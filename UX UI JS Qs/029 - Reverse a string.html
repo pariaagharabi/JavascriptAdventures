@@ -81,9 +81,9 @@
 
     <script>
         document.getElementById("btn-reverse").addEventListener(() => {
-            const userInput = document.getElementById("").value;
+            const userInput = document.getElementById("user-str").value;
 
-            
+            document.getElementById("result").innerHTML = reverseStr(userInput);
         });
 
         function reverseStr(string) {
