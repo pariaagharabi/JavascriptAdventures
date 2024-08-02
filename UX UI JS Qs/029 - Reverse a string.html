@@ -73,14 +73,14 @@
                 <button id="btn-reverse">Reverse</button>
             </main>
 
-            <div class="dispaly-result">
+            <div class="display-result">
                 <span id="result"></span>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById("btn-reverse").addEventListener(() => {
+        document.getElementById("btn-reverse").addEventListener("click", () => {
             const userInput = document.getElementById("user-str").value;
 
             document.getElementById("result").innerHTML = reverseStr(userInput);
