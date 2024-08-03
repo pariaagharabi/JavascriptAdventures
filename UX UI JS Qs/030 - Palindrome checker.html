@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,23 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function checkPalindrome(str){
+        function checkPalindrome(str) {
             const halfLength = Math.floor(str.length / 2);
 
-            for(let i = 0; i < halfLength; i++) {
-                
+            for (let i = 0; i < halfLength; i++) {
+                if (str[i] !== str[str.length - 1 - i]) {
+                    return false;
+                }
+
+                return true;
             }
         }
 
     </script>
 </body>
+
 </html>
