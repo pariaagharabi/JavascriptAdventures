@@ -35,7 +35,7 @@
         document.getElement("sum-btn").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-arr").value);
 
-            document.getElementById("result").innerHTML = 
+            document.getElementById("result").innerHTML = sumAllNumbers(userInput);
         });
 
         function sumAllNumbers(array) {
