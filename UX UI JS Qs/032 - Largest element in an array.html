@@ -88,8 +88,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-largest").addEventListener("click", ()=>{
+        document.getElementById("btn-largest").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-arr").value);
+
+            document.getElementById("result").innerHTML = getLargestElement(userInput);
         });
 
         function getLargestElement(array) {
