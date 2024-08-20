@@ -17,7 +17,7 @@
             let removeDuplicatesResult = [];
 
             for (let i = 0; i < array.length; i++) {
-                if (removeDuplicatesResult.includes(array[i])) {
+                if (!removeDuplicatesResult.includes(array[i])) {
                     removeDuplicatesResult.push(array[i]);
                 }
             }
