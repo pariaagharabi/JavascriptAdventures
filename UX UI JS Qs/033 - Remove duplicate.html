@@ -32,10 +32,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-unique-nums").addEventListener("click", ()=>{
+        document.getElementById("btn-unique-nums").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-arr").value);
 
-            document.getElementById("result").innerHTML = 
+            document.getElementById("result").innerHTML = JSON.stringify(removeDuplicates(userInput));
         });
 
         function removeDuplicates(array) {
