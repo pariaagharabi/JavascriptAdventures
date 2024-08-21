@@ -33,7 +33,7 @@
 
     <script>
         document.getElementById("btn-unique-nums").addEventListener("click", () => {
-            const userInput = JSON.parse(document.getElementById("user-arr").value);
+            const userInput = JSON.parse(document.getElementById("user-arr").value.split(','));
 
             document.getElementById("result").innerHTML = JSON.stringify(removeDuplicates(userInput));
         });
