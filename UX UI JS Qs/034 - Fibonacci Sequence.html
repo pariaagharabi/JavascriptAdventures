@@ -16,15 +16,14 @@
         function fibSequence(num) {
             let initialArr = [0, 1];
 
-            for (let i = 0; i < nums.length; i++) {
-                let nextFibonacciNums = initialArr[i - 1] + initialArr[i + 1];
-                initialArr.push(nextFibonacciNums);
+            for (let i = 2; i < num; i++) {
+                initialArr[i] = initialArr[i - 1] + initialArr[i - 2];
             }
 
             return initialArr;
         }
 
-        console.log((fibSequence(5)));
+        console.log(fibSequence(5));
     </script>
 
 </body>
