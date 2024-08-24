@@ -14,9 +14,12 @@
 
     <script>
         function fibSequence(nums) {
-            let initialArr = [0,1];
+            let initialArr = [0, 1];
 
-            
+            for (let i = 0; i < nums.length; i++) {
+                let nextFibonacciNums = initialArr[i - 1] + initialArr[i + 1];
+            }
+
         }
     </script>
 
