@@ -18,8 +18,10 @@
 
             for (let i = 0; i < nums.length; i++) {
                 let nextFibonacciNums = initialArr[i - 1] + initialArr[i + 1];
+                initialArr.push(nextFibonacciNums);
             }
 
+            return initialArr;
         }
     </script>
 
