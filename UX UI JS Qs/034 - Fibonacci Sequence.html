@@ -77,7 +77,7 @@
             <main class="main-container">
                 <div class="input-group">
                     <label>Number: </label>
-                    <input type="text" placeholder="Enter a number...">
+                    <input type="text" placeholder="Enter a number..." id="user-num">
                 </div>
                 <button id="btn-fib">Fibonacci Sequence</button>
             </main>
@@ -90,7 +90,7 @@
 
     <script>
         document.getElementById("btn-fib").addEventListener("click", () => {
-
+            const userInput = document.getElementById("user-num").value;
         });
 
         function fibSequence(num) {
