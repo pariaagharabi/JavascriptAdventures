@@ -92,7 +92,7 @@
         document.getElementById("btn-fib").addEventListener("click", () => {
             const userInput = Number(document.getElementById("user-num").value);
 
-            document.getElementById("result").innerHTML = 
+            document.getElementById("result").innerHTML = JSON.stringify(fibSequence(userInput));
         });
 
         function fibSequence(num) {
