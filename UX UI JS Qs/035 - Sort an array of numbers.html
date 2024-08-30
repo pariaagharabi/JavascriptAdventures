@@ -32,10 +32,12 @@
     </div>
 
     <script>
-        document.getElementById("btn-sort").addEventListener("click",()=>{
+        document.getElementById("btn-sort").addEventListener("click", () => {
             const userInput = Number(document.getElementById("user-arr").value);
             const splitedUserInput = userInput.split(",");
-            document.getElementById("result").innerHTML = sortArray(splitedUserInput);
+
+            document.getElementById("result").innerHTML =
+                JSON.stringify(sortArray(splitedUserInput));
         });
 
         function sortArray(arr) {
