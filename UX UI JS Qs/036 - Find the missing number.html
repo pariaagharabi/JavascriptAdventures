@@ -95,7 +95,7 @@
         document.getElementById("missing-num-btn").addEventListener("click", () => {
             const userInput = JSON.parse(document.getElementById("user-arr").value);
 
-            document.getElementById("").innerHTML = 
+            document.getElementById("result").innerHTML = findMissingNumber(userInput);
         });
 
         function findMissingNumber(arr) {
