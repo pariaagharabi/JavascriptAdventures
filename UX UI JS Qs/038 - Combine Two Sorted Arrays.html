@@ -17,7 +17,8 @@
             const sortedArr1 = arr1.slice().sort((a, b) => a - b);
             const sortedArr2 = arr2.slice().sort((a, b) => a - b);
 
-
+            const combinedResult = [...sortedArr1, ...sortedArr2];
+            return combinedResult;
         }
     </script>
 
