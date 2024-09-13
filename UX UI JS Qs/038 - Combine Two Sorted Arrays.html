@@ -14,6 +14,7 @@
 
     <script>
         function CombineTwoSortedArrays(arr1, arr2) {
+            // By using slice function we ensure that the orginal arrays are preserved.
             const sortedArr1 = arr1.slice().sort((a, b) => a - b);
             const sortedArr2 = arr2.slice().sort((a, b) => a - b);
 
