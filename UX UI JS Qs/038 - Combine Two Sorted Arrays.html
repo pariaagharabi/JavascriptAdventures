@@ -94,7 +94,8 @@
 
     <script>
         document.getElementById("btn-combine").addEventListener("click", () => {
-            const firstUserInput = Number(document.getElementById("first-arr").value);
+            const firstUserInput = JSON.parse(document.getElementById("first-arr").value);
+
         });
 
         function CombineTwoSortedArrays(arr1, arr2) {
