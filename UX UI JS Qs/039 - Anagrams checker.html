@@ -42,6 +42,7 @@
             const firstUserStr = document.getElementById("first-str").value;
             const secondUserStr = document.getElementById("second-str").value;
 
+            document.getElementById("result").innerHTML = checkAnagrams(firstUserStr, secondUserStr);
         });
 
         function checkAnagrams(firstStr, secondStr) {
