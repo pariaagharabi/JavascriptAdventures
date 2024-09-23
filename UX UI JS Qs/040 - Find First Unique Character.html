@@ -18,12 +18,15 @@
 
             for (let i = 0; i < str.length; i++) {
                 if (!uniqueResult.includes(str[i])) {
-                    uniqueResult.push(str[i]);
+                    uniqueResult += str[i];
+                    return str[i];
                 }
             }
 
-            return uniqueResult;
+            return null;
         }
+
+        console.log(firstUniqueCharacter("swiss"));
     </script>
 
 </body>
