@@ -18,9 +18,11 @@
 
             for (let i = 0; i < str.length; i++) {
                 if (!uniqueResult.includes(str[i])) {
-                    
+                    uniqueResult.push(str[i]);
                 }
             }
+
+            return uniqueResult;
         }
     </script>
 
