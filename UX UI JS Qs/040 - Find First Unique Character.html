@@ -17,13 +17,12 @@
             let uniqueResult = "";
 
             for (let i = 0; i < str.length; i++) {
-                if (!uniqueResult.includes(str[i])) {
+                if (uniqueResult.includes(str[i]) === false) {
                     uniqueResult += str[i];
-                    return str[i];
                 }
             }
 
-            return null;
+            return uniqueResult;
         }
 
         console.log(firstUniqueCharacter("swiss"));
