@@ -20,7 +20,8 @@
                 if (!uniqueResult.includes(str[i])) {
                     uniqueResult += str[i];
                 } else {
-                    uniqueResult = uniqueResult.replace(str[i], ''); // Remove if it's a duplicate
+                    uniqueResult = uniqueResult.split(str[i]).join('');
+                    // uniqueResult = uniqueResult.replace(str[i], ''); // Remove if it's a duplicate
                 }
             }
 
