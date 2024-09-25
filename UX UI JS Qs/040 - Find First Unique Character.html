@@ -17,6 +17,10 @@
             background-color: rgb(43, 43, 43);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
+
+        .app-container {
+            display: flex;
+        }
     </style>
 </head>
 
@@ -49,8 +53,8 @@
                 if (!uniqueResult.includes(str[i])) {
                     uniqueResult += str[i];
                 } else {
-                    uniqueResult = uniqueResult.split(str[i]).join('');
-                    // uniqueResult = uniqueResult.replace(str[i], ''); // Remove if it's a duplicate
+                    // uniqueResult = uniqueResult.split(str[i]).join('');
+                    uniqueResult = uniqueResult.replace(str[i], ''); // Remove if it's a duplicate
                 }
             }
 
