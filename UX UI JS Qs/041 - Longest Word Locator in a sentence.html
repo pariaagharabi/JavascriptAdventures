@@ -17,8 +17,8 @@
             const splitedSentences = sentence.split(" ");
             let longestWordResult = splitedSentences[0];
 
-            for (let i = 0; i < splitedSentences.length; i++) {
-                if (longestWordResult[i].length > splitedSentences[i].length) {
+            for (let i = 1; i < splitedSentences.length; i++) {
+                if (splitedSentences[i].length > longestWordResult.length) {
                     longestWordResult = splitedSentences[i];
                 }
             }
