@@ -93,6 +93,8 @@
     <script>
         document.getElementById("btn-longest-word").addEventListener("click", () => {
             const user_input = document.getElementById("user-sentence").value;
+
+            document.getElementById("result").textContent = getLongestWordLocator(user_input);
         })
 
         function getLongestWordLocator(sentence) {
