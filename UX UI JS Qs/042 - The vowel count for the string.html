@@ -87,6 +87,8 @@
     <script>
         document.getElementById("btn-vowels").addEventListener("click", () => {
             const userInput = document.getElementById("user-str").value;
+
+            document.getElementById("result").textContent = countVowels(userInput);
         });
 
         function countVowels(str) {
