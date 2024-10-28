@@ -92,7 +92,7 @@
         document.getElementById("btn-flip-words").addEventListener("click", () => {
             const userInput = document.getElementById("sentence-input").value;
 
-            document.getElementById("output-sentence").textContent = 
+            document.getElementById("output-sentence").textContent = reverseEachWord(userInput);
         })
 
         function reverseEachWord(sentence) {
