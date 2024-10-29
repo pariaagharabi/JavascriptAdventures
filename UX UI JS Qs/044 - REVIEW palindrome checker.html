@@ -17,7 +17,9 @@
             const halfLenStr = str.length / 2;
 
             for (let i = 0; i < halfLenStr; i++) {
-
+                if (halfLenStr[i] !== halfLenStr[i - 1]){
+                    return false;
+                }
             }
         }
     </script>
