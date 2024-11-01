@@ -90,6 +90,7 @@
         document.getElementById("btn-checker").addEventListener("click", () => {
             const userInput = document.getElementById("input-str").value;
 
+            document.getElementById("result").textContent = checkPalindrome(userInput)? "Palindrome" : "Not Palindrome";
         })
 
         function checkPalindrome(str) {
