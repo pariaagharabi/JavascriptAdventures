@@ -95,9 +95,10 @@
 
         function checkPalindrome(str) {
             const halfLenStr = Math.floor(str.length / 2);
+            const lowerStr = str.toLowerCase();
 
             for (let i = 0; i < halfLenStr; i++) {
-                if (str[i] !== str[str.length - 1 - i]) {
+                if (lowerStr[i] !== lowerStr[lowerStr.length - 1 - i]) {
                     return false;
                 }
             }
