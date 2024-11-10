@@ -89,9 +89,9 @@
     </div>
 
     <script>
-        document.getElementById("btn-capitalize")
+        document.getElementById("btn-capitalize").addEventListener()
 
-        
+
         function capitalizeLetter(sentence) {
             const splitedSentence = sentence.split(" ");
             const capitalizedWords = splitedSentence.map(word => word.charAt(0).toUpperCase() + word.slice(1));
