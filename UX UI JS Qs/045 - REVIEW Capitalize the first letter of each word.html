@@ -89,9 +89,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-capitalize").addEventListener("click", ()=>{
+        document.getElementById("btn-capitalize").addEventListener("click", () => {
             const userInput = document.getElementById("user-sentence").value;
-            
+
+            document.getElementById("result").textContent = capitalizeLetter(userInput);
         })
 
 
