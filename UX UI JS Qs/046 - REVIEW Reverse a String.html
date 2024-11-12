@@ -45,14 +45,14 @@
         function reverseStr(str) {
             let reversedStr = [];
 
-            for (let i = str.length; i >= 0; i--) {
-                reverseStr.push(str[i])
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversedStr.push(str[i]);
             }
 
-            return reverseStr.join('');
+            return reversedStr.join('');
         }
 
-        // Example usage
+        // Example usage:
         console.log(reverseStr("hello"));
     </script>
 
