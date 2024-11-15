@@ -13,11 +13,21 @@
 <body>
 
     <script>
+
+        // First solution
         function calculatePowerOfTwo(base, exponent) {
             return Math.pow(base, exponent);
         }
 
         console.log(calculatePowerOfTwo(2, 3));
+
+        //Second solution
+        function power(base, exponent) {
+            if (exponent === 0) return 1;
+            return base ** exponent;
+        }
+
+        console.log(power(2, 3)); // 8
     </script>
 
 </body>
