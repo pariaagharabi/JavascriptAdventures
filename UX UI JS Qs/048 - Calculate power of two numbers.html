@@ -11,28 +11,33 @@
 </head>
 
 <body>
+    <div class="app-container">
+        <div class="inner-container">
+            <header class="header-container">
+                <span>Calculate power of two numbers</span>
+            </header>
+        </div>
 
-    <script>
+        <script>
 
+            // ---------------------------------------------------------
+            // First solution
+            function calculatePowerOfTwo(base, exponent) {
+                return Math.pow(base, exponent);
+            }
+            // Example usage
+            console.log(calculatePowerOfTwo(2, 3));
 
-        // ---------------------------------------------------------
-        // First solution
-        function calculatePowerOfTwo(base, exponent) {
-            return Math.pow(base, exponent);
-        }
-        // Example usage
-        console.log(calculatePowerOfTwo(2, 3));
+            // ---------------------------------------------------------
 
-        // ---------------------------------------------------------
-
-        //Second solution
-        function power(base, exponent) {
-            if (exponent === 0) return 1;
-            return base ** exponent;
-        }
-        //Example usage
-        console.log(power(2, 0)); 
-    </script>
+            //Second solution
+            function power(base, exponent) {
+                if (exponent === 0) return 1;
+                return base ** exponent;
+            }
+            //Example usage
+            console.log(power(2, 0)); 
+        </script>
 
 </body>
 
