@@ -93,9 +93,11 @@
         </div>
 
         <script>
-            document.getElementById("btn-calc-pow").addEventListener("click",()=>{
+            document.getElementById("btn-calc-pow").addEventListener("click", () => {
                 const baseUserInput = Number(document.getElementById("base-user-input").value);
                 const exponentUserInput = Number(document.getElementById("exponent-user-input").value);
+
+                document.getElementById("result").innerHTML = `The result is: ${calculatePowerOfTwo(baseUserInput, exponentUserInput)}`;
             })
 
             // ---------------------------------------------------------
