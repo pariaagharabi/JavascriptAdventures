@@ -94,7 +94,8 @@
 
         <script>
             document.getElementById("btn-calc-pow").addEventListener("click",()=>{
-                const baseUserInput = document.getElementById("base-user-input").value;
+                const baseUserInput = Number(document.getElementById("base-user-input").value);
+                const exponentUserInput = Number(document.getElementById("exponent-user-input").value);
             })
 
             // ---------------------------------------------------------
