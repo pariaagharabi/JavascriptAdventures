@@ -16,11 +16,13 @@
         function removeDuplicates(arr) {
             let uniqueResult = [];
 
-            for(let i=0; i<arr.length; i++) {
-                if(!uniqueResult.includes(arr[i])) {
-
+            for (let i = 0; i < arr.length; i++) {
+                if (!uniqueResult.includes(arr[i])) {
+                    uniqueResult.push(arr[i]);
                 }
             }
+
+            return uniqueResult;
         }
     </script>
 
