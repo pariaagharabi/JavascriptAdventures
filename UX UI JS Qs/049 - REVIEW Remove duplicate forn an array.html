@@ -64,6 +64,8 @@
     <script>
         document.getElementById("btn-unique").addEventListener("click", () => {
             const userInput = Number(document.getElementById("user-arr").value);
+
+            document.getElementById("result").innerHTML = JSON.stringify(removeDuplicates(userInput));
         });
 
 
