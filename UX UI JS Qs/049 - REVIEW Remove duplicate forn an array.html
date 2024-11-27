@@ -82,7 +82,7 @@
 
     <script>
         document.getElementById("btn-unique").addEventListener("click", () => {
-            const userInput = Number(document.getElementById("user-arr").value.split(","));
+            const userInput = JSON.parse(document.getElementById("user-arr").value.split(','));
 
             document.getElementById("result").innerHTML = JSON.stringify(removeDuplicates(userInput));
         });
