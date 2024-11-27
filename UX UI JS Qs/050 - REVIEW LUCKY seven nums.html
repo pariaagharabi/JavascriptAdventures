@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,22 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
 
-        function luckySeven(array){
-            for(let i = 0; i < array.length; i++){
-                
+        function hasLuckySeven(arr) {
+            for (let i = 0; i < arr.length - 2; i++) {
+                const sum = arr[i] + arr[i + 1] + arr[i + 2];
+                if (sum === 7) {
+                    return true;
+                }
             }
+            return false; 
         }
     </script>
-    
+
 </body>
+
 </html>
