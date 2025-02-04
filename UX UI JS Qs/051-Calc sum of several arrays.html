@@ -93,7 +93,7 @@
             </main>
 
             <footer class=" footer-container">
-                <button>Calculate</button>
+                <button id="calc-sum">Calculate</button>
                 <span id="result"></span>
             </footer>
         </div>
@@ -108,7 +108,7 @@
             const array3 = document.getElementById("array3").value.split(",").map(Number);
 
             const result = calculateSumArrays(array1, array2, array3);
-            document.getElementById("result").textContent = result;
+            document.getElementById("calc-sum").textContent = calculateSumArrays(result);
         });
 
         function calculateSumArrays(...arrays) {
