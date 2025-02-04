@@ -94,6 +94,7 @@
 
             <footer class=" footer-container">
                 <button id="calc-sum">Calculate</button>
+                <br>
                 <span id="result"></span>
             </footer>
         </div>
@@ -102,19 +103,17 @@
 
 
     <script>
-        document.getElementById("result").addEventListener("click", () => {
+        document.getElementById("calc-sum").addEventListener("click", () => {
             const array1 = document.getElementById("array1").value.split(",").map(Number);
             const array2 = document.getElementById("array2").value.split(",").map(Number);
             const array3 = document.getElementById("array3").value.split(",").map(Number);
 
             const result = calculateSumArrays(array1, array2, array3);
-            document.getElementById("calc-sum").textContent = calculateSumArrays(result);
+            document.getElementById("result").textContent = `Sum: ${result}`;
         });
 
         function calculateSumArrays(...arrays) {
-            //Uses rest parameter syntax to accept any number of arrays.
             return arrays.flat().reduce((sum, num) => sum + num, 0);
-            //arrays.flat() flattens the array of arrays into a single array
         }
 
         // Example
