@@ -102,7 +102,14 @@
 
 
     <script>
-        document.getElementById("result")
+        document.getElementById("result").addEventListener("click", () => {
+            const array1 = document.getElementById("array1").value.split(",").map(Number);
+            const array2 = document.getElementById("array2").value.split(",").map(Number);
+            const array3 = document.getElementById("array3").value.split(",").map(Number);
+
+            const result = calculateSumArrays(array1, array2, array3);
+            document.getElementById("result").textContent = result;
+        });
 
         function calculateSumArrays(...arrays) {
             //Uses rest parameter syntax to accept any number of arrays.
