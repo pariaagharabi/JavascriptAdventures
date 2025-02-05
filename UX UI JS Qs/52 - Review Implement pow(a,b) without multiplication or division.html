@@ -14,10 +14,10 @@
 
 
     <script>
-        function calcPow(a, b) {
-            if (b === 0) return 1;
-            if (b < 0) return 1 / pow(a, -b);
-            return a * pow(a, b - 1);
+        function calcPow(base, exponent) {
+            if (exponent === 0) return 1;
+            if (exponent < 0) return 1 / pow(base, -exponent);
+            return base * pow(base, exponent - 1);
         }
     </script>
 
