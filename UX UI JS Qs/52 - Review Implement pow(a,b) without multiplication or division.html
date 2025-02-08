@@ -91,6 +91,8 @@
         document.getElementById("calculate-btn").addEventListener("click", () => {
             const userBase = document.getElementById("base").value;
             const userExponent = document.getElementById("exponent").value;
+
+            document.getElementById("result").textContent = `Result: ${calcPow(userBase, userExponent)}`;
         })
 
 
