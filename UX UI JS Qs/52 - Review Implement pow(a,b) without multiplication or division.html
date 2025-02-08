@@ -88,7 +88,10 @@
 
 
     <script>
-        document.getElementById("calculate-btn").addEventListener("click", () => { })
+        document.getElementById("calculate-btn").addEventListener("click", () => {
+            const userBase = document.getElementById("base").value;
+            const userExponent = document.getElementById("exponent").value;
+        })
 
 
         function calcPow(base, exponent) {
