@@ -89,22 +89,21 @@
 
     <script>
         document.getElementById("calculate-btn").addEventListener("click", () => {
-            const userBase = document.getElementById("base").value;
-            const userExponent = document.getElementById("exponent").value;
+            const userBase = Number(document.getElementById("base").value);
+            const userExponent = Number(document.getElementById("exponent").value);
 
             document.getElementById("result").textContent = `Result: ${calcPow(userBase, userExponent)}`;
-        })
-
+        });
 
         function calcPow(base, exponent) {
             // Base case: any number to the power of 0 is 1
             if (exponent === 0) return 1;
 
             // Handle negative exponents
-            if (exponent < 0) return 1 / pow(base, -exponent);
+            if (exponent < 0) return 1 / calcPow(base, -exponent);
 
             // Recursive case: a^b = a * a^(b-1)
-            return base * pow(base, exponent - 1);
+            return base * calcPow(base, exponent - 1);
         }
     </script>
 
