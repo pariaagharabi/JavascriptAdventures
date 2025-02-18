@@ -99,14 +99,19 @@
         })
 
 
-        function longestChar(arr) {
-            let longest = '';
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].length > longest.length) {
-                    longest = arr[i];
+        function findLongestWord(orgStr) {
+            const eachWord = orgStr.split(" ");
+            let longestWord = eachWord[0];
+            let maxLen = 0;
+
+            for (let i = 1; i < eachWord.length; i++) {
+                if (eachWord[i].length > maxLen) {
+                    longestWord = eachWord[i];
+                    maxLen = eachWord[i].length;
                 }
             }
-            return longest;
+
+            return longestWord;
         }
 
     </script>
