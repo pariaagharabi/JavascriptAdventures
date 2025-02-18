@@ -94,9 +94,8 @@
         document.getElementById("btn-longest-char").addEventListener("click", () => {
             const userInput = document.getElementById("arrayInput").value.trim()
 
-            const spriatedArr = userInput.split(",");
-            const longestWord = longestChar(spriatedArr);
-            document.getElementById("result").innerHTML = longestWord;
+            const separatedArr = userInput.split(",").map(item => item.trim());
+            document.getElementById("result").innerHTML = 
         })
 
 
