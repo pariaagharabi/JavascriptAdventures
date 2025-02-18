@@ -92,7 +92,7 @@
 
     <script>
         document.getElementById("btn-longest-char").addEventListener("click", () => {
-            const userInput = document.getElementById("arrayInput").value;
+            const userInput = document.getElementById("arrayInput").value.trim()
 
             const spriatedArr = userInput.split(",");
             const longestWord = longestChar(spriatedArr);
