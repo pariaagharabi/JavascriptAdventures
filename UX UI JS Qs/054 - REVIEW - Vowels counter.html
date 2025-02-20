@@ -14,18 +14,19 @@
 
     <script>
         function countVowels(orgStr) {
-            const vowelsChar = ["a", "e", "o", "i", "u"];
+            const vowelsChar = ["a", "e", "i", "o", "u"];
             let count = 0;
 
-            for (var i = 0; i < orgStr.length; i++) {
-                if (i === vowelsChar) {
+            for (let i = 0; i < orgStr.length; i++) {
+                if (vowelsChar.includes(orgStr[i].toLowerCase())) {
                     count++;
                 }
             }
+            return count;
         }
 
         // Example usage:
-        console.log(countVowels("Hello World")); // Output: 3
+        console.log(countVowels("Hello World")); // 3
     </script>
 
 </body>
