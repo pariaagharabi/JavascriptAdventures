@@ -13,12 +13,14 @@
 <body>
 
     <script>
-        function countVowels(orgStr){
-            const vowelsChar = ["a", "e", "o", "i","u"];
+        function countVowels(orgStr) {
+            const vowelsChar = ["a", "e", "o", "i", "u"];
             let count = 0;
 
-            for(var i=0; i< orgStr.length; i++){
-                
+            for (var i = 0; i < orgStr.length; i++) {
+                if (i === vowelsChar) {
+                    count++;
+                }
             }
         }
     </script>
