@@ -96,8 +96,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-counter").addEventListener("click", ()=>{
-            
+        document.getElementById("btn-counter").addEventListener("click", () => {
+            const inputStr = document.getElementById("inputStr").value;
+            const result = countVowels(inputStr);
+            document.getElementById("result").textContent = 
         })
 
         function countVowels(orgStr) {
