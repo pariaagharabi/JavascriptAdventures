@@ -17,6 +17,11 @@
         function getPalindrome(orgString) {
             let lowerCaseStr = orgString.toLowerCase();
             const halfLength = Math.floor(lowerCaseStr.length / 2);
+            for (let i = 0; i < halfLength; i++) {
+                if (lowerCaseStr[i] !== lowerCaseStr[lowerCaseStr.length - 1 - i]) {
+                    return false;
+                }
+            }
         }
     </script>
 
