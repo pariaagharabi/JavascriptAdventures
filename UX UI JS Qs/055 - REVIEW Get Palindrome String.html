@@ -97,7 +97,7 @@
         document.getElementById("btn-palindorme").addEventListener("click", () => {
             const userInput = document.getElementById("input-string").value;
 
-            document.getElementById("result").innerHTML =
+            document.getElementById("result").innerHTML = getPalindrome(userInput);
         });
 
         function getPalindrome(orgString) {
