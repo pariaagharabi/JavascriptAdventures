@@ -90,9 +90,11 @@
 
 
     <script>
-        document.getElementById("btn-sort").addEventListener("click", ()=>{
+        document.getElementById("btn-sort").addEventListener("click", () => {
             const inputUser = document.getElementById("input").value;
             const numbers = inputUser.split(",").map(Number);
+
+            document.getElementById("result").innerText = bubbleSort(numbers).join(", ");
         })
 
 
