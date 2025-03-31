@@ -24,8 +24,8 @@
 
     <script>
         function sumOfArrays(...arrays) {
-            return arrays.reduce((acc, arr) => {
-                return acc + arr.reduce((sum, num) => sum + num, 0);
+            return arrays.reduce((totalSum, arr) => {
+                return totalSum + arr.reduce((sum, num) => sum + num, 0);
             }, 0);
         }
 
