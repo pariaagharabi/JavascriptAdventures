@@ -14,8 +14,8 @@
         }
 
         body {
-            background-color: darkslategrey;
-            color: white;
+            background-color: rgb(12, 216, 216);
+            color: rgb(14, 15, 15);
         }
     </style>
 </head>
@@ -36,6 +36,11 @@
         // const result = sumOfArrays(array1, array2, array3);
         // console.log(result);
         // Output: 45
+
+        // Second solution
+        function sumOfArrays(...arrays) {
+            return arrays.flat().reduce((sum, num) => sum + num, 0);
+        }
     </script>
 </body>
 
