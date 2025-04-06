@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum of seversl arrays</title>
+    <title>Sum of several arrays</title>
 
     <style>
         :is(*, ::after, ::before) {
@@ -47,7 +47,6 @@
             content: "*";
             color: rgb(235, 62, 62);
             vertical-align: text-bottom;
-
         }
 
         .main-container button {
@@ -80,15 +79,15 @@
                 <div class="input-group">
                     <div class="array-one-input">
                         <label for="array1">Array #1:</label>
-                        <input type="text" id="array1" placeholder="e.g. [1, 2, 3]">
+                        <input type="text" id="array1" placeholder="e.g. 1, 2, 3">
                     </div>
                     <div class="array-two-input">
                         <label for="array2">Array #2:</label>
-                        <input type="text" id="array2" placeholder="e.g. [4, 5, 6]">
+                        <input type="text" id="array2" placeholder="e.g. 4, 5, 6">
                     </div>
                     <div class="array-three-input">
                         <label for="array3">Array #3:</label>
-                        <input type="text" id="array3" placeholder="e.g. [7, 8, 9]">
+                        <input type="text" id="array3" placeholder="e.g. 7, 8, 9">
                     </div>
                 </div>
                 <div>
@@ -105,35 +104,21 @@
     </div>
 
     <script>
-        document.getElementById("cal-sum").addEventListener("click", () => {
+        document.getElementById("calc-sum").addEventListener("click", () => {
             let userArray1 = document.getElementById("array1").value;
             let userArray2 = document.getElementById("array2").value;
             let userArray3 = document.getElementById("array3").value;
 
-            // Convert string inputs into arrays of numbers
+            // Convert inputs to a single array of numbers
             const arraysValueNums = [...userArray1.split(","), ...userArray2.split(","), ...userArray3.split(",")]
-                .map(item => Number(item.trim()));
+                .map(item => Number(item.trim()))
+                .filter(item => !isNaN(item)); // Optional: remove invalid inputs
 
-            document.getElementById("result").innerText = sumOfArrays(arraysValueNums);
-        })
+            document.getElementById("result").innerText = `Sum: ${sumOfArrays(arraysValueNums)}`;
+        });
 
-        function sumOfArrays(...arrays) {
-            return arrays.reduce((totalSum, arr) => {
-                return totalSum + arr.reduce((sum, num) => sum + num, 0);
-            }, 0);
-        }
-
-        // Example usage:
-        // const array1 = [1, 2, 3];
-        // const array2 = [4, 5, 6];
-        // const array3 = [7, 8, 9];
-        // const result = sumOfArrays(array1, array2, array3);
-        // console.log(result);
-        // Output: 45
-
-        // Second solution
-        function sumOfArrays(...arrays) {
-            return arrays.flat().reduce((sum, num) => sum + num, 0);
+        function sumOfArrays(numbersArray) {
+            return numbersArray.reduce((sum, num) => sum + num, 0);
         }
     </script>
 </body>
