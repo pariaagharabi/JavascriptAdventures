@@ -113,6 +113,8 @@
             // Convert string inputs into arrays of numbers
             const arraysValueNums = [...userArray1.split(","), ...userArray2.split(","), ...userArray3.split(",")]
                 .map(item => Number(item.trim()));
+
+            document.getElementById("result").innerText = sumOfArrays(arraysValueNums);
         })
 
         function sumOfArrays(...arrays) {
