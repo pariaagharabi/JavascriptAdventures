@@ -17,10 +17,9 @@
         function stringCapitalize(str) {
             let capitalizatedStr = "";
             let words = str.split(" ");
-            let firstCharOfEachWord = "";
 
             for (let i = 0; i < words.length; i++) {
-                firstCharOfEachWord = words[i].charAt(0).toUpperCase();
+                let firstCharOfEachWord = words[i].charAt(0).toUpperCase();
                 capitalizatedStr += firstCharOfEachWord + words[i].slice(1) + " ";
             }
 
