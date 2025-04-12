@@ -16,12 +16,12 @@
     <script>
         function reverseStrring(orgStr) {
             let reveredStr = "";
-            const halfLengthStr = Math.floor(orgStr.length / 2);
 
-            for(let i=0; i < halfLengthStr; i++){
-                
+            for (let i = orgStr.length - 1; i >= 0; i--) {
+                reveredStr += orgStr[i];
             }
 
+            return reveredStr;
         }
     </script>
 
