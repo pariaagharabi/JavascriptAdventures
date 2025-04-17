@@ -93,7 +93,9 @@
 
 
     <script>
-        document.getElementById("btn-reverse").addEventListener
+        document.getElementById("btn-reverse").addEventListener("click", ()=>{
+            const userInput = document.getElementById("input-string").value;
+        })
 
         function reverseStrring(orgStr) {
             let reveredStr = "";
