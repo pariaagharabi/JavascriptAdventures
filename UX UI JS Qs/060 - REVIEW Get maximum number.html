@@ -16,11 +16,13 @@
         function findMaxNum(orgArray) {
             let maxNumber = orgArray[0];
 
-            for(let i=0; i<orgArray.length; i++){
-                if(orgArray[i]> maxNumber){
-                    
+            for (let i = 0; i < orgArray.length; i++) {
+                if (orgArray[i] > maxNumber) {
+                    maxNumber = orgArray[i];
                 }
             }
+
+            return maxNumber;
         }
 
     </script>
