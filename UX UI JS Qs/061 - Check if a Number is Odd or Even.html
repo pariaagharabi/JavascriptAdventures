@@ -14,8 +14,12 @@
 <body>
 
     <script>
-        function checkOddEven() {
-            
+        function checkOddEven(num) {
+            if (num % 2 === 0) {
+                return `${num} is an even number.`;
+            } else {
+                return `${num} is an odd number.`;
+            }
         }
     </script>
 
