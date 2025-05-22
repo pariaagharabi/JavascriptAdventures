@@ -102,8 +102,10 @@
     </div>
 
     <script>
-        document.getElementById("btn-checker").addEventListener("click",()=>{
+        document.getElementById("btn-checker").addEventListener("click", () => {
             const userInput = document.getElementById("numberInput").value;
+
+            document.getElementById("result").innerHTML = checkOddEven(userInput);
         })
 
 
