@@ -24,6 +24,11 @@
             return sumResult;
         }
 
+        // Using reduce
+        function sumArrayV2(arr) {
+            return arr.reduce((sum, num) => sum + num, 0);
+        }
+
         // Test cases
         console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
     </script>
