@@ -92,6 +92,8 @@
         document.getElementById("btn-sum").addEventListener("click", () => {
             let inptUser = document.getElementById("arrayInput").value;
             let arr = inptUser.split(",").map(Number).filter(num => !isNaN(num));
+
+            document.getElementById("result").innerText = sumArrayV2(arr);
         });
 
 
