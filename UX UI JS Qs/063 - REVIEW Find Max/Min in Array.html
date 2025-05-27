@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,26 @@
 
     </style>
 </head>
+
 <body>
 
 
     <script>
-        function findMinMax(arr){
+        function findMinMax(arr) {
             let min = arr[0];
             let max = arr[0];
 
-            for(let i=1; i< arr.length; i++){
-                
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
             }
         }
     </script>
-    
+
 </body>
+
 </html>
