@@ -38,6 +38,8 @@
         document.getElementById("btn-minMax").addEventListener("click", () => {
             const userInput = document.getElementById("arrayInput").value;
             const userInputNums = userInput.split(',').map(Number);
+
+            document.getElementById("output").innerText = JSON.stringify(findMinMax(userInputNums));
         })
 
         function findMinMax(arr) {
