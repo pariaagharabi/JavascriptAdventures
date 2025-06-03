@@ -7,7 +7,9 @@
     <title>Reverse a String</title>
 
     <style>
-
+        :is(*, *::before, *::after) {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 
@@ -35,14 +37,14 @@
     </div>
 
     <script>
-        document.getElementById("reverseButton").addEventListener("click", ()=>{
+        document.getElementById("reverseButton").addEventListener("click", () => {
             const inputString = document.getElementById("inputString").value;
             const outputString = reverseString(inputString);
-            
+
             document.getElementById("outputString").textContent = outputString;
         });
-        
-        
+
+
         function reverseString(str) {
             let reverseResult = " ";
             for (let i = str.length - 1; i >= 0; i--) {
