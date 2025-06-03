@@ -36,7 +36,9 @@
 
     <script>
         document.getElementById("reverseButton").addEventListener("click", ()=>{
-
+            const inputString = document.getElementById("inputString").value;
+            const outputString = reverseString(inputString);
+            document.getElementById("outputString").textContent = outputString;
         });
         
         
