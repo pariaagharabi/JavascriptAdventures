@@ -18,6 +18,12 @@
             const halfLenStr = Math.floor(str.length / 2);
             const lowcaseStr = str.toLowerCase();
 
+            for (let i = 0; i < halfLenStr; i++) {
+                if (lowcaseStr[i] !== lowcaseStr[lowcaseStr.length - 1 - i]) {
+                    return false;
+                }
+            }
+
         }
 
 
