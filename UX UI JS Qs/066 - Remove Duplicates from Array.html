@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,24 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function removeDuplicates(arrOrg){
+        function removeDuplicates(arrOrg) {
             let uniqueArr = [];
-            
-            for(let i=0; i< arrOrg.length ; i++){
-                if(!uniqueArr.includes(arrOrg[i])){
+
+            for (let i = 0; i < arrOrg.length; i++) {
+                if (!uniqueArr.includes(arrOrg[i])) {
                     uniqueArr.push(arrOrg[i]);
                 }
             }
+
+            return uniqueArr;
         }
 
     </script>
-    
+
 </body>
+
 </html>
