@@ -13,8 +13,11 @@
     <script>
         function removeDuplicates(arrOrg){
             let uniqueArr = [];
+            
             for(let i=0; i< arrOrg.length ; i++){
-                
+                if(!uniqueArr.includes(arrOrg[i])){
+                    uniqueArr.push(arrOrg[i]);
+                }
             }
         }
 
