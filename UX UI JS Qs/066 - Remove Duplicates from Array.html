@@ -91,7 +91,8 @@
 
     <script>
         document.getElementById("uniqueArr-btn").addEventListener("click", () => {
-            const userInput = document.getElementById("arrayInput").value;
+            let userInput = document.getElementById("arrayInput").value;
+            let inputArray = userInput.split(',').map(Number);
 
             document.getElementById("outpu").innerHTML = removeDuplicates(userInput);
         });
