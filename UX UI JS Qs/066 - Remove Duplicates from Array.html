@@ -92,9 +92,9 @@
     <script>
         document.getElementById("uniqueArr-btn").addEventListener("click", () => {
             let userInput = document.getElementById("arrayInput").value;
-            let inputArray = userInput.split(',').map(Number);
+            const inputArray = userInput.split(',').map(item => Number(item.trim()));
 
-            document.getElementById("output").innerHTML = removeDuplicates(userInput);
+            document.getElementById("output").innerHTML = removeDuplicates(inputArray);
         });
 
         function removeDuplicates(arrOrg) {
