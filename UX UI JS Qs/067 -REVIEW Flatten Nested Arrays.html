@@ -104,7 +104,7 @@
             const userInput = document.getElementById("inputArray").value;
             const convertToArr = JSON.parse(userInput);
 
-            document.getElementById("output").innerHTML = flattenArray(convertToArr).join(", ");
+            document.getElementById("output").innerHTML = JSON.stringify(flatten(convertToArr));
         })
 
 
