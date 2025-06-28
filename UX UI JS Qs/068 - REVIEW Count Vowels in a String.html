@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,28 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function countVowels(strOrg){
+        function countVowels(strOrg) {
             let vowelsLetters = [
                 'a', 'e', 'i', 'o', 'u',
                 'A', 'E', 'I', 'O', 'U'
             ];
 
             let count = 0;
-            for(let i=0; i< strOrg.length ;i++){
-                if(vowelsLetters.includes(strOrg[i])){
+            for (let i = 0; i < strOrg.length; i++) {
+                if (vowelsLetters.includes(strOrg[i])) {
                     count++;
                 }
             }
+
+            return count;
         }
 
     </script>
-    
+
 </body>
+
 </html>
