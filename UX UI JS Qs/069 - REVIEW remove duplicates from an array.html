@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <div class="inner-container">
@@ -15,11 +17,42 @@
             <header class="header-container">
                 <h1>Remove duplicates from an array</h1>
             </header>
+
+            <main class="main-container">
+                <div class="input-group">
+                    <label for="inputArray">Input Array</label>
+                    <input type="text" id="inputArray" placeholder="e.g. [1, 2, 2, 3, 4, 4]">
+                </div>
+                <button id="removeDuplicatesBtn">Remove Duplicates</button>
+            </main>
+
         </div>
     </div>
-    
+
+
+
+
+
+    <script>
+        document.getElementById('removeDuplicatesBtn').addEventListener('click', function () {
+            const input = document.getElementById('inputArray').value;
+            try {
+                const array = JSON.parse(input);
+                if (!Array.isArray(array)) throw new Error("Input must be an array");
+                const uniqueArray = [...new Set(array)];
+                document.getElementById('outputArray').textContent = JSON.stringify(uniqueArray);
+            } catch (error) {
+                document.getElementById('outputArray').textContent = "Error: " + error.message;
+            }
+        });
+    </script>
+    </main>
+    </div>
+    </div>
+
     <script>
 
     </script>
 </body>
+
 </html>
