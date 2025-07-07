@@ -76,9 +76,13 @@
         function removeDuplicates(orgArr) {
             let uniqueArr = [];
 
-            for (let i = 0; i <= orgArr.length; i++) { 
-                if(!uniqueArr.includes(orgArr[i]))
+            for (let i = 0; i <= orgArr.length; i++) {
+                if (!uniqueArr.includes(orgArr[i])) {
+                    uniqueArr.push(orgArr[i]);
+                }
             }
+
+            return uniqueArr;
         }
     </script>
 </body>
