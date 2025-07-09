@@ -103,8 +103,7 @@
             let convertedUserInputToArr = userInput.split(',').map(item => item.trim()).map(Number);
             let convertToJSON = JSON.stringify(convertedUserInputToArr);
 
-            document.getElementById("outputArray").innerHTML = 
-
+            document.getElementById("outputArray").innerHTML = removeDuplicates(convertToJSON);
         });
 
         function removeDuplicates(orgArr) {
