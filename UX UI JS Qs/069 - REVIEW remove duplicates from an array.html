@@ -99,22 +99,18 @@
 
     <script>
         document.getElementById("removeDuplicatesBtn").addEventListener("click", () => {
-            let userInput = document.getElementById("inputArray").value;
-            let convertedUserInputToArr = userInput.split(',').map(item => item.trim()).map(Number);
-            let convertToJSON = JSON.stringify(convertedUserInputToArr);
+            const userInput = JSON.parse(document.getElementById("inputArray").value.split(','));
 
-            document.getElementById("outputArray").innerHTML = removeDuplicates(convertToJSON);
+            document.getElementById("outputArray").innerHTML = JSON.stringify(removeDuplicates(userInput));
         });
 
         function removeDuplicates(orgArr) {
             let uniqueArr = [];
-
             for (let i = 0; i < orgArr.length; i++) {
                 if (!uniqueArr.includes(orgArr[i])) {
                     uniqueArr.push(orgArr[i]);
                 }
             }
-
             return uniqueArr;
         }
 
