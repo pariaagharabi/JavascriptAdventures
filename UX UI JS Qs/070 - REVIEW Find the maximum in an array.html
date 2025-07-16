@@ -100,7 +100,7 @@
 
     <script>
         document.getElementById("findMaxBtton").addEventListener("click", () => {
-            const userInput = (document.getElementById("ArrayInput").value);
+            const userInput = JSON.parse(document.getElementById("ArrayInput").value.split(','));
 
         })
 
