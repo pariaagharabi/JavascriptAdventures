@@ -99,11 +99,10 @@
     </div>
 
     <script>
-        document.getElementById("findMaxBtton").addEventListener("click", () => {
-            const userInput = JSON.parse(document.getElementById("ArrayInput").value.split(','));
+        document.getElementById("findMaxButton").addEventListener("click", () => {
+            const userInput = JSON.parse(document.getElementById("arrayInput").value.split(','));
 
-            document.getElementById("result").textContent = findMax(userInput);
-
+            document.getElementById("result").innerHTML = JSON.stringify(findMax(userInput));
         })
 
 
