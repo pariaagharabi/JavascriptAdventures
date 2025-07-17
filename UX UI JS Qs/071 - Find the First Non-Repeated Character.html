@@ -14,7 +14,12 @@
 
     <script>
         function findNonRepeatedCharacter(str) {
+            const freq = str.split('').reduce((acc, char) => {
+                acc[char] = (acc[char] || 0) + 1;
+                return acc;
+            }, {});
 
+            return str.split('').find(char => freq[char] === 1) || null;
         }
     </script>
 
