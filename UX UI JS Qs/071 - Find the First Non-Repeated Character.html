@@ -100,10 +100,10 @@
     </div>
 
     <script>
-        document.getElementById("unique-char-btn").addEventListener("click",()=>{
+        document.getElementById("unique-char-btn").addEventListener("click", () => {
             const userInput = document.getElementById("inputString").value;
 
-            document.getElementById("output").innerHTML
+            document.getElementById("output").innerHTML = findNonRepeatedCharacter(userInput) || "No non-repeating character found";
         });
 
         function findNonRepeatedCharacter(str) {
