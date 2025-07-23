@@ -23,6 +23,7 @@
             // If the element is not found, exit the function
             if (!ul) return;
 
+            // Use Array.map() to generate an array of <li> strings
             ul.innerHTML = items.map(item => `<li>${item}</li>`).join('');
         }
 
