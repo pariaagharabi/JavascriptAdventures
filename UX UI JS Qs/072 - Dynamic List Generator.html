@@ -17,7 +17,10 @@
 
     <script>
         function createListItems(items, ulId) {
+            // Get the <ul> element by its ID
             const ul = document.getElementById(ulId);
+
+            // If the element is not found, exit the function
             if (!ul) return;
 
             ul.innerHTML = items.map(item => `<li>${item}</li>`).join('');
