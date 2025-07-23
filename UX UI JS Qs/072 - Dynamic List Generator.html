@@ -24,6 +24,7 @@
             if (!ul) return;
 
             // Use Array.map() to generate an array of <li> strings
+            // Then update the innerHTML of the <ul> to display the list
             ul.innerHTML = items.map(item => `<li>${item}</li>`).join('');
         }
 
