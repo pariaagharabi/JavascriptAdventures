@@ -16,22 +16,11 @@
     <ul id="myList"></ul>
 
     <script>
-        function createListItems(array, ulElementId) {
-            const ul = document.getElementById(ulElementId);
-            if (!ul) {
-                console.error(`No <ul> element found with id: ${ulElementId}`);
-                return;
-            }
+        function createListItems(items, ulId) {
+            const ul = document.getElementById(ulId);
+            if (!ul) return;
 
-            // Clear existing list items
-            ul.innerHTML = '';
-
-            // Loop through array and append <li> items
-            array.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                ul.appendChild(li);
-            });
+            ul.innerHTML = items.map(item => `<li>${item}</li>`).join('');
         }
 
         // Example array
