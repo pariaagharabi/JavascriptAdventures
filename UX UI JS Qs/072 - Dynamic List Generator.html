@@ -42,11 +42,10 @@
             const input = document.getElementById('itemInput').value;
 
             // Split the input string into an array, trimming whitespace
-            // const items = input.split(',').map(item => item.trim()).filter(item => item);
-            const convertToArr = JSON.parse(input);
+            const items = input.split(',').map(item => item.trim()).filter(item => item);
 
             // Call the function to create list items
-            JSON.stringify(createListItems(items, 'myList'));
+            createListItems(items, 'myList');
         });
 
 
