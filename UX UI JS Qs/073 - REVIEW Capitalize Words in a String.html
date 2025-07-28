@@ -15,10 +15,13 @@
     <script>
         function capitalizeWords(orgStr) {
             let capitalizedStr = "";
-            let words = orgStr.split(" ");
+            let spratedWords = orgStr.split(" ");
 
-            for(let i=0; i< orgStr.length ; i++){
-                
+            for (let i = 0; i < spratedWords.length; i++) {
+                let firstEachChar = spratedWords[i][0].toUpperCase();
+                let restOfChar = spratedWords[i].slice(1);
+
+                capitalizedStr += firstEachChar + restOfChar + " ";
             }
         }
     </script>
