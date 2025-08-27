@@ -104,8 +104,8 @@
         document.getElementById("mergeBtn").addEventListener("click", () => {
             let userInputArr1 = JSON.parse(document.getElementById("array1").value);
             let userInputArr2 = JSON.parse(document.getElementById("array2").value);
-            
-            document.getElementById("outputMerge").innerText = 
+
+            document.getElementById("outputMerge").innerText = mergeArrays(userInputArr1, userInputArr2);
         });
 
 
