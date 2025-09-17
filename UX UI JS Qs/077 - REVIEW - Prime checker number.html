@@ -89,7 +89,7 @@
 
     <script>
         document.getElementById("btnPrime").addEventListener("click", () => {
-            let userInput = document.getElementById("numberInput").value;
+            let userInput = Number(document.getElementById("numberInput").value);
 
             document.getElementById("output").innerHTML = isPrime(userInput);
         });
