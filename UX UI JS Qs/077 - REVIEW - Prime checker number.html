@@ -91,7 +91,7 @@
         document.getElementById("btnPrime").addEventListener("click", () => {
             let userInput = document.getElementById("numberInput").value;
 
-            document.innerHtml = isPrime(userInput);
+            document.getElementById("output").innerHtml = isPrime(userInput);
         });
 
         function isPrime(number) {
