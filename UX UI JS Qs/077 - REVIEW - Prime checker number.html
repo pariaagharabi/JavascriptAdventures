@@ -72,13 +72,13 @@
                 <h1>Prime Checker Number</h1>
             </header>
 
-            <mai class="mainContainer">
+            <main class="mainContainer">
                 <div class="inputGroup">
                     <label>Enter a number:</label>
                     <input type="number" id="numberInput" placeholder="Add a number..." />
                 </div>
                 <button id="btnPrime">Prime Checker</button>
-            </mai>
+            </main>
 
             <div class="outputContainer">
                 <h1>Result:</h1>
@@ -91,17 +91,17 @@
         document.getElementById("btnPrime").addEventListener("click", () => {
             let userInput = document.getElementById("numberInput").value;
 
-            document.getElementById("output").innerHtml = isPrime(userInput);
+            document.getElementById("output").innerHTML = isPrime(userInput);
         });
 
         function isPrime(number) {
-            if (number <= 1) return false;
+            if (number <= 1) return `${number} is NOT a prime number.`;
 
             for (let i = 2; i <= Math.sqrt(number); i++) {
-                if (number % i === 0) return '${number} is NOT a prime number.';
+                if (number % i === 0) return `${number} is NOT a prime number.`;
             }
 
-            return '${number} is a prime number.';
+            return `${number} is a prime number.`;
         }
 
         // Example usage:
