@@ -18,7 +18,12 @@
 
             for (let i = 0; i < orgArr.lenghth; i++) {
                 for (let j = 0; j < orgArr.lenghth - 1 - i; j++) {
-
+                    if (orgArr[j] > orgArr[j + 1]) {
+                        // swap
+                        let temp = orgArr[j];
+                        orgArr[j] = orgArr[j + 1];
+                        orgArr[j + 1] = temp;
+                    }
                 }
             }
         }
