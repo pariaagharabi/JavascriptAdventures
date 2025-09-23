@@ -97,6 +97,9 @@
     <script>
         document.getElementById("btnBubble").addEventListener("click", ()=>{
             let userInput = document.getElementById("arrayInput").value;
+            let userInputArray = userInput.split(",").map(Number);
+
+            
         })
 
         function bubbleSort(orgArr) {
