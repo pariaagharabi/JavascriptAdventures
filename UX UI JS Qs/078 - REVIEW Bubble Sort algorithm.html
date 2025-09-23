@@ -99,7 +99,7 @@
             let userInput = document.getElementById("arrayInput").value;
             let userInputArray = userInput.split(",").map(Number);
 
-            document.getElementById("sortedOutput").textContent =
+            document.getElementById("sortedOutput").textContent = bubbleSort(userInputArray);
         })
 
         function bubbleSort(orgArr) {
