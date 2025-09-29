@@ -20,6 +20,8 @@
         function flipWordsSententce(orgStr) {
             let splitedStr = orgStr.split(" ");
             let reversedWords = splitedStr.map(word => word.split("").reverse().join(""));
+
+            return reversedWords.join(" ");
         }
 
     </script>
