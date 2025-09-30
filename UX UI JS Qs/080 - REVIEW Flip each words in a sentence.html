@@ -11,6 +11,11 @@
             margin: 0;
             padding: 0;
         }
+
+        body {
+            color: rgb(2, 31, 67);
+            background-color: rgb(242, 246, 251);
+        }
     </style>
 </head>
 
@@ -39,7 +44,7 @@
     <script>
         function flipWordsSentence(orgStr) {
             let splitedStr = orgStr.split(" ");
-            
+
             // Strings don’t support reverse(), so use split/reverse/join
             let reversedWords = splitedStr.map(word => word.split("").reverse().join(""));
 
