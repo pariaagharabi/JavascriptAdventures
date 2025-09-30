@@ -39,6 +39,8 @@
     <script>
         function flipWordsSentence(orgStr) {
             let splitedStr = orgStr.split(" ");
+            
+            // Strings don’t support reverse(), so use split/reverse/join
             let reversedWords = splitedStr.map(word => word.split("").reverse().join(""));
 
             return reversedWords.join(" ");
