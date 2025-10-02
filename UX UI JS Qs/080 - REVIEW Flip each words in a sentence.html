@@ -95,7 +95,7 @@
         document.getElementById("btnFlip").addEventListener("click", () => {
             let userInput = document.getElementById("sentenceInput").value;
 
-            
+            document.getElementById("output").textContent = flipWordsSentence(userInput);
         });
 
         function flipWordsSentence(orgStr) {
