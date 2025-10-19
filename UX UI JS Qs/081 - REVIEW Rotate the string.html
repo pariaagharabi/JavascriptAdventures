@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,18 @@
 
 
     <script>
-        
+        function leftRotateString(str, rotations) {
+            const n = str.length;
+            // Ensure rotations are within the string length
+            const actualRotations = rotations % n;
+            return str.slice(actualRotations) + str.slice(0, actualRotations);
+        }
+
+        // Example usage:
+        console.log(leftRotateString("abcdef", 2)); // Output: "cdefab"
+        console.log(leftRotateString("hello", 1));  // Output: "elloh"
     </script>
-    
+
 </body>
+
 </html>
