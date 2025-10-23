@@ -102,8 +102,10 @@
 
 
     <script>
-        document.getElementById("btnRotate").addEventListener("click", ()=>{
+        document.getElementById("btnRotate").addEventListener("click", () => {
             let userInput = document.getElementById("inputString").value;
+
+            document.getElementById("outputResult").innerText = leftRotateString(userInput, 2);
         });
 
         function leftRotateString(str, rotations) {
