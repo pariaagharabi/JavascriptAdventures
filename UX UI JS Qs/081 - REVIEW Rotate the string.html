@@ -105,7 +105,7 @@
         document.getElementById("btnRotate").addEventListener("click", () => {
             let userInput = document.getElementById("inputString").value;
 
-            document.getElementById("outputResult").innerText = leftRotateString(userInput, 2);
+            document.getElementById("outputResult").innerHTML = leftRotateString(userInput, 2);
         });
 
         function leftRotateString(str, rotations) {
@@ -116,8 +116,9 @@
         }
 
         // Example usage:
-        console.log(leftRotateString(" abcdef", 2)); // Output: "cdefab" console.log(leftRotateString("hello", 1)); //
-        Output: "elloh" </script>
+        // console.log(leftRotateString("hello", 1)); 
+
+    </script>
 
 </body>
 
