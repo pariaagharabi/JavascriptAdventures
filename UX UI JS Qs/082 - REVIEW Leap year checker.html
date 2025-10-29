@@ -37,6 +37,10 @@
         .headerContainer h1 {
             margin-bottom: 20px;
         }
+
+        .mainContainer label::after {
+            content: "*";
+        }
     </style>
 </head>
 
@@ -47,7 +51,7 @@
                 <h1>Leap year checker</h1>
             </header>
 
-            <main class="main mainContainer">
+            <main class="mainContainer">
                 <div class="inputGroup">
                     <label>Year:</label>
                     <input type="text" id="yearInput" placeholder="Enter year..." />
