@@ -100,6 +100,16 @@
     </div>
 
     <script>
+        document.getElementById("btnMaxNum").addEventListener("click", () => {
+            const firstInteger = parseInt(document.getElementById("firstInteger").value);
+            const secondInteger = parseInt(document.getElementById("secondInteger").value);
+
+            const maxNum = maxOfTwoIntegers(firstInteger, secondInteger);
+
+            document.getElementById("outputMaxNum").textContent = `The maximum number between ${firstInteger} and ${secondInteger} is ${maxNum}.`;
+        });
+
+
         function maxOfTwoIntegers(a, b) {
             // return (a > b) ? a : b;
 
