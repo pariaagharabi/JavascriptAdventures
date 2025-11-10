@@ -21,6 +21,10 @@
 
         function isPrime(num) {
             if (num <= 1) return false;
+
+            for (let num = 2; num <= Math.sqrt(num); num++) {
+                if (num % i === 0) return false;
+            }
         }
 
 
