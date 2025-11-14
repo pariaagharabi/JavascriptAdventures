@@ -89,7 +89,7 @@
             document.getElementById("btnPrime"), addEventListener("click", () => {
                 let userInput = parseInt(document.getElementById("numberInput").value);
 
-                document.getElementById("showResult").innerHTML
+                document.getElementById("showResult").innerHTML = isPrime(userInput) ? `${userInput} is a prime number.` : `${userInput} is not a prime number.`;
             })
 
             function isPrime(num) {
