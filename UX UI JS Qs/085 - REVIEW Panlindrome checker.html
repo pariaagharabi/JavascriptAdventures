@@ -19,6 +19,12 @@
             const normalizedStr = orgStr.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
             const halfLength = Math.floor(normalizedStr.length / 2);
+
+            for(let i = 0; i < halfLength; i++) {
+                if(normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
+                    return false;
+                }
+            }
         }
 
     </script>
