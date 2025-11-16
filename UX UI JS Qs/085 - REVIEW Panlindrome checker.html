@@ -20,12 +20,15 @@
 
             const halfLength = Math.floor(normalizedStr.length / 2);
 
-            for(let i = 0; i < halfLength; i++) {
-                if(normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
+            for (let i = 0; i < halfLength; i++) {
+                if (normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
                     return false;
                 }
             }
         }
+
+        // Example usage:
+        console.log(isPalindrome("civic"))
 
     </script>
 
