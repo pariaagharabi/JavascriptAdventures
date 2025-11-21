@@ -93,8 +93,10 @@
     </div>
 
     <script>
-        document.getElementById("btnPalindrome").addEventListener("click", ()=>{
+        document.getElementById("btnPalindrome").addEventListener("click", () => {
             const userInput = document.getElementById("inputString").value;
+
+            document.getElementById("output").textContent = isPalindrome(userInput) ? `"${userInput}" is a palindrome.` : `"${userInput}" is not a palindrome.`;
         })
 
         function isPalindrome(orgStr) {
