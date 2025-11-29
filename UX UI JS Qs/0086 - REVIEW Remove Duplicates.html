@@ -97,6 +97,7 @@
     <script>
         document.getElementById("btnUnique").addEventlistener("click", () => {
             const userInput = document.getElementById("arrayInput").value;
+            const inputArray = userInput.split(',').map(item => item.trim());
         })
 
 
