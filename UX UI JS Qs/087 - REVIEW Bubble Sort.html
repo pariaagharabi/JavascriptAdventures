@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,24 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function bubbleSort(orgArr){
-            for(let i=0; i<= orgArr.length; i++){
-                for(let j=0; j<= orgArr -i-1 ; j++){
-                    
+        function bubbleSort(orgArr) {
+            for (let i = 0; i <= orgArr.length; i++) {
+                for (let j = 0; j <= orgArr - 1 - i; j++) {
+                    if (orgArr[j] > orgArr[j + 1]) {
+                        let temp = orgArr[j];
+                        orgArr[j] = orgArr[j + 1];
+                        orgArr[j + 1] = temp;
+                    }
                 }
             }
 
         }
     </script>
-    
+
 </body>
+
 </html>
