@@ -15,7 +15,7 @@
     <script>
         function bubbleSort(orgArr) {
             for (let i = 0; i < orgArr.length; i++) {
-                for (let j = 0; j < orgArr - 1 - i; j++) {
+                for (let j = 0; j < orgArr.length - 1 - i; j++) {
                     if (orgArr[j] > orgArr[j + 1]) {
                         let temp = orgArr[j];
                         orgArr[j] = orgArr[j + 1];
@@ -23,9 +23,9 @@
                     }
                 }
             }
-
             return orgArr;
         }
+
 
         // Example usage
         console.log(bubbleSort([5, 3, 8, 4, 2])); // Output: [2, 3, 4, 5, 8]
