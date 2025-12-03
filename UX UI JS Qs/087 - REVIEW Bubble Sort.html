@@ -32,6 +32,10 @@
             padding: 20px;
             text-align: center;
         }
+
+        .mainContainer .inputGroup label::after {
+            content: "*";
+        }
     </style>
 </head>
 
@@ -42,7 +46,7 @@
                 <h1>Bubble Sort Algorithm</h1>
             </header>
 
-            <main class="maiContainer">
+            <main class="mainContainer">
                 <div class="inputGroup">
                     <label>Array:</label>
                     <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas..." />
