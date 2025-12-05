@@ -93,7 +93,7 @@
             const userInput = document.getElementById("arrayInput").value;
             const convertArr = userInput.split(",").map(num => (map.trim()));
 
-            document.getElementById("result").textContent = 
+            document.getElementById("result").textContent = bubbleSort(convertArr);
         });
 
         function bubbleSort(orgArr) {
