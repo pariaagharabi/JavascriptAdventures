@@ -91,7 +91,7 @@
     <script>
         document.getElementById("btnBubble").addEventListener("click", () => {
             const userInput = document.getElementById("arrayInput").value;
-            const convertArr = userInput.split(",").map(num => (map.trim()));
+            const convertArr = userInput.split(",").map(num => Number(num.trim()));
 
             document.getElementById("result").textContent = bubbleSort(convertArr);
         });
