@@ -90,8 +90,10 @@
 
 
     <script>
-        document.getElementById("btnReverse").addEventListener("click",()=>{
+        document.getElementById("btnReverse").addEventListener("click", () => {
             let inputStr = document.getElementById("inputString").value;
+
+            document.getElementById("result").innerText = reverseString(inputStr);
         })
 
         function reverseString(str) {
