@@ -19,9 +19,18 @@
     <script>
         function calcFactorial(orginalNumber) {
             if (orginalNumber < 0) {
-                return "Factorial is not defined for negative numbers.";
+                return false;
             }
 
+            if (orginalNumber === 0 || orginalNumber === 1) {
+                return 1;
+            }
+
+            let factorial = 1;
+            for (let i = 2; i <= orginalNumber; i++) {
+                factorial *= i;
+            }
+            return factorial;
         }
 
     </script>
