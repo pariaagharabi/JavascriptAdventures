@@ -93,13 +93,13 @@
     </div>
 
     <script>
-        document.getElementById("FactorialBtn").addEventListener("click", ()=>{
+        document.getElementById("FactorialBtn").addEventListener("click", () => {
             let numberInput = document.getElementById("numberInput").value;
 
-            
+            document.getElementById("output").textContent = calcFactorial(Number(numberInput));
         })
 
-        
+
         function calcFactorial(orginalNumber) {
             if (orginalNumber < 0) {
                 return false;
@@ -118,7 +118,7 @@
 
         // Example usage:
         // console.log(calcFactorial(5)); // Output: 120
-        // console.log(calcFactorial(0)); // Output: 1     
+        // console.log(calcFactorial(0)); // Output: 1
         // console.log(calcFactorial(-3)); // Output: false
 
     </script>
