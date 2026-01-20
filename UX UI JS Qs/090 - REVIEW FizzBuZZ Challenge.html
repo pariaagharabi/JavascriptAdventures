@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,27 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function fizzBuzz(orgNum){
-            for(let i=1; i<=orgNum; i++){
-                if(i % 3 === 0 && i % 5 === 0){
-                    return ("FizzBuzz");
-                } else if(i % 3 === 0){
-                    return ("Fizz");
-                } else if(i % 5 === 0){
-                    return ("Buzz");
+        function fizzBuzz(orgNum) {
+            for (let i = 1; i <= orgNum; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log("FizzBuzz");
+                } else if (i % 3 === 0) {
+                    console.log("Fizz");
+                } else if (i % 5 === 0) {
+                    console.log("Buzz");
                 } else {
-                    return (i);
+                    console.log(i);
                 }
             }
         }
+
+        // Example usage:
     </script>
-    
+
 </body>
+
 </html>
