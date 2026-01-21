@@ -33,25 +33,25 @@
 
         <script>
             document.getElementById("fizzBuzzBtn").addEventListener("click", () => {
-                let inputNum = parseInt(document.getElementById("numberInput").value);
-
+                const inputNum = parseInt(document.getElementById("numberInput").value.trim(), 10);
                 document.getElementById("result").innerHTML = fizzBuzz(inputNum);
             });
 
             function fizzBuzz(orgNum) {
-                for (let i = 1; i <= orgNum; i++) {
-                    if (i % 3 === 0 && i % 5 === 0) {
-                        console.log("FizzBuzz");
-                    } else if (i % 3 === 0) {
-                        console.log("Fizz");
-                    } else if (i % 5 === 0) {
-                        console.log("Buzz");
-                    } else {
-                        console.log(i);
-                    }
+                if (!Number.isInteger(orgNum) || orgNum < 1) {
+                    return "Please enter a positive whole number (e.g., 15).";
                 }
-            }
 
+                const out = [];
+                for (let i = 1; i <= orgNum; i++) {
+                    if (i % 3 === 0 && i % 5 === 0) out.push("FizzBuzz");
+                    else if (i % 3 === 0) out.push("Fizz");
+                    else if (i % 5 === 0) out.push("Buzz");
+                    else out.push(String(i));
+                }
+                return out.join("<br>");
+            }
+        </script>
         </script>
 
 </body>
