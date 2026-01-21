@@ -28,33 +28,33 @@
             <div class="outputContainer">
                 <h2>Output:</h2>
                 <span id="result"></span>
+            </div>
         </div>
-    </div>
 
-    <script>
-        document.getElementById("fizzBuzzBtn").addEventListener("click", ()=>{
-            let inputNum = parseInt(document.getElementById("numberInput").value);
+        <script>
+            document.getElementById("fizzBuzzBtn").addEventListener("click", () => {
+                let inputNum = parseInt(document.getElementById("numberInput").value);
 
-            
-        })
+                document.getElementById("result").innerHTML = fizzBuzz(inputNum);
+            })
 
-        function fizzBuzz(orgNum) {
-            for (let i = 1; i <= orgNum; i++) {
-                if (i % 3 === 0 && i % 5 === 0) {
-                    console.log("FizzBuzz");
-                } else if (i % 3 === 0) {
-                    console.log("Fizz");
-                } else if (i % 5 === 0) {
-                    console.log("Buzz");
-                } else {
-                    console.log(i);
+            function fizzBuzz(orgNum) {
+                for (let i = 1; i <= orgNum; i++) {
+                    if (i % 3 === 0 && i % 5 === 0) {
+                        console.log("FizzBuzz");
+                    } else if (i % 3 === 0) {
+                        console.log("Fizz");
+                    } else if (i % 5 === 0) {
+                        console.log("Buzz");
+                    } else {
+                        console.log(i);
+                    }
                 }
             }
-        }
 
-        // Example usage:
-        fizzBuzz(100);
-    </script>
+            // Example usage:
+            fizzBuzz(100);
+        </script>
 
 </body>
 
