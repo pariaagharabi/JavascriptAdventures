@@ -96,8 +96,13 @@
 
     <script>
 
-        function findSecondMaxNum(orgArr){
-            
+        function findSecondMaxNum(orgArr) {
+            let maxNum = orgArr[0];
+            for (let i = 1; i < orgArr.length; i++) {
+                if (orgArr[i] > maxNum) {
+                    maxNum = orgArr[i];
+                }
+            }
         }
 
     </script>
