@@ -95,7 +95,7 @@
     </div>
 
     <script>
-        document.getElementById("secondMaxNumBtn").addEventListener("click",()=>{
+        document.getElementById("secondMaxNumBtn").addEventListener("click", () => {
             let input = document.getElementById("arrayInput").value;
             let arr = input.split(',').map(Number);
 
@@ -103,19 +103,12 @@
         });
 
 
-        function findSecondMaxNum(orgArr) {
-            let maxNum = orgArr[0];
-            let secondMaxNum = 0;
-
-            for (let i = 1; i < orgArr.length; i++) {
-                if (orgArr[i] > maxNum) {
-                    secondMaxNum = maxNum;
-                    maxNum = orgArr[i];
-                }
-            }
-
-            return secondMaxNum;
+        function findSecondMaxNum(arr) {
+            const uniq = [...new Set(arr)];
+            uniq.sort((a, b) => b - a);
+            return uniq.length >= 2 ? uniq[1] : undefined;
         }
+
 
         // Example usage:
         console.log(findSecondMaxNum([3, 5, 7, 2, 8])); // Output: 7
