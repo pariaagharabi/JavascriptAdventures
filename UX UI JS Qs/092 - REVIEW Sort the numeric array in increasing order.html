@@ -33,6 +33,11 @@
             text-align: center;
             box-shadow: 0 0 12px;
         }
+
+        .mainContainer .inputGroup label::after {
+            content: " *";
+            color: red;
+        }
     </style>
 </head>
 
@@ -43,7 +48,7 @@
                 <h2>Sort the numeric array in increasing order</h2>
             </header>
 
-            <main class="mainCOntainer">
+            <main class="mainContainer">
                 <div class="inputGroup">
                     <label>Enter numbers separated by commas:</label>
                     <input type="text" id="numberInput" placeholder="e.g., 34,7,23,32,5,62">
