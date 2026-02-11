@@ -94,8 +94,10 @@
     </div>
 
     <script>
-        document.getElementById("checkerBtn").addEventListener("click", ()=>{
-            
+        document.getElementById("checkerBtn").addEventListener("click", () => {
+            let inputValue = parseInt(document.getElementById("numberInput").value);
+
+            document.getElementById("outputSpan").textContent = `Result: ${isPowerOfTwo(inputValue)}`;
         })
 
 
