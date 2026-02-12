@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,20 @@
 
     </style>
 </head>
+
 <body>
 
     <script>
-        function removeDuplicates(orgArr){
-            
+        function removeDuplicates(orgArr) {
+            let uniqueArr = orgArr.set();
+            return uniqueArr;
         }
 
+        // Example usage:
+        console.log(removeDuplicates([1, 2, 3, 2, 4, 1])); // Output: [1, 2, 3, 4]
+
     </script>
-    
+
 </body>
+
 </html>
