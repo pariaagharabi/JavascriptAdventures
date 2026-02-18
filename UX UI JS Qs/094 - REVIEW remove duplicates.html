@@ -93,11 +93,11 @@
     </div>
 
     <script>
-        document.getElementById("uniqueBtn").addEventListener("click", ()=>{
+        document.getElementById("uniqueBtn").addEventListener("click", () => {
             let arrayInput = document.getElementById("arrayInput").value;
             let orgArr = arrayInput.split(",").map(item => item.trim());
 
-            
+            document.getElementById("output").textContent = "Result: " + JSON.stringify(removeDuplicates(orgArr));
         })
 
 
