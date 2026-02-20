@@ -34,7 +34,9 @@
     <script>
 
         function reverseEachWord(orgSentence){
-            
+            let words = orgSentence.split(" ");
+            let reversedWords = words.map(word => word.split("").reverse().join(""));
+            return reversedWords.join(" ");
         }
 
     </script>
