@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse each word in the sentence</title>
     <style>
-
+        :is(*, *::before, *::after) {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 
@@ -33,7 +35,7 @@
 
     <script>
 
-        function reverseEachWord(orgSentence){
+        function reverseEachWord(orgSentence) {
             let words = orgSentence.split(" ");
             let reversedWords = words.map(word => word.split("").reverse().join(""));
             return reversedWords.join(" ");
@@ -41,7 +43,6 @@
 
         // Example usage:
         console.log(reverseEachWord("Hello World")); // Output: "olleH dlroW"
-        
 
     </script>
 </body>
