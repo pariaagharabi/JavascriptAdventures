@@ -94,7 +94,9 @@
     </div>
 
     <script>
-        document.getElementById("reverseBtn").addEventListener("click",)
+        document.getElementById("reverseBtn").addEventListener("click",()=>{
+            let userInput = document.getElementById("sentenceInput").value;
+        })
 
         function reverseEachWord(orgSentence) {
             let words = orgSentence.split(" ");
