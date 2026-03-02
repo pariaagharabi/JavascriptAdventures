@@ -95,6 +95,10 @@
     <script>
         document.getElementById("intBtn").addEventListener("click", () => {
             const userInput = document.getElementById("numberInput").value;
+            const num = parseFloat(userInput);
+            const result = isInt(num);
+
+            document.getElementById("result").textContent = isInt(num);
         })
 
         function isInt(numOrg) {
