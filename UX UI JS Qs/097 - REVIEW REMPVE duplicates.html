@@ -93,12 +93,12 @@
     </div>
 
     <script>
-        document.getElementById("uniqueBtn").addEventListener("click", ()=>{
+        document.getElementById("uniqueBtn").addEventListener("click", () => {
             let userInput = document.getElementById("inputArray").value;
             let convertedArray = userInput.split(",").map(item => item.trim());
 
-            document.getElementById("outputSpan").textContent
-        })
+            document.getElementById("outputSpan").textContent = removeDuplicates(convertedArray);
+        });
 
         function removeDuplicates(orgArr) {
             return [...new Set(orgArr)];
