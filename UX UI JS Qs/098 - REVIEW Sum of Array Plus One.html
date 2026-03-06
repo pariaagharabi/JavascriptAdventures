@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 
     </style>
 </head>
+
 <body>
     <div class="appContainer">
         <div class="innerContainer">
@@ -28,14 +30,19 @@
             </div>
         </div>
     </div>
-    
+
     <script>
-        function sumPlusOne(orgArr){
-            for(let i=0; i<orgArr.length; i++){
+        function sumPlusOne(orgArr) {
+            let sumNums = 0;
+
+            for (let i = 0; i < orgArr.length; i++) {
                 orgArr[i] = Number(orgArr[i]);
+                sumNums += orgArr[i];
             }
+            return sumNums + 1;
         }
 
     </script>
 </body>
+
 </html>
