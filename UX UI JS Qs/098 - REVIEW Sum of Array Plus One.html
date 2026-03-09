@@ -32,11 +32,11 @@
     </div>
 
     <script>
-        document.getElementById("calculateBtn").addEventListener("click",()=>{
+        document.getElementById("calculateBtn").addEventListener("click", () => {
             const userInput = document.getElementById("arrayInput").value;
             const convrtToNums = userInput.split(",").map(item => item.trim());
 
-            document.getElementById("result").textContent = 
+            document.getElementById("result").textContent = sumPlusOne(convrtToNums);
         })
 
         function sumPlusOne(orgArr) {
