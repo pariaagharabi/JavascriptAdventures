@@ -27,10 +27,14 @@
     </div>
 
     <script>
-        function longestChar(orgStr){
+        function longestChar(orgStr) {
             let longestChar = orgStr[0];
 
-            
+            for (let i = 1; i < orgStr.length; i++) {
+                if (orgStr[i].length > longestChar.length) {
+                    longestChar = orgStr[i];
+                }
+            }
         }
 
     </script>
