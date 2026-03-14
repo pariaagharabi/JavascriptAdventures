@@ -27,17 +27,23 @@
     </div>
 
     <script>
-        function findLongestWord(orgStr) {
-            let longestWord = orgStr[0];
+        function findLongestWord(str) {
+            // Split the original string into an array of words
+            const words = str.split(' ');
 
-            for (let i = 1; i < orgStr.length; i++) {
-                if (orgStr[i] > longestWord) {
-                    longestWord = orgStr[i];
+            // Start by assuming the first word is the longest
+            let longestWord = words[0];
+
+            // Loop through the rest of the words
+            for (let i = 1; i < words.length; i++) {
+                if (words[i].length > longestWord.length) {
+                    longestWord = words[i];
                 }
             }
 
             return longestWord;
         }
+
 
         // Example usage:
         console.log(findLongestWord("JavaScript is the web programming language")); // Output: JavaScript
