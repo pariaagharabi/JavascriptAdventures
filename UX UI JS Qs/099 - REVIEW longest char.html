@@ -27,20 +27,20 @@
     </div>
 
     <script>
-        function longestChar(orgStr) {
-            let longestChar = orgStr[0];
+        function findLongestWord(orgStr) {
+            let longestWord = orgStr[0];
 
             for (let i = 1; i < orgStr.length; i++) {
-                if (orgStr[i].length > longestChar.length) {
-                    longestChar = orgStr[i];
+                if (orgStr[i] > longestWord) {
+                    longestWord = orgStr[i];
                 }
             }
 
-            return longestChar;
+            return longestWord;
         }
 
         // Example usage:
-        console.log(longestChar("JavaScript is the web programming language")); // Output: JavaScript
+        console.log(findLongestWord("JavaScript is the web programming language")); // Output: JavaScript
 
     </script>
 </body>
