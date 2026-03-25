@@ -95,9 +95,11 @@
     </div>
 
     <script>
-        document.getElementById("emptyButton").addEventListener("click",()=>{
+        document.getElementById("emptyButton").addEventListener("click", () => {
             let userArrInput = document.getElementById("arrayInput").value;
             let userArr = userArrInput.split(",").map(item => item.trim());
+
+            document.getElementById("output").textContent = JSON.stringify(emptyArray(userArr));
         })
 
         function emptyArray(orgArr) {
