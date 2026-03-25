@@ -96,7 +96,8 @@
 
     <script>
         document.getElementById("emptyButton").addEventListener("click",()=>{
-            
+            let userArrInput = document.getElementById("arrayInput").value;
+            let userArr = userArrInput.split(",").map(item => item.trim());
         })
 
         function emptyArray(orgArr) {
