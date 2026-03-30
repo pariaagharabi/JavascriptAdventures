@@ -11,7 +11,12 @@
 <body>
 
     <script>
-        
+        function rotateString(orgString, num) {
+            if (num < 0) {
+                num = orgString.length + num;
+            }
+            return orgString.slice(num) + orgString.slice(0, num);
+        }
     </script>
     
 </body>
