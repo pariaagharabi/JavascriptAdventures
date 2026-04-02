@@ -101,8 +101,7 @@
             const userInput = document.getElementById("inputString").value;
             const rotatePosition = parseInt(document.getElementById("rotateAmount").value) % userInput.length;
 
-
-
+            document.getElementById("outputString").textContent = rotateString(userInput, rotatePosition);
         })
 
 
