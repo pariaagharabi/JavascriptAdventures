@@ -81,6 +81,10 @@
                 <div class="inputGroup">
                     <label for="inputString">Input String:</label>
                     <input type="text" id="inputString" placeholder="Enter a string...">
+                    <div class="inputRotate">
+                        <label for="rotateAmount">Rotate by (number):</label>
+                        <input type="text" id="rotateAmount" placeholder="Enter a number...">
+                    </div>
                 </div>
                 <button id="rotateBtn">Rotate String</button>
             </main>
@@ -95,6 +99,10 @@
     <script>
         document.getElementById("rotateBtn").addEventListener("click", () => {
             const userInput = document.getElementById("inputString").value;
+            const rotatePosition = parseInt(document.getElementById("rotateAmount").value) % userInput.length;
+
+
+
         })
 
 
