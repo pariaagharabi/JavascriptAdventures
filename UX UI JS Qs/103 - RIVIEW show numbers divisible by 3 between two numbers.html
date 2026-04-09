@@ -36,7 +36,10 @@
 
         .mainContainer .inputGroup label::after {
             content: "*";
+            color: red;
         }
+
+
     </style>
 </head>
 
@@ -51,11 +54,11 @@
                 <div class="inputGroup">
                     <div class="inputNum1">
                         <label for="num1">Number 1:</label>
-                        <input type="number" id="num1" name="num1">
+                        <input type="number" id="num1" name="num1" placeholder="Number 1 ...">
                     </div>
                     <div class="inputNum2">
                         <label for="num2">Number 2:</label>
-                        <input type="number" id="num2" name="num2">
+                        <input type="number" id="num2" name="num2" placeholder="Number 2 ...">
                     </div>
                 </div>
                 <button id="btnDivisible">Show Numbers Divisible by 3</button>
