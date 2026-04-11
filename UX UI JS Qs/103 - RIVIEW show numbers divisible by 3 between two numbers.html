@@ -101,7 +101,7 @@
     </div>
 
     <script>
-        document.getElementById("btnDivisible").addEventListener("click", ()=>{
+        document.getElementById("btnDivisible").addEventListener("click", () => {
             const num1 = parseInt(document.getElementById("num1").value);
             const num2 = parseInt(document.getElementById("num2").value);
 
@@ -110,7 +110,7 @@
                 return;
             }
 
-            
+            document.getElementById("output").textContent = showNumsDivisibleBy3(num1, num2).join(", ");
         })
 
         function showNumsDivisibleBy3(num1, num2) {
