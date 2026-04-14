@@ -35,6 +35,13 @@
     <script>
         document.getElementById("btnFact").addEventListener("click",()=>{
             const userInputNum = parseInt(document.getElementById("numInput").value);
+
+            if (isNaN(userInputNum) || userInputNum < 0) {
+                document.getElementById("result").textContent = "Please enter a valid non-negative integer.";
+                return;
+            }
+
+            
         })
 
         function getFactorial(orgNum) {
