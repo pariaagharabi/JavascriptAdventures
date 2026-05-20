@@ -17,12 +17,17 @@
     <script>
         function check_polarity(num1, num2) {
             if (num1 < 0 && num2 < 0) {
-                return ("Both numbers are negative");
-            } else if (num1 >= 0 && num2 >= 0) {
-                return ("Both are positive");
-            }
+                return "Both numbers are negative";
 
-            return ("One of numbers is negative and another one is positive.");
+            } else if (num1 >= 0 && num2 >= 0) {
+                return "Both numbers are positive";
+
+            } else if (num1 < 0 && num2 >= 0) {
+                return "First number is negative and second number is positive";
+
+            } else {
+                return "First number is positive and second number is negative";
+            }
         }
     </script>
 
