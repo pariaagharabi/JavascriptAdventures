@@ -40,7 +40,12 @@
 
 
     <script>
-        document.getElementById("btn_checker").addEventListener("click",)
+        document.getElementById("btn_checker").addEventListener("click",()=>{
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = check_polarity(num1, num2);
+            
+        })
 
         function check_polarity(num1, num2) {
             if (num1 < 0 && num2 < 0) {
