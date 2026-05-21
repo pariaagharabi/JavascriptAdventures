@@ -23,7 +23,7 @@
 
         .appContainer {
             display: flex;
-            
+            justify-content: center;
         }
     </style>
 </head>
@@ -32,26 +32,28 @@
 
     <div class="appContainer">
         <div class="innerContainer">
-            <h1>Check negativity and positivity of two integer</h1>
-        </div>
+            <header class="headerContainer">
+                <h1>Check negativity and positivity of two integer</h1>
+            </header>
 
-        <main class="mainContainer">
-            <div class="inputGroup">
-                <div class="num_one_group">
-                    <label for="num1">Number 1:</label>
-                    <input type="number" id="num1" name="num1">
+            <main class="mainContainer">
+                <div class="inputGroup">
+                    <div class="num_one_group">
+                        <label for="num1">Number 1:</label>
+                        <input type="number" id="num1" name="num1">
+                    </div>
+                    <div class="num_two_group">
+                        <label for="num2">Number 2:</label>
+                        <input type="number" id="num2" name="num2">
+                    </div>
                 </div>
-                <div class="num_two_group">
-                    <label for="num2">Number 2:</label>
-                    <input type="number" id="num2" name="num2">
-                </div>
+                <button id="btn_checker">Check Polarity</button>
+            </main>
+
+            <div class="outputContainer">
+                <h2>Result:</h2>
+                <p id="result"></p>
             </div>
-            <button id="btn_checker">Check Polarity</button>
-        </main>
-
-        <div class="outputContainer">
-            <h2>Result:</h2>
-            <p id="result"></p>
         </div>
     </div>
 
