@@ -34,7 +34,10 @@
 
     <script>
         document.getElementById("btnSort").addEventListener("click", () => {
-
+            const input = document.getElementById("stringArray").value;
+            const stringArray = input.split(",").map(str => str.trim());
+            const sortedArray = sortStrings(stringArray);
+            document.getElementById("output").textContent = JSON.stringify(sortedArray, null, 2);
         });
 
 
