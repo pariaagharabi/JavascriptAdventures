@@ -38,8 +38,7 @@
             const orgArr = input.split(',').map(item => item.trim());
 
             document.getElementById("output").textContent = JSON.stringify(duplicateArray(orgArr));
-
-        })
+        });
 
         function duplicateArray(orgArr) {
             return orgArr.concat(orgArr);
