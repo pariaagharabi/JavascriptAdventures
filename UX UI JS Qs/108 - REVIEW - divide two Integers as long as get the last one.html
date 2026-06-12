@@ -17,6 +17,9 @@
             // Prevent infinite loop if divisor is 1 or -1
             if (divisor === 1) return dividend;
             if (divisor === -1) return -dividend;
+
+            // Division by zero is undefined
+            if (divisor === 0) return NaN;
         }
     </script>
 
