@@ -20,6 +20,16 @@
 
             // Division by zero is undefined
             if (divisor === 0) return NaN;
+
+            let current = dividend;
+
+            // Keep dividing as long as 'current' is perfectly divisible by 'divisor'
+            while (current % divisor === 0 && current !== 0) {
+                current = current / divisor;
+            }
+
+            return current;
+
         }
     </script>
 
