@@ -104,6 +104,8 @@
             const userInput2 = document.getElementById("secondStr").value;
 
             const result = isRotation(userInput1, userInput2);
+
+            document.getElementById("result").textContent = result ? "The second string is a rotation of the first string." : "The second string is NOT a rotation of the first string.";
         });
 
         function isRotation(str1, str2) {
