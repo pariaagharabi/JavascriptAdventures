@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find largest even number</title>
     <style>
-        
+
     </style>
 </head>
+
 <body>
 
     <script>
         function findLargestEvenNumber(arr) {
-           
+            let largestEven = null;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    if (largestEven === null || arr[i] > largestEven) {
+                        largestEven = arr[i];
+                    }
+                }
+            }
+            return largestEven;
         }
     </script>
-    
+
 </body>
+
 </html>
