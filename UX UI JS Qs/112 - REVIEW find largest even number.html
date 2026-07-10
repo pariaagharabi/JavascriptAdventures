@@ -83,7 +83,7 @@
                     <label for="numbers">Enter numbers (comma-separated):</label>
                     <input type="text" id="numbers" placeholder="e.g., 1, 2, 3, 4, 5">
                 </div>
-                <button id="findButton">Find Largest Even Number</button>
+                <button id="findEvenNum">Find Largest Even Number</button>
             </main>
 
             <footer class="footerContainer">
@@ -94,7 +94,7 @@
     </div>
 
     <script>
-        document
+        document.getElementById("findEvenNum").addEventListener("click")
 
         function findLargestEvenNumber(arr) {
             let largestEven = null;
