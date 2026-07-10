@@ -94,9 +94,11 @@
     </div>
 
     <script>
-        document.getElementById("findEvenNum").addEventListener("click", ()=> {
+        document.getElementById("findEvenNum").addEventListener("click", () => {
             const userInput = document.getElementById("numbers").value;
             const numArray = userInput.split(',').map(num => parseInt(num.trim(), 10)).filter(num => !isNaN(num));
+
+            document.getElementById("result").textContent = findLargestEvenNumber(numArray) !== null ? findLargestEvenNumber(numArray) : "No even numbers found.";
         })
 
         function findLargestEvenNumber(arr) {
