@@ -93,9 +93,11 @@
 
 
     <script>
-        document.getElementById("reverseButton").addEventListener("click",()=>(
-
-        ));
+        document.getElementById("reverseButton").addEventListener("click", () => {
+            const numberInput = document.getElementById("numberInput").value;
+            const reversedNumber = reverseNum(parseInt(numberInput));
+            document.getElementById("output").textContent = `Result: ${}`;
+        });
 
         function reverseNum(orgNum) {
             while (orgNum > 0) {
