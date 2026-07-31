@@ -5,26 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review - Find Unique Characters</title>
-    style{
-
-    }
+    <style></style>
 </head>
 
 <body>
+    <div class="appContainer">
+        <div class="innerContainer">
+            <header class="headerContainer">
+                <h1>Find Unique Characters</h1>
+            </header>
+        </div>
+    </div>
 
     <script>
         function findUniqueCharacters(orgStr) {
-            let uniqueChars = '';
-            for (let i = 0; i < orgStr.length; i++) {
-                if (uniqueChars.indexOf(orgStr[i]) === -1) {
-                    uniqueChars += orgStr[i];
-                }
+            const freq = new Map();
+
+            // Count frequencies
+            for (const char of orgStr) {
+                freq.set(char, (freq.get(char) || 0) + 1);
             }
-            return uniqueChars;
+
+            // Keep only characters that appear once, in original order
+            return [...orgStr].filter(char => freq.get(char) === 1).join('');
         }
 
         // Example usage
-        console.log(findUniqueCharacters("thequickthe")); // Output: "thequickbrownfxjmpsvlazydg"
+        console.log(findUniqueCharacters("thequthe")); // Output: "qu"
     </script>
 
 </body>
