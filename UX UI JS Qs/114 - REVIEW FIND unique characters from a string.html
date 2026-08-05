@@ -69,8 +69,6 @@
             box-shadow: 0 0 5px rgb(22, 22, 21);
             transform: scale(1.04);
         }
-
-
     </style>
 </head>
 
@@ -97,10 +95,10 @@
     </div>
 
     <script>
-        document.getElementById('findUniqueBtn').addEventListener('click', ()=>{
+        document.getElementById('findUniqueBtn').addEventListener('click', () => {
             const inputStr = document.getElementById('inputString').value;
-            
-            document.getElementById('output')
+
+            document.getElementById('output').textContent = findUniqueCharacters(inputStr);
         })
 
 
