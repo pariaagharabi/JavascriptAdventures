@@ -36,7 +36,19 @@
 
 
         function generateFibonacci(orgNum) { 
-            
+            if (orgNum <= 0) {
+                return [];
+            } else if (orgNum === 1) {
+                return [0];
+            } else if (orgNum === 2) {
+                return [0, 1];
+            } else {
+                const fibSequence = [0, 1];
+                for (let i = 2; i < orgNum; i++) {
+                    fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+                }
+                return fibSequence;
+            }
         }
 
 
