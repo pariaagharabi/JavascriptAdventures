@@ -95,7 +95,21 @@
 
     <script>
         document.getElementById("generateBtn").addEventListener("click", () => {
+            const inputNum = parseInt(document.getElementById("inputNum").value);
+            const fibList = document.getElementById("fibList");
+            fibList.innerHTML = ""; // Clear previous results
 
+            if (isNaN(inputNum) || inputNum < 1) {
+                alert("Please enter a valid positive integer.");
+                return;
+            }
+
+            const fibonacciSequence = generateFibonacci(inputNum);
+            fibonacciSequence.forEach(num => {
+                const listItem = document.createElement("li");
+                listItem.textContent = num;
+                fibList.appendChild(listItem);
+            });
         });
 
         function generateFibonacci(orgNum) {
