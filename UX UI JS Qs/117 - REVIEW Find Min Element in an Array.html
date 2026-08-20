@@ -34,6 +34,7 @@
     <script>
         document.getElementById("findMinButton").addEventListener("click", ()=>{
             const userInput = document.getElementById("arrayInput").value;
+            const array = userInput.split(',').map(Number);
         })
 
         function findMinElement(arr) {
