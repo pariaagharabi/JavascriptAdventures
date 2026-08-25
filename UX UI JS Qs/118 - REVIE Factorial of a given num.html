@@ -11,7 +11,13 @@
 <body>
 
     <script>
-        
+        function factorial(orgNum) {
+            if (orgNum === 0 || orgNum === 1) {
+                return 1;
+            } else {
+                return orgNum * factorial(orgNum - 1);
+            }
+        }
     </script>
     
 </body>
