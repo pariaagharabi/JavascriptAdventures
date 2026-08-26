@@ -27,18 +27,19 @@
 
             <div class="output">
                 <h1>
-                    <pre id="result">Result:</pre>
+                    Result:
                 </h1>
+                <pre id="result"></pre>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById("calculateBtn").addEventListener("click",()=>{
+        document.getElementById("calculateBtn").addEventListener("click", () => {
             const userNumInput = document.getElementById("numberInput").value;
             const num = parseInt(userNumInput);
 
-            document.getElementById("result").textContent =  factorial(num);
+            document.getElementById("result").textContent = factorial(num);
 
         })
 
