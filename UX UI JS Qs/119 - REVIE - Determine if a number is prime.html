@@ -97,10 +97,22 @@
     <script>
         document.getElementById("checkButton").addEventListener("click", () => {
             const userInput = document.getElementById("numberInput").value;
+            const result = document.getElementById("result");
 
-            document.getElementById("result").textContent = isPrime(userInput) ? `${userInput} is a prime number.` : `${userInput} is not a prime number.`;
-        })
+            if (userInput.trim() === "") {
+                result.textContent = "Empty";
+                return;
+            }
 
+            const number = Number(userInput);
+
+            if (isNaN(number)) {
+                result.textContent = "Invalid number";
+                return;
+            }
+
+            result.textContent = isPrime(number) ? "Prime" : "Not Prime";
+        });
 
         function isPrime(number) {
             if (number <= 1) {
@@ -108,7 +120,9 @@
             }
 
             for (let i = 2; i <= Math.sqrt(number); i++) {
-                if (number % i === 0) return false;
+                if (number % i === 0) {
+                    return false;
+                }
             }
 
             return true;
