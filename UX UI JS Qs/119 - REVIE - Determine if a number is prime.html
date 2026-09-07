@@ -40,7 +40,7 @@
         }
 
         .mainContainer .inputGroup input {
-            color:rgb(70, 13, 124);
+            color: rgb(70, 13, 124);
             background-color: transparent;
             outline: none;
             border: 1px solid rgb(70, 13, 124);
@@ -53,11 +53,11 @@
         }
 
         .mainContainer button {
-            color:rgb(70, 13, 124);
+            color: rgb(70, 13, 124);
             background-color: transparent;
             font-weight: bold;
             padding: 4px 12px;
-            border: 1px solid rgb(70, 13, 124); 
+            border: 1px solid rgb(70, 13, 124);
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -94,10 +94,10 @@
     </div>
 
     <script>
-        document.getElementById("checkButton").addEventListener("click", ()=>{
+        document.getElementById("checkButton").addEventListener("click", () => {
             const userInput = document.getElementById("numberInput").value;
 
-            document.getElementById("result").textContent = 
+            document.getElementById("result").textContent = isPrime(userInput) ? `${userInput} is a prime number.` : `${userInput} is not a prime number.`;
         })
 
 
