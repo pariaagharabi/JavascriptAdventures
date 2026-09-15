@@ -55,7 +55,7 @@
         }
 
         .mainContainer button {
-            color:rgb(2, 2, 58);
+            color: rgb(2, 2, 58);
             background-color: transparent;
             border: 1.6px solid rgb(2, 2, 58);
             border-radius: 4px;
@@ -78,7 +78,7 @@
     <div class="appContainer">
         <div class="innerContainer">
             <header class="headerContainer">
-                <h1>Convert a string to camel case</h1>
+                <h1>Convert a string to camel case:</h1>
             </header>
 
             <main class="mainContainer">
@@ -98,7 +98,7 @@
 
 
     <script>
-        document.getElementById("convertButton").addEventListener("click",()=>{
+        document.getElementById("convertButton").addEventListener("click", () => {
             const userInput = document.getElementById("inputString").value;
 
             document.getElementById("outputString").textContent = convertToCamelCase(userInput);
