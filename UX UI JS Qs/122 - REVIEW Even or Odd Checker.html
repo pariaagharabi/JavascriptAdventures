@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,24 @@
 
     </style>
 </head>
+
 <body>
-    
+
 
     <script>
-        function checkEvenOdd(num) {
-            if (num % 2 === 0) {
-                console.log(num + " is even.");
+        function checkEvenOdd(orgNum) {
+            if (orgNum % 2 === 0) {
+                return orgNum + " is even.";
             } else {
-                console.log(num + " is odd.");
+                return orgNum + " is odd.";
             }
         }
+
+        // Example usage:
+        console.log(checkEvenOdd(4)); // Output: 4 is even.
+        console.log(checkEvenOdd(7)); // Output: 7 is odd.
     </script>
 
 </body>
+
 </html>
