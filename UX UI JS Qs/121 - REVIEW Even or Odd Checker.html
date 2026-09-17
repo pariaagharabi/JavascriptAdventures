@@ -35,7 +35,9 @@
 
     <script>
         document.getElementById("checkButton").addEventListener("click", ()=>{
-
+            const numberInput = document.getElementById("numberInput").value;
+            const result = checkEvenOdd(parseInt(numberInput));
+            document.getElementById("outputText").textContent = result;
         });
 
         function checkEvenOdd(orgNum) {
