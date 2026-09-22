@@ -14,6 +14,10 @@
 
     <script>
         function factorialCalc(orgNum) {
+            if (orgNum < 0) {
+                return "Factorial is not defined for negative numbers.";
+            }
+
             let fact = 1;
             for (let i = 1; i <= orgNum; i++) {
                 fact *= i;
@@ -23,6 +27,7 @@
 
         // Example usage:
         console.log(factorialCalc(5)); // Output: 120
+        console.log(factorialCalc(-3)); // Output: 1
     </script>
 
 </body>
