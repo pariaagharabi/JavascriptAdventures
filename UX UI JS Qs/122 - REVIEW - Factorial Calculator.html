@@ -16,7 +16,7 @@
             <header class="headerContainer">
                 <h1>Factorial Calculator</h1>
             </header>
-            
+
             <main class="mainContainer">
                 <div class="inputGroup">
                     <label for="numberInput">Enter a number:</label>
@@ -33,8 +33,10 @@
     </div>
 
     <script>
-        document.getElementById("calculateBtn").addEventListener("click", ()=>{
-            
+        document.getElementById("calculateBtn").addEventListener("click", () => {
+            const numberInput = document.getElementById("numberInput").value;
+            const result = factorialCalc(parseInt(numberInput));
+            document.getElementById("result").textContent = result;
         })
 
         function factorialCalc(orgNum) {
