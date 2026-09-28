@@ -32,8 +32,21 @@
         </div>
     </div>
 
-
     <script>
+        function isPerfectNumber(orgNum) {
+            if (orgNum <= 0) {
+                return "Perfect numbers are positive integers greater than zero.";
+            }
+
+            let sum = 0;
+            for (let i = 1; i < orgNum; i++) {
+                if (orgNum % i === 0) {
+                    sum += i;
+                }
+            }
+
+            return sum === orgNum ? `${orgNum} is a perfect number.` : `${orgNum} is not a perfect number.`;
+        }
 
     </script>
 </body>
