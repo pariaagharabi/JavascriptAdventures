@@ -14,13 +14,14 @@
 
         body {
             background-color: rgb(17, 16, 17);
-            color:rgb(249, 3, 249);
-            margin-top:12px;
-            font-family:Georgia, 'Times New Roman', Times, serif
+            color: rgb(249, 3, 249);
+            margin-top: 12px;
+            font-family: Georgia, 'Times New Roman', Times, serif
         }
 
         .appContainer {
             display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -31,19 +32,19 @@
             <header class="headerContainer">
                 <h1>Perfect Number Checker</h1>
             </header>
-        </div>
 
-        <main class="mainContainer">
-            <div class="inputGroup">
-                <label for="numberInput">Enter a number:</label>
-                <input type="number" id="numberInput" placeholder="Enter a number">
+            <main class="mainContainer">
+                <div class="inputGroup">
+                    <label for="numberInput">Enter a number:</label>
+                    <input type="number" id="numberInput" placeholder="Enter a number">
+                </div>
+                <button id="checkButton">Check</button>
+            </main>
+
+            <div class="outputContainer">
+                <h2>Result:</h2>
+                <p id="result"></p>
             </div>
-            <button id="checkButton">Check</button>
-        </main>
-
-        <div class="outputContainer">
-            <h2>Result:</h2>
-            <p id="result"></p>
         </div>
     </div>
 
