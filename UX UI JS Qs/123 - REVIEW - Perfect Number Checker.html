@@ -23,7 +23,6 @@
             display: flex;
             justify-content: center;
             line-height: 2.5;
-            
         }
 
         .innerContainer {
@@ -34,6 +33,11 @@
             padding: 20px;
             margin: 8px;
         }
+
+        .mainContainer .inputGroup label::after {
+            content: " *";
+            color: red;
+        }
     </style>
 </head>
 
@@ -41,7 +45,7 @@
     <div class="appContainer">
         <div class="innerContainer">
             <header class="headerContainer">
-                <h1>Perfect Number Checker</h1>
+                <h1>Perfect Number Checker:</h1>
             </header>
 
             <main class="mainContainer">
