@@ -11,7 +11,13 @@
 <body>
     
     <script>
-        
+        function isArmstrongNumber(num) {
+            const digits = num.toString().split('');
+            const numDigits = digits.length;
+            const sumOfPowers = digits.reduce((sum, digit) => sum + Math.pow(parseInt(digit), numDigits), 0);
+            return sumOfPowers === num;
+        }
+
     </script>
 
 </body>
