@@ -41,8 +41,17 @@
             }
 
             const number = parseInt(numberInput);
+            if (isNaN(number)) {
+                resultElement.textContent = "Invalid input. Please enter a valid number.";
+                return;
+            }
 
-            
+            const isArmstrong = isArmstrongNumber(number);
+            if (isArmstrong) {      
+                resultElement.textContent = `${number} is an Armstrong number.`;
+            } else {
+                resultElement.textContent = `${number} is not an Armstrong number.`;
+            }            
         })
 
         function isArmstrongNumber(num) {
