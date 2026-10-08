@@ -35,6 +35,13 @@
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
 
+            if (numberInput === "") {
+                resultElement.textContent = "Please enter a number.";
+                return;
+            }
+
+            const number = parseInt(numberInput);
+
             
         })
 
