@@ -15,13 +15,13 @@
         body {
             background-color: #f4f4f4;
             color: rgb(39, 36, 36);
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin-top: 12px;
         }
 
         .appContainer {
             display: flex;
-            
+
         }
     </style>
 </head>
@@ -29,25 +29,28 @@
 <body>
     <div class="appContainer">
         <div class="innerContainer">
-            <h1>Armstrong Number Checker</h1>
-        </div>
+            <header class="headerContainer">
+                <h1>Armstrong Number Checker</h1>
+            </header>
 
-        <main class="mainContainer">
-            <div class="inputGroup">
-                <label for="numberInput">Number:</label>
-                <input type="number" id="numberInput" placeholder="Enter a number..." required>
+
+            <main class="mainContainer">
+                <div class="inputGroup">
+                    <label for="numberInput">Number:</label>
+                    <input type="number" id="numberInput" placeholder="Enter a number..." required>
+                </div>
+                <button id="checkButton">Check Armstrong Number</button>
+            </main>
+
+            <div class="outputContainer">
+                <h1>Result:</h1>
+                <p id="result"></p>
             </div>
-            <button id="checkButton">Check Armstrong Number</button>
-        </main>
-
-        <div class="outputContainer">
-            <h1>Result:</h1>
-            <p id="result"></p>
         </div>
     </div>
 
     <script>
-        document.getElementById("checkButton").addEventListener("click", ()=>{
+        document.getElementById("checkButton").addEventListener("click", () => {
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
 
@@ -63,11 +66,11 @@
             }
 
             const isArmstrong = isArmstrongNumber(number);
-            if (isArmstrong) {      
+            if (isArmstrong) {
                 resultElement.textContent = `${number} is an Armstrong number.`;
             } else {
                 resultElement.textContent = `${number} is not an Armstrong number.`;
-            }            
+            }
         });
 
         function isArmstrongNumber(num) {
