@@ -37,7 +37,9 @@
 
     <script>
         document.getElementById("calculateButton").addEventListener("click", () => {
-
+            const numberInput = document.getElementById("numberInput").value;
+            const result = sumOfDigits(parseInt(numberInput));
+            
         });
 
         function sumOfDigits(num) {
