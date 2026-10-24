@@ -12,7 +12,21 @@
     
     <script>
         function isFibonacci(orgNum) {
-            
+            let a = 0;
+            let b = 1;
+            let c = a + b;
+
+            while (c < orgNum) {
+                a = b;
+                b = c;
+                c = a + b;
+            }
+
+            if (c === orgNum || orgNum === 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
     </script>
 </body>
