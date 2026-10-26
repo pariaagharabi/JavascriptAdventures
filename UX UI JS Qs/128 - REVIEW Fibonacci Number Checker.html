@@ -33,7 +33,7 @@
     </div>
 
     <script>
-        document.getElementById("checkButton").addEventListener("click", ()=>{
+        document.getElementById("checkButton").addEventListener("click", () => {
             const userInput = parseInt(document.getElementById("numberInput").value);
 
             if (isNaN(userInput)) {
@@ -42,7 +42,7 @@
                 return;
             }
 
-            document.getElementById("output").textContent = 
+            document.getElementById("output").textContent = isFibonacci(userInput);
         })
 
         function isFibonacci(orgNum) {
