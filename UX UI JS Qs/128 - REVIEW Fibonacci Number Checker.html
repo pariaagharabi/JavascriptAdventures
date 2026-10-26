@@ -34,7 +34,14 @@
 
     <script>
         document.getElementById("checkButton").addEventListener("click", ()=>{
-            
+            const userInput = parseInt(document.getElementById("numberInput").value);
+
+            if (isNaN(userInput)) {
+                document.getElementById("output").textContent = "Result: Please enter a valid number.";
+                document.getElementById("outputDescription").textContent = "";
+                return;
+            }
+
         })
 
         function isFibonacci(orgNum) {
