@@ -42,7 +42,7 @@
                 return;
             }
 
-            document.getElementById("output").textContent = isFibonacci(userInput);
+            document.getElementById("output").textContent = `Result: ${userInput} is ${isFibonacci(userInput) ? '' : 'not '}a Fibonacci number.`;
         });
 
         function isFibonacci(orgNum) {
