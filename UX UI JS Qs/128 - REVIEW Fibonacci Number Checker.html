@@ -26,8 +26,9 @@
             </main>
 
             <div class="outputContainer">
-                <h1 id="output">Result: </h1>
-                <pre id="outputDescription"></pre>
+                <h2>
+                    <p id="output">Result: </p>
+                </h2>
             </div>
         </div>
     </div>
@@ -38,12 +39,11 @@
 
             if (isNaN(userInput)) {
                 document.getElementById("output").textContent = "Result: Please enter a valid number.";
-                document.getElementById("outputDescription").textContent = "";
                 return;
             }
 
             document.getElementById("output").textContent = isFibonacci(userInput);
-        })
+        });
 
         function isFibonacci(orgNum) {
             let a = 0;
