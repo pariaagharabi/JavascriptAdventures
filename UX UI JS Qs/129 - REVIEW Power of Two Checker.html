@@ -35,6 +35,13 @@
 
     <script>
         document.getElementById("checkButton").addEventListener("click", ()=>{
+            const userInput = parseInt(document.getElementById("inputNum").value);
+
+            if (isNaN(userInput)) {
+                document.getElementById("result").textContent = "Please enter a valid number.";
+                return;
+            }
+
             
         })
 
