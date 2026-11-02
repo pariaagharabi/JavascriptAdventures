@@ -34,7 +34,7 @@
     </div>
 
     <script>
-        document.getElementById("checkButton").addEventListener("click", ()=>{
+        document.getElementById("checkButton").addEventListener("click", () => {
             const userInput = parseInt(document.getElementById("inputNum").value);
 
             if (isNaN(userInput)) {
@@ -42,7 +42,7 @@
                 return;
             }
 
-            
+            document.getElementById("result").textContent = `${userInput} is ${isPowerOfTwo(userInput) ? '' : 'not '}a power of two.`;
         })
 
         function isPowerOfTwo(orgNum) {
