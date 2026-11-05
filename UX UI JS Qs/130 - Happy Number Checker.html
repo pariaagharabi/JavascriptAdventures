@@ -24,9 +24,19 @@
             return num === 1;
         }
 
+        function sumOfSquares(num) {
+            let sum = 0;
+            while (num > 0) {
+                let digit = num % 10;
+                sum += digit * digit;
+                num = Math.floor(num / 10);
+            }
+            return sum;
+        }
+
         // example usage
         console.log(isHappyNumber(19)); // true
-        cosole.log(isHappyNumber(2)); // false
+        console.log(isHappyNumber(2)); // false
     </script>
 
 </body>
