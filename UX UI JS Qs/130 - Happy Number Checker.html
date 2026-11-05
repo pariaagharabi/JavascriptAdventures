@@ -13,7 +13,16 @@
 <body>
 
     <script>
-        
+        function isHappyNumber(num) {
+            let seen = new Set();
+
+            while (num !== 1 && !seen.has(num)) {
+                seen.add(num);
+                num = sumOfSquares(num);
+            }
+
+            return num === 1;
+        }
     </script>
 
 </body>
