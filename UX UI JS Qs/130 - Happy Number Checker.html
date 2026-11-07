@@ -34,6 +34,22 @@
 
     <script>
         document.getElementById("checkButton").addEventListener("click", ()=>{
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+
+            if (numberInput === "") {
+                resultElement.textContent = "Please enter a number.";
+                return;
+            }
+
+            const num = parseInt(numberInput, 10);
+            if (isNaN(num) || num < 1) {
+                resultElement.textContent = "Please enter a valid positive integer.";
+                return;
+            }
+
+            const isHappy = isHappyNumber(num);
+           
             
         })
 
