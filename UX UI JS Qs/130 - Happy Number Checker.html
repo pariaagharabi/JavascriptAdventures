@@ -49,9 +49,8 @@
             }
 
             const isHappy = isHappyNumber(num);
-           
-            
-        })
+            resultElement.textContent = isHappy ? `${num} is a happy number!` : `${num} is not a happy number.`;         
+        });
 
         function isHappyNumber(num) {
             let seen = new Set();
