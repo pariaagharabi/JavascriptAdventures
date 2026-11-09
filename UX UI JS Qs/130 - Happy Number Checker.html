@@ -13,11 +13,11 @@
         }
 
         body {
-            font-family :monospace;
+            font-family: monospace;
             background-color: #f0f0f0;
             color: #201f1f;
+            margin-top: 12px;
         }
-
     </style>
 </head>
 
@@ -44,7 +44,7 @@
     </div>
 
     <script>
-        document.getElementById("checkButton").addEventListener("click", ()=>{
+        document.getElementById("checkButton").addEventListener("click", () => {
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
 
@@ -60,7 +60,7 @@
             }
 
             const isHappy = isHappyNumber(num);
-            resultElement.textContent = isHappy ? `${num} is a happy number!` : `${num} is not a happy number.`;         
+            resultElement.textContent = isHappy ? `${num} is a happy number!` : `${num} is not a happy number.`;
         });
 
         function isHappyNumber(num) {
