@@ -33,7 +33,15 @@
     </div>
 
     <script>
+        function isPerfectSquare(num) {
+            if (num < 0) return false; // Negative numbers cannot be perfect squares
+            const sqrt = Math.sqrt(num);
+            return sqrt === Math.floor(sqrt); // Check if the square root is an integer
+        }
 
+
+        // Example usage:
+        
     </script>
 
 </body>
